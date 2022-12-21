@@ -37,8 +37,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.DashboardPanel = new System.Windows.Forms.Panel();
-            this.gunaCirclePictureBox2 = new Guna.UI.WinForms.GunaCirclePictureBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.DeanBTN = new Guna.UI.WinForms.GunaButton();
             this.StudentBTN = new Guna.UI.WinForms.GunaButton();
@@ -49,13 +47,17 @@
             this.gunaCirclePictureBox1 = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.DashboardPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
+            this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -167,35 +169,11 @@
             // 
             // DashboardPanel
             // 
-            this.DashboardPanel.Controls.Add(this.gunaCirclePictureBox2);
-            this.DashboardPanel.Controls.Add(this.label4);
+            this.DashboardPanel.Controls.Add(this.tabControl1);
             this.DashboardPanel.Location = new System.Drawing.Point(194, 52);
             this.DashboardPanel.Name = "DashboardPanel";
             this.DashboardPanel.Size = new System.Drawing.Size(1175, 683);
             this.DashboardPanel.TabIndex = 8;
-            // 
-            // gunaCirclePictureBox2
-            // 
-            this.gunaCirclePictureBox2.BaseColor = System.Drawing.Color.White;
-            this.gunaCirclePictureBox2.ErrorImage = null;
-            this.gunaCirclePictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("gunaCirclePictureBox2.Image")));
-            this.gunaCirclePictureBox2.Location = new System.Drawing.Point(419, 68);
-            this.gunaCirclePictureBox2.Name = "gunaCirclePictureBox2";
-            this.gunaCirclePictureBox2.Size = new System.Drawing.Size(92, 91);
-            this.gunaCirclePictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.gunaCirclePictureBox2.TabIndex = 9;
-            this.gunaCirclePictureBox2.TabStop = false;
-            this.gunaCirclePictureBox2.UseTransfarantBackground = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Swis721 Blk BT", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(517, 90);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(431, 48);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Student Data Form";
             // 
             // panel2
             // 
@@ -397,6 +375,46 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Michel Jay Gwapo";
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Location = new System.Drawing.Point(3, 6);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1174, 680);
+            this.tabControl1.TabIndex = 0;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1166, 654);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Student Background";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1166, 654);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Department";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(1166, 654);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Assesment";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
             // RegisStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -412,12 +430,11 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.DashboardPanel.ResumeLayout(false);
-            this.DashboardPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).EndInit();
+            this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -442,7 +459,9 @@
         private Guna.UI.WinForms.GunaCirclePictureBox gunaCirclePictureBox1;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label1;
-        private Guna.UI.WinForms.GunaCirclePictureBox gunaCirclePictureBox2;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPage3;
     }
 }
