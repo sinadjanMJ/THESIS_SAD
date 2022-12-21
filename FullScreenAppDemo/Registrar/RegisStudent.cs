@@ -106,5 +106,52 @@ namespace FullScreenAppDemo
             updatePanel.Hide();
 
         }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            studentBackground s = new studentBackground
+            {
+                S_fname = textS_Fname.Text.Trim(),
+                S_mname = textS_Mname.Text.Trim(),
+                S_lname = textS_Lname.Text.Trim(),
+                S_Sex = comboGender.Text.Trim(),
+                S_Birthdate = date_S_Birthdate.Text.Trim(),
+                S_mNumber = textS_MobileNumber.Text.Trim(),
+                S_emailAdd = textS_EmailAdd.Text.Trim(),
+                S_Religion = textS_Religion.Text.Trim(),
+                S_Citizenship = textS_Citizenship.Text.Trim(),
+                S_Province = textS_Province.Text.Trim(),
+                S_municipality = textS_Municipality.Text.Trim(),
+                S_barangay = textS_Barangay.Text.Trim(),
+                S_Guardian_fname = textS_Guardian_Fname.Text.Trim(),
+                S_Guardian_mname = textS_Guardian_Mname.Text.Trim(),
+                S_Guardian_lname = textS_Guardian_LName.Text.Trim(),
+                S_Guardian_contact = textS_Guardian_Contact.Text.Trim()
+            };
+
+            _context.studentBackgrounds.Add(s);
+            _context.SaveChanges();
+            MessageBox.Show("STUDENT ADDED SUCCESSFULLY");
+            openStudList(); 
+            dgvStudentList.DataSource = _context.studentBackgrounds.ToList();
+
+        }
+        private void openStudList()
+        {
+
+            tabControl1.Hide();
+            studentdataPanel.Show();
+            addstudentPanel.Hide();
+            updatePanel.Hide();
+        }
+
+        private void gunaButton2_Click(object sender, EventArgs e)
+        {
+            tabControl1.Hide();
+            studentdataPanel.Show();
+            addstudentPanel.Hide();
+            updatePanel.Hide();
+
+        }
     }
 }
