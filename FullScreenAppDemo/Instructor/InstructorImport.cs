@@ -60,5 +60,21 @@ namespace FullScreenAppDemo
             ii.Show();
             this.Hide();
         }
+
+        private void gunaButton2_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+
+        }
+
+        private void gunaButton1_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Do you want to exit.", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.Yes)
+            {
+                Application.ExitThread();
+
+            }
+        }
     }
 }

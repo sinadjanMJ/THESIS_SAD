@@ -73,5 +73,20 @@ namespace FullScreenAppDemo
             UpdateEventHandler.Invoke(this, args);
         }
 
+        private void gunaButton4_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+
+        }
+
+        private void gunaButton3_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Do you want to exit.", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.Yes)
+            {
+                Application.ExitThread();
+
+            }
+        }
     }
 }

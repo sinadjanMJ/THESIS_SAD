@@ -80,10 +80,10 @@
     <Compile Include="Academics\AcademicsDashboard.Designer.cs">
       <DependentUpon>AcademicsDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="DeanImport.cs">
+    <Compile Include="Dean\DeanImport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DeanImport.Designer.cs">
+    <Compile Include="Dean\DeanImport.Designer.cs">
       <DependentUpon>DeanImport.cs</DependentUpon>
     </Compile>
     <Compile Include="department_course_section\CourseImport.cs">
@@ -208,7 +208,7 @@
     <EmbeddedResource Include="Academics\AcademicsDashboard.resx">
       <DependentUpon>AcademicsDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DeanImport.resx">
+    <EmbeddedResource Include="Dean\DeanImport.resx">
       <DependentUpon>DeanImport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="department_course_section\CourseImport.resx">
@@ -305,9 +305,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Dean\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="db\StudentPortalGradeViewer.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
