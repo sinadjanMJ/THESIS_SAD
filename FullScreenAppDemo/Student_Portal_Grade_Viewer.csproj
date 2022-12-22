@@ -80,6 +80,14 @@
     <Compile Include="Academics\AcademicsDashboard.Designer.cs">
       <DependentUpon>AcademicsDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="CourseImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CourseImport.Designer.cs">
+      <DependentUpon>CourseImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="perips\courselmps.cs" />
+    <Compile Include="perips\courseValue.cs" />
     <Compile Include="db\Class_S.cs">
       <DependentUpon>StudentPortalGradeViewer.tt</DependentUpon>
     </Compile>
@@ -116,17 +124,32 @@
     <Compile Include="db\S_Subject.cs">
       <DependentUpon>StudentPortalGradeViewer.tt</DependentUpon>
     </Compile>
+    <Compile Include="perips\DeanWithDepartment.cs" />
     <Compile Include="Dean\DeanDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Dean\DeanDashboard.Designer.cs">
       <DependentUpon>DeanDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="DepartmentImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DepartmentImport.Designer.cs">
+      <DependentUpon>DepartmentImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="perips\DepartmentValue.cs" />
+    <Compile Include="perips\InstructorWithDept.cs" />
     <Compile Include="Instructor\InstructorDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Instructor\InstructorDashboard.Designer.cs">
       <DependentUpon>InstructorDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registrar\RegisSubject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registrar\RegisSubject.Designer.cs">
+      <DependentUpon>RegisSubject.cs</DependentUpon>
     </Compile>
     <Compile Include="Registrar\RegisAcademics.cs">
       <SubType>Form</SubType>
@@ -160,11 +183,27 @@
     <Compile Include="Registrar\RegisStudent.Designer.cs">
       <DependentUpon>RegisStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="studentPortalDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>studentPortalDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="studentPortalDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>studentPortalDataSet1.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Academics\AcademicsDashboard.resx">
       <DependentUpon>AcademicsDashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CourseImport.resx">
+      <DependentUpon>CourseImport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dean\DeanDashboard.resx">
       <DependentUpon>DeanDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DepartmentImport.resx">
+      <DependentUpon>DepartmentImport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Instructor\InstructorDashboard.resx">
       <DependentUpon>InstructorDashboard.cs</DependentUpon>
@@ -178,6 +217,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Registrar\RegisSubject.resx">
+      <DependentUpon>RegisSubject.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Registrar\RegisAcademics.resx">
       <DependentUpon>RegisAcademics.cs</DependentUpon>
     </EmbeddedResource>
@@ -201,7 +243,9 @@
       <DependentUpon>StudentPortalGradeViewer.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\FullScreenAppDemo.db.Department.datasource" />
     <None Include="Properties\DataSources\FullScreenAppDemo.db.studentBackground.datasource" />
+    <None Include="Properties\DataSources\RegisDean.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -211,6 +255,28 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="studentPortalDataSet.xsc">
+      <DependentUpon>studentPortalDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="studentPortalDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>studentPortalDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="studentPortalDataSet.xss">
+      <DependentUpon>studentPortalDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="studentPortalDataSet1.xsc">
+      <DependentUpon>studentPortalDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="studentPortalDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>studentPortalDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="studentPortalDataSet1.xss">
+      <DependentUpon>studentPortalDataSet1.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

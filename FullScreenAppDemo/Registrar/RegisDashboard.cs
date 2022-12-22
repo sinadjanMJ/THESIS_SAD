@@ -66,5 +66,12 @@ namespace FullScreenAppDemo
             RegisDean mj = new RegisDean();
             mj.Show();
         }
+
+        private void gunaButton1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            RegisSubject mj = new RegisSubject();
+            mj.Show();
+        }
     }
 }

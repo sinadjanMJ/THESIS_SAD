@@ -11,11 +11,18 @@ using FullScreenAppDemo.db;
 
 namespace FullScreenAppDemo
 {
-    public partial class RegisDean : Form
+    public partial class RegisSubject : Form
     {
-        public RegisDean()
+        studentPortalEntities _context = new studentPortalEntities();
+        public RegisSubject()
         {
             InitializeComponent();
+        }
+
+        private void MinimizedBTN_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+
         }
 
         private void CloseBTN_Click(object sender, EventArgs e)
@@ -26,11 +33,6 @@ namespace FullScreenAppDemo
                 Application.ExitThread();
 
             }
-        }
-
-        private void MinimizedBTN_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
         }
 
         private void DashboardBTN_Click(object sender, EventArgs e)
@@ -68,11 +70,36 @@ namespace FullScreenAppDemo
             mj.Show();
         }
 
-        private void RegisDean_Load(object sender, EventArgs e)
+        private void Subject_Click(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'studentPortalDataSet.Dean' table. You can move, or remove it, as needed.
-            this.deanTableAdapter.Fill(this.studentPortalDataSet.Dean);
+            this.Hide();
+            RegisSubject mj = new RegisSubject();
+            mj.Show();
+        }
 
+        private void tabPage3_Click(object sender, EventArgs e)
+        {
+            dgvDepartmentList.DataSource = _context.Departments.ToList();
+        }
+
+        private void RegisSubject_Load(object sender, EventArgs e)
+        {
+            
+            dgvDepartmentList.DataSource = _context.Departments.ToList();
+
+        }
+
+       
+        private void F2_UpdateEventHandler1(object sender, DepartmentImport.UpdateEventArgs args)
+        {
+            dgvDepartmentList.DataSource = _context.Departments.ToList();
+        }
+
+        private void btnAddDepartment_Click(object sender, EventArgs e)
+        {
+            DepartmentImport std = new DepartmentImport(this);
+            std.UpdateEventHandler += F2_UpdateEventHandler1;
+            std.ShowDialog();
         }
     }
 }

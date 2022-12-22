@@ -16,6 +16,7 @@ namespace FullScreenAppDemo
     {
         studentPortalEntities _context = new studentPortalEntities();
         public static string studentID = "";
+        int studID;
         public RegisStudent()
         {
             InitializeComponent();
@@ -80,6 +81,8 @@ namespace FullScreenAppDemo
             studentdataPanel.Show();
             addstudentPanel.Hide();
             updatePanel.Hide();
+
+            loadList();
         }
 
         private void btnBackMenu_Click(object sender, EventArgs e)
@@ -152,6 +155,89 @@ namespace FullScreenAppDemo
             addstudentPanel.Hide();
             updatePanel.Hide();
 
+        }
+
+        private void dgvStudentList_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            loadList();
+            tabControl1.Hide();
+            studentdataPanel.Hide();
+            addstudentPanel.Hide();
+            updatePanel.Show();
+        }
+        private void openSTList()
+        {
+            tabControl1.Hide();
+            studentdataPanel.Show();
+            addstudentPanel.Hide();
+            updatePanel.Hide();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            int studID = Int32.Parse(studentID.ToString());
+            var selectedRow = _context.studentBackgrounds.Where(q => q.StudentID == studID).FirstOrDefault();
+
+            _context.studentBackgrounds.Remove(selectedRow);
+            _context.SaveChanges();
+            dgvStudentList.DataSource = _context.studentBackgrounds.ToList();
+        }
+
+        public void loadList()
+        {
+
+            studID = Int32.Parse(studentID.ToString());
+            var selectedRowID = _context.studentBackgrounds.Where(q => q.StudentID == studID).FirstOrDefault();
+
+
+            U_StudentID.Text = selectedRowID.StudentID.ToString().Trim();
+            U_FNAME.Text = selectedRowID.S_fname.ToString().Trim();
+            U_MIDDLENAME.Text = selectedRowID.S_mname.ToString().Trim();
+            U_LASTNAME.Text = selectedRowID.S_lname.ToString().Trim();
+            U_GENDER.Text = selectedRowID.S_Sex.ToString().Trim();
+            U_BIRTHDATE.Value = Convert.ToDateTime(selectedRowID.S_Birthdate.ToString());
+            U_NUMBER.Text = selectedRowID.S_mNumber.ToString().Trim();
+            U_EMAIL.Text = selectedRowID.S_emailAdd.ToString().Trim();
+            U_RELIGION.Text = selectedRowID.S_Religion.ToString().Trim();
+            U_CITIZEN.Text = selectedRowID.S_Citizenship.ToString().Trim();
+            U_PROVINCE.Text = selectedRowID.S_Province.ToString().Trim();
+            U_MUNICIPALITY.Text = selectedRowID.S_municipality.ToString().Trim();
+            U_BRGY.Text = selectedRowID.S_barangay.ToString().Trim();
+            U_GFNAME.Text = selectedRowID.S_Guardian_fname.ToString().Trim();
+            U_GMIDDLENAME.Text = selectedRowID.S_Guardian_mname.ToString().Trim();
+            U_GLASTNAME.Text = selectedRowID.S_Guardian_lname.ToString().Trim();
+            U_GNUMBER.Text = selectedRowID.S_Guardian_contact.ToString().Trim();
+        }
+
+        private void UPDATEBTN_Click(object sender, EventArgs e)
+        {
+            var selectedRowID = _context.studentBackgrounds.Where(q => q.StudentID == studID).FirstOrDefault();
+
+            selectedRowID.S_fname = U_FNAME.Text.Trim();
+            selectedRowID.S_mname = U_MIDDLENAME.Text.Trim();
+            selectedRowID.S_lname = U_LASTNAME.Text.Trim();
+            selectedRowID.S_Sex = U_GENDER.Text.Trim();
+            selectedRowID.S_Birthdate = U_BIRTHDATE.Text.Trim();
+            selectedRowID.S_mNumber = U_NUMBER.Text.Trim();
+            selectedRowID.S_emailAdd = U_EMAIL.Text.Trim();
+            selectedRowID.S_Religion = U_RELIGION.Text.Trim();
+            selectedRowID.S_Citizenship = U_CITIZEN.Text.Trim();
+            selectedRowID.S_Province = U_PROVINCE.Text.Trim();
+            selectedRowID.S_municipality = U_MUNICIPALITY.Text.Trim();
+            selectedRowID.S_barangay = U_BRGY.Text.Trim();
+            selectedRowID.S_Guardian_fname = U_GFNAME.Text.Trim();
+            selectedRowID.S_Guardian_mname = U_GMIDDLENAME.Text.Trim();
+            selectedRowID.S_Guardian_lname = U_GLASTNAME.Text.Trim();
+            selectedRowID.S_Guardian_contact = U_GNUMBER.Text.Trim();
+
+            _context.SaveChanges();
+             dgvStudentList.DataSource = _context.studentBackgrounds.ToList();
+            openSTList();
+        }
+
+        private void UCANCELBTN_Click(object sender, EventArgs e)
+        {
+            openSTList();
         }
     }
 }
