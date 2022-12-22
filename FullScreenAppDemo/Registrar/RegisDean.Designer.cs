@@ -57,13 +57,14 @@
             this.btnAddDean = new Guna.UI.WinForms.GunaButton();
             this.ADDdean = new System.Windows.Forms.Panel();
             this.UPDATEpanel = new System.Windows.Forms.Panel();
-            this.regisDeanBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.studentPortalDataSet = new FullScreenAppDemo.studentPortalDataSet();
             this.deanBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.deanTableAdapter = new FullScreenAppDemo.studentPortalDataSetTableAdapters.DeanTableAdapter();
+            this.regisDeanBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.deanWithDepartmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.deanIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.deanfnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.departmentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.departmentNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.deanNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).BeginInit();
@@ -72,9 +73,10 @@
             this.panel1.SuspendLayout();
             this.DashboardPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDeanList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.regisDeanBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentPortalDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deanBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.regisDeanBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deanWithDepartmentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // gunaCirclePictureBox1
@@ -439,9 +441,9 @@
             this.dgvDeanList.ColumnHeadersHeight = 21;
             this.dgvDeanList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.deanIDDataGridViewTextBoxColumn,
-            this.deanfnameDataGridViewTextBoxColumn,
-            this.departmentIDDataGridViewTextBoxColumn});
-            this.dgvDeanList.DataSource = this.deanBindingSource;
+            this.departmentNameDataGridViewTextBoxColumn,
+            this.deanNameDataGridViewTextBoxColumn});
+            this.dgvDeanList.DataSource = this.deanWithDepartmentBindingSource;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
@@ -504,6 +506,7 @@
             this.btnAddDean.TabIndex = 10;
             this.btnAddDean.Text = "ADD DEAN";
             this.btnAddDean.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnAddDean.Click += new System.EventHandler(this.btnAddDean_Click);
             // 
             // ADDdean
             // 
@@ -519,10 +522,6 @@
             this.UPDATEpanel.Size = new System.Drawing.Size(1175, 683);
             this.UPDATEpanel.TabIndex = 13;
             // 
-            // regisDeanBindingSource
-            // 
-            this.regisDeanBindingSource.DataSource = typeof(FullScreenAppDemo.RegisDean);
-            // 
             // studentPortalDataSet
             // 
             this.studentPortalDataSet.DataSetName = "studentPortalDataSet";
@@ -537,24 +536,31 @@
             // 
             this.deanTableAdapter.ClearBeforeFill = true;
             // 
+            // regisDeanBindingSource
+            // 
+            this.regisDeanBindingSource.DataSource = typeof(FullScreenAppDemo.RegisDean);
+            // 
+            // deanWithDepartmentBindingSource
+            // 
+            this.deanWithDepartmentBindingSource.DataSource = typeof(FullScreenAppDemo.perips.DeanWithDepartment);
+            // 
             // deanIDDataGridViewTextBoxColumn
             // 
             this.deanIDDataGridViewTextBoxColumn.DataPropertyName = "DeanID";
-            this.deanIDDataGridViewTextBoxColumn.HeaderText = "Dean ID";
+            this.deanIDDataGridViewTextBoxColumn.HeaderText = "DeanID";
             this.deanIDDataGridViewTextBoxColumn.Name = "deanIDDataGridViewTextBoxColumn";
-            this.deanIDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // deanfnameDataGridViewTextBoxColumn
+            // departmentNameDataGridViewTextBoxColumn
             // 
-            this.deanfnameDataGridViewTextBoxColumn.DataPropertyName = "Dean_fname";
-            this.deanfnameDataGridViewTextBoxColumn.HeaderText = "Dean\'s Name";
-            this.deanfnameDataGridViewTextBoxColumn.Name = "deanfnameDataGridViewTextBoxColumn";
+            this.departmentNameDataGridViewTextBoxColumn.DataPropertyName = "Department_Name";
+            this.departmentNameDataGridViewTextBoxColumn.HeaderText = "Department_Name";
+            this.departmentNameDataGridViewTextBoxColumn.Name = "departmentNameDataGridViewTextBoxColumn";
             // 
-            // departmentIDDataGridViewTextBoxColumn
+            // deanNameDataGridViewTextBoxColumn
             // 
-            this.departmentIDDataGridViewTextBoxColumn.DataPropertyName = "Department_ID";
-            this.departmentIDDataGridViewTextBoxColumn.HeaderText = "Department";
-            this.departmentIDDataGridViewTextBoxColumn.Name = "departmentIDDataGridViewTextBoxColumn";
+            this.deanNameDataGridViewTextBoxColumn.DataPropertyName = "Dean_Name";
+            this.deanNameDataGridViewTextBoxColumn.HeaderText = "Dean_Name";
+            this.deanNameDataGridViewTextBoxColumn.Name = "deanNameDataGridViewTextBoxColumn";
             // 
             // RegisDean
             // 
@@ -581,9 +587,10 @@
             this.DashboardPanel.ResumeLayout(false);
             this.DashboardPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDeanList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.regisDeanBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentPortalDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deanBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.regisDeanBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deanWithDepartmentBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -619,7 +626,8 @@
         private System.Windows.Forms.BindingSource deanBindingSource;
         private studentPortalDataSetTableAdapters.DeanTableAdapter deanTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn deanIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn deanfnameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn departmentIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn departmentNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn deanNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource deanWithDepartmentBindingSource;
     }
 }

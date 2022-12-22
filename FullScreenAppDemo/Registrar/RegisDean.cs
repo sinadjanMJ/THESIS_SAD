@@ -8,11 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FullScreenAppDemo.db;
+using FullScreenAppDemo.perips;
 
 namespace FullScreenAppDemo
 {
     public partial class RegisDean : Form
     {
+
+        studentPortalEntities _context = new studentPortalEntities();
         public RegisDean()
         {
             InitializeComponent();
@@ -70,9 +73,27 @@ namespace FullScreenAppDemo
 
         private void RegisDean_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'studentPortalDataSet.Dean' table. You can move, or remove it, as needed.
-            this.deanTableAdapter.Fill(this.studentPortalDataSet.Dean);
+            var res = (
+                from dea in _context.Deans
+                join dep in _context.Departments
+                on dea.Department_ID equals dep.Department_ID.ToString()
 
+                select new DeanWithDepartment
+                {
+                    DeanID = dea.DeanID,
+                    Dean_Name = dea.Dean_fname + ", " + dea.Dean_lname,
+                    Department_Name = dep.Department_Name
+                }
+             ).ToList();
+
+            dgvDeanList.DataSource = res;
+
+        }
+
+        private void btnAddDean_Click(object sender, EventArgs e)
+        {
+            DeanImport mj = new DeanImport();
+            mj.Show();
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FullScreenAppDemo
+namespace FullScreenAppDemo.perips
 {
     class DeanWithDepartment
     {
@@ -13,3 +13,4 @@ namespace FullScreenAppDemo
         public string Dean_Name { get; set; }
     }
 }
+

@@ -123,6 +123,7 @@ namespace FullScreenAppDemo
             this.Name = "DepartmentImport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DepartmentImport";
+            this.Load += new System.EventHandler(this.DepartmentImport_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

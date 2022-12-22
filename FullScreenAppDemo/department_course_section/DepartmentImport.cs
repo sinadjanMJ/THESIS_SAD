@@ -52,9 +52,14 @@ namespace FullScreenAppDemo
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {
-              TabControl de = new TabControl();
+             TabControl de = new TabControl();
             de.Show();
             this.Hide();
+        }
+
+        private void DepartmentImport_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

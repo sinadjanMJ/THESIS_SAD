@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FullScreenAppDemo.db;
+using FullScreenAppDemo.perips;
 
 namespace FullScreenAppDemo
 {
     public partial class RegisInstructor : Form
     {
+
+        studentPortalEntities _context = new studentPortalEntities();
         public RegisInstructor()
         {
             InitializeComponent();
@@ -65,6 +69,37 @@ namespace FullScreenAppDemo
             this.Hide();
             RegisDean mj = new RegisDean();
             mj.Show();
+        }
+
+        private void btnBackMenu_Click(object sender, EventArgs e)
+        {
+           
+           
+        }
+
+        private void btnAddInstructor_Click(object sender, EventArgs e)
+        {
+            InstructorImport mj = new InstructorImport();
+            mj.Show();
+        }
+
+        private void RegisInstructor_Load(object sender, EventArgs e)
+        {
+            var res1 = (
+                from ins in _context.Instructors
+                join deps in _context.Departments
+                on ins.Department_ID equals deps.Department_ID.ToString()
+
+                select new InstructorWithDept
+                {
+                    InstructorID = ins.InstructorID,
+                    Instructor_Name = ins.Instructor_fname + ", " + ins.Instructor_lname,
+                    Department_Name = deps.Department_Name
+                }
+
+                ).ToList();
+
+            dgvInstructorList.DataSource = res1;
         }
     }
 }

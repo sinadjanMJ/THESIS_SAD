@@ -92,10 +92,10 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Swis721 Blk BT", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(233, 75);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(473, 48);
+            this.label5.Size = new System.Drawing.Size(389, 46);
             this.label5.TabIndex = 14;
             this.label5.Text = "Validate Grade Form";
             // 
@@ -163,10 +163,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Swis721 Blk BT", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(226, 36);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(431, 48);
+            this.label4.Size = new System.Drawing.Size(356, 46);
             this.label4.TabIndex = 10;
             this.label4.Text = "Student Data Form";
             // 
@@ -488,11 +488,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1371, 788);
-            this.Controls.Add(this.InstructorDashboardPanel);
             this.Controls.Add(this.ValidatePanel);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.InstructorStudentPanel);
+            this.Controls.Add(this.InstructorDashboardPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "InstructorDashboard";
             this.Text = "InstructorDashboard";

@@ -80,14 +80,18 @@
     <Compile Include="Academics\AcademicsDashboard.Designer.cs">
       <DependentUpon>AcademicsDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="CourseImport.cs">
+    <Compile Include="DeanImport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CourseImport.Designer.cs">
+    <Compile Include="DeanImport.Designer.cs">
+      <DependentUpon>DeanImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="department_course_section\CourseImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="department_course_section\CourseImport.Designer.cs">
       <DependentUpon>CourseImport.cs</DependentUpon>
     </Compile>
-    <Compile Include="perips\courselmps.cs" />
-    <Compile Include="perips\courseValue.cs" />
     <Compile Include="db\Class_S.cs">
       <DependentUpon>StudentPortalGradeViewer.tt</DependentUpon>
     </Compile>
@@ -124,27 +128,35 @@
     <Compile Include="db\S_Subject.cs">
       <DependentUpon>StudentPortalGradeViewer.tt</DependentUpon>
     </Compile>
-    <Compile Include="perips\DeanWithDepartment.cs" />
-    <Compile Include="Dean\DeanDashboard.cs">
+    <Compile Include="DeanDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dean\DeanDashboard.Designer.cs">
+    <Compile Include="DeanDashboard.Designer.cs">
       <DependentUpon>DeanDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="DepartmentImport.cs">
+    <Compile Include="department_course_section\DepartmentImport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DepartmentImport.Designer.cs">
+    <Compile Include="department_course_section\DepartmentImport.Designer.cs">
       <DependentUpon>DepartmentImport.cs</DependentUpon>
     </Compile>
-    <Compile Include="perips\DepartmentValue.cs" />
-    <Compile Include="perips\InstructorWithDept.cs" />
-    <Compile Include="Instructor\InstructorDashboard.cs">
+    <Compile Include="InstructorDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Instructor\InstructorDashboard.Designer.cs">
+    <Compile Include="InstructorDashboard.Designer.cs">
       <DependentUpon>InstructorDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Instructor\InstructorImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Instructor\InstructorImport.Designer.cs">
+      <DependentUpon>InstructorImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="perips\courseImps.cs" />
+    <Compile Include="perips\courseValue.cs" />
+    <Compile Include="perips\DeanWithDepartment.cs" />
+    <Compile Include="perips\DepartmentValue.cs" />
+    <Compile Include="perips\InstructorWithDept.cs" />
     <Compile Include="Registrar\RegisSubject.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,17 +208,23 @@
     <EmbeddedResource Include="Academics\AcademicsDashboard.resx">
       <DependentUpon>AcademicsDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CourseImport.resx">
+    <EmbeddedResource Include="DeanImport.resx">
+      <DependentUpon>DeanImport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="department_course_section\CourseImport.resx">
       <DependentUpon>CourseImport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dean\DeanDashboard.resx">
+    <EmbeddedResource Include="DeanDashboard.resx">
       <DependentUpon>DeanDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DepartmentImport.resx">
+    <EmbeddedResource Include="department_course_section\DepartmentImport.resx">
       <DependentUpon>DepartmentImport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Instructor\InstructorDashboard.resx">
+    <EmbeddedResource Include="InstructorDashboard.resx">
       <DependentUpon>InstructorDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Instructor\InstructorImport.resx">
+      <DependentUpon>InstructorImport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -243,8 +261,14 @@
       <DependentUpon>StudentPortalGradeViewer.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\FullScreenAppDemo.db.Class_S.datasource" />
+    <None Include="Properties\DataSources\FullScreenAppDemo.db.Course.datasource" />
     <None Include="Properties\DataSources\FullScreenAppDemo.db.Department.datasource" />
     <None Include="Properties\DataSources\FullScreenAppDemo.db.studentBackground.datasource" />
+    <None Include="Properties\DataSources\FullScreenAppDemo.db.S_Subject.datasource" />
+    <None Include="Properties\DataSources\FullScreenAppDemo.perips.courseImps.datasource" />
+    <None Include="Properties\DataSources\FullScreenAppDemo.perips.DeanWithDepartment.datasource" />
+    <None Include="Properties\DataSources\FullScreenAppDemo.perips.InstructorWithDept.datasource" />
     <None Include="Properties\DataSources\RegisDean.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -281,7 +305,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Dean\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="db\StudentPortalGradeViewer.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

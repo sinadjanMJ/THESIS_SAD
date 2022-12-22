@@ -1,0 +1,269 @@
+﻿
+namespace FullScreenAppDemo
+{
+    partial class InstructorImport
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InstructorImport));
+            this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
+            this.textInstructor_lname = new Guna.UI.WinForms.GunaTextBox();
+            this.textInstructor_mname = new Guna.UI.WinForms.GunaTextBox();
+            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
+            this.textInstructor_fname = new Guna.UI.WinForms.GunaTextBox();
+            this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaComboBox1 = new Guna.UI.WinForms.GunaComboBox();
+            this.btnCancel = new Guna.UI.WinForms.GunaButton();
+            this.btnSave = new Guna.UI.WinForms.GunaButton();
+            this.gunaCirclePictureBox2 = new Guna.UI.WinForms.GunaCirclePictureBox();
+            this.label4 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // gunaLabel4
+            // 
+            this.gunaLabel4.AutoSize = true;
+            this.gunaLabel4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel4.Location = new System.Drawing.Point(560, 129);
+            this.gunaLabel4.Name = "gunaLabel4";
+            this.gunaLabel4.Size = new System.Drawing.Size(210, 21);
+            this.gunaLabel4.TabIndex = 42;
+            this.gunaLabel4.Text = "INSTRUCTOR\'S LAST NAME";
+            // 
+            // gunaLabel3
+            // 
+            this.gunaLabel3.AutoSize = true;
+            this.gunaLabel3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel3.Location = new System.Drawing.Point(304, 129);
+            this.gunaLabel3.Name = "gunaLabel3";
+            this.gunaLabel3.Size = new System.Drawing.Size(231, 21);
+            this.gunaLabel3.TabIndex = 41;
+            this.gunaLabel3.Text = "INSTRUCTOR\'S MIDDLE NAME";
+            // 
+            // textInstructor_lname
+            // 
+            this.textInstructor_lname.BaseColor = System.Drawing.Color.White;
+            this.textInstructor_lname.BorderColor = System.Drawing.Color.Silver;
+            this.textInstructor_lname.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textInstructor_lname.FocusedBaseColor = System.Drawing.Color.White;
+            this.textInstructor_lname.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.textInstructor_lname.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.textInstructor_lname.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.textInstructor_lname.Location = new System.Drawing.Point(563, 154);
+            this.textInstructor_lname.Name = "textInstructor_lname";
+            this.textInstructor_lname.PasswordChar = '\0';
+            this.textInstructor_lname.SelectedText = "";
+            this.textInstructor_lname.Size = new System.Drawing.Size(211, 30);
+            this.textInstructor_lname.TabIndex = 40;
+            // 
+            // textInstructor_mname
+            // 
+            this.textInstructor_mname.BaseColor = System.Drawing.Color.White;
+            this.textInstructor_mname.BorderColor = System.Drawing.Color.Silver;
+            this.textInstructor_mname.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textInstructor_mname.FocusedBaseColor = System.Drawing.Color.White;
+            this.textInstructor_mname.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.textInstructor_mname.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.textInstructor_mname.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.textInstructor_mname.Location = new System.Drawing.Point(307, 154);
+            this.textInstructor_mname.Name = "textInstructor_mname";
+            this.textInstructor_mname.PasswordChar = '\0';
+            this.textInstructor_mname.SelectedText = "";
+            this.textInstructor_mname.Size = new System.Drawing.Size(228, 30);
+            this.textInstructor_mname.TabIndex = 39;
+            // 
+            // gunaLabel1
+            // 
+            this.gunaLabel1.AutoSize = true;
+            this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel1.Location = new System.Drawing.Point(72, 129);
+            this.gunaLabel1.Name = "gunaLabel1";
+            this.gunaLabel1.Size = new System.Drawing.Size(214, 21);
+            this.gunaLabel1.TabIndex = 38;
+            this.gunaLabel1.Text = "INSTRUCTOR\'S FIRST NAME";
+            // 
+            // textInstructor_fname
+            // 
+            this.textInstructor_fname.BaseColor = System.Drawing.Color.White;
+            this.textInstructor_fname.BorderColor = System.Drawing.Color.Silver;
+            this.textInstructor_fname.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textInstructor_fname.FocusedBaseColor = System.Drawing.Color.White;
+            this.textInstructor_fname.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.textInstructor_fname.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.textInstructor_fname.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.textInstructor_fname.Location = new System.Drawing.Point(75, 154);
+            this.textInstructor_fname.Name = "textInstructor_fname";
+            this.textInstructor_fname.PasswordChar = '\0';
+            this.textInstructor_fname.SelectedText = "";
+            this.textInstructor_fname.Size = new System.Drawing.Size(211, 30);
+            this.textInstructor_fname.TabIndex = 37;
+            // 
+            // gunaLabel2
+            // 
+            this.gunaLabel2.AutoSize = true;
+            this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel2.Location = new System.Drawing.Point(73, 190);
+            this.gunaLabel2.Name = "gunaLabel2";
+            this.gunaLabel2.Size = new System.Drawing.Size(111, 21);
+            this.gunaLabel2.TabIndex = 36;
+            this.gunaLabel2.Text = "DEPARTMENT";
+            // 
+            // gunaComboBox1
+            // 
+            this.gunaComboBox1.BackColor = System.Drawing.Color.Transparent;
+            this.gunaComboBox1.BaseColor = System.Drawing.Color.White;
+            this.gunaComboBox1.BorderColor = System.Drawing.Color.Silver;
+            this.gunaComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.gunaComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.gunaComboBox1.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.gunaComboBox1.ForeColor = System.Drawing.Color.Black;
+            this.gunaComboBox1.FormattingEnabled = true;
+            this.gunaComboBox1.Location = new System.Drawing.Point(75, 214);
+            this.gunaComboBox1.Name = "gunaComboBox1";
+            this.gunaComboBox1.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.gunaComboBox1.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.gunaComboBox1.Size = new System.Drawing.Size(324, 26);
+            this.gunaComboBox1.TabIndex = 35;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.AnimationHoverSpeed = 0.07F;
+            this.btnCancel.AnimationSpeed = 0.03F;
+            this.btnCancel.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnCancel.BorderColor = System.Drawing.Color.Black;
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnCancel.FocusedColor = System.Drawing.Color.Empty;
+            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.Image = null;
+            this.btnCancel.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnCancel.Location = new System.Drawing.Point(641, 235);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnCancel.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnCancel.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnCancel.OnHoverImage = null;
+            this.btnCancel.OnPressedColor = System.Drawing.Color.Black;
+            this.btnCancel.Size = new System.Drawing.Size(133, 42);
+            this.btnCancel.TabIndex = 34;
+            this.btnCancel.Text = "CANCEL";
+            this.btnCancel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.AnimationHoverSpeed = 0.07F;
+            this.btnSave.AnimationSpeed = 0.03F;
+            this.btnSave.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnSave.BorderColor = System.Drawing.Color.Black;
+            this.btnSave.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnSave.FocusedColor = System.Drawing.Color.Empty;
+            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Image = null;
+            this.btnSave.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnSave.Location = new System.Drawing.Point(490, 235);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnSave.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnSave.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnSave.OnHoverImage = null;
+            this.btnSave.OnPressedColor = System.Drawing.Color.Black;
+            this.btnSave.Size = new System.Drawing.Size(127, 42);
+            this.btnSave.TabIndex = 33;
+            this.btnSave.Text = "SAVE";
+            this.btnSave.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // gunaCirclePictureBox2
+            // 
+            this.gunaCirclePictureBox2.BaseColor = System.Drawing.Color.White;
+            this.gunaCirclePictureBox2.ErrorImage = null;
+            this.gunaCirclePictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("gunaCirclePictureBox2.Image")));
+            this.gunaCirclePictureBox2.Location = new System.Drawing.Point(70, 11);
+            this.gunaCirclePictureBox2.Name = "gunaCirclePictureBox2";
+            this.gunaCirclePictureBox2.Size = new System.Drawing.Size(92, 91);
+            this.gunaCirclePictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.gunaCirclePictureBox2.TabIndex = 44;
+            this.gunaCirclePictureBox2.TabStop = false;
+            this.gunaCirclePictureBox2.UseTransfarantBackground = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(168, 33);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(372, 46);
+            this.label4.TabIndex = 43;
+            this.label4.Text = "Instructor Add Form";
+            // 
+            // InstructorImport
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 319);
+            this.Controls.Add(this.gunaCirclePictureBox2);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.gunaLabel4);
+            this.Controls.Add(this.gunaLabel3);
+            this.Controls.Add(this.textInstructor_lname);
+            this.Controls.Add(this.textInstructor_mname);
+            this.Controls.Add(this.gunaLabel1);
+            this.Controls.Add(this.textInstructor_fname);
+            this.Controls.Add(this.gunaLabel2);
+            this.Controls.Add(this.gunaComboBox1);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnSave);
+            this.Name = "InstructorImport";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "InstructorListForm";
+            this.Load += new System.EventHandler(this.InstructorImport_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private Guna.UI.WinForms.GunaLabel gunaLabel4;
+        private Guna.UI.WinForms.GunaLabel gunaLabel3;
+        private Guna.UI.WinForms.GunaTextBox textInstructor_lname;
+        private Guna.UI.WinForms.GunaTextBox textInstructor_mname;
+        private Guna.UI.WinForms.GunaLabel gunaLabel1;
+        private Guna.UI.WinForms.GunaTextBox textInstructor_fname;
+        private Guna.UI.WinForms.GunaLabel gunaLabel2;
+        private Guna.UI.WinForms.GunaComboBox gunaComboBox1;
+        private Guna.UI.WinForms.GunaButton btnCancel;
+        private Guna.UI.WinForms.GunaButton btnSave;
+        private Guna.UI.WinForms.GunaCirclePictureBox gunaCirclePictureBox2;
+        private System.Windows.Forms.Label label4;
+    }
+}

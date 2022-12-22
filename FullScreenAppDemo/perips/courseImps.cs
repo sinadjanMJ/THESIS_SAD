@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FullScreenAppDemo
+namespace FullScreenAppDemo.perips
 {
-    class courselmps
+    class courseImps
     {
         public int CourseID { get; set; }
         public string Course_name { get; set; }

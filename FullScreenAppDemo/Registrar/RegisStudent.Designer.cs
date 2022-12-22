@@ -66,10 +66,6 @@
             this.gunaDataGridView2 = new Guna.UI.WinForms.GunaDataGridView();
             this.gunaDataGridView1 = new Guna.UI.WinForms.GunaDataGridView();
             this.btnDelete = new Guna.UI.WinForms.GunaButton();
-            this.studentBackgroundBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.studentBackgroundBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.studentBackgroundBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.studentPortalEntitiesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.addstudentPanel = new System.Windows.Forms.Panel();
             this.gunaCirclePictureBox2 = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -146,6 +142,10 @@
             this.label31 = new System.Windows.Forms.Label();
             this.gunaLabel9 = new Guna.UI.WinForms.GunaLabel();
             this.U_StudentID = new Guna.UI.WinForms.GunaTextBox();
+            this.studentBackgroundBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.studentBackgroundBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.studentBackgroundBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.studentPortalEntitiesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.studentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sfnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.smnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -161,14 +161,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaDataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaDataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentBackgroundBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentBackgroundBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentBackgroundBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentPortalEntitiesBindingSource)).BeginInit();
             this.addstudentPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).BeginInit();
             this.updatePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBackgroundBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBackgroundBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBackgroundBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentPortalEntitiesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBackgroundBindingSource3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -1991,10 +1991,10 @@
             this.ClientSize = new System.Drawing.Size(1371, 788);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.updatePanel);
-            this.Controls.Add(this.addstudentPanel);
             this.Controls.Add(this.studentdataPanel);
             this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.updatePanel);
+            this.Controls.Add(this.addstudentPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RegisStudent";
             this.Text = "RegisStudentDashboard";
@@ -2011,16 +2011,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaDataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaDataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentBackgroundBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentBackgroundBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentBackgroundBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentPortalEntitiesBindingSource)).EndInit();
             this.addstudentPanel.ResumeLayout(false);
             this.addstudentPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).EndInit();
             this.updatePanel.ResumeLayout(false);
             this.updatePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBackgroundBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBackgroundBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBackgroundBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentPortalEntitiesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBackgroundBindingSource3)).EndInit();
             this.ResumeLayout(false);
 

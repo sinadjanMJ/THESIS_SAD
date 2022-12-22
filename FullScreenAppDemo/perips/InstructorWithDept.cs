@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FullScreenAppDemo
+namespace FullScreenAppDemo.perips
 {
     class InstructorWithDept
     {
