@@ -77,7 +77,7 @@ namespace FullScreenAppDemo
         {
             dgvStudentList.DataSource = _context.studentBackgrounds.ToList();
             
-            tabControl1.Hide();
+            saveDATA.Hide();
             studentdataPanel.Show();
             addstudentPanel.Hide();
             updatePanel.Hide();
@@ -103,7 +103,7 @@ namespace FullScreenAppDemo
 
         private void gunaButton1_Click(object sender, EventArgs e)
         {
-            tabControl1.Hide();
+            saveDATA.Hide();
             studentdataPanel.Hide();
             addstudentPanel.Show();
             updatePanel.Hide();
@@ -112,37 +112,26 @@ namespace FullScreenAppDemo
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            studentBackground s = new studentBackground
+            if (textS_Municipality.Text ==""&& textS_Citizenship.Text==""&& textS_EmailAdd.Text == "" && textS_Mname.Text == "" && textS_Province.Text == "" && textS_Religion.Text == "" && textS_MobileNumber.Text == "" && comboGender.Text == "" && textS_Fname.Text == "" && textS_Barangay.Text == "" && textS_Lname.Text == "")
             {
-                S_fname = textS_Fname.Text.Trim(),
-                S_mname = textS_Mname.Text.Trim(),
-                S_lname = textS_Lname.Text.Trim(),
-                S_Sex = comboGender.Text.Trim(),
-                S_Birthdate = date_S_Birthdate.Text.Trim(),
-                S_mNumber = textS_MobileNumber.Text.Trim(),
-                S_emailAdd = textS_EmailAdd.Text.Trim(),
-                S_Religion = textS_Religion.Text.Trim(),
-                S_Citizenship = textS_Citizenship.Text.Trim(),
-                S_Province = textS_Province.Text.Trim(),
-                S_municipality = textS_Municipality.Text.Trim(),
-                S_barangay = textS_Barangay.Text.Trim(),
-                S_Guardian_fname = textS_Guardian_Fname.Text.Trim(),
-                S_Guardian_mname = textS_Guardian_Mname.Text.Trim(),
-                S_Guardian_lname = textS_Guardian_LName.Text.Trim(),
-                S_Guardian_contact = textS_Guardian_Contact.Text.Trim()
-            };
 
-            _context.studentBackgrounds.Add(s);
-            _context.SaveChanges();
-            MessageBox.Show("STUDENT ADDED SUCCESSFULLY");
-            openStudList(); 
-            dgvStudentList.DataSource = _context.studentBackgrounds.ToList();
+                MessageBox.Show("Fill out the field first");
+
+            }
+            else
+            {
+                saveDATA.Show();
+                studentdataPanel.Hide();
+                addstudentPanel.Hide();
+                updatePanel.Hide();
+               
+            }
 
         }
         private void openStudList()
         {
 
-            tabControl1.Hide();
+            saveDATA.Hide();
             studentdataPanel.Show();
             addstudentPanel.Hide();
             updatePanel.Hide();
@@ -150,7 +139,7 @@ namespace FullScreenAppDemo
 
         private void gunaButton2_Click(object sender, EventArgs e)
         {
-            tabControl1.Hide();
+            saveDATA.Hide();
             studentdataPanel.Show();
             addstudentPanel.Hide();
             updatePanel.Hide();
@@ -160,14 +149,14 @@ namespace FullScreenAppDemo
         private void dgvStudentList_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             loadList();
-            tabControl1.Hide();
+            saveDATA.Hide();
             studentdataPanel.Hide();
             addstudentPanel.Hide();
             updatePanel.Show();
         }
         private void openSTList()
         {
-            tabControl1.Hide();
+            saveDATA.Hide();
             studentdataPanel.Show();
             addstudentPanel.Hide();
             updatePanel.Hide();
@@ -238,6 +227,31 @@ namespace FullScreenAppDemo
         private void UCANCELBTN_Click(object sender, EventArgs e)
         {
             openSTList();
+        }
+
+        private void cBSemester_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cBYear_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cBDepartment_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cBCourse_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cBSection_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

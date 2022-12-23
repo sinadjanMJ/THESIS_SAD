@@ -4,7 +4,27 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="studentPortalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="studentPortalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="assign_Instructor">
+          <Key>
+            <PropertyRef Name="ai_ID" />
+          </Key>
+          <Property Name="ai_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ai_semester" Type="varchar" MaxLength="50" />
+          <Property Name="ai_classID" Type="varchar" MaxLength="50" />
+          <Property Name="ai_subjectID" Type="varchar" MaxLength="50" />
+          <Property Name="ai_instructorID" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="assignSubject">
+          <Key>
+            <PropertyRef Name="a_id" />
+          </Key>
+          <Property Name="a_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="a_subjectID" Type="varchar" MaxLength="50" />
+          <Property Name="a_classID" Type="varchar" MaxLength="50" />
+          <Property Name="a_semester" Type="varchar" MaxLength="50" />
+          <Property Name="a_instructorID" Type="varchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="Class_S">
           <Key>
             <PropertyRef Name="ClassID" />
@@ -57,6 +77,21 @@
           <Property Name="SubjectID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="SubjectCode" Type="varchar" MaxLength="50" />
           <Property Name="SubjectName" Type="varchar" MaxLength="50" />
+          <Property Name="SubjectUnit" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Student_Profile">
+          <Key>
+            <PropertyRef Name="SP_ID" />
+          </Key>
+          <Property Name="SP_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StudentID" Type="varchar" MaxLength="50" />
+          <Property Name="DepartmentID" Type="varchar" MaxLength="50" />
+          <Property Name="CourseID" Type="varchar" MaxLength="50" />
+          <Property Name="YearLevel" Type="varchar" MaxLength="50" />
+          <Property Name="ClassID" Type="varchar" MaxLength="50" />
+          <Property Name="Semester" Type="varchar" MaxLength="50" />
+          <Property Name="SubjectID" Type="varchar" MaxLength="50" />
+          <Property Name="InstructorID" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="studentBackground">
           <Key>
@@ -81,18 +116,52 @@
           <Property Name="S_Guardian_contact" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityContainer Name="studentPortalModelStoreContainer">
+          <EntitySet Name="assign_Instructor" EntityType="Self.assign_Instructor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="assignSubject" EntityType="Self.assignSubject" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Class_S" EntityType="Self.Class_S" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Course" EntityType="Self.Course" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Dean" EntityType="Self.Dean" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Instructor" EntityType="Self.Instructor" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="S_Subject" EntityType="Self.S_Subject" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Student_Profile" EntityType="Self.Student_Profile" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="studentBackground" EntityType="Self.studentBackground" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="studentPortalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="assign_Instructor">
+          <Key>
+            <PropertyRef Name="ai_ID" />
+          </Key>
+          <Property Name="ai_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ai_semester" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ai_classID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ai_subjectID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ai_instructorID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="assignSubject">
+          <Key>
+            <PropertyRef Name="a_id" />
+          </Key>
+          <Property Name="a_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="a_subjectID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="a_classID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="a_semester" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="a_instructorID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Class_S">
+          <Key>
+            <PropertyRef Name="ClassID" />
+          </Key>
+          <Property Name="ClassID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ClassName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="YearLevel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DepartmentID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CourseID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
         <EntityType Name="Course">
           <Key>
             <PropertyRef Name="CourseID" />
@@ -135,6 +204,21 @@
           <Property Name="SubjectID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="SubjectCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="SubjectName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SubjectUnit" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Student_Profile">
+          <Key>
+            <PropertyRef Name="SP_ID" />
+          </Key>
+          <Property Name="SP_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StudentID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DepartmentID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CourseID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="YearLevel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ClassID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Semester" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SubjectID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="InstructorID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="studentBackground">
           <Key>
@@ -159,30 +243,56 @@
           <Property Name="S_Guardian_contact" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityContainer Name="studentPortalEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="assign_Instructor" EntityType="Self.assign_Instructor" />
+          <EntitySet Name="assignSubjects" EntityType="Self.assignSubject" />
+          <EntitySet Name="Class_S" EntityType="Self.Class_S" />
           <EntitySet Name="Courses" EntityType="Self.Course" />
           <EntitySet Name="Deans" EntityType="Self.Dean" />
           <EntitySet Name="Departments" EntityType="Self.Department" />
           <EntitySet Name="Instructors" EntityType="Self.Instructor" />
           <EntitySet Name="S_Subject" EntityType="Self.S_Subject" />
+          <EntitySet Name="Student_Profile" EntityType="Self.Student_Profile" />
           <EntitySet Name="studentBackgrounds" EntityType="Self.studentBackground" />
-          <EntitySet Name="Class_S" EntityType="studentPortalModel.Class_S" />
         </EntityContainer>
-        <EntityType Name="Class_S">
-          <Key>
-            <PropertyRef Name="ClassID" />
-          </Key>
-          <Property Name="ClassID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ClassName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="YearLevel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="DepartmentID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="CourseID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="studentPortalModelStoreContainer" CdmEntityContainer="studentPortalEntities">
+          <EntitySetMapping Name="assign_Instructor">
+            <EntityTypeMapping TypeName="studentPortalModel.assign_Instructor">
+              <MappingFragment StoreEntitySet="assign_Instructor">
+                <ScalarProperty Name="ai_ID" ColumnName="ai_ID" />
+                <ScalarProperty Name="ai_semester" ColumnName="ai_semester" />
+                <ScalarProperty Name="ai_classID" ColumnName="ai_classID" />
+                <ScalarProperty Name="ai_subjectID" ColumnName="ai_subjectID" />
+                <ScalarProperty Name="ai_instructorID" ColumnName="ai_instructorID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="assignSubjects">
+            <EntityTypeMapping TypeName="studentPortalModel.assignSubject">
+              <MappingFragment StoreEntitySet="assignSubject">
+                <ScalarProperty Name="a_id" ColumnName="a_id" />
+                <ScalarProperty Name="a_subjectID" ColumnName="a_subjectID" />
+                <ScalarProperty Name="a_classID" ColumnName="a_classID" />
+                <ScalarProperty Name="a_semester" ColumnName="a_semester" />
+                <ScalarProperty Name="a_instructorID" ColumnName="a_instructorID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Class_S">
+            <EntityTypeMapping TypeName="studentPortalModel.Class_S">
+              <MappingFragment StoreEntitySet="Class_S">
+                <ScalarProperty Name="ClassID" ColumnName="ClassID" />
+                <ScalarProperty Name="ClassName" ColumnName="ClassName" />
+                <ScalarProperty Name="YearLevel" ColumnName="YearLevel" />
+                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+                <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Courses">
             <EntityTypeMapping TypeName="studentPortalModel.Course">
               <MappingFragment StoreEntitySet="Course">
@@ -228,6 +338,22 @@
                 <ScalarProperty Name="SubjectID" ColumnName="SubjectID" />
                 <ScalarProperty Name="SubjectCode" ColumnName="SubjectCode" />
                 <ScalarProperty Name="SubjectName" ColumnName="SubjectName" />
+                <ScalarProperty Name="SubjectUnit" ColumnName="SubjectUnit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Student_Profile">
+            <EntityTypeMapping TypeName="studentPortalModel.Student_Profile">
+              <MappingFragment StoreEntitySet="Student_Profile">
+                <ScalarProperty Name="SP_ID" ColumnName="SP_ID" />
+                <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+                <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+                <ScalarProperty Name="YearLevel" ColumnName="YearLevel" />
+                <ScalarProperty Name="ClassID" ColumnName="ClassID" />
+                <ScalarProperty Name="Semester" ColumnName="Semester" />
+                <ScalarProperty Name="SubjectID" ColumnName="SubjectID" />
+                <ScalarProperty Name="InstructorID" ColumnName="InstructorID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -251,17 +377,6 @@
                 <ScalarProperty Name="S_Guardian_lname" ColumnName="S_Guardian_lname" />
                 <ScalarProperty Name="S_Guardian_mname" ColumnName="S_Guardian_mname" />
                 <ScalarProperty Name="S_Guardian_contact" ColumnName="S_Guardian_contact" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Class_S">
-            <EntityTypeMapping TypeName="studentPortalModel.Class_S">
-              <MappingFragment StoreEntitySet="Class_S">
-                <ScalarProperty Name="CourseID" ColumnName="CourseID" />
-                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
-                <ScalarProperty Name="YearLevel" ColumnName="YearLevel" />
-                <ScalarProperty Name="ClassName" ColumnName="ClassName" />
-                <ScalarProperty Name="ClassID" ColumnName="ClassID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

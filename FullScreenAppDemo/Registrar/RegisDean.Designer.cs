@@ -60,11 +60,11 @@
             this.studentPortalDataSet = new FullScreenAppDemo.studentPortalDataSet();
             this.deanBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.deanTableAdapter = new FullScreenAppDemo.studentPortalDataSetTableAdapters.DeanTableAdapter();
-            this.regisDeanBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.deanWithDepartmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.deanIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.departmentNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.deanNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.deanWithDepartmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.regisDeanBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).BeginInit();
@@ -75,8 +75,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDeanList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentPortalDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deanBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.regisDeanBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deanWithDepartmentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.regisDeanBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // gunaCirclePictureBox1
@@ -431,10 +431,10 @@
             this.dgvDeanList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvDeanList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Firebrick;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvDeanList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
@@ -468,10 +468,10 @@
             this.dgvDeanList.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
             this.dgvDeanList.ThemeStyle.BackColor = System.Drawing.Color.White;
             this.dgvDeanList.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvDeanList.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dgvDeanList.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.Maroon;
             this.dgvDeanList.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvDeanList.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.dgvDeanList.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvDeanList.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvDeanList.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.Gold;
             this.dgvDeanList.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvDeanList.ThemeStyle.HeaderStyle.Height = 21;
             this.dgvDeanList.ThemeStyle.ReadOnly = false;
@@ -487,21 +487,23 @@
             // 
             this.btnAddDean.AnimationHoverSpeed = 0.07F;
             this.btnAddDean.AnimationSpeed = 0.03F;
-            this.btnAddDean.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnAddDean.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddDean.BaseColor = System.Drawing.Color.Maroon;
             this.btnAddDean.BorderColor = System.Drawing.Color.Black;
             this.btnAddDean.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnAddDean.FocusedColor = System.Drawing.Color.Empty;
-            this.btnAddDean.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnAddDean.ForeColor = System.Drawing.Color.White;
+            this.btnAddDean.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddDean.ForeColor = System.Drawing.Color.Gold;
             this.btnAddDean.Image = null;
             this.btnAddDean.ImageSize = new System.Drawing.Size(20, 20);
             this.btnAddDean.Location = new System.Drawing.Point(218, 237);
             this.btnAddDean.Name = "btnAddDean";
-            this.btnAddDean.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnAddDean.OnHoverBaseColor = System.Drawing.Color.Lime;
             this.btnAddDean.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnAddDean.OnHoverForeColor = System.Drawing.Color.White;
             this.btnAddDean.OnHoverImage = null;
             this.btnAddDean.OnPressedColor = System.Drawing.Color.Black;
+            this.btnAddDean.Radius = 5;
             this.btnAddDean.Size = new System.Drawing.Size(160, 42);
             this.btnAddDean.TabIndex = 10;
             this.btnAddDean.Text = "ADD DEAN";
@@ -536,14 +538,6 @@
             // 
             this.deanTableAdapter.ClearBeforeFill = true;
             // 
-            // regisDeanBindingSource
-            // 
-            this.regisDeanBindingSource.DataSource = typeof(FullScreenAppDemo.RegisDean);
-            // 
-            // deanWithDepartmentBindingSource
-            // 
-            this.deanWithDepartmentBindingSource.DataSource = typeof(FullScreenAppDemo.perips.DeanWithDepartment);
-            // 
             // deanIDDataGridViewTextBoxColumn
             // 
             this.deanIDDataGridViewTextBoxColumn.DataPropertyName = "DeanID";
@@ -561,6 +555,14 @@
             this.deanNameDataGridViewTextBoxColumn.DataPropertyName = "Dean_Name";
             this.deanNameDataGridViewTextBoxColumn.HeaderText = "Dean_Name";
             this.deanNameDataGridViewTextBoxColumn.Name = "deanNameDataGridViewTextBoxColumn";
+            // 
+            // deanWithDepartmentBindingSource
+            // 
+            this.deanWithDepartmentBindingSource.DataSource = typeof(FullScreenAppDemo.perips.DeanWithDepartment);
+            // 
+            // regisDeanBindingSource
+            // 
+            this.regisDeanBindingSource.DataSource = typeof(FullScreenAppDemo.RegisDean);
             // 
             // RegisDean
             // 
@@ -589,8 +591,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDeanList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentPortalDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deanBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.regisDeanBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deanWithDepartmentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.regisDeanBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

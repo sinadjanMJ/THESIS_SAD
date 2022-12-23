@@ -76,6 +76,7 @@ namespace FullScreenAppDemo
             // 
             // textInstructor_lname
             // 
+            this.textInstructor_lname.BackColor = System.Drawing.Color.Transparent;
             this.textInstructor_lname.BaseColor = System.Drawing.Color.White;
             this.textInstructor_lname.BorderColor = System.Drawing.Color.Silver;
             this.textInstructor_lname.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -86,12 +87,14 @@ namespace FullScreenAppDemo
             this.textInstructor_lname.Location = new System.Drawing.Point(563, 217);
             this.textInstructor_lname.Name = "textInstructor_lname";
             this.textInstructor_lname.PasswordChar = '\0';
+            this.textInstructor_lname.Radius = 5;
             this.textInstructor_lname.SelectedText = "";
             this.textInstructor_lname.Size = new System.Drawing.Size(211, 30);
             this.textInstructor_lname.TabIndex = 40;
             // 
             // textInstructor_mname
             // 
+            this.textInstructor_mname.BackColor = System.Drawing.Color.Transparent;
             this.textInstructor_mname.BaseColor = System.Drawing.Color.White;
             this.textInstructor_mname.BorderColor = System.Drawing.Color.Silver;
             this.textInstructor_mname.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -102,6 +105,7 @@ namespace FullScreenAppDemo
             this.textInstructor_mname.Location = new System.Drawing.Point(307, 217);
             this.textInstructor_mname.Name = "textInstructor_mname";
             this.textInstructor_mname.PasswordChar = '\0';
+            this.textInstructor_mname.Radius = 5;
             this.textInstructor_mname.SelectedText = "";
             this.textInstructor_mname.Size = new System.Drawing.Size(228, 30);
             this.textInstructor_mname.TabIndex = 39;
@@ -118,6 +122,7 @@ namespace FullScreenAppDemo
             // 
             // textInstructor_fname
             // 
+            this.textInstructor_fname.BackColor = System.Drawing.Color.Transparent;
             this.textInstructor_fname.BaseColor = System.Drawing.Color.White;
             this.textInstructor_fname.BorderColor = System.Drawing.Color.Silver;
             this.textInstructor_fname.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -128,6 +133,7 @@ namespace FullScreenAppDemo
             this.textInstructor_fname.Location = new System.Drawing.Point(75, 217);
             this.textInstructor_fname.Name = "textInstructor_fname";
             this.textInstructor_fname.PasswordChar = '\0';
+            this.textInstructor_fname.Radius = 5;
             this.textInstructor_fname.SelectedText = "";
             this.textInstructor_fname.Size = new System.Drawing.Size(211, 30);
             this.textInstructor_fname.TabIndex = 37;
@@ -157,6 +163,7 @@ namespace FullScreenAppDemo
             this.gunaComboBox1.Name = "gunaComboBox1";
             this.gunaComboBox1.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.gunaComboBox1.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.gunaComboBox1.Radius = 5;
             this.gunaComboBox1.Size = new System.Drawing.Size(324, 26);
             this.gunaComboBox1.TabIndex = 35;
             // 
@@ -164,13 +171,13 @@ namespace FullScreenAppDemo
             // 
             this.btnCancel.AnimationHoverSpeed = 0.07F;
             this.btnCancel.AnimationSpeed = 0.03F;
-            this.btnCancel.BackColor = System.Drawing.Color.Transparent;
-            this.btnCancel.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnCancel.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnCancel.BaseColor = System.Drawing.Color.Maroon;
             this.btnCancel.BorderColor = System.Drawing.Color.Black;
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnCancel.FocusedColor = System.Drawing.Color.Empty;
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.ForeColor = System.Drawing.Color.Gold;
             this.btnCancel.Image = null;
             this.btnCancel.ImageSize = new System.Drawing.Size(20, 20);
             this.btnCancel.Location = new System.Drawing.Point(641, 298);
@@ -191,13 +198,13 @@ namespace FullScreenAppDemo
             // 
             this.btnSave.AnimationHoverSpeed = 0.07F;
             this.btnSave.AnimationSpeed = 0.03F;
-            this.btnSave.BackColor = System.Drawing.Color.Transparent;
-            this.btnSave.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnSave.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnSave.BaseColor = System.Drawing.Color.Maroon;
             this.btnSave.BorderColor = System.Drawing.Color.Black;
             this.btnSave.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnSave.FocusedColor = System.Drawing.Color.Empty;
             this.btnSave.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.ForeColor = System.Drawing.Color.Gold;
             this.btnSave.Image = null;
             this.btnSave.ImageSize = new System.Drawing.Size(20, 20);
             this.btnSave.Location = new System.Drawing.Point(490, 298);
@@ -346,6 +353,7 @@ namespace FullScreenAppDemo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(800, 364);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.gunaCirclePictureBox2);

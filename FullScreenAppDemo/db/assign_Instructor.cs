@@ -12,11 +12,12 @@ namespace FullScreenAppDemo.db
     using System;
     using System.Collections.Generic;
     
-    public partial class S_Subject
+    public partial class assign_Instructor
     {
-        public int SubjectID { get; set; }
-        public string SubjectCode { get; set; }
-        public string SubjectName { get; set; }
-        public string SubjectUnit { get; set; }
+        public int ai_ID { get; set; }
+        public string ai_semester { get; set; }
+        public string ai_classID { get; set; }
+        public string ai_subjectID { get; set; }
+        public string ai_instructorID { get; set; }
     }
 }

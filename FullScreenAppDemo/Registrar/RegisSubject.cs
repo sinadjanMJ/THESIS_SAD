@@ -204,7 +204,8 @@ namespace FullScreenAppDemo
             S_Subject s = new S_Subject
             {
                 SubjectCode = textSubjectCode.Text.Trim(),
-                SubjectName = textSubjectName.Text.Trim()
+                SubjectName = textSubjectName.Text.Trim(),
+                SubjectUnit = textSubjectUnits.Text.Trim()
             };
 
             _context.S_Subject.Add(s);
@@ -266,6 +267,12 @@ namespace FullScreenAppDemo
             textC_name.Clear();
         }
 
+        private void btnAssignSub_Click(object sender, EventArgs e)
+        {
+          
+            assignSubject mj = new assignSubject();
+            mj.Show();
 
+        }
     }
 }

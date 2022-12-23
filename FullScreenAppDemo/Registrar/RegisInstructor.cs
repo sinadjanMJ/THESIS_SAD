@@ -101,5 +101,10 @@ namespace FullScreenAppDemo
 
             dgvInstructorList.DataSource = res1;
         }
+
+        private void btnDELETE_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

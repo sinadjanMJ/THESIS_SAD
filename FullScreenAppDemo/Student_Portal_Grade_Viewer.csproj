@@ -74,23 +74,23 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Academics\AcademicsDashboard.cs">
+    <Compile Include="DASHBOARD\AcademicsDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Academics\AcademicsDashboard.Designer.cs">
+    <Compile Include="DASHBOARD\AcademicsDashboard.Designer.cs">
       <DependentUpon>AcademicsDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dean\DeanImport.cs">
+    <Compile Include="assignSubject.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dean\DeanImport.Designer.cs">
-      <DependentUpon>DeanImport.cs</DependentUpon>
+    <Compile Include="assignSubject.Designer.cs">
+      <DependentUpon>assignSubject.cs</DependentUpon>
     </Compile>
-    <Compile Include="department_course_section\CourseImport.cs">
-      <SubType>Form</SubType>
+    <Compile Include="db\assignSubject.cs">
+      <DependentUpon>StudentPortalGradeViewer.tt</DependentUpon>
     </Compile>
-    <Compile Include="department_course_section\CourseImport.Designer.cs">
-      <DependentUpon>CourseImport.cs</DependentUpon>
+    <Compile Include="db\assign_Instructor.cs">
+      <DependentUpon>StudentPortalGradeViewer.tt</DependentUpon>
     </Compile>
     <Compile Include="db\Class_S.cs">
       <DependentUpon>StudentPortalGradeViewer.tt</DependentUpon>
@@ -125,13 +125,28 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>StudentPortalGradeViewer.edmx</DependentUpon>
     </Compile>
+    <Compile Include="db\Student_Profile.cs">
+      <DependentUpon>StudentPortalGradeViewer.tt</DependentUpon>
+    </Compile>
     <Compile Include="db\S_Subject.cs">
       <DependentUpon>StudentPortalGradeViewer.tt</DependentUpon>
     </Compile>
-    <Compile Include="DeanDashboard.cs">
+    <Compile Include="Dean\DeanImport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DeanDashboard.Designer.cs">
+    <Compile Include="Dean\DeanImport.Designer.cs">
+      <DependentUpon>DeanImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="department_course_section\CourseImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="department_course_section\CourseImport.Designer.cs">
+      <DependentUpon>CourseImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DASHBOARD\DeanDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DASHBOARD\DeanDashboard.Designer.cs">
       <DependentUpon>DeanDashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="department_course_section\DepartmentImport.cs">
@@ -140,10 +155,10 @@
     <Compile Include="department_course_section\DepartmentImport.Designer.cs">
       <DependentUpon>DepartmentImport.cs</DependentUpon>
     </Compile>
-    <Compile Include="InstructorDashboard.cs">
+    <Compile Include="DASHBOARD\InstructorDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InstructorDashboard.Designer.cs">
+    <Compile Include="DASHBOARD\InstructorDashboard.Designer.cs">
       <DependentUpon>InstructorDashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="Instructor\InstructorImport.cs">
@@ -152,11 +167,15 @@
     <Compile Include="Instructor\InstructorImport.Designer.cs">
       <DependentUpon>InstructorImport.cs</DependentUpon>
     </Compile>
+    <Compile Include="perips\assignWithClassSubInstructor.cs" />
+    <Compile Include="perips\classValue.cs" />
     <Compile Include="perips\courseImps.cs" />
     <Compile Include="perips\courseValue.cs" />
     <Compile Include="perips\DeanWithDepartment.cs" />
     <Compile Include="perips\DepartmentValue.cs" />
+    <Compile Include="perips\instructorValue.cs" />
     <Compile Include="perips\InstructorWithDept.cs" />
+    <Compile Include="perips\subjectValue.cs" />
     <Compile Include="Registrar\RegisSubject.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,10 +202,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Registrar\RegisDashboard.cs">
+    <Compile Include="DASHBOARD\RegisDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Registrar\RegisDashboard.Designer.cs">
+    <Compile Include="DASHBOARD\RegisDashboard.Designer.cs">
       <DependentUpon>RegisDashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="Registrar\RegisStudent.cs">
@@ -205,8 +224,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>studentPortalDataSet1.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Academics\AcademicsDashboard.resx">
+    <EmbeddedResource Include="DASHBOARD\AcademicsDashboard.resx">
       <DependentUpon>AcademicsDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="assignSubject.resx">
+      <DependentUpon>assignSubject.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dean\DeanImport.resx">
       <DependentUpon>DeanImport.cs</DependentUpon>
@@ -214,13 +236,13 @@
     <EmbeddedResource Include="department_course_section\CourseImport.resx">
       <DependentUpon>CourseImport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DeanDashboard.resx">
+    <EmbeddedResource Include="DASHBOARD\DeanDashboard.resx">
       <DependentUpon>DeanDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="department_course_section\DepartmentImport.resx">
       <DependentUpon>DepartmentImport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InstructorDashboard.resx">
+    <EmbeddedResource Include="DASHBOARD\InstructorDashboard.resx">
       <DependentUpon>InstructorDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Instructor\InstructorImport.resx">
@@ -241,7 +263,7 @@
     <EmbeddedResource Include="Registrar\RegisAcademics.resx">
       <DependentUpon>RegisAcademics.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Registrar\RegisDashboard.resx">
+    <EmbeddedResource Include="DASHBOARD\RegisDashboard.resx">
       <DependentUpon>RegisDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Registrar\RegisDean.resx">
@@ -266,6 +288,7 @@
     <None Include="Properties\DataSources\FullScreenAppDemo.db.Department.datasource" />
     <None Include="Properties\DataSources\FullScreenAppDemo.db.studentBackground.datasource" />
     <None Include="Properties\DataSources\FullScreenAppDemo.db.S_Subject.datasource" />
+    <None Include="Properties\DataSources\FullScreenAppDemo.perips.assignWithClassSubInstructor.datasource" />
     <None Include="Properties\DataSources\FullScreenAppDemo.perips.courseImps.datasource" />
     <None Include="Properties\DataSources\FullScreenAppDemo.perips.DeanWithDepartment.datasource" />
     <None Include="Properties\DataSources\FullScreenAppDemo.perips.InstructorWithDept.datasource" />
@@ -305,21 +328,24 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Academics\" />
+    <Folder Include="Subject\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="db\StudentPortalGradeViewer.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>StudentPortalGradeViewer.Context.cs</LastGenOutput>
       <DependentUpon>StudentPortalGradeViewer.edmx</DependentUpon>
+      <LastGenOutput>StudentPortalGradeViewer.Context.cs</LastGenOutput>
     </Content>
     <Content Include="db\StudentPortalGradeViewer.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>StudentPortalGradeViewer.edmx</DependentUpon>
       <LastGenOutput>StudentPortalGradeViewer.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

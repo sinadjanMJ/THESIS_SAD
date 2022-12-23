@@ -25,12 +25,15 @@ namespace FullScreenAppDemo.db
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<assign_Instructor> assign_Instructor { get; set; }
+        public virtual DbSet<assignSubject> assignSubjects { get; set; }
+        public virtual DbSet<Class_S> Class_S { get; set; }
         public virtual DbSet<Course> Courses { get; set; }
         public virtual DbSet<Dean> Deans { get; set; }
         public virtual DbSet<Department> Departments { get; set; }
         public virtual DbSet<Instructor> Instructors { get; set; }
         public virtual DbSet<S_Subject> S_Subject { get; set; }
+        public virtual DbSet<Student_Profile> Student_Profile { get; set; }
         public virtual DbSet<studentBackground> studentBackgrounds { get; set; }
-        public virtual DbSet<Class_S> Class_S { get; set; }
     }
 }
