@@ -31,22 +31,33 @@ namespace FullScreenAppDemo
 
         private void btnSaveAssign_Click(object sender, EventArgs e)
         {
-            db.assignSubject halu = new db.assignSubject
+            if (cBCourse.SelectedIndex == -1 || cBYear.SelectedIndex == -1 || cBSemester.SelectedIndex == -1 || cBDepartment.SelectedIndex == -1 || cBSection.SelectedIndex == -1)
             {
-                a_subjectID = (cBSubject.SelectedItem as subjectValue).Value.ToString(),
-                a_classID = (cBSection.SelectedItem as classValue).Value.ToString(),
-                a_semester = cBSemester.Text.Trim(),
-                a_instructorID = (cBInstructor.SelectedItem as instructorValue).Value.ToString()
-            };
+                MessageBox.Show("Fill out the Designated Credential first", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                if (MessageBox.Show("Are you sure you want to Save", "Save", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    db.assignSubject halu = new db.assignSubject
+                    {
+                        a_subjectID = (cBSubject.SelectedItem as subjectValue).Value.ToString(),
+                        a_classID = (cBSection.SelectedItem as classValue).Value.ToString(),
+                        a_semester = cBSemester.Text.Trim(),
+                        a_instructorID = (cBInstructor.SelectedItem as instructorValue).Value.ToString()
+                    };
 
-            _context.assignSubjects.Add(halu);
-            _context.SaveChanges();
+                    _context.assignSubjects.Add(halu);
+                    _context.SaveChanges();
 
-            loadAssignment();
+                    loadAssignment();
 
-            this.Hide();
-            RegisSubject mj = new RegisSubject();
-            mj.Show();
+                    this.Hide();
+                    RegisSubject mj = new RegisSubject();
+                    mj.Show();
+                }
+            }
+           
         }
 
         private void assignSubject_Load(object sender, EventArgs e)

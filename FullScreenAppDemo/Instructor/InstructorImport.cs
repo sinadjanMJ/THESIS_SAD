@@ -38,20 +38,31 @@ namespace FullScreenAppDemo
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            Instructor i = new Instructor
+            if (textInstructor_fname.Text == "" || textInstructor_lname.Text == "" || textInstructor_mname.Text == "" || gunaComboBox1.Text == "")
             {
-                Instructor_fname = textInstructor_fname.Text.Trim(),
-                Instructor_mname = textInstructor_mname.Text.Trim(),
-                Instructor_lname = textInstructor_lname.Text.Trim(),
-                Department_ID = (gunaComboBox1.SelectedItem as DepartmentValue).Value.ToString()
-            };
+                MessageBox.Show("Fill out the Designated Credential first", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                if (MessageBox.Show("Are you sure you want to Save", "Save", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    Instructor i = new Instructor
+                    {
+                        Instructor_fname = textInstructor_fname.Text.Trim(),
+                        Instructor_mname = textInstructor_mname.Text.Trim(),
+                        Instructor_lname = textInstructor_lname.Text.Trim(),
+                        Department_ID = (gunaComboBox1.SelectedItem as DepartmentValue).Value.ToString()
+                    };
 
-            _context.Instructors.Add(i);
-            _context.SaveChanges();
+                    _context.Instructors.Add(i);
+                    _context.SaveChanges();
 
-            RegisInstructor ii = new RegisInstructor();
-            ii.Show();
-            this.Hide();
+                    RegisInstructor ii = new RegisInstructor();
+                    ii.Show();
+                    this.Hide();
+                }
+            }
+            
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

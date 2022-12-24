@@ -159,19 +159,20 @@ namespace FullScreenAppDemo
             this.gunaComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.gunaComboBox1.ForeColor = System.Drawing.Color.Black;
             this.gunaComboBox1.FormattingEnabled = true;
+            this.gunaComboBox1.ItemHeight = 25;
             this.gunaComboBox1.Location = new System.Drawing.Point(75, 277);
             this.gunaComboBox1.Name = "gunaComboBox1";
             this.gunaComboBox1.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.gunaComboBox1.OnHoverItemForeColor = System.Drawing.Color.White;
             this.gunaComboBox1.Radius = 5;
-            this.gunaComboBox1.Size = new System.Drawing.Size(324, 26);
+            this.gunaComboBox1.Size = new System.Drawing.Size(324, 31);
             this.gunaComboBox1.TabIndex = 35;
             // 
             // btnCancel
             // 
             this.btnCancel.AnimationHoverSpeed = 0.07F;
             this.btnCancel.AnimationSpeed = 0.03F;
-            this.btnCancel.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnCancel.BackColor = System.Drawing.Color.Transparent;
             this.btnCancel.BaseColor = System.Drawing.Color.Maroon;
             this.btnCancel.BorderColor = System.Drawing.Color.Black;
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.None;
@@ -198,7 +199,7 @@ namespace FullScreenAppDemo
             // 
             this.btnSave.AnimationHoverSpeed = 0.07F;
             this.btnSave.AnimationSpeed = 0.03F;
-            this.btnSave.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnSave.BackColor = System.Drawing.Color.Transparent;
             this.btnSave.BaseColor = System.Drawing.Color.Maroon;
             this.btnSave.BorderColor = System.Drawing.Color.Black;
             this.btnSave.DialogResult = System.Windows.Forms.DialogResult.None;

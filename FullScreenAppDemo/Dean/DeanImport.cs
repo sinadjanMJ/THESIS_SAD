@@ -25,20 +25,31 @@ namespace FullScreenAppDemo
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            Dean dn = new Dean
+            if (textDean_fname.Text == "" || textDean_lname.Text == "" || textDean_mname.Text == "" || gunaComboBox1.SelectedIndex == -1)
             {
-                Dean_fname = textDean_fname.Text.Trim(),
-                Dean_mname = textDean_mname.Text.Trim(),
-                Dean_lname = textDean_lname.Text.Trim(),
-                Department_ID = (gunaComboBox1.SelectedItem as DepartmentValue).Value.ToString()
-            };
+                MessageBox.Show("Fill out the Designated Credential first", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                if (MessageBox.Show("Are you sure you want to Save", "Save", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    Dean dn = new Dean
+                    {
+                        Dean_fname = textDean_fname.Text.Trim(),
+                        Dean_mname = textDean_mname.Text.Trim(),
+                        Dean_lname = textDean_lname.Text.Trim(),
+                        Department_ID = (gunaComboBox1.SelectedItem as DepartmentValue).Value.ToString()
+                    };
 
-            _context.Deans.Add(dn);
-            _context.SaveChanges();
+                    _context.Deans.Add(dn);
+                    _context.SaveChanges();
 
-            RegisDean d = new RegisDean();
-            d.Show();
-            this.Hide();
+                    RegisDean d = new RegisDean();
+                    d.Show();
+                    this.Hide();
+                }
+            }
+           
 
         }
 

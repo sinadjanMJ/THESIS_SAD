@@ -1488,12 +1488,13 @@
             // 
             this.UCANCELBTN.AnimationHoverSpeed = 0.07F;
             this.UCANCELBTN.AnimationSpeed = 0.03F;
-            this.UCANCELBTN.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.UCANCELBTN.BackColor = System.Drawing.Color.Transparent;
+            this.UCANCELBTN.BaseColor = System.Drawing.Color.Maroon;
             this.UCANCELBTN.BorderColor = System.Drawing.Color.Black;
             this.UCANCELBTN.DialogResult = System.Windows.Forms.DialogResult.None;
             this.UCANCELBTN.FocusedColor = System.Drawing.Color.Empty;
-            this.UCANCELBTN.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.UCANCELBTN.ForeColor = System.Drawing.Color.White;
+            this.UCANCELBTN.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UCANCELBTN.ForeColor = System.Drawing.Color.Gold;
             this.UCANCELBTN.Image = null;
             this.UCANCELBTN.ImageSize = new System.Drawing.Size(20, 20);
             this.UCANCELBTN.Location = new System.Drawing.Point(815, 653);
@@ -1503,6 +1504,7 @@
             this.UCANCELBTN.OnHoverForeColor = System.Drawing.Color.White;
             this.UCANCELBTN.OnHoverImage = null;
             this.UCANCELBTN.OnPressedColor = System.Drawing.Color.Black;
+            this.UCANCELBTN.Radius = 5;
             this.UCANCELBTN.Size = new System.Drawing.Size(160, 42);
             this.UCANCELBTN.TabIndex = 101;
             this.UCANCELBTN.Text = "CANCEL";
@@ -1513,12 +1515,13 @@
             // 
             this.UPDATEBTN.AnimationHoverSpeed = 0.07F;
             this.UPDATEBTN.AnimationSpeed = 0.03F;
-            this.UPDATEBTN.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.UPDATEBTN.BackColor = System.Drawing.Color.Transparent;
+            this.UPDATEBTN.BaseColor = System.Drawing.Color.Maroon;
             this.UPDATEBTN.BorderColor = System.Drawing.Color.Black;
             this.UPDATEBTN.DialogResult = System.Windows.Forms.DialogResult.None;
             this.UPDATEBTN.FocusedColor = System.Drawing.Color.Empty;
-            this.UPDATEBTN.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.UPDATEBTN.ForeColor = System.Drawing.Color.White;
+            this.UPDATEBTN.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UPDATEBTN.ForeColor = System.Drawing.Color.Gold;
             this.UPDATEBTN.Image = null;
             this.UPDATEBTN.ImageSize = new System.Drawing.Size(20, 20);
             this.UPDATEBTN.Location = new System.Drawing.Point(643, 653);
@@ -1528,6 +1531,7 @@
             this.UPDATEBTN.OnHoverForeColor = System.Drawing.Color.White;
             this.UPDATEBTN.OnHoverImage = null;
             this.UPDATEBTN.OnPressedColor = System.Drawing.Color.Black;
+            this.UPDATEBTN.Radius = 5;
             this.UPDATEBTN.Size = new System.Drawing.Size(160, 42);
             this.UPDATEBTN.TabIndex = 100;
             this.UPDATEBTN.Text = "UPDATE";
@@ -2383,10 +2387,10 @@
             this.ClientSize = new System.Drawing.Size(1371, 788);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.addstudentPanel);
             this.Controls.Add(this.studentdataPanel);
             this.Controls.Add(this.saveDATA);
             this.Controls.Add(this.updatePanel);
+            this.Controls.Add(this.addstudentPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RegisStudent";
             this.Text = "RegisStudentDashboard";

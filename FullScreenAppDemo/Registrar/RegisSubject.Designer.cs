@@ -528,6 +528,7 @@ namespace FullScreenAppDemo
             this.cBYear.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cBYear.ForeColor = System.Drawing.Color.Black;
             this.cBYear.FormattingEnabled = true;
+            this.cBYear.ItemHeight = 25;
             this.cBYear.Items.AddRange(new object[] {
             "1st Year",
             "2nd Year",
@@ -538,7 +539,7 @@ namespace FullScreenAppDemo
             this.cBYear.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cBYear.OnHoverItemForeColor = System.Drawing.Color.White;
             this.cBYear.Radius = 5;
-            this.cBYear.Size = new System.Drawing.Size(189, 26);
+            this.cBYear.Size = new System.Drawing.Size(189, 31);
             this.cBYear.TabIndex = 27;
             // 
             // cBCourse
@@ -552,12 +553,13 @@ namespace FullScreenAppDemo
             this.cBCourse.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cBCourse.ForeColor = System.Drawing.Color.Black;
             this.cBCourse.FormattingEnabled = true;
+            this.cBCourse.ItemHeight = 25;
             this.cBCourse.Location = new System.Drawing.Point(144, 450);
             this.cBCourse.Name = "cBCourse";
             this.cBCourse.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cBCourse.OnHoverItemForeColor = System.Drawing.Color.White;
             this.cBCourse.Radius = 5;
-            this.cBCourse.Size = new System.Drawing.Size(510, 26);
+            this.cBCourse.Size = new System.Drawing.Size(510, 31);
             this.cBCourse.TabIndex = 26;
             // 
             // cBDepartment
@@ -571,12 +573,13 @@ namespace FullScreenAppDemo
             this.cBDepartment.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cBDepartment.ForeColor = System.Drawing.Color.Black;
             this.cBDepartment.FormattingEnabled = true;
+            this.cBDepartment.ItemHeight = 25;
             this.cBDepartment.Location = new System.Drawing.Point(144, 381);
             this.cBDepartment.Name = "cBDepartment";
             this.cBDepartment.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cBDepartment.OnHoverItemForeColor = System.Drawing.Color.White;
             this.cBDepartment.Radius = 5;
-            this.cBDepartment.Size = new System.Drawing.Size(510, 26);
+            this.cBDepartment.Size = new System.Drawing.Size(510, 31);
             this.cBDepartment.TabIndex = 25;
             this.cBDepartment.SelectedIndexChanged += new System.EventHandler(this.cBDepartment_SelectedIndexChanged);
             // 

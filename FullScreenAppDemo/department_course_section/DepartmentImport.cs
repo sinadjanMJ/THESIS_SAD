@@ -22,18 +22,30 @@ namespace FullScreenAppDemo
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            Department d = new Department
+
+            if (textDepartment_name.Text == "" )
             {
-                Department_Name = textDepartment_name.Text.Trim()
-            };
+                MessageBox.Show("Fill out the Designated Credential first", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                if (MessageBox.Show("Are you sure you want to Save", "Save", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    Department d = new Department
+                    {
+                        Department_Name = textDepartment_name.Text.Trim()
+                    };
 
-            _context.Departments.Add(d);
-            _context.SaveChanges();
+                    _context.Departments.Add(d);
+                    _context.SaveChanges();
 
-            TabControl de = new TabControl();
-            de.Show();
-            this.Hide();
-            insert();
+                    TabControl de = new TabControl();
+                    de.Show();
+                    this.Hide();
+                    insert();
+                }
+            }
+           
 
 
         }

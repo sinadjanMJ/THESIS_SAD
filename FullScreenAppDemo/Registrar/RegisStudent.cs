@@ -28,11 +28,9 @@ namespace FullScreenAppDemo
 
         private void CloseBTN_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Do you want to exit.", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dr == DialogResult.Yes)
+            if (MessageBox.Show("Are you sure you want to Exit", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                Application.ExitThread();
-
+                this.Close();
             }
         }
 
@@ -155,7 +153,7 @@ namespace FullScreenAppDemo
             addstudentPanel.Hide();
             updatePanel.Hide();
 
-            Cancel();
+            Clear();
 
         }
 
@@ -177,12 +175,16 @@ namespace FullScreenAppDemo
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            int studID = Int32.Parse(studentID.ToString());
-            var selectedRow = _context.studentBackgrounds.Where(q => q.StudentID == studID).FirstOrDefault();
+            if (MessageBox.Show("Are you sure you want to Delete", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                int studID = Int32.Parse(studentID.ToString());
+                var selectedRow = _context.studentBackgrounds.Where(q => q.StudentID == studID).FirstOrDefault();
 
-            _context.studentBackgrounds.Remove(selectedRow);
-            _context.SaveChanges();
-            dgvStudentList.DataSource = _context.studentBackgrounds.ToList();
+                _context.studentBackgrounds.Remove(selectedRow);
+                _context.SaveChanges();
+                dgvStudentList.DataSource = _context.studentBackgrounds.ToList();
+            }
+            
         }
 
         public void loadList()
@@ -377,7 +379,7 @@ namespace FullScreenAppDemo
 
 
         }
-        public void Cancel()
+        public void Clear()
         {
 
             textS_Fname.Clear();
@@ -412,41 +414,55 @@ namespace FullScreenAppDemo
 
         private void gunaButton3_Click(object sender, EventArgs e)
         {
-            studentBackground s = new studentBackground
+            if (cBCourse.SelectedIndex == -1 || cBYear.SelectedIndex == -1 || cBSemester.SelectedIndex == -1 || cBDepartment.SelectedIndex == -1 || cBSection.SelectedIndex == -1)
             {
-                S_fname = textS_Fname.Text.Trim(),
-                S_mname = textS_Mname.Text.Trim(),
-                S_lname = textS_Lname.Text.Trim(),
-                S_Sex = comboGender.Text.Trim(),
-                S_Birthdate = date_S_Birthdate.Text.Trim(),
-                S_mNumber = textS_MobileNumber.Text.Trim(),
-                S_emailAdd = textS_EmailAdd.Text.Trim(),
-                S_Religion = textS_Religion.Text.Trim(),
-                S_Citizenship = textS_Citizenship.Text.Trim(),
-                S_Province = textS_Province.Text.Trim(),
-                S_municipality = textS_Municipality.Text.Trim(),
-                S_barangay = textS_Barangay.Text.Trim(),
-                S_Guardian_fname = textS_Guardian_Fname.Text.Trim(),
-                S_Guardian_mname = textS_Guardian_Mname.Text.Trim(),
-                S_Guardian_lname = textS_Guardian_LName.Text.Trim(),
-                S_Guardian_contact = textS_Guardian_Contact.Text.Trim()
-            };
+                MessageBox.Show("Fill out the Designated Credential first", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                if (MessageBox.Show("Are you sure you want to Save", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
 
-            _context.studentBackgrounds.Add(s);
-            _context.SaveChanges();
-            saveProfile();
-            MessageBox.Show("STUDENT ADDED SUCCESSFULLY");
-            openStudList();
-            dgvStudentList.DataSource = _context.studentBackgrounds.ToList();
+                    studentBackground s = new studentBackground
+                    {
+                        S_fname = textS_Fname.Text.Trim(),
+                        S_mname = textS_Mname.Text.Trim(),
+                        S_lname = textS_Lname.Text.Trim(),
+                        S_Sex = comboGender.Text.Trim(),
+                        S_Birthdate = date_S_Birthdate.Text.Trim(),
+                        S_mNumber = textS_MobileNumber.Text.Trim(),
+                        S_emailAdd = textS_EmailAdd.Text.Trim(),
+                        S_Religion = textS_Religion.Text.Trim(),
+                        S_Citizenship = textS_Citizenship.Text.Trim(),
+                        S_Province = textS_Province.Text.Trim(),
+                        S_municipality = textS_Municipality.Text.Trim(),
+                        S_barangay = textS_Barangay.Text.Trim(),
+                        S_Guardian_fname = textS_Guardian_Fname.Text.Trim(),
+                        S_Guardian_mname = textS_Guardian_Mname.Text.Trim(),
+                        S_Guardian_lname = textS_Guardian_LName.Text.Trim(),
+                        S_Guardian_contact = textS_Guardian_Contact.Text.Trim()
+                    };
+
+                    _context.studentBackgrounds.Add(s);
+                    _context.SaveChanges();
+                    saveProfile();
+                    Clear();
+                    MessageBox.Show("STUDENT ADDED SUCCESSFULLY");
+                    openStudList();
+                    dgvStudentList.DataSource = _context.studentBackgrounds.ToList();
+
+                }
+            }
+           
 
         }
 
         private void PROCEED_Click(object sender, EventArgs e)
         {
-            if(textS_Municipality.Text == " " && textS_Citizenship.Text == " " && textS_EmailAdd.Text == " " && textS_Mname.Text == " " && textS_Province.Text == "" && textS_Religion.Text == "" && textS_MobileNumber.Text == " " && comboGender.Text == " " && textS_Fname.Text == " " && textS_Barangay.Text == " " && textS_Lname.Text == " ")
+            if(textS_Municipality.Text =="" || textS_Citizenship.Text == "" || textS_EmailAdd.Text == "" || textS_Mname.Text == "" || textS_Province.Text == "" || textS_Religion.Text == "" || textS_MobileNumber.Text == "" || comboGender.Text == "" || textS_Fname.Text == "" || textS_Barangay.Text == "" || textS_Lname.Text == "")
             {
 
-                MessageBox.Show("Fill out the field first");
+                MessageBox.Show("Fill out the field first", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
             else
@@ -455,6 +471,7 @@ namespace FullScreenAppDemo
                 studentdataPanel.Hide();
                 addstudentPanel.Hide();
                 updatePanel.Hide();
+               
 
             }
         }

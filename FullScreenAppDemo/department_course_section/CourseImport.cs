@@ -38,19 +38,31 @@ namespace FullScreenAppDemo
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            Course c = new Course
+
+            if (textCourse_name.Text == "" || gunaComboBox1.SelectedIndex == -1)
             {
-                Course_name = textCourse_name.Text.Trim(),
-                DepartmentID = (gunaComboBox1.SelectedItem as DepartmentValue).Value.ToString()
-            };
+                MessageBox.Show("Fill out the Designated Credential first", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                if (MessageBox.Show("Are you sure you want to Save", "Save", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    Course c = new Course
+                    {
+                        Course_name = textCourse_name.Text.Trim(),
+                        DepartmentID = (gunaComboBox1.SelectedItem as DepartmentValue).Value.ToString()
+                    };
 
-            _context.Courses.Add(c);
-            _context.SaveChanges();
-            insert();
+                    _context.Courses.Add(c);
+                    _context.SaveChanges();
+                    insert();
 
-            TabControl dl = new TabControl();
-            dl.Show();
-            this.Hide();
+                    TabControl dl = new TabControl();
+                    dl.Show();
+                    this.Hide();
+                }
+            }
+          
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

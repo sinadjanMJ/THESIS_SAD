@@ -38,11 +38,9 @@ namespace FullScreenAppDemo
 
         private void CloseBTN_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Do you want to exit.", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dr == DialogResult.Yes)
+            if (MessageBox.Show("Are you sure you want to Exit", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                Application.ExitThread();
-
+                this.Close();
             }
         }
 
