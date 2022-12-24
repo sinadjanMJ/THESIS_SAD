@@ -201,17 +201,7 @@ namespace FullScreenAppDemo
 
         private void btnCreateSub_Click(object sender, EventArgs e)
         {
-            S_Subject s = new S_Subject
-            {
-                SubjectCode = textSubjectCode.Text.Trim(),
-                SubjectName = textSubjectName.Text.Trim(),
-                SubjectUnit = textSubjectUnits.Text.Trim()
-            };
 
-            _context.S_Subject.Add(s);
-            _context.SaveChanges();
-
-            loadSubs();
         }
         private void loadSubs()
         {
@@ -273,6 +263,27 @@ namespace FullScreenAppDemo
             assignSubject mj = new assignSubject();
             mj.Show();
 
+        }
+
+        private void BTNCreateSub_Click_1(object sender, EventArgs e)
+        {
+            S_Subject s = new S_Subject
+            {
+                SubjectCode = textSubjectCode.Text.Trim(),
+                SubjectName = textSubjectName.Text.Trim(),
+                SubjectUnit = textSubjectUnits.Text.Trim()
+            };
+
+            _context.S_Subject.Add(s);
+            _context.SaveChanges();
+
+            loadSubs();
+        }
+
+        private void BTNAssignSub_Click_1(object sender, EventArgs e)
+        {
+            assignSubject mj = new assignSubject();
+            mj.Show();
         }
     }
 }

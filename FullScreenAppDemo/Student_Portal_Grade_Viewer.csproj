@@ -175,6 +175,7 @@
     <Compile Include="perips\DepartmentValue.cs" />
     <Compile Include="perips\instructorValue.cs" />
     <Compile Include="perips\InstructorWithDept.cs" />
+    <Compile Include="perips\studentAssignSub.cs" />
     <Compile Include="perips\subjectValue.cs" />
     <Compile Include="Registrar\RegisSubject.cs">
       <SubType>Form</SubType>
@@ -292,6 +293,7 @@
     <None Include="Properties\DataSources\FullScreenAppDemo.perips.courseImps.datasource" />
     <None Include="Properties\DataSources\FullScreenAppDemo.perips.DeanWithDepartment.datasource" />
     <None Include="Properties\DataSources\FullScreenAppDemo.perips.InstructorWithDept.datasource" />
+    <None Include="Properties\DataSources\FullScreenAppDemo.perips.studentAssignSub.datasource" />
     <None Include="Properties\DataSources\RegisDean.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
