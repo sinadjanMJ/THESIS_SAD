@@ -177,6 +177,12 @@
     <Compile Include="perips\InstructorWithDept.cs" />
     <Compile Include="perips\studentAssignSub.cs" />
     <Compile Include="perips\subjectValue.cs" />
+    <Compile Include="Registrar\RegistarFormData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registrar\RegistarFormData.Designer.cs">
+      <DependentUpon>RegistarFormData.cs</DependentUpon>
+    </Compile>
     <Compile Include="Registrar\RegisSubject.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -258,6 +264,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Registrar\RegistarFormData.resx">
+      <DependentUpon>RegistarFormData.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Registrar\RegisSubject.resx">
       <DependentUpon>RegisSubject.cs</DependentUpon>
     </EmbeddedResource>

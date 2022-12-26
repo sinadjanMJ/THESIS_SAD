@@ -32,43 +32,68 @@ namespace FullScreenAppDemo
 
         private void DashboardBTN_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            RegisDashboard mj = new RegisDashboard();
+            RegistarFormData mj = new RegistarFormData();
+            mj.TopLevel = false;
+            DashboardPanel.Controls.Clear();
+            DashboardPanel.Controls.Add(mj);
             mj.Show();
         }
 
         private void StudentBTN_Click(object sender, EventArgs e)
         {
-            this.Hide();
             RegisStudent mj = new RegisStudent();
+            mj.TopLevel = false;
+            DashboardPanel.Controls.Clear();
+            DashboardPanel.Controls.Add(mj);
             mj.Show();
         }
 
         private void InstructorBTN_Click(object sender, EventArgs e)
         {
-            this.Hide();
             RegisInstructor mj = new RegisInstructor();
+            mj.TopLevel = false;
+            DashboardPanel.Controls.Clear();
+            DashboardPanel.Controls.Add(mj);
             mj.Show();
         }
 
         private void AcademicsBTN_Click(object sender, EventArgs e)
         {
-            this.Hide();
             RegisAcademics mj = new RegisAcademics();
+            mj.TopLevel = false;
+            DashboardPanel.Controls.Clear();
+            DashboardPanel.Controls.Add(mj);
             mj.Show();
         }
 
         private void DeanBTN_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            //this.Hide();
+            //RegisDean mj = new RegisDean();
+            //mj.Show();
             RegisDean mj = new RegisDean();
+            mj.TopLevel = false;
+            DashboardPanel.Controls.Clear();
+            DashboardPanel.Controls.Add(mj);
             mj.Show();
+
         }
 
         private void gunaButton1_Click(object sender, EventArgs e)
         {
-            this.Hide();
             RegisSubject mj = new RegisSubject();
+            mj.TopLevel = false;
+            DashboardPanel.Controls.Clear();
+            DashboardPanel.Controls.Add(mj);
+            mj.Show();
+        }
+
+        private void RegisDashboard_Load(object sender, EventArgs e)
+        {
+            RegistarFormData mj = new RegistarFormData();
+            mj.TopLevel = false;
+            DashboardPanel.Controls.Clear();
+            DashboardPanel.Controls.Add(mj);
             mj.Show();
         }
     }
