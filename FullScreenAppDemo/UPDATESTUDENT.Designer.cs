@@ -91,6 +91,7 @@ namespace FullScreenAppDemo
             this.cBCourse = new Guna.UI.WinForms.GunaComboBox();
             this.gunaLabel14 = new Guna.UI.WinForms.GunaLabel();
             this.cBSection = new Guna.UI.WinForms.GunaComboBox();
+            this.gunaButton4 = new Guna.UI.WinForms.GunaButton();
             this.subjectIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cODEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sUBJECTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -723,6 +724,7 @@ namespace FullScreenAppDemo
             // 
             // UPDATEPANEL
             // 
+            this.UPDATEPANEL.Controls.Add(this.gunaButton4);
             this.UPDATEPANEL.Controls.Add(this.gunaButton1);
             this.UPDATEPANEL.Controls.Add(this.gunaButton3);
             this.UPDATEPANEL.Controls.Add(this.labelUnits);
@@ -759,7 +761,7 @@ namespace FullScreenAppDemo
             this.gunaButton1.ForeColor = System.Drawing.Color.Gold;
             this.gunaButton1.Image = null;
             this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton1.Location = new System.Drawing.Point(767, 626);
+            this.gunaButton1.Location = new System.Drawing.Point(876, 403);
             this.gunaButton1.Name = "gunaButton1";
             this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -787,7 +789,7 @@ namespace FullScreenAppDemo
             this.gunaButton3.ForeColor = System.Drawing.Color.Gold;
             this.gunaButton3.Image = null;
             this.gunaButton3.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton3.Location = new System.Drawing.Point(962, 626);
+            this.gunaButton3.Location = new System.Drawing.Point(876, 637);
             this.gunaButton3.Name = "gunaButton3";
             this.gunaButton3.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.gunaButton3.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -805,7 +807,7 @@ namespace FullScreenAppDemo
             // 
             this.labelUnits.AutoSize = true;
             this.labelUnits.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUnits.Location = new System.Drawing.Point(427, 647);
+            this.labelUnits.Location = new System.Drawing.Point(341, 658);
             this.labelUnits.Name = "labelUnits";
             this.labelUnits.Size = new System.Drawing.Size(19, 21);
             this.labelUnits.TabIndex = 123;
@@ -815,7 +817,7 @@ namespace FullScreenAppDemo
             // 
             this.gunaLabel15.AutoSize = true;
             this.gunaLabel15.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel15.Location = new System.Drawing.Point(314, 647);
+            this.gunaLabel15.Location = new System.Drawing.Point(228, 658);
             this.gunaLabel15.Name = "gunaLabel15";
             this.gunaLabel15.Size = new System.Drawing.Size(118, 21);
             this.gunaLabel15.TabIndex = 122;
@@ -826,7 +828,7 @@ namespace FullScreenAppDemo
             this.gunaCirclePictureBox4.BaseColor = System.Drawing.Color.White;
             this.gunaCirclePictureBox4.ErrorImage = null;
             this.gunaCirclePictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("gunaCirclePictureBox4.Image")));
-            this.gunaCirclePictureBox4.Location = new System.Drawing.Point(316, 30);
+            this.gunaCirclePictureBox4.Location = new System.Drawing.Point(230, 41);
             this.gunaCirclePictureBox4.Name = "gunaCirclePictureBox4";
             this.gunaCirclePictureBox4.Size = new System.Drawing.Size(92, 91);
             this.gunaCirclePictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -838,7 +840,7 @@ namespace FullScreenAppDemo
             // 
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Segoe UI Semibold", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(414, 52);
+            this.label32.Location = new System.Drawing.Point(328, 63);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(364, 54);
             this.label32.TabIndex = 120;
@@ -884,7 +886,7 @@ namespace FullScreenAppDemo
             this.dgvSubAssignment.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvSubAssignment.EnableHeadersVisualStyles = false;
             this.dgvSubAssignment.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvSubAssignment.Location = new System.Drawing.Point(241, 448);
+            this.dgvSubAssignment.Location = new System.Drawing.Point(155, 459);
             this.dgvSubAssignment.Name = "dgvSubAssignment";
             this.dgvSubAssignment.ReadOnly = true;
             this.dgvSubAssignment.RowHeadersVisible = false;
@@ -919,7 +921,7 @@ namespace FullScreenAppDemo
             // 
             this.gunaLabel10.AutoSize = true;
             this.gunaLabel10.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel10.Location = new System.Drawing.Point(357, 326);
+            this.gunaLabel10.Location = new System.Drawing.Point(271, 337);
             this.gunaLabel10.Name = "gunaLabel10";
             this.gunaLabel10.Size = new System.Drawing.Size(86, 21);
             this.gunaLabel10.TabIndex = 118;
@@ -940,7 +942,7 @@ namespace FullScreenAppDemo
             this.cBSemester.Items.AddRange(new object[] {
             "1st Semester",
             "2nd Semester"});
-            this.cBSemester.Location = new System.Drawing.Point(361, 350);
+            this.cBSemester.Location = new System.Drawing.Point(275, 361);
             this.cBSemester.Name = "cBSemester";
             this.cBSemester.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cBSemester.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -952,7 +954,7 @@ namespace FullScreenAppDemo
             // 
             this.gunaLabel11.AutoSize = true;
             this.gunaLabel11.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel11.Location = new System.Drawing.Point(357, 255);
+            this.gunaLabel11.Location = new System.Drawing.Point(271, 266);
             this.gunaLabel11.Name = "gunaLabel11";
             this.gunaLabel11.Size = new System.Drawing.Size(94, 21);
             this.gunaLabel11.TabIndex = 116;
@@ -975,7 +977,7 @@ namespace FullScreenAppDemo
             "2nd Year",
             "3rd Year",
             "4th Year"});
-            this.cBYear.Location = new System.Drawing.Point(361, 279);
+            this.cBYear.Location = new System.Drawing.Point(275, 290);
             this.cBYear.Name = "cBYear";
             this.cBYear.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cBYear.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -988,7 +990,7 @@ namespace FullScreenAppDemo
             // 
             this.gunaLabel12.AutoSize = true;
             this.gunaLabel12.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel12.Location = new System.Drawing.Point(357, 185);
+            this.gunaLabel12.Location = new System.Drawing.Point(271, 196);
             this.gunaLabel12.Name = "gunaLabel12";
             this.gunaLabel12.Size = new System.Drawing.Size(111, 21);
             this.gunaLabel12.TabIndex = 114;
@@ -1006,7 +1008,7 @@ namespace FullScreenAppDemo
             this.cBDepartment.ForeColor = System.Drawing.Color.Black;
             this.cBDepartment.FormattingEnabled = true;
             this.cBDepartment.ItemHeight = 30;
-            this.cBDepartment.Location = new System.Drawing.Point(361, 209);
+            this.cBDepartment.Location = new System.Drawing.Point(275, 220);
             this.cBDepartment.Name = "cBDepartment";
             this.cBDepartment.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cBDepartment.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -1019,7 +1021,7 @@ namespace FullScreenAppDemo
             // 
             this.gunaLabel13.AutoSize = true;
             this.gunaLabel13.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel13.Location = new System.Drawing.Point(738, 185);
+            this.gunaLabel13.Location = new System.Drawing.Point(652, 196);
             this.gunaLabel13.Name = "gunaLabel13";
             this.gunaLabel13.Size = new System.Drawing.Size(70, 21);
             this.gunaLabel13.TabIndex = 112;
@@ -1037,7 +1039,7 @@ namespace FullScreenAppDemo
             this.cBCourse.ForeColor = System.Drawing.Color.Black;
             this.cBCourse.FormattingEnabled = true;
             this.cBCourse.ItemHeight = 30;
-            this.cBCourse.Location = new System.Drawing.Point(742, 209);
+            this.cBCourse.Location = new System.Drawing.Point(656, 220);
             this.cBCourse.Name = "cBCourse";
             this.cBCourse.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cBCourse.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -1050,7 +1052,7 @@ namespace FullScreenAppDemo
             // 
             this.gunaLabel14.AutoSize = true;
             this.gunaLabel14.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel14.Location = new System.Drawing.Point(738, 255);
+            this.gunaLabel14.Location = new System.Drawing.Point(652, 266);
             this.gunaLabel14.Name = "gunaLabel14";
             this.gunaLabel14.Size = new System.Drawing.Size(75, 21);
             this.gunaLabel14.TabIndex = 110;
@@ -1068,13 +1070,40 @@ namespace FullScreenAppDemo
             this.cBSection.ForeColor = System.Drawing.Color.Black;
             this.cBSection.FormattingEnabled = true;
             this.cBSection.ItemHeight = 30;
-            this.cBSection.Location = new System.Drawing.Point(742, 279);
+            this.cBSection.Location = new System.Drawing.Point(656, 290);
             this.cBSection.Name = "cBSection";
             this.cBSection.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cBSection.OnHoverItemForeColor = System.Drawing.Color.White;
             this.cBSection.Radius = 5;
             this.cBSection.Size = new System.Drawing.Size(311, 36);
             this.cBSection.TabIndex = 109;
+            // 
+            // gunaButton4
+            // 
+            this.gunaButton4.AnimationHoverSpeed = 0.07F;
+            this.gunaButton4.AnimationSpeed = 0.03F;
+            this.gunaButton4.BackColor = System.Drawing.Color.Transparent;
+            this.gunaButton4.BaseColor = System.Drawing.Color.Maroon;
+            this.gunaButton4.BorderColor = System.Drawing.Color.Black;
+            this.gunaButton4.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaButton4.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaButton4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaButton4.ForeColor = System.Drawing.Color.Gold;
+            this.gunaButton4.Image = null;
+            this.gunaButton4.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaButton4.Location = new System.Drawing.Point(699, 637);
+            this.gunaButton4.Name = "gunaButton4";
+            this.gunaButton4.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.gunaButton4.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaButton4.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaButton4.OnHoverImage = null;
+            this.gunaButton4.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton4.Radius = 5;
+            this.gunaButton4.Size = new System.Drawing.Size(160, 42);
+            this.gunaButton4.TabIndex = 126;
+            this.gunaButton4.Text = "PREVIOUS";
+            this.gunaButton4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gunaButton4.Click += new System.EventHandler(this.gunaButton4_Click);
             // 
             // subjectIDDataGridViewTextBoxColumn
             // 
@@ -1219,5 +1248,6 @@ namespace FullScreenAppDemo
         private System.Windows.Forms.DataGridViewTextBoxColumn iNSTRUCTORDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn subjectidDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn instructoridDataGridViewTextBoxColumn;
+        private Guna.UI.WinForms.GunaButton gunaButton4;
     }
 }

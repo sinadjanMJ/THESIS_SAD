@@ -240,7 +240,11 @@ namespace FullScreenAppDemo
 
                 ).ToList();
 
-                dgvSubAssignment.DataSource = res;
+                ListtoDataTableConverter converter = new ListtoDataTableConverter();
+                DataTable dt = converter.ToDataTable(res);
+                //SqlDataReader da = new SqlDataReader(res);
+
+                dgvSubAssignment.DataSource = dt;
                 //dgvSubAssignment.Columns["instructor_id"].Visible = false;
 
                 calculateUnit();

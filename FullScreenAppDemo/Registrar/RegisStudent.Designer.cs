@@ -1144,6 +1144,7 @@
             // 
             // dgvSubAssignment
             // 
+            this.dgvSubAssignment.AllowUserToAddRows = false;
             dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
             this.dgvSubAssignment.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvSubAssignment.AutoGenerateColumns = false;
@@ -1182,6 +1183,7 @@
             this.dgvSubAssignment.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvSubAssignment.Location = new System.Drawing.Point(146, 446);
             this.dgvSubAssignment.Name = "dgvSubAssignment";
+            this.dgvSubAssignment.ReadOnly = true;
             this.dgvSubAssignment.RowHeadersVisible = false;
             this.dgvSubAssignment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSubAssignment.Size = new System.Drawing.Size(881, 150);
@@ -1200,7 +1202,7 @@
             this.dgvSubAssignment.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.Gold;
             this.dgvSubAssignment.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvSubAssignment.ThemeStyle.HeaderStyle.Height = 21;
-            this.dgvSubAssignment.ThemeStyle.ReadOnly = false;
+            this.dgvSubAssignment.ThemeStyle.ReadOnly = true;
             this.dgvSubAssignment.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvSubAssignment.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvSubAssignment.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
@@ -1367,42 +1369,49 @@
             this.subjectIDDataGridViewTextBoxColumn.DataPropertyName = "SubjectID";
             this.subjectIDDataGridViewTextBoxColumn.HeaderText = "SubjectID";
             this.subjectIDDataGridViewTextBoxColumn.Name = "subjectIDDataGridViewTextBoxColumn";
+            this.subjectIDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // cODEDataGridViewTextBoxColumn
             // 
             this.cODEDataGridViewTextBoxColumn.DataPropertyName = "CODE";
             this.cODEDataGridViewTextBoxColumn.HeaderText = "CODE";
             this.cODEDataGridViewTextBoxColumn.Name = "cODEDataGridViewTextBoxColumn";
+            this.cODEDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // sUBJECTDataGridViewTextBoxColumn
             // 
             this.sUBJECTDataGridViewTextBoxColumn.DataPropertyName = "SUBJECT";
             this.sUBJECTDataGridViewTextBoxColumn.HeaderText = "SUBJECT";
             this.sUBJECTDataGridViewTextBoxColumn.Name = "sUBJECTDataGridViewTextBoxColumn";
+            this.sUBJECTDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // uNITSDataGridViewTextBoxColumn
             // 
             this.uNITSDataGridViewTextBoxColumn.DataPropertyName = "UNITS";
             this.uNITSDataGridViewTextBoxColumn.HeaderText = "UNITS";
             this.uNITSDataGridViewTextBoxColumn.Name = "uNITSDataGridViewTextBoxColumn";
+            this.uNITSDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // iNSTRUCTORDataGridViewTextBoxColumn
             // 
             this.iNSTRUCTORDataGridViewTextBoxColumn.DataPropertyName = "INSTRUCTOR";
             this.iNSTRUCTORDataGridViewTextBoxColumn.HeaderText = "INSTRUCTOR";
             this.iNSTRUCTORDataGridViewTextBoxColumn.Name = "iNSTRUCTORDataGridViewTextBoxColumn";
+            this.iNSTRUCTORDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // subjectidDataGridViewTextBoxColumn1
             // 
             this.subjectidDataGridViewTextBoxColumn1.DataPropertyName = "subject_id";
             this.subjectidDataGridViewTextBoxColumn1.HeaderText = "SUBJECT ID";
             this.subjectidDataGridViewTextBoxColumn1.Name = "subjectidDataGridViewTextBoxColumn1";
+            this.subjectidDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // instructoridDataGridViewTextBoxColumn
             // 
             this.instructoridDataGridViewTextBoxColumn.DataPropertyName = "instructor_id";
             this.instructoridDataGridViewTextBoxColumn.HeaderText = "INSTRUCTOR ID";
             this.instructoridDataGridViewTextBoxColumn.Name = "instructoridDataGridViewTextBoxColumn";
+            this.instructoridDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // studentAssignSubBindingSource
             // 
@@ -1413,9 +1422,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1371, 788);
-            this.Controls.Add(this.studentdataPanel);
             this.Controls.Add(this.saveDATA);
             this.Controls.Add(this.addstudentPanel);
+            this.Controls.Add(this.studentdataPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RegisStudent";
             this.Text = "RegisStudentDashboard";
