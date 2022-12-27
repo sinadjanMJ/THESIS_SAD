@@ -320,6 +320,7 @@ namespace FullScreenAppDemo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(800, 320);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.gunaLabel4);
@@ -333,8 +334,9 @@ namespace FullScreenAppDemo
             this.Controls.Add(this.gunaLabel1);
             this.Controls.Add(this.textDean_fname);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Location = new System.Drawing.Point(400, 300);
             this.Name = "DeanImport";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "DeanImport";
             this.Load += new System.EventHandler(this.DeanImport_Load);
             this.panel1.ResumeLayout(false);

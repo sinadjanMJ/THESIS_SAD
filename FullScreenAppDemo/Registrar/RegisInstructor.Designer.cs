@@ -29,27 +29,31 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisInstructor));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisInstructor));
-            this.DashboardPanel = new System.Windows.Forms.Panel();
-            this.btnDELETE = new Guna.UI.WinForms.GunaButton();
-            this.btnAddInstructor = new Guna.UI.WinForms.GunaButton();
-            this.dgvInstructorList = new Guna.UI.WinForms.GunaDataGridView();
-            this.gunaCirclePictureBox2 = new Guna.UI.WinForms.GunaCirclePictureBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.instructorWithDeptBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.instructorIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.instructorNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.departmentNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.instructorWithDeptBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.DashboardPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInstructorList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).BeginInit();
+            this.DashboardPanel = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.gunaCirclePictureBox2 = new Guna.UI.WinForms.GunaCirclePictureBox();
+            this.departmentNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.instructorNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.instructorIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvInstructorList = new Guna.UI.WinForms.GunaDataGridView();
+            this.btnAddInstructor = new Guna.UI.WinForms.GunaButton();
+            this.btnDELETE = new Guna.UI.WinForms.GunaButton();
             ((System.ComponentModel.ISupportInitialize)(this.instructorWithDeptBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.instructorWithDeptBindingSource1)).BeginInit();
+            this.DashboardPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInstructorList)).BeginInit();
             this.SuspendLayout();
+            // 
+            // instructorWithDeptBindingSource1
+            // 
+            this.instructorWithDeptBindingSource1.DataSource = typeof(FullScreenAppDemo.perips.InstructorWithDept);
             // 
             // DashboardPanel
             // 
@@ -63,60 +67,46 @@
             this.DashboardPanel.Size = new System.Drawing.Size(1175, 683);
             this.DashboardPanel.TabIndex = 11;
             // 
-            // btnDELETE
+            // label4
             // 
-            this.btnDELETE.AnimationHoverSpeed = 0.07F;
-            this.btnDELETE.AnimationSpeed = 0.03F;
-            this.btnDELETE.BackColor = System.Drawing.Color.Transparent;
-            this.btnDELETE.BaseColor = System.Drawing.Color.Maroon;
-            this.btnDELETE.BorderColor = System.Drawing.Color.Black;
-            this.btnDELETE.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnDELETE.FocusedColor = System.Drawing.Color.Empty;
-            this.btnDELETE.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDELETE.ForeColor = System.Drawing.Color.Gold;
-            this.btnDELETE.Image = null;
-            this.btnDELETE.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnDELETE.Location = new System.Drawing.Point(794, 545);
-            this.btnDELETE.Name = "btnDELETE";
-            this.btnDELETE.OnHoverBaseColor = System.Drawing.Color.Red;
-            this.btnDELETE.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnDELETE.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnDELETE.OnHoverImage = null;
-            this.btnDELETE.OnPressedColor = System.Drawing.Color.Black;
-            this.btnDELETE.Radius = 5;
-            this.btnDELETE.Size = new System.Drawing.Size(160, 42);
-            this.btnDELETE.TabIndex = 12;
-            this.btnDELETE.Text = "DELETE";
-            this.btnDELETE.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnDELETE.Click += new System.EventHandler(this.btnDELETE_Click);
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(282, 84);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(400, 54);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Instructor Data Form";
             // 
-            // btnAddInstructor
+            // gunaCirclePictureBox2
             // 
-            this.btnAddInstructor.AnimationHoverSpeed = 0.07F;
-            this.btnAddInstructor.AnimationSpeed = 0.03F;
-            this.btnAddInstructor.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddInstructor.BaseColor = System.Drawing.Color.Maroon;
-            this.btnAddInstructor.BorderColor = System.Drawing.Color.Black;
-            this.btnAddInstructor.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnAddInstructor.FocusedColor = System.Drawing.Color.Empty;
-            this.btnAddInstructor.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddInstructor.ForeColor = System.Drawing.Color.Gold;
-            this.btnAddInstructor.Image = null;
-            this.btnAddInstructor.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnAddInstructor.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnAddInstructor.Location = new System.Drawing.Point(184, 214);
-            this.btnAddInstructor.Name = "btnAddInstructor";
-            this.btnAddInstructor.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.btnAddInstructor.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnAddInstructor.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnAddInstructor.OnHoverImage = null;
-            this.btnAddInstructor.OnPressedColor = System.Drawing.Color.Black;
-            this.btnAddInstructor.Radius = 5;
-            this.btnAddInstructor.Size = new System.Drawing.Size(160, 42);
-            this.btnAddInstructor.TabIndex = 11;
-            this.btnAddInstructor.Text = "ADD INSTRUCTOR";
-            this.btnAddInstructor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnAddInstructor.Click += new System.EventHandler(this.btnAddInstructor_Click);
+            this.gunaCirclePictureBox2.BaseColor = System.Drawing.Color.White;
+            this.gunaCirclePictureBox2.ErrorImage = null;
+            this.gunaCirclePictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("gunaCirclePictureBox2.Image")));
+            this.gunaCirclePictureBox2.Location = new System.Drawing.Point(184, 62);
+            this.gunaCirclePictureBox2.Name = "gunaCirclePictureBox2";
+            this.gunaCirclePictureBox2.Size = new System.Drawing.Size(92, 91);
+            this.gunaCirclePictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.gunaCirclePictureBox2.TabIndex = 9;
+            this.gunaCirclePictureBox2.TabStop = false;
+            this.gunaCirclePictureBox2.UseTransfarantBackground = false;
+            // 
+            // departmentNameDataGridViewTextBoxColumn
+            // 
+            this.departmentNameDataGridViewTextBoxColumn.DataPropertyName = "Department_Name";
+            this.departmentNameDataGridViewTextBoxColumn.HeaderText = "Department_Name";
+            this.departmentNameDataGridViewTextBoxColumn.Name = "departmentNameDataGridViewTextBoxColumn";
+            // 
+            // instructorNameDataGridViewTextBoxColumn
+            // 
+            this.instructorNameDataGridViewTextBoxColumn.DataPropertyName = "Instructor_Name";
+            this.instructorNameDataGridViewTextBoxColumn.HeaderText = "Instructor_Name";
+            this.instructorNameDataGridViewTextBoxColumn.Name = "instructorNameDataGridViewTextBoxColumn";
+            // 
+            // instructorIDDataGridViewTextBoxColumn
+            // 
+            this.instructorIDDataGridViewTextBoxColumn.DataPropertyName = "InstructorID";
+            this.instructorIDDataGridViewTextBoxColumn.HeaderText = "InstructorID";
+            this.instructorIDDataGridViewTextBoxColumn.Name = "instructorIDDataGridViewTextBoxColumn";
             // 
             // dgvInstructorList
             // 
@@ -180,50 +170,60 @@
             this.dgvInstructorList.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvInstructorList.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
-            // gunaCirclePictureBox2
+            // btnAddInstructor
             // 
-            this.gunaCirclePictureBox2.BaseColor = System.Drawing.Color.White;
-            this.gunaCirclePictureBox2.ErrorImage = null;
-            this.gunaCirclePictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("gunaCirclePictureBox2.Image")));
-            this.gunaCirclePictureBox2.Location = new System.Drawing.Point(184, 62);
-            this.gunaCirclePictureBox2.Name = "gunaCirclePictureBox2";
-            this.gunaCirclePictureBox2.Size = new System.Drawing.Size(92, 91);
-            this.gunaCirclePictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.gunaCirclePictureBox2.TabIndex = 9;
-            this.gunaCirclePictureBox2.TabStop = false;
-            this.gunaCirclePictureBox2.UseTransfarantBackground = false;
+            this.btnAddInstructor.AnimationHoverSpeed = 0.07F;
+            this.btnAddInstructor.AnimationSpeed = 0.03F;
+            this.btnAddInstructor.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddInstructor.BaseColor = System.Drawing.Color.Maroon;
+            this.btnAddInstructor.BorderColor = System.Drawing.Color.Black;
+            this.btnAddInstructor.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnAddInstructor.FocusedColor = System.Drawing.Color.Empty;
+            this.btnAddInstructor.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddInstructor.ForeColor = System.Drawing.Color.Gold;
+            this.btnAddInstructor.Image = null;
+            this.btnAddInstructor.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnAddInstructor.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnAddInstructor.Location = new System.Drawing.Point(184, 214);
+            this.btnAddInstructor.Name = "btnAddInstructor";
+            this.btnAddInstructor.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnAddInstructor.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnAddInstructor.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnAddInstructor.OnHoverImage = null;
+            this.btnAddInstructor.OnPressedColor = System.Drawing.Color.Black;
+            this.btnAddInstructor.Radius = 5;
+            this.btnAddInstructor.Size = new System.Drawing.Size(160, 42);
+            this.btnAddInstructor.TabIndex = 11;
+            this.btnAddInstructor.Text = "ADD INSTRUCTOR";
+            this.btnAddInstructor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnAddInstructor.Click += new System.EventHandler(this.btnAddInstructor_Click);
             // 
-            // label4
+            // btnDELETE
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(282, 84);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(400, 54);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Instructor Data Form";
-            // 
-            // instructorIDDataGridViewTextBoxColumn
-            // 
-            this.instructorIDDataGridViewTextBoxColumn.DataPropertyName = "InstructorID";
-            this.instructorIDDataGridViewTextBoxColumn.HeaderText = "InstructorID";
-            this.instructorIDDataGridViewTextBoxColumn.Name = "instructorIDDataGridViewTextBoxColumn";
-            // 
-            // instructorNameDataGridViewTextBoxColumn
-            // 
-            this.instructorNameDataGridViewTextBoxColumn.DataPropertyName = "Instructor_Name";
-            this.instructorNameDataGridViewTextBoxColumn.HeaderText = "Instructor_Name";
-            this.instructorNameDataGridViewTextBoxColumn.Name = "instructorNameDataGridViewTextBoxColumn";
-            // 
-            // departmentNameDataGridViewTextBoxColumn
-            // 
-            this.departmentNameDataGridViewTextBoxColumn.DataPropertyName = "Department_Name";
-            this.departmentNameDataGridViewTextBoxColumn.HeaderText = "Department_Name";
-            this.departmentNameDataGridViewTextBoxColumn.Name = "departmentNameDataGridViewTextBoxColumn";
-            // 
-            // instructorWithDeptBindingSource1
-            // 
-            this.instructorWithDeptBindingSource1.DataSource = typeof(FullScreenAppDemo.perips.InstructorWithDept);
+            this.btnDELETE.AnimationHoverSpeed = 0.07F;
+            this.btnDELETE.AnimationSpeed = 0.03F;
+            this.btnDELETE.BackColor = System.Drawing.Color.Transparent;
+            this.btnDELETE.BaseColor = System.Drawing.Color.Maroon;
+            this.btnDELETE.BorderColor = System.Drawing.Color.Black;
+            this.btnDELETE.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnDELETE.FocusedColor = System.Drawing.Color.Empty;
+            this.btnDELETE.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDELETE.ForeColor = System.Drawing.Color.Gold;
+            this.btnDELETE.Image = null;
+            this.btnDELETE.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnDELETE.Location = new System.Drawing.Point(794, 545);
+            this.btnDELETE.Name = "btnDELETE";
+            this.btnDELETE.OnHoverBaseColor = System.Drawing.Color.Red;
+            this.btnDELETE.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnDELETE.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnDELETE.OnHoverImage = null;
+            this.btnDELETE.OnPressedColor = System.Drawing.Color.Black;
+            this.btnDELETE.Radius = 5;
+            this.btnDELETE.Size = new System.Drawing.Size(160, 42);
+            this.btnDELETE.TabIndex = 12;
+            this.btnDELETE.Text = "DELETE";
+            this.btnDELETE.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnDELETE.Click += new System.EventHandler(this.btnDELETE_Click);
             // 
             // RegisInstructor
             // 
@@ -235,27 +235,27 @@
             this.Name = "RegisInstructor";
             this.Text = "InstructorDashboard";
             this.Load += new System.EventHandler(this.RegisInstructor_Load);
-            this.DashboardPanel.ResumeLayout(false);
-            this.DashboardPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInstructorList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.instructorWithDeptBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.instructorWithDeptBindingSource1)).EndInit();
+            this.DashboardPanel.ResumeLayout(false);
+            this.DashboardPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInstructorList)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+        private System.Windows.Forms.BindingSource instructorWithDeptBindingSource;
+        private System.Windows.Forms.BindingSource instructorWithDeptBindingSource1;
         private System.Windows.Forms.Panel DashboardPanel;
         private Guna.UI.WinForms.GunaButton btnDELETE;
         private Guna.UI.WinForms.GunaButton btnAddInstructor;
         private Guna.UI.WinForms.GunaDataGridView dgvInstructorList;
-        private System.Windows.Forms.BindingSource instructorWithDeptBindingSource;
-        private Guna.UI.WinForms.GunaCirclePictureBox gunaCirclePictureBox2;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridViewTextBoxColumn instructorIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn instructorNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn departmentNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource instructorWithDeptBindingSource1;
+        private Guna.UI.WinForms.GunaCirclePictureBox gunaCirclePictureBox2;
+        private System.Windows.Forms.Label label4;
     }
 }

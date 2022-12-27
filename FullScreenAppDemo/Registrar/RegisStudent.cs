@@ -20,75 +20,27 @@ namespace FullScreenAppDemo
         DepartmentValue dv = new DepartmentValue();
         courseValue cv = new courseValue();
         classValue cvs = new classValue();
-        int studID;
+       
         public RegisStudent()
         {
             InitializeComponent();
         }
 
-        private void CloseBTN_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Are you sure you want to Exit", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                this.Close();
-            }
-        }
-
-        private void MinimizedBTN_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-
-        }
-
-        private void DashboardBTN_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            RegisDashboard mj = new RegisDashboard();
-            mj.Show();
-        }
-
-        private void StudentBTN_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            RegisStudent mj = new RegisStudent();
-            mj.Show();
-        }
-
-        private void InstructorBTN_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            RegisInstructor mj = new RegisInstructor();
-            mj.Show();
-        }
-
-        private void AcademicsBTN_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            RegisAcademics mj = new RegisAcademics();
-            mj.Show();
-        }
-
-        private void DeanBTN_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            RegisDean mj = new RegisDean();
-            mj.Show();
-        }
+        
 
         private void RegisStudent_Load(object sender, EventArgs e)
         {
-            dgvStudentList.DataSource = _context.studentBackgrounds.ToList();
-            
-            saveDATA.Hide();
-            studentdataPanel.Show();
-            addstudentPanel.Hide();
-            updatePanel.Hide();
 
-            loadList();
+
+            dgvStudentList.DataSource = _context.studentBackgrounds.ToList();
+
+            openStudList();
+
 
             loadDepartment();
-            dgvSubAssignment.Columns[4].Visible = false;
+            dgvSubAssignment.Columns[0].Visible = false;
             dgvSubAssignment.Columns[5].Visible = false;
+            dgvSubAssignment.Columns[6].Visible = false;
         }
 
         private void loadDepartment()
@@ -128,7 +80,7 @@ namespace FullScreenAppDemo
             saveDATA.Hide();
             studentdataPanel.Hide();
             addstudentPanel.Show();
-            updatePanel.Hide();
+           
 
         }
 
@@ -143,15 +95,13 @@ namespace FullScreenAppDemo
             saveDATA.Hide();
             studentdataPanel.Show();
             addstudentPanel.Hide();
-            updatePanel.Hide();
+           
+
         }
 
         private void gunaButton2_Click(object sender, EventArgs e)
         {
-            saveDATA.Hide();
-            studentdataPanel.Show();
-            addstudentPanel.Hide();
-            updatePanel.Hide();
+            openStudList();
 
             Clear();
 
@@ -159,18 +109,19 @@ namespace FullScreenAppDemo
 
         private void dgvStudentList_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            loadList();
-            saveDATA.Hide();
-            studentdataPanel.Hide();
-            addstudentPanel.Hide();
-            updatePanel.Show();
+           
+            UPDATESTUDENT mj = new UPDATESTUDENT();
+            mj.TopLevel = false;
+            studentdataPanel.Controls.Clear();
+            studentdataPanel.Controls.Add(mj);
+            mj.Show();
         }
         private void openSTList()
         {
             saveDATA.Show();
             studentdataPanel.Hide();
             addstudentPanel.Hide();
-            updatePanel.Hide();
+        
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -187,62 +138,6 @@ namespace FullScreenAppDemo
             
         }
 
-        public void loadList()
-        {
-
-            studID = Int32.Parse(studentID.ToString());
-            var selectedRowID = _context.studentBackgrounds.Where(q => q.StudentID == studID).FirstOrDefault();
-
-
-            U_StudentID.Text = selectedRowID.StudentID.ToString().Trim();
-            U_FNAME.Text = selectedRowID.S_fname.ToString().Trim();
-            U_MIDDLENAME.Text = selectedRowID.S_mname.ToString().Trim();
-            U_LASTNAME.Text = selectedRowID.S_lname.ToString().Trim();
-            U_GENDER.Text = selectedRowID.S_Sex.ToString().Trim();
-            U_BIRTHDATE.Value = Convert.ToDateTime(selectedRowID.S_Birthdate.ToString());
-            U_NUMBER.Text = selectedRowID.S_mNumber.ToString().Trim();
-            U_EMAIL.Text = selectedRowID.S_emailAdd.ToString().Trim();
-            U_RELIGION.Text = selectedRowID.S_Religion.ToString().Trim();
-            U_CITIZEN.Text = selectedRowID.S_Citizenship.ToString().Trim();
-            U_PROVINCE.Text = selectedRowID.S_Province.ToString().Trim();
-            U_MUNICIPALITY.Text = selectedRowID.S_municipality.ToString().Trim();
-            U_BRGY.Text = selectedRowID.S_barangay.ToString().Trim();
-            U_GFNAME.Text = selectedRowID.S_Guardian_fname.ToString().Trim();
-            U_GMIDDLENAME.Text = selectedRowID.S_Guardian_mname.ToString().Trim();
-            U_GLASTNAME.Text = selectedRowID.S_Guardian_lname.ToString().Trim();
-            U_GNUMBER.Text = selectedRowID.S_Guardian_contact.ToString().Trim();
-        }
-
-        private void UPDATEBTN_Click(object sender, EventArgs e)
-        {
-            var selectedRowID = _context.studentBackgrounds.Where(q => q.StudentID == studID).FirstOrDefault();
-
-            selectedRowID.S_fname = U_FNAME.Text.Trim();
-            selectedRowID.S_mname = U_MIDDLENAME.Text.Trim();
-            selectedRowID.S_lname = U_LASTNAME.Text.Trim();
-            selectedRowID.S_Sex = U_GENDER.Text.Trim();
-            selectedRowID.S_Birthdate = U_BIRTHDATE.Text.Trim();
-            selectedRowID.S_mNumber = U_NUMBER.Text.Trim();
-            selectedRowID.S_emailAdd = U_EMAIL.Text.Trim();
-            selectedRowID.S_Religion = U_RELIGION.Text.Trim();
-            selectedRowID.S_Citizenship = U_CITIZEN.Text.Trim();
-            selectedRowID.S_Province = U_PROVINCE.Text.Trim();
-            selectedRowID.S_municipality = U_MUNICIPALITY.Text.Trim();
-            selectedRowID.S_barangay = U_BRGY.Text.Trim();
-            selectedRowID.S_Guardian_fname = U_GFNAME.Text.Trim();
-            selectedRowID.S_Guardian_mname = U_GMIDDLENAME.Text.Trim();
-            selectedRowID.S_Guardian_lname = U_GLASTNAME.Text.Trim();
-            selectedRowID.S_Guardian_contact = U_GNUMBER.Text.Trim();
-
-            _context.SaveChanges();
-             dgvStudentList.DataSource = _context.studentBackgrounds.ToList();
-            openSTList();
-        }
-
-        private void UCANCELBTN_Click(object sender, EventArgs e)
-        {
-            openSTList();
-        }
 
      
         private void gunaLabel12_Click(object sender, EventArgs e)
@@ -348,13 +243,24 @@ namespace FullScreenAppDemo
                 dgvSubAssignment.DataSource = res;
                 //dgvSubAssignment.Columns["instructor_id"].Visible = false;
 
-                int sum = 0;
-                for (int i = 0; i < dgvSubAssignment.Rows.Count; ++i)
-                {
-                    sum += Convert.ToInt32(dgvSubAssignment.Rows[i].Cells[2].Value);
-                }
-                labelUnits.Text = sum.ToString();
+                calculateUnit();
             }
+        }
+        private void calculateUnit()
+        {
+            int sum = 0;
+            string hello = "";
+            for (int i = 0; i < dgvSubAssignment.Rows.Count; ++i)
+            {
+                //sum += Convert.ToInt32(dgvSubAssignment.Rows[i].Cells[2].Value);
+                hello = dgvSubAssignment.Rows[i].Cells[3].Value.ToString();
+                if (hello != "")
+                {
+                    //sum = Int32.Parse(hello.ToString());
+                    sum += Int32.Parse(hello.ToString());
+                }
+            }
+            labelUnits.Text = sum.ToString();
         }
         private void saveProfile()
         {
@@ -370,8 +276,8 @@ namespace FullScreenAppDemo
                     YearLevel = cBYear.Text.Trim(),
                     ClassID = (cBSection.SelectedItem as classValue).Value.ToString(),
                     Semester = cBSemester.Text.Trim(),
-                    SubjectID = Convert.ToString(dgvSubAssignment.Rows[i].Cells[4].Value),
-                    InstructorID = Convert.ToString(dgvSubAssignment.Rows[i].Cells[5].Value)
+                    SubjectID = Convert.ToString(dgvSubAssignment.Rows[i].Cells[5].Value),
+                    InstructorID = Convert.ToString(dgvSubAssignment.Rows[i].Cells[6].Value)
                 };
                 _context.Student_Profile.Add(sp);
                 _context.SaveChanges();
@@ -470,10 +376,18 @@ namespace FullScreenAppDemo
                 saveDATA.Show();
                 studentdataPanel.Hide();
                 addstudentPanel.Hide();
-                updatePanel.Hide();
+              
                
 
             }
+        }
+
+        private void gunaButton4_Click(object sender, EventArgs e)
+        {
+            dgvSubAssignment.Rows.Remove(dgvSubAssignment.CurrentRow);
+
+            dgvSubAssignment.Refresh();
+            calculateUnit();
         }
     }
 }

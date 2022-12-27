@@ -175,6 +175,7 @@
     <Compile Include="perips\DepartmentValue.cs" />
     <Compile Include="perips\instructorValue.cs" />
     <Compile Include="perips\InstructorWithDept.cs" />
+    <Compile Include="perips\ListtoDataTableConverter.cs" />
     <Compile Include="perips\studentAssignSub.cs" />
     <Compile Include="perips\subjectValue.cs" />
     <Compile Include="Registrar\RegistarFormData.cs">
@@ -231,6 +232,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>studentPortalDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="UPDATESTUDENT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UPDATESTUDENT.Designer.cs">
+      <DependentUpon>UPDATESTUDENT.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="DASHBOARD\AcademicsDashboard.resx">
       <DependentUpon>AcademicsDashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -284,6 +291,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Registrar\RegisStudent.resx">
       <DependentUpon>RegisStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UPDATESTUDENT.resx">
+      <DependentUpon>UPDATESTUDENT.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="db\StudentPortalGradeViewer.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

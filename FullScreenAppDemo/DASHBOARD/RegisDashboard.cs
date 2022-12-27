@@ -26,7 +26,8 @@ namespace FullScreenAppDemo
         {
             if (MessageBox.Show("Are you sure you want to Exit", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                this.Close();
+                //this.Close();
+                Application.Exit();
             }
         }
 

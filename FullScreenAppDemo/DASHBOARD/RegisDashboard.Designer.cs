@@ -137,7 +137,7 @@
             this.label18.ForeColor = System.Drawing.Color.Gold;
             this.label18.Location = new System.Drawing.Point(653, 19);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(185, 16);
+            this.label18.Size = new System.Drawing.Size(191, 16);
             this.label18.TabIndex = 2;
             this.label18.Text = "Welcome to Mga Palaatik";
             // 
@@ -148,7 +148,7 @@
             this.label2.ForeColor = System.Drawing.Color.Gold;
             this.label2.Location = new System.Drawing.Point(60, 12);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(192, 16);
+            this.label2.Size = new System.Drawing.Size(210, 16);
             this.label2.TabIndex = 2;
             this.label2.Text = "CRMC STUDENT PORTAL";
             // 
@@ -387,7 +387,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(29, 78);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 16);
+            this.label1.Size = new System.Drawing.Size(138, 16);
             this.label1.TabIndex = 2;
             this.label1.Text = "Michel Jay Gwapo";
             // 
@@ -437,10 +437,10 @@
         private Guna.UI.WinForms.GunaButton StudentBTN;
         private Guna.UI.WinForms.GunaButton AcademicsBTN;
         private Guna.UI.WinForms.GunaButton InstructorBTN;
-        private System.Windows.Forms.Panel DashboardPanel;
         private Guna.UI.WinForms.GunaButton DeanBTN;
         private Guna.UI.WinForms.GunaButton CloseBTN;
         private Guna.UI.WinForms.GunaButton MinimizedBTN;
         private Guna.UI.WinForms.GunaButton gunaButton1;
+        public System.Windows.Forms.Panel DashboardPanel;
     }
 }

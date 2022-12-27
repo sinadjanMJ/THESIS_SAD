@@ -37,14 +37,6 @@ namespace FullScreenAppDemo
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisSubject));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -58,13 +50,6 @@ namespace FullScreenAppDemo
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.gunaDataGridView1 = new Guna.UI.WinForms.GunaDataGridView();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.deletecourse = new Guna.UI.WinForms.GunaButton();
-            this.deletedepartment = new Guna.UI.WinForms.GunaButton();
-            this.dgvCourseList = new Guna.UI.WinForms.GunaDataGridView();
-            this.btnCourse = new Guna.UI.WinForms.GunaButton();
-            this.dgvDepartmentList = new Guna.UI.WinForms.GunaDataGridView();
-            this.btnAddDepartment = new Guna.UI.WinForms.GunaButton();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dgvSubList = new Guna.UI.WinForms.GunaDataGridView();
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
@@ -88,17 +73,12 @@ namespace FullScreenAppDemo
             this.departmentIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.courseIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.classSBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.courseIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.coursenameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.departmentNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.courseImpsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.departmentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.departmentNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.departmentBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.subjectCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subjectUnitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sSubjectBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.courseImpsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.departmentBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.sSubjectBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             this.sSubjectBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.courseBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -106,9 +86,6 @@ namespace FullScreenAppDemo
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaDataGridView1)).BeginInit();
-            this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCourseList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDepartmentList)).BeginInit();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).BeginInit();
@@ -117,9 +94,9 @@ namespace FullScreenAppDemo
             ((System.ComponentModel.ISupportInitialize)(this.sSubjectBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.classSBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.classSBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sSubjectBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseImpsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sSubjectBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sSubjectBindingSource4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sSubjectBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseBindingSource)).BeginInit();
@@ -129,7 +106,6 @@ namespace FullScreenAppDemo
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(3, 4);
@@ -383,275 +359,6 @@ namespace FullScreenAppDemo
             this.gunaDataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gunaDataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
-            // tabPage3
-            // 
-            this.tabPage3.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage3.Controls.Add(this.deletecourse);
-            this.tabPage3.Controls.Add(this.deletedepartment);
-            this.tabPage3.Controls.Add(this.dgvCourseList);
-            this.tabPage3.Controls.Add(this.btnCourse);
-            this.tabPage3.Controls.Add(this.dgvDepartmentList);
-            this.tabPage3.Controls.Add(this.btnAddDepartment);
-            this.tabPage3.Location = new System.Drawing.Point(4, 26);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1152, 625);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Department";
-            this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
-            // 
-            // deletecourse
-            // 
-            this.deletecourse.AnimationHoverSpeed = 0.07F;
-            this.deletecourse.AnimationSpeed = 0.03F;
-            this.deletecourse.BackColor = System.Drawing.Color.Transparent;
-            this.deletecourse.BaseColor = System.Drawing.Color.Maroon;
-            this.deletecourse.BorderColor = System.Drawing.Color.Black;
-            this.deletecourse.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.deletecourse.FocusedColor = System.Drawing.Color.Empty;
-            this.deletecourse.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deletecourse.ForeColor = System.Drawing.Color.Gold;
-            this.deletecourse.Image = null;
-            this.deletecourse.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.deletecourse.ImageSize = new System.Drawing.Size(20, 20);
-            this.deletecourse.Location = new System.Drawing.Point(785, 565);
-            this.deletecourse.Name = "deletecourse";
-            this.deletecourse.OnHoverBaseColor = System.Drawing.Color.Red;
-            this.deletecourse.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.deletecourse.OnHoverForeColor = System.Drawing.Color.White;
-            this.deletecourse.OnHoverImage = null;
-            this.deletecourse.OnPressedColor = System.Drawing.Color.Black;
-            this.deletecourse.Radius = 5;
-            this.deletecourse.Size = new System.Drawing.Size(160, 42);
-            this.deletecourse.TabIndex = 13;
-            this.deletecourse.Text = "DELETE COURSE";
-            this.deletecourse.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.deletecourse.Click += new System.EventHandler(this.deletecourse_Click);
-            // 
-            // deletedepartment
-            // 
-            this.deletedepartment.AnimationHoverSpeed = 0.07F;
-            this.deletedepartment.AnimationSpeed = 0.03F;
-            this.deletedepartment.BackColor = System.Drawing.Color.Transparent;
-            this.deletedepartment.BaseColor = System.Drawing.Color.Maroon;
-            this.deletedepartment.BorderColor = System.Drawing.Color.Black;
-            this.deletedepartment.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.deletedepartment.FocusedColor = System.Drawing.Color.Empty;
-            this.deletedepartment.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deletedepartment.ForeColor = System.Drawing.Color.Gold;
-            this.deletedepartment.Image = null;
-            this.deletedepartment.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.deletedepartment.ImageSize = new System.Drawing.Size(20, 20);
-            this.deletedepartment.Location = new System.Drawing.Point(785, 326);
-            this.deletedepartment.Name = "deletedepartment";
-            this.deletedepartment.OnHoverBaseColor = System.Drawing.Color.Red;
-            this.deletedepartment.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.deletedepartment.OnHoverForeColor = System.Drawing.Color.White;
-            this.deletedepartment.OnHoverImage = null;
-            this.deletedepartment.OnPressedColor = System.Drawing.Color.Black;
-            this.deletedepartment.Radius = 5;
-            this.deletedepartment.Size = new System.Drawing.Size(160, 42);
-            this.deletedepartment.TabIndex = 12;
-            this.deletedepartment.Text = "DELETE DEPARTMENT";
-            this.deletedepartment.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.deletedepartment.Click += new System.EventHandler(this.deletedepartment_Click);
-            // 
-            // dgvCourseList
-            // 
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            this.dgvCourseList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvCourseList.AutoGenerateColumns = false;
-            this.dgvCourseList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvCourseList.BackgroundColor = System.Drawing.Color.White;
-            this.dgvCourseList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvCourseList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCourseList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvCourseList.ColumnHeadersHeight = 21;
-            this.dgvCourseList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.courseIDDataGridViewTextBoxColumn,
-            this.coursenameDataGridViewTextBoxColumn,
-            this.departmentNameDataGridViewTextBoxColumn1});
-            this.dgvCourseList.DataSource = this.courseImpsBindingSource;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCourseList.DefaultCellStyle = dataGridViewCellStyle7;
-            this.dgvCourseList.EnableHeadersVisualStyles = false;
-            this.dgvCourseList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvCourseList.Location = new System.Drawing.Point(207, 409);
-            this.dgvCourseList.Name = "dgvCourseList";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Firebrick;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCourseList.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.dgvCourseList.RowHeadersVisible = false;
-            this.dgvCourseList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCourseList.Size = new System.Drawing.Size(738, 150);
-            this.dgvCourseList.TabIndex = 11;
-            this.dgvCourseList.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
-            this.dgvCourseList.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvCourseList.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dgvCourseList.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.dgvCourseList.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dgvCourseList.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dgvCourseList.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dgvCourseList.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvCourseList.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.Maroon;
-            this.dgvCourseList.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvCourseList.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvCourseList.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.Gold;
-            this.dgvCourseList.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvCourseList.ThemeStyle.HeaderStyle.Height = 21;
-            this.dgvCourseList.ThemeStyle.ReadOnly = false;
-            this.dgvCourseList.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvCourseList.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvCourseList.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvCourseList.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgvCourseList.ThemeStyle.RowsStyle.Height = 22;
-            this.dgvCourseList.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvCourseList.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgvCourseList.SelectionChanged += new System.EventHandler(this.dgvCourseList_SelectionChanged);
-            // 
-            // btnCourse
-            // 
-            this.btnCourse.AnimationHoverSpeed = 0.07F;
-            this.btnCourse.AnimationSpeed = 0.03F;
-            this.btnCourse.BackColor = System.Drawing.Color.Transparent;
-            this.btnCourse.BaseColor = System.Drawing.Color.Maroon;
-            this.btnCourse.BorderColor = System.Drawing.Color.Black;
-            this.btnCourse.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnCourse.FocusedColor = System.Drawing.Color.Empty;
-            this.btnCourse.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCourse.ForeColor = System.Drawing.Color.Gold;
-            this.btnCourse.Image = null;
-            this.btnCourse.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnCourse.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnCourse.Location = new System.Drawing.Point(373, 110);
-            this.btnCourse.Name = "btnCourse";
-            this.btnCourse.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.btnCourse.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnCourse.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnCourse.OnHoverImage = null;
-            this.btnCourse.OnPressedColor = System.Drawing.Color.Black;
-            this.btnCourse.Radius = 5;
-            this.btnCourse.Size = new System.Drawing.Size(160, 42);
-            this.btnCourse.TabIndex = 10;
-            this.btnCourse.Text = "ADD COURSE";
-            this.btnCourse.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnCourse.Click += new System.EventHandler(this.btnCourse_Click);
-            // 
-            // dgvDepartmentList
-            // 
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            this.dgvDepartmentList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
-            this.dgvDepartmentList.AutoGenerateColumns = false;
-            this.dgvDepartmentList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvDepartmentList.BackgroundColor = System.Drawing.Color.White;
-            this.dgvDepartmentList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvDepartmentList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDepartmentList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
-            this.dgvDepartmentList.ColumnHeadersHeight = 21;
-            this.dgvDepartmentList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.departmentIDDataGridViewTextBoxColumn,
-            this.departmentNameDataGridViewTextBoxColumn});
-            this.dgvDepartmentList.DataSource = this.departmentBindingSource1;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDepartmentList.DefaultCellStyle = dataGridViewCellStyle11;
-            this.dgvDepartmentList.EnableHeadersVisualStyles = false;
-            this.dgvDepartmentList.GridColor = System.Drawing.Color.Gainsboro;
-            this.dgvDepartmentList.Location = new System.Drawing.Point(207, 170);
-            this.dgvDepartmentList.Name = "dgvDepartmentList";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.Firebrick;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDepartmentList.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
-            this.dgvDepartmentList.RowHeadersVisible = false;
-            this.dgvDepartmentList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDepartmentList.Size = new System.Drawing.Size(738, 150);
-            this.dgvDepartmentList.TabIndex = 8;
-            this.dgvDepartmentList.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
-            this.dgvDepartmentList.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvDepartmentList.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dgvDepartmentList.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.dgvDepartmentList.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dgvDepartmentList.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dgvDepartmentList.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dgvDepartmentList.ThemeStyle.GridColor = System.Drawing.Color.Gainsboro;
-            this.dgvDepartmentList.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.Maroon;
-            this.dgvDepartmentList.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvDepartmentList.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvDepartmentList.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.Gold;
-            this.dgvDepartmentList.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvDepartmentList.ThemeStyle.HeaderStyle.Height = 21;
-            this.dgvDepartmentList.ThemeStyle.ReadOnly = false;
-            this.dgvDepartmentList.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvDepartmentList.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvDepartmentList.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvDepartmentList.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgvDepartmentList.ThemeStyle.RowsStyle.Height = 22;
-            this.dgvDepartmentList.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvDepartmentList.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgvDepartmentList.SelectionChanged += new System.EventHandler(this.dgvDepartmentList_SelectionChanged);
-            // 
-            // btnAddDepartment
-            // 
-            this.btnAddDepartment.AnimationHoverSpeed = 0.07F;
-            this.btnAddDepartment.AnimationSpeed = 0.03F;
-            this.btnAddDepartment.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddDepartment.BaseColor = System.Drawing.Color.Maroon;
-            this.btnAddDepartment.BorderColor = System.Drawing.Color.Transparent;
-            this.btnAddDepartment.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnAddDepartment.FocusedColor = System.Drawing.Color.Empty;
-            this.btnAddDepartment.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddDepartment.ForeColor = System.Drawing.Color.Gold;
-            this.btnAddDepartment.Image = null;
-            this.btnAddDepartment.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnAddDepartment.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnAddDepartment.Location = new System.Drawing.Point(207, 110);
-            this.btnAddDepartment.Name = "btnAddDepartment";
-            this.btnAddDepartment.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.btnAddDepartment.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnAddDepartment.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnAddDepartment.OnHoverImage = null;
-            this.btnAddDepartment.OnPressedColor = System.Drawing.Color.Black;
-            this.btnAddDepartment.Radius = 5;
-            this.btnAddDepartment.Size = new System.Drawing.Size(160, 42);
-            this.btnAddDepartment.TabIndex = 7;
-            this.btnAddDepartment.Text = "ADD DEPARTMENT";
-            this.btnAddDepartment.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnAddDepartment.Click += new System.EventHandler(this.btnAddDepartment_Click);
-            // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
@@ -675,36 +382,36 @@ namespace FullScreenAppDemo
             // 
             // dgvSubList
             // 
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
-            this.dgvSubList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            this.dgvSubList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvSubList.AutoGenerateColumns = false;
             this.dgvSubList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSubList.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dgvSubList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvSubList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvSubList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.Brown;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSubList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Brown;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSubList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvSubList.ColumnHeadersHeight = 21;
             this.dgvSubList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.subjectCodeDataGridViewTextBoxColumn,
             this.dataGridViewTextBoxColumn,
             this.subjectUnitDataGridViewTextBoxColumn});
             this.dgvSubList.DataSource = this.sSubjectBindingSource2;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSubList.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSubList.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgvSubList.EnableHeadersVisualStyles = false;
             this.dgvSubList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvSubList.Location = new System.Drawing.Point(544, 242);
@@ -783,9 +490,9 @@ namespace FullScreenAppDemo
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(412, 72);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(356, 46);
+            this.label4.Size = new System.Drawing.Size(354, 46);
             this.label4.TabIndex = 17;
-            this.label4.Text = "Student Data Form";
+            this.label4.Text = "Subject Data Form";
             // 
             // BTNAssignSub
             // 
@@ -945,45 +652,6 @@ namespace FullScreenAppDemo
             // 
             this.classSBindingSource1.DataSource = typeof(FullScreenAppDemo.db.Class_S);
             // 
-            // courseIDDataGridViewTextBoxColumn
-            // 
-            this.courseIDDataGridViewTextBoxColumn.DataPropertyName = "CourseID";
-            this.courseIDDataGridViewTextBoxColumn.HeaderText = "CourseID";
-            this.courseIDDataGridViewTextBoxColumn.Name = "courseIDDataGridViewTextBoxColumn";
-            // 
-            // coursenameDataGridViewTextBoxColumn
-            // 
-            this.coursenameDataGridViewTextBoxColumn.DataPropertyName = "Course_name";
-            this.coursenameDataGridViewTextBoxColumn.HeaderText = "Course_name";
-            this.coursenameDataGridViewTextBoxColumn.Name = "coursenameDataGridViewTextBoxColumn";
-            // 
-            // departmentNameDataGridViewTextBoxColumn1
-            // 
-            this.departmentNameDataGridViewTextBoxColumn1.DataPropertyName = "Department_Name";
-            this.departmentNameDataGridViewTextBoxColumn1.HeaderText = "Department_Name";
-            this.departmentNameDataGridViewTextBoxColumn1.Name = "departmentNameDataGridViewTextBoxColumn1";
-            // 
-            // courseImpsBindingSource
-            // 
-            this.courseImpsBindingSource.DataSource = typeof(FullScreenAppDemo.perips.courseImps);
-            // 
-            // departmentIDDataGridViewTextBoxColumn
-            // 
-            this.departmentIDDataGridViewTextBoxColumn.DataPropertyName = "Department_ID";
-            this.departmentIDDataGridViewTextBoxColumn.HeaderText = "Department ID";
-            this.departmentIDDataGridViewTextBoxColumn.Name = "departmentIDDataGridViewTextBoxColumn";
-            this.departmentIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // departmentNameDataGridViewTextBoxColumn
-            // 
-            this.departmentNameDataGridViewTextBoxColumn.DataPropertyName = "Department_Name";
-            this.departmentNameDataGridViewTextBoxColumn.HeaderText = "Department Name";
-            this.departmentNameDataGridViewTextBoxColumn.Name = "departmentNameDataGridViewTextBoxColumn";
-            // 
-            // departmentBindingSource1
-            // 
-            this.departmentBindingSource1.DataSource = typeof(FullScreenAppDemo.db.Department);
-            // 
             // subjectCodeDataGridViewTextBoxColumn
             // 
             this.subjectCodeDataGridViewTextBoxColumn.DataPropertyName = "SubjectCode";
@@ -1005,6 +673,14 @@ namespace FullScreenAppDemo
             // sSubjectBindingSource2
             // 
             this.sSubjectBindingSource2.DataSource = typeof(FullScreenAppDemo.db.S_Subject);
+            // 
+            // courseImpsBindingSource
+            // 
+            this.courseImpsBindingSource.DataSource = typeof(FullScreenAppDemo.perips.courseImps);
+            // 
+            // departmentBindingSource1
+            // 
+            this.departmentBindingSource1.DataSource = typeof(FullScreenAppDemo.db.Department);
             // 
             // sSubjectBindingSource4
             // 
@@ -1036,9 +712,6 @@ namespace FullScreenAppDemo
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaDataGridView1)).EndInit();
-            this.tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCourseList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDepartmentList)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubList)).EndInit();
@@ -1048,9 +721,9 @@ namespace FullScreenAppDemo
             ((System.ComponentModel.ISupportInitialize)(this.sSubjectBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.classSBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.classSBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sSubjectBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseImpsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sSubjectBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sSubjectBindingSource4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sSubjectBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseBindingSource)).EndInit();
@@ -1063,24 +736,12 @@ namespace FullScreenAppDemo
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
-        private Guna.UI.WinForms.GunaButton btnCourse;
-        private Guna.UI.WinForms.GunaDataGridView dgvDepartmentList;
-        private Guna.UI.WinForms.GunaButton btnAddDepartment;
         private studentPortalDataSet1 studentPortalDataSet1;
         private System.Windows.Forms.BindingSource departmentBindingSource;
         private studentPortalDataSet1TableAdapters.DepartmentTableAdapter departmentTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn departmentIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn departmentNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource departmentBindingSource1;
         private System.Windows.Forms.BindingSource courseBindingSource;
-        private Guna.UI.WinForms.GunaDataGridView dgvCourseList;
-        private System.Windows.Forms.DataGridViewTextBoxColumn courseIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn coursenameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn departmentNameDataGridViewTextBoxColumn1;
         private System.Windows.Forms.BindingSource courseImpsBindingSource;
-        private Guna.UI.WinForms.GunaButton deletecourse;
-        private Guna.UI.WinForms.GunaButton deletedepartment;
         private Guna.UI.WinForms.GunaButton BTNAssignSub;
         private Guna.UI.WinForms.GunaLabel gunaLabel2;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;

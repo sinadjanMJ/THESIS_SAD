@@ -449,7 +449,6 @@ namespace FullScreenAppDemo
             this.dgvAssignInstructor.AutoGenerateColumns = false;
             this.dgvAssignInstructor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAssignInstructor.BackgroundColor = System.Drawing.Color.White;
-            this.dgvAssignInstructor.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvAssignInstructor.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvAssignInstructor.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;

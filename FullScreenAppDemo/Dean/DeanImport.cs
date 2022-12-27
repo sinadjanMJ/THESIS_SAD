@@ -43,10 +43,7 @@ namespace FullScreenAppDemo
 
                     _context.Deans.Add(dn);
                     _context.SaveChanges();
-
-                    RegisDean d = new RegisDean();
-                    d.Show();
-                    this.Hide();
+                    this.Close();
                 }
             }
            
@@ -70,9 +67,8 @@ namespace FullScreenAppDemo
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            RegisDean d = new RegisDean();
-            d.Show();
-            this.Hide();
+
+            this.Close();
         }
     }
 }
