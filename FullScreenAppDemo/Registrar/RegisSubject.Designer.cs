@@ -67,16 +67,18 @@ namespace FullScreenAppDemo
             this.departmentTableAdapter = new FullScreenAppDemo.studentPortalDataSet1TableAdapters.DepartmentTableAdapter();
             this.sSubjectBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.classSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnDelete = new Guna.UI.WinForms.GunaButton();
+            this.CANC = new Guna.UI.WinForms.GunaButton();
             this.classIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.classNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.yearLevelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.departmentIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.courseIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.classSBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.departmentNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.courseNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sectionWithDepWithCourseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.subjectCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subjectUnitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sSubjectBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.classSBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.courseImpsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.departmentBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.sSubjectBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
@@ -93,8 +95,9 @@ namespace FullScreenAppDemo
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sSubjectBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.classSBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.classSBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sectionWithDepWithCourseBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sSubjectBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.classSBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseImpsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sSubjectBindingSource4)).BeginInit();
@@ -117,6 +120,8 @@ namespace FullScreenAppDemo
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage2.Controls.Add(this.CANC);
+            this.tabPage2.Controls.Add(this.btnDelete);
             this.tabPage2.Controls.Add(this.cBYear);
             this.tabPage2.Controls.Add(this.cBCourse);
             this.tabPage2.Controls.Add(this.cBDepartment);
@@ -133,7 +138,6 @@ namespace FullScreenAppDemo
             this.tabPage2.Size = new System.Drawing.Size(1152, 625);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Section";
-            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // cBYear
             // 
@@ -218,6 +222,7 @@ namespace FullScreenAppDemo
             this.textC_name.SelectedText = "";
             this.textC_name.Size = new System.Drawing.Size(160, 30);
             this.textC_name.TabIndex = 24;
+            this.textC_name.TextChanged += new System.EventHandler(this.textC_name_TextChanged);
             // 
             // btnAddSection
             // 
@@ -232,7 +237,7 @@ namespace FullScreenAppDemo
             this.btnAddSection.ForeColor = System.Drawing.Color.Gold;
             this.btnAddSection.Image = null;
             this.btnAddSection.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnAddSection.Location = new System.Drawing.Point(704, 504);
+            this.btnAddSection.Location = new System.Drawing.Point(676, 504);
             this.btnAddSection.Name = "btnAddSection";
             this.btnAddSection.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnAddSection.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -288,6 +293,8 @@ namespace FullScreenAppDemo
             // 
             // gunaDataGridView1
             // 
+            this.gunaDataGridView1.AllowUserToAddRows = false;
+            this.gunaDataGridView1.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.gunaDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gunaDataGridView1.AutoGenerateColumns = false;
@@ -308,10 +315,9 @@ namespace FullScreenAppDemo
             this.gunaDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.classIDDataGridViewTextBoxColumn,
             this.classNameDataGridViewTextBoxColumn,
-            this.yearLevelDataGridViewTextBoxColumn,
-            this.departmentIDDataGridViewTextBoxColumn1,
-            this.courseIDDataGridViewTextBoxColumn1});
-            this.gunaDataGridView1.DataSource = this.classSBindingSource1;
+            this.departmentNameDataGridViewTextBoxColumn,
+            this.courseNameDataGridViewTextBoxColumn});
+            this.gunaDataGridView1.DataSource = this.sectionWithDepWithCourseBindingSource;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -324,6 +330,7 @@ namespace FullScreenAppDemo
             this.gunaDataGridView1.GridColor = System.Drawing.Color.DarkGray;
             this.gunaDataGridView1.Location = new System.Drawing.Point(141, 77);
             this.gunaDataGridView1.Name = "gunaDataGridView1";
+            this.gunaDataGridView1.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -350,7 +357,7 @@ namespace FullScreenAppDemo
             this.gunaDataGridView1.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.Gold;
             this.gunaDataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.gunaDataGridView1.ThemeStyle.HeaderStyle.Height = 21;
-            this.gunaDataGridView1.ThemeStyle.ReadOnly = false;
+            this.gunaDataGridView1.ThemeStyle.ReadOnly = true;
             this.gunaDataGridView1.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.gunaDataGridView1.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.gunaDataGridView1.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -358,6 +365,8 @@ namespace FullScreenAppDemo
             this.gunaDataGridView1.ThemeStyle.RowsStyle.Height = 22;
             this.gunaDataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gunaDataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.gunaDataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gunaDataGridView1_CellClick);
+            this.gunaDataGridView1.SelectionChanged += new System.EventHandler(this.gunaDataGridView1_SelectionChanged);
             // 
             // tabPage1
             // 
@@ -618,39 +627,91 @@ namespace FullScreenAppDemo
             // 
             this.departmentTableAdapter.ClearBeforeFill = true;
             // 
+            // btnDelete
+            // 
+            this.btnDelete.AnimationHoverSpeed = 0.07F;
+            this.btnDelete.AnimationSpeed = 0.03F;
+            this.btnDelete.BackColor = System.Drawing.Color.Transparent;
+            this.btnDelete.BaseColor = System.Drawing.Color.Maroon;
+            this.btnDelete.BorderColor = System.Drawing.Color.Black;
+            this.btnDelete.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnDelete.FocusedColor = System.Drawing.Color.Empty;
+            this.btnDelete.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.Gold;
+            this.btnDelete.Image = null;
+            this.btnDelete.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnDelete.Location = new System.Drawing.Point(851, 278);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnDelete.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnDelete.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnDelete.OnHoverImage = null;
+            this.btnDelete.OnPressedColor = System.Drawing.Color.Black;
+            this.btnDelete.Radius = 5;
+            this.btnDelete.Size = new System.Drawing.Size(160, 42);
+            this.btnDelete.TabIndex = 28;
+            this.btnDelete.Text = "DELETE";
+            this.btnDelete.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // CANC
+            // 
+            this.CANC.AnimationHoverSpeed = 0.07F;
+            this.CANC.AnimationSpeed = 0.03F;
+            this.CANC.BackColor = System.Drawing.Color.Transparent;
+            this.CANC.BaseColor = System.Drawing.Color.Maroon;
+            this.CANC.BorderColor = System.Drawing.Color.Black;
+            this.CANC.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.CANC.FocusedColor = System.Drawing.Color.Empty;
+            this.CANC.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CANC.ForeColor = System.Drawing.Color.Gold;
+            this.CANC.Image = null;
+            this.CANC.ImageSize = new System.Drawing.Size(20, 20);
+            this.CANC.Location = new System.Drawing.Point(851, 504);
+            this.CANC.Name = "CANC";
+            this.CANC.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.CANC.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.CANC.OnHoverForeColor = System.Drawing.Color.White;
+            this.CANC.OnHoverImage = null;
+            this.CANC.OnPressedColor = System.Drawing.Color.Black;
+            this.CANC.Radius = 5;
+            this.CANC.Size = new System.Drawing.Size(160, 42);
+            this.CANC.TabIndex = 29;
+            this.CANC.Text = "CANCEL";
+            this.CANC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.CANC.Click += new System.EventHandler(this.CANC_Click);
+            // 
             // classIDDataGridViewTextBoxColumn
             // 
-            this.classIDDataGridViewTextBoxColumn.DataPropertyName = "ClassID";
-            this.classIDDataGridViewTextBoxColumn.HeaderText = "Class ID";
+            this.classIDDataGridViewTextBoxColumn.DataPropertyName = "classID";
+            this.classIDDataGridViewTextBoxColumn.HeaderText = "CLASS ID";
             this.classIDDataGridViewTextBoxColumn.Name = "classIDDataGridViewTextBoxColumn";
+            this.classIDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // classNameDataGridViewTextBoxColumn
             // 
-            this.classNameDataGridViewTextBoxColumn.DataPropertyName = "ClassName";
-            this.classNameDataGridViewTextBoxColumn.HeaderText = "Class Name";
+            this.classNameDataGridViewTextBoxColumn.DataPropertyName = "className";
+            this.classNameDataGridViewTextBoxColumn.HeaderText = "CLASS NAME";
             this.classNameDataGridViewTextBoxColumn.Name = "classNameDataGridViewTextBoxColumn";
+            this.classNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // yearLevelDataGridViewTextBoxColumn
+            // departmentNameDataGridViewTextBoxColumn
             // 
-            this.yearLevelDataGridViewTextBoxColumn.DataPropertyName = "YearLevel";
-            this.yearLevelDataGridViewTextBoxColumn.HeaderText = "Year Level";
-            this.yearLevelDataGridViewTextBoxColumn.Name = "yearLevelDataGridViewTextBoxColumn";
+            this.departmentNameDataGridViewTextBoxColumn.DataPropertyName = "departmentName";
+            this.departmentNameDataGridViewTextBoxColumn.HeaderText = "DEPARTMENT NAME";
+            this.departmentNameDataGridViewTextBoxColumn.Name = "departmentNameDataGridViewTextBoxColumn";
+            this.departmentNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // departmentIDDataGridViewTextBoxColumn1
+            // courseNameDataGridViewTextBoxColumn
             // 
-            this.departmentIDDataGridViewTextBoxColumn1.DataPropertyName = "DepartmentID";
-            this.departmentIDDataGridViewTextBoxColumn1.HeaderText = "Department ID";
-            this.departmentIDDataGridViewTextBoxColumn1.Name = "departmentIDDataGridViewTextBoxColumn1";
+            this.courseNameDataGridViewTextBoxColumn.DataPropertyName = "courseName";
+            this.courseNameDataGridViewTextBoxColumn.HeaderText = "COURSE NAME";
+            this.courseNameDataGridViewTextBoxColumn.Name = "courseNameDataGridViewTextBoxColumn";
+            this.courseNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // courseIDDataGridViewTextBoxColumn1
+            // sectionWithDepWithCourseBindingSource
             // 
-            this.courseIDDataGridViewTextBoxColumn1.DataPropertyName = "CourseID";
-            this.courseIDDataGridViewTextBoxColumn1.HeaderText = "Course ID";
-            this.courseIDDataGridViewTextBoxColumn1.Name = "courseIDDataGridViewTextBoxColumn1";
-            // 
-            // classSBindingSource1
-            // 
-            this.classSBindingSource1.DataSource = typeof(FullScreenAppDemo.db.Class_S);
+            this.sectionWithDepWithCourseBindingSource.DataSource = typeof(FullScreenAppDemo.perips.sectionWithDepWithCourse);
             // 
             // subjectCodeDataGridViewTextBoxColumn
             // 
@@ -673,6 +734,10 @@ namespace FullScreenAppDemo
             // sSubjectBindingSource2
             // 
             this.sSubjectBindingSource2.DataSource = typeof(FullScreenAppDemo.db.S_Subject);
+            // 
+            // classSBindingSource1
+            // 
+            this.classSBindingSource1.DataSource = typeof(FullScreenAppDemo.db.Class_S);
             // 
             // courseImpsBindingSource
             // 
@@ -720,8 +785,9 @@ namespace FullScreenAppDemo
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sSubjectBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.classSBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.classSBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sectionWithDepWithCourseBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sSubjectBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.classSBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseImpsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sSubjectBindingSource4)).EndInit();
@@ -771,13 +837,15 @@ namespace FullScreenAppDemo
         private System.Windows.Forms.BindingSource sSubjectBindingSource3;
         private Guna.UI.WinForms.GunaDataGridView dgvSubList;
         private System.Windows.Forms.BindingSource sSubjectBindingSource4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn classIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn classNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn yearLevelDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn departmentIDDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn courseIDDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn subjectCodeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn subjectUnitDataGridViewTextBoxColumn;
+        private Guna.UI.WinForms.GunaButton btnDelete;
+        private Guna.UI.WinForms.GunaButton CANC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn classIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn classNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn departmentNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn courseNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource sectionWithDepWithCourseBindingSource;
     }
 }

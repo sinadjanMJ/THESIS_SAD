@@ -42,24 +42,25 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DashboardPanel = new System.Windows.Forms.Panel();
-            this.studentPortalDataSet = new FullScreenAppDemo.studentPortalDataSet();
-            this.deanBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.deanTableAdapter = new FullScreenAppDemo.studentPortalDataSetTableAdapters.DeanTableAdapter();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnDelete = new System.Windows.Forms.TabPage();
             this.dgvDeanList = new Guna.UI.WinForms.GunaDataGridView();
             this.btnAddDean = new Guna.UI.WinForms.GunaButton();
             this.gunaCirclePictureBox2 = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.gunaCirclePictureBox1 = new Guna.UI.WinForms.GunaCirclePictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.deletecourse = new Guna.UI.WinForms.GunaButton();
             this.deletedepartment = new Guna.UI.WinForms.GunaButton();
             this.dgvCourseList = new Guna.UI.WinForms.GunaDataGridView();
             this.btnCourse = new Guna.UI.WinForms.GunaButton();
             this.dgvDepartmentList = new Guna.UI.WinForms.GunaDataGridView();
             this.btnAddDepartment = new Guna.UI.WinForms.GunaButton();
-            this.gunaCirclePictureBox1 = new Guna.UI.WinForms.GunaCirclePictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.studentPortalDataSet = new FullScreenAppDemo.studentPortalDataSet();
+            this.deanBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.deanTableAdapter = new FullScreenAppDemo.studentPortalDataSetTableAdapters.DeanTableAdapter();
+            this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.deanIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.departmentNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.deanNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,16 +74,16 @@
             this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.regisDeanBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DashboardPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.studentPortalDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deanBindingSource)).BeginInit();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
+            this.btnDelete.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDeanList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCourseList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDepartmentList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentPortalDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deanBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deanWithDepartmentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseImpsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
@@ -97,23 +98,9 @@
             this.DashboardPanel.Size = new System.Drawing.Size(1175, 733);
             this.DashboardPanel.TabIndex = 11;
             // 
-            // studentPortalDataSet
-            // 
-            this.studentPortalDataSet.DataSetName = "studentPortalDataSet";
-            this.studentPortalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // deanBindingSource
-            // 
-            this.deanBindingSource.DataMember = "Dean";
-            this.deanBindingSource.DataSource = this.studentPortalDataSet;
-            // 
-            // deanTableAdapter
-            // 
-            this.deanTableAdapter.ClearBeforeFill = true;
-            // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.btnDelete);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(0, 3);
@@ -123,37 +110,20 @@
             this.tabControl1.TabIndex = 0;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
-            // tabPage1
+            // btnDelete
             // 
-            this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage1.Controls.Add(this.dgvDeanList);
-            this.tabPage1.Controls.Add(this.btnAddDean);
-            this.tabPage1.Controls.Add(this.gunaCirclePictureBox2);
-            this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Location = new System.Drawing.Point(4, 26);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1164, 697);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Dean";
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage2.Controls.Add(this.gunaCirclePictureBox1);
-            this.tabPage2.Controls.Add(this.label1);
-            this.tabPage2.Controls.Add(this.deletecourse);
-            this.tabPage2.Controls.Add(this.deletedepartment);
-            this.tabPage2.Controls.Add(this.dgvCourseList);
-            this.tabPage2.Controls.Add(this.btnCourse);
-            this.tabPage2.Controls.Add(this.dgvDepartmentList);
-            this.tabPage2.Controls.Add(this.btnAddDepartment);
-            this.tabPage2.Location = new System.Drawing.Point(4, 26);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1164, 697);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Department and Course";
+            this.btnDelete.BackColor = System.Drawing.SystemColors.Control;
+            this.btnDelete.Controls.Add(this.gunaButton1);
+            this.btnDelete.Controls.Add(this.dgvDeanList);
+            this.btnDelete.Controls.Add(this.btnAddDean);
+            this.btnDelete.Controls.Add(this.gunaCirclePictureBox2);
+            this.btnDelete.Controls.Add(this.label4);
+            this.btnDelete.Location = new System.Drawing.Point(4, 26);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Padding = new System.Windows.Forms.Padding(3);
+            this.btnDelete.Size = new System.Drawing.Size(1164, 697);
+            this.btnDelete.TabIndex = 0;
+            this.btnDelete.Text = "Dean";
             // 
             // dgvDeanList
             // 
@@ -216,6 +186,9 @@
             this.dgvDeanList.ThemeStyle.RowsStyle.Height = 22;
             this.dgvDeanList.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvDeanList.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvDeanList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDeanList_CellClick);
+            this.dgvDeanList.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDeanList_CellMouseDoubleClick);
+            this.dgvDeanList.SelectionChanged += new System.EventHandler(this.dgvDeanList_SelectionChanged);
             // 
             // btnAddDean
             // 
@@ -269,6 +242,48 @@
             this.label4.Text = "Dean Data Form";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
+            // tabPage2
+            // 
+            this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage2.Controls.Add(this.gunaCirclePictureBox1);
+            this.tabPage2.Controls.Add(this.label1);
+            this.tabPage2.Controls.Add(this.deletecourse);
+            this.tabPage2.Controls.Add(this.deletedepartment);
+            this.tabPage2.Controls.Add(this.dgvCourseList);
+            this.tabPage2.Controls.Add(this.btnCourse);
+            this.tabPage2.Controls.Add(this.dgvDepartmentList);
+            this.tabPage2.Controls.Add(this.btnAddDepartment);
+            this.tabPage2.Location = new System.Drawing.Point(4, 26);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1164, 697);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Department and Course";
+            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
+            // 
+            // gunaCirclePictureBox1
+            // 
+            this.gunaCirclePictureBox1.BaseColor = System.Drawing.Color.White;
+            this.gunaCirclePictureBox1.ErrorImage = null;
+            this.gunaCirclePictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("gunaCirclePictureBox1.Image")));
+            this.gunaCirclePictureBox1.Location = new System.Drawing.Point(213, 18);
+            this.gunaCirclePictureBox1.Name = "gunaCirclePictureBox1";
+            this.gunaCirclePictureBox1.Size = new System.Drawing.Size(92, 91);
+            this.gunaCirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.gunaCirclePictureBox1.TabIndex = 21;
+            this.gunaCirclePictureBox1.TabStop = false;
+            this.gunaCirclePictureBox1.UseTransfarantBackground = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(311, 40);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(668, 54);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Department and Course  Data Form";
+            // 
             // deletecourse
             // 
             this.deletecourse.AnimationHoverSpeed = 0.07F;
@@ -295,6 +310,7 @@
             this.deletecourse.TabIndex = 19;
             this.deletecourse.Text = "DELETE COURSE";
             this.deletecourse.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.deletecourse.Visible = false;
             this.deletecourse.Click += new System.EventHandler(this.deletecourse_Click);
             // 
             // deletedepartment
@@ -323,6 +339,7 @@
             this.deletedepartment.TabIndex = 18;
             this.deletedepartment.Text = "DELETE DEPARTMENT";
             this.deletedepartment.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.deletedepartment.Visible = false;
             this.deletedepartment.Click += new System.EventHandler(this.deletedepartment_Click);
             // 
             // dgvCourseList
@@ -332,6 +349,7 @@
             this.dgvCourseList.AutoGenerateColumns = false;
             this.dgvCourseList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCourseList.BackgroundColor = System.Drawing.Color.White;
+            this.dgvCourseList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCourseList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvCourseList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -394,6 +412,8 @@
             this.dgvCourseList.ThemeStyle.RowsStyle.Height = 22;
             this.dgvCourseList.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvCourseList.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvCourseList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCourseList_CellClick);
+            this.dgvCourseList.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvCourseList_CellMouseDoubleClick);
             this.dgvCourseList.SelectionChanged += new System.EventHandler(this.dgvCourseList_SelectionChanged);
             // 
             // btnCourse
@@ -426,11 +446,14 @@
             // 
             // dgvDepartmentList
             // 
+            this.dgvDepartmentList.AllowUserToAddRows = false;
+            this.dgvDepartmentList.AllowUserToDeleteRows = false;
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
             this.dgvDepartmentList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvDepartmentList.AutoGenerateColumns = false;
             this.dgvDepartmentList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDepartmentList.BackgroundColor = System.Drawing.Color.White;
+            this.dgvDepartmentList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvDepartmentList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvDepartmentList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -458,6 +481,7 @@
             this.dgvDepartmentList.GridColor = System.Drawing.Color.Gainsboro;
             this.dgvDepartmentList.Location = new System.Drawing.Point(213, 198);
             this.dgvDepartmentList.Name = "dgvDepartmentList";
+            this.dgvDepartmentList.ReadOnly = true;
             dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -484,7 +508,7 @@
             this.dgvDepartmentList.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.Gold;
             this.dgvDepartmentList.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvDepartmentList.ThemeStyle.HeaderStyle.Height = 21;
-            this.dgvDepartmentList.ThemeStyle.ReadOnly = false;
+            this.dgvDepartmentList.ThemeStyle.ReadOnly = true;
             this.dgvDepartmentList.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvDepartmentList.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvDepartmentList.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -492,6 +516,8 @@
             this.dgvDepartmentList.ThemeStyle.RowsStyle.Height = 22;
             this.dgvDepartmentList.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvDepartmentList.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvDepartmentList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDepartmentList_CellClick);
+            this.dgvDepartmentList.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDepartmentList_CellMouseDoubleClick);
             this.dgvDepartmentList.SelectionChanged += new System.EventHandler(this.dgvDepartmentList_SelectionChanged);
             // 
             // btnAddDepartment
@@ -522,28 +548,47 @@
             this.btnAddDepartment.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnAddDepartment.Click += new System.EventHandler(this.btnAddDepartment_Click);
             // 
-            // gunaCirclePictureBox1
+            // studentPortalDataSet
             // 
-            this.gunaCirclePictureBox1.BaseColor = System.Drawing.Color.White;
-            this.gunaCirclePictureBox1.ErrorImage = null;
-            this.gunaCirclePictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("gunaCirclePictureBox1.Image")));
-            this.gunaCirclePictureBox1.Location = new System.Drawing.Point(213, 18);
-            this.gunaCirclePictureBox1.Name = "gunaCirclePictureBox1";
-            this.gunaCirclePictureBox1.Size = new System.Drawing.Size(92, 91);
-            this.gunaCirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.gunaCirclePictureBox1.TabIndex = 21;
-            this.gunaCirclePictureBox1.TabStop = false;
-            this.gunaCirclePictureBox1.UseTransfarantBackground = false;
+            this.studentPortalDataSet.DataSetName = "studentPortalDataSet";
+            this.studentPortalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // label1
+            // deanBindingSource
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(311, 40);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(668, 54);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Department and Course  Data Form";
+            this.deanBindingSource.DataMember = "Dean";
+            this.deanBindingSource.DataSource = this.studentPortalDataSet;
+            // 
+            // deanTableAdapter
+            // 
+            this.deanTableAdapter.ClearBeforeFill = true;
+            // 
+            // gunaButton1
+            // 
+            this.gunaButton1.AnimationHoverSpeed = 0.07F;
+            this.gunaButton1.AnimationSpeed = 0.03F;
+            this.gunaButton1.BackColor = System.Drawing.Color.Transparent;
+            this.gunaButton1.BaseColor = System.Drawing.Color.Maroon;
+            this.gunaButton1.BorderColor = System.Drawing.Color.Black;
+            this.gunaButton1.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaButton1.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaButton1.ForeColor = System.Drawing.Color.Gold;
+            this.gunaButton1.Image = null;
+            this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaButton1.Location = new System.Drawing.Point(144, 582);
+            this.gunaButton1.Name = "gunaButton1";
+            this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.Red;
+            this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaButton1.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaButton1.OnHoverImage = null;
+            this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton1.Radius = 5;
+            this.gunaButton1.Size = new System.Drawing.Size(160, 42);
+            this.gunaButton1.TabIndex = 16;
+            this.gunaButton1.Text = "DELETE";
+            this.gunaButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gunaButton1.Visible = false;
+            this.gunaButton1.Click += new System.EventHandler(this.gunaButton1_Click);
             // 
             // deanIDDataGridViewTextBoxColumn
             // 
@@ -594,12 +639,14 @@
             this.departmentIDDataGridViewTextBoxColumn.DataPropertyName = "Department_ID";
             this.departmentIDDataGridViewTextBoxColumn.HeaderText = "Department_ID";
             this.departmentIDDataGridViewTextBoxColumn.Name = "departmentIDDataGridViewTextBoxColumn";
+            this.departmentIDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // departmentNameDataGridViewTextBoxColumn1
             // 
             this.departmentNameDataGridViewTextBoxColumn1.DataPropertyName = "Department_Name";
             this.departmentNameDataGridViewTextBoxColumn1.HeaderText = "Department_Name";
             this.departmentNameDataGridViewTextBoxColumn1.Name = "departmentNameDataGridViewTextBoxColumn1";
+            this.departmentNameDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // departmentBindingSource
             // 
@@ -620,18 +667,18 @@
             this.Text = "RegisDean";
             this.Load += new System.EventHandler(this.RegisDean_Load);
             this.DashboardPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.studentPortalDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deanBindingSource)).EndInit();
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
+            this.btnDelete.ResumeLayout(false);
+            this.btnDelete.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDeanList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCourseList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDepartmentList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentPortalDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deanBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deanWithDepartmentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseImpsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).EndInit();
@@ -648,7 +695,7 @@
         private studentPortalDataSetTableAdapters.DeanTableAdapter deanTableAdapter;
         private System.Windows.Forms.BindingSource deanWithDepartmentBindingSource;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage btnDelete;
         private Guna.UI.WinForms.GunaDataGridView dgvDeanList;
         private System.Windows.Forms.DataGridViewTextBoxColumn deanIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn departmentNameDataGridViewTextBoxColumn;
@@ -656,12 +703,10 @@
         private Guna.UI.WinForms.GunaButton btnAddDean;
         private Guna.UI.WinForms.GunaCirclePictureBox gunaCirclePictureBox2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TabPage tabPage2;
         private Guna.UI.WinForms.GunaButton deletecourse;
         private Guna.UI.WinForms.GunaButton deletedepartment;
         private Guna.UI.WinForms.GunaDataGridView dgvCourseList;
         private Guna.UI.WinForms.GunaButton btnCourse;
-        private Guna.UI.WinForms.GunaDataGridView dgvDepartmentList;
         private Guna.UI.WinForms.GunaButton btnAddDepartment;
         private System.Windows.Forms.DataGridViewTextBoxColumn departmentIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn departmentNameDataGridViewTextBoxColumn1;
@@ -672,5 +717,8 @@
         private System.Windows.Forms.BindingSource courseImpsBindingSource;
         private Guna.UI.WinForms.GunaCirclePictureBox gunaCirclePictureBox1;
         private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.TabPage tabPage2;
+        public Guna.UI.WinForms.GunaDataGridView dgvDepartmentList;
+        private Guna.UI.WinForms.GunaButton gunaButton1;
     }
 }

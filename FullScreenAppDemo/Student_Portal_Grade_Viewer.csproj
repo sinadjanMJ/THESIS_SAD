@@ -80,10 +80,10 @@
     <Compile Include="DASHBOARD\AcademicsDashboard.Designer.cs">
       <DependentUpon>AcademicsDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="assignSubject.cs">
+    <Compile Include="Subject\assignSubject.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="assignSubject.Designer.cs">
+    <Compile Include="Subject\assignSubject.Designer.cs">
       <DependentUpon>assignSubject.cs</DependentUpon>
     </Compile>
     <Compile Include="db\assignSubject.cs">
@@ -176,6 +176,7 @@
     <Compile Include="perips\instructorValue.cs" />
     <Compile Include="perips\InstructorWithDept.cs" />
     <Compile Include="perips\ListtoDataTableConverter.cs" />
+    <Compile Include="perips\sectionWithDepWithCourse.cs" />
     <Compile Include="perips\studentAssignSub.cs" />
     <Compile Include="perips\subjectValue.cs" />
     <Compile Include="Registrar\RegistarFormData.cs">
@@ -232,16 +233,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>studentPortalDataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="UPDATESTUDENT.cs">
+    <Compile Include="Subject\UPDATESTUDENT.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UPDATESTUDENT.Designer.cs">
+    <Compile Include="Subject\UPDATESTUDENT.Designer.cs">
       <DependentUpon>UPDATESTUDENT.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="DASHBOARD\AcademicsDashboard.resx">
       <DependentUpon>AcademicsDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="assignSubject.resx">
+    <EmbeddedResource Include="Subject\assignSubject.resx">
       <DependentUpon>assignSubject.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dean\DeanImport.resx">
@@ -292,7 +293,7 @@
     <EmbeddedResource Include="Registrar\RegisStudent.resx">
       <DependentUpon>RegisStudent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UPDATESTUDENT.resx">
+    <EmbeddedResource Include="Subject\UPDATESTUDENT.resx">
       <DependentUpon>UPDATESTUDENT.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="db\StudentPortalGradeViewer.edmx">
@@ -312,6 +313,7 @@
     <None Include="Properties\DataSources\FullScreenAppDemo.perips.courseImps.datasource" />
     <None Include="Properties\DataSources\FullScreenAppDemo.perips.DeanWithDepartment.datasource" />
     <None Include="Properties\DataSources\FullScreenAppDemo.perips.InstructorWithDept.datasource" />
+    <None Include="Properties\DataSources\FullScreenAppDemo.perips.sectionWithDepWithCourse.datasource" />
     <None Include="Properties\DataSources\FullScreenAppDemo.perips.studentAssignSub.datasource" />
     <None Include="Properties\DataSources\RegisDean.datasource" />
     <None Include="Properties\Settings.settings">
@@ -351,7 +353,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Academics\" />
-    <Folder Include="Subject\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

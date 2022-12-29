@@ -74,6 +74,7 @@ namespace FullScreenAppDemo
             this.textS_Mname = new Guna.UI.WinForms.GunaTextBox();
             this.textS_Fname = new Guna.UI.WinForms.GunaTextBox();
             this.UPDATEPANEL = new System.Windows.Forms.Panel();
+            this.gunaButton4 = new Guna.UI.WinForms.GunaButton();
             this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.gunaButton3 = new Guna.UI.WinForms.GunaButton();
             this.labelUnits = new Guna.UI.WinForms.GunaLabel();
@@ -91,7 +92,6 @@ namespace FullScreenAppDemo
             this.cBCourse = new Guna.UI.WinForms.GunaComboBox();
             this.gunaLabel14 = new Guna.UI.WinForms.GunaLabel();
             this.cBSection = new Guna.UI.WinForms.GunaComboBox();
-            this.gunaButton4 = new Guna.UI.WinForms.GunaButton();
             this.subjectIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cODEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sUBJECTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -748,6 +748,33 @@ namespace FullScreenAppDemo
             this.UPDATEPANEL.TabIndex = 12;
             this.UPDATEPANEL.Paint += new System.Windows.Forms.PaintEventHandler(this.UPDATEPANEL_Paint);
             // 
+            // gunaButton4
+            // 
+            this.gunaButton4.AnimationHoverSpeed = 0.07F;
+            this.gunaButton4.AnimationSpeed = 0.03F;
+            this.gunaButton4.BackColor = System.Drawing.Color.Transparent;
+            this.gunaButton4.BaseColor = System.Drawing.Color.Maroon;
+            this.gunaButton4.BorderColor = System.Drawing.Color.Black;
+            this.gunaButton4.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaButton4.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaButton4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaButton4.ForeColor = System.Drawing.Color.Gold;
+            this.gunaButton4.Image = null;
+            this.gunaButton4.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaButton4.Location = new System.Drawing.Point(699, 637);
+            this.gunaButton4.Name = "gunaButton4";
+            this.gunaButton4.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.gunaButton4.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaButton4.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaButton4.OnHoverImage = null;
+            this.gunaButton4.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton4.Radius = 5;
+            this.gunaButton4.Size = new System.Drawing.Size(160, 42);
+            this.gunaButton4.TabIndex = 126;
+            this.gunaButton4.Text = "PREVIOUS";
+            this.gunaButton4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gunaButton4.Click += new System.EventHandler(this.gunaButton4_Click);
+            // 
             // gunaButton1
             // 
             this.gunaButton1.AnimationHoverSpeed = 0.07F;
@@ -1078,33 +1105,6 @@ namespace FullScreenAppDemo
             this.cBSection.Size = new System.Drawing.Size(311, 36);
             this.cBSection.TabIndex = 109;
             // 
-            // gunaButton4
-            // 
-            this.gunaButton4.AnimationHoverSpeed = 0.07F;
-            this.gunaButton4.AnimationSpeed = 0.03F;
-            this.gunaButton4.BackColor = System.Drawing.Color.Transparent;
-            this.gunaButton4.BaseColor = System.Drawing.Color.Maroon;
-            this.gunaButton4.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton4.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaButton4.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaButton4.ForeColor = System.Drawing.Color.Gold;
-            this.gunaButton4.Image = null;
-            this.gunaButton4.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton4.Location = new System.Drawing.Point(699, 637);
-            this.gunaButton4.Name = "gunaButton4";
-            this.gunaButton4.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.gunaButton4.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton4.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton4.OnHoverImage = null;
-            this.gunaButton4.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton4.Radius = 5;
-            this.gunaButton4.Size = new System.Drawing.Size(160, 42);
-            this.gunaButton4.TabIndex = 126;
-            this.gunaButton4.Text = "PREVIOUS";
-            this.gunaButton4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.gunaButton4.Click += new System.EventHandler(this.gunaButton4_Click);
-            // 
             // subjectIDDataGridViewTextBoxColumn
             // 
             this.subjectIDDataGridViewTextBoxColumn.DataPropertyName = "SubjectID";
@@ -1163,8 +1163,8 @@ namespace FullScreenAppDemo
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1371, 788);
-            this.Controls.Add(this.UPDATEPANEL);
             this.Controls.Add(this.NEXTPANEL);
+            this.Controls.Add(this.UPDATEPANEL);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "UPDATESTUDENT";
             this.Text = "UPDATESTUDENT";

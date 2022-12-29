@@ -103,16 +103,11 @@
             this.labelUnits = new Guna.UI.WinForms.GunaLabel();
             this.gunaButton3 = new Guna.UI.WinForms.GunaButton();
             this.saveDATA = new System.Windows.Forms.Panel();
+            this.gunaButton4 = new Guna.UI.WinForms.GunaButton();
             this.studentBackgroundBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.studentBackgroundBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.studentBackgroundBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.studentPortalEntitiesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gunaButton4 = new Guna.UI.WinForms.GunaButton();
-            this.studentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sfnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.smnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.slnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.studentBackgroundBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.subjectIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cODEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sUBJECTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -121,6 +116,11 @@
             this.subjectidDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.instructoridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.studentAssignSubBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.studentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sfnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.smnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.slnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentBackgroundBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.studentdataPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaDataGridView1)).BeginInit();
@@ -134,8 +134,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.studentBackgroundBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBackgroundBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentPortalEntitiesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentBackgroundBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentAssignSubBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBackgroundBindingSource3)).BeginInit();
             this.SuspendLayout();
             // 
             // studentdataPanel
@@ -1332,38 +1332,6 @@
             this.gunaButton4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.gunaButton4.Click += new System.EventHandler(this.gunaButton4_Click);
             // 
-            // studentIDDataGridViewTextBoxColumn
-            // 
-            this.studentIDDataGridViewTextBoxColumn.DataPropertyName = "StudentID";
-            this.studentIDDataGridViewTextBoxColumn.HeaderText = "STUDENT ID";
-            this.studentIDDataGridViewTextBoxColumn.Name = "studentIDDataGridViewTextBoxColumn";
-            this.studentIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sfnameDataGridViewTextBoxColumn
-            // 
-            this.sfnameDataGridViewTextBoxColumn.DataPropertyName = "S_fname";
-            this.sfnameDataGridViewTextBoxColumn.HeaderText = "FIRST NAME";
-            this.sfnameDataGridViewTextBoxColumn.Name = "sfnameDataGridViewTextBoxColumn";
-            this.sfnameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // smnameDataGridViewTextBoxColumn
-            // 
-            this.smnameDataGridViewTextBoxColumn.DataPropertyName = "S_mname";
-            this.smnameDataGridViewTextBoxColumn.HeaderText = "MIDDLE NAME";
-            this.smnameDataGridViewTextBoxColumn.Name = "smnameDataGridViewTextBoxColumn";
-            this.smnameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // slnameDataGridViewTextBoxColumn
-            // 
-            this.slnameDataGridViewTextBoxColumn.DataPropertyName = "S_lname";
-            this.slnameDataGridViewTextBoxColumn.HeaderText = "LAST NAME";
-            this.slnameDataGridViewTextBoxColumn.Name = "slnameDataGridViewTextBoxColumn";
-            this.slnameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // studentBackgroundBindingSource3
-            // 
-            this.studentBackgroundBindingSource3.DataSource = typeof(FullScreenAppDemo.db.studentBackground);
-            // 
             // subjectIDDataGridViewTextBoxColumn
             // 
             this.subjectIDDataGridViewTextBoxColumn.DataPropertyName = "SubjectID";
@@ -1417,6 +1385,38 @@
             // 
             this.studentAssignSubBindingSource.DataSource = typeof(FullScreenAppDemo.perips.studentAssignSub);
             // 
+            // studentIDDataGridViewTextBoxColumn
+            // 
+            this.studentIDDataGridViewTextBoxColumn.DataPropertyName = "StudentID";
+            this.studentIDDataGridViewTextBoxColumn.HeaderText = "STUDENT ID";
+            this.studentIDDataGridViewTextBoxColumn.Name = "studentIDDataGridViewTextBoxColumn";
+            this.studentIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sfnameDataGridViewTextBoxColumn
+            // 
+            this.sfnameDataGridViewTextBoxColumn.DataPropertyName = "S_fname";
+            this.sfnameDataGridViewTextBoxColumn.HeaderText = "FIRST NAME";
+            this.sfnameDataGridViewTextBoxColumn.Name = "sfnameDataGridViewTextBoxColumn";
+            this.sfnameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // smnameDataGridViewTextBoxColumn
+            // 
+            this.smnameDataGridViewTextBoxColumn.DataPropertyName = "S_mname";
+            this.smnameDataGridViewTextBoxColumn.HeaderText = "MIDDLE NAME";
+            this.smnameDataGridViewTextBoxColumn.Name = "smnameDataGridViewTextBoxColumn";
+            this.smnameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // slnameDataGridViewTextBoxColumn
+            // 
+            this.slnameDataGridViewTextBoxColumn.DataPropertyName = "S_lname";
+            this.slnameDataGridViewTextBoxColumn.HeaderText = "LAST NAME";
+            this.slnameDataGridViewTextBoxColumn.Name = "slnameDataGridViewTextBoxColumn";
+            this.slnameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // studentBackgroundBindingSource3
+            // 
+            this.studentBackgroundBindingSource3.DataSource = typeof(FullScreenAppDemo.db.studentBackground);
+            // 
             // RegisStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1444,8 +1444,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.studentBackgroundBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBackgroundBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentPortalEntitiesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentBackgroundBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentAssignSubBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBackgroundBindingSource3)).EndInit();
             this.ResumeLayout(false);
 
         }

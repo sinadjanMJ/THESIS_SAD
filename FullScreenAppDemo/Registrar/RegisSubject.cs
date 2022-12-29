@@ -23,6 +23,11 @@ namespace FullScreenAppDemo
 
         public static string departmentID = "";
         public static string courseID = "";
+
+
+
+        string mouseClicked = "";
+        int classID = 0;
         //int departID;
 
         public RegisSubject()
@@ -51,9 +56,29 @@ namespace FullScreenAppDemo
         private void RegisSubject_Load(object sender, EventArgs e)
         {
             gunaDataGridView1.DataSource = _context.Class_S.ToList();
+            loadData();
             loadDepartment();
             loadSubs();
+            CANC.Visible = false;
 
+        }
+        private void loadData()
+        {
+            var res = (
+                from sec in _context.Class_S
+                join dep in _context.Departments on sec.DepartmentID equals dep.Department_ID.ToString()
+                join cor in _context.Courses on sec.CourseID equals cor.CourseID.ToString()
+
+                select new sectionWithDepWithCourse
+                {
+                    classID = sec.ClassID,
+                    className = sec.ClassName,
+                    departmentName = dep.Department_Name,
+                    courseName = cor.Course_name
+                }
+                ).ToList();
+
+            gunaDataGridView1.DataSource = res;
         }
         private void loadDepartment()
         {
@@ -85,11 +110,6 @@ namespace FullScreenAppDemo
             dgvSubList.DataSource = _context.S_Subject.ToList();
         }
 
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnAddSection_Click(object sender, EventArgs e)
         {
 
@@ -99,21 +119,85 @@ namespace FullScreenAppDemo
             }
             else
             {
-                if (MessageBox.Show("Are you sure you want to Save", "Save", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                string className = textC_name.Text.Trim();
+                if (btnAddSection.Text == "ADD SECTION")
                 {
-                    Class_S cs = new Class_S
+                    //QUERY IF THERE IS AN EXISTING CLASS NAME
+                    var section = _context.Class_S.Where(q => q.ClassName == className).FirstOrDefault();
+
+                    if (section == null) //IF THERE IS NO EXISITNG CLASS NAME
                     {
-                        ClassName = textC_name.Text.Trim(),
-                        DepartmentID = (cBDepartment.SelectedItem as DepartmentValue).Value.ToString(),
-                        CourseID = (cBCourse.SelectedItem as courseValue).Value.ToString(),
-                        YearLevel = cBYear.Text.Trim()
-                    };
+                        Class_S cs = new Class_S
+                        {
+                            ClassName = textC_name.Text.Trim(),
+                            DepartmentID = (cBDepartment.SelectedItem as DepartmentValue).Value.ToString(),
+                            CourseID = (cBCourse.SelectedItem as courseValue).Value.ToString(),
+                            YearLevel = cBYear.Text.Trim()
+                        };
 
-                    _context.Class_S.Add(cs);
-                    _context.SaveChanges();
-                    CLEAR();
+                        _context.Class_S.Add(cs);
+                        _context.SaveChanges();
+                        MessageBox.Show("Successfully Added");
 
-                    gunaDataGridView1.DataSource = _context.Class_S.ToList();
+                        loadData();
+                        CANC.Visible = false;
+                        CLEAR();
+                    }
+                    else
+                    {
+                        MessageBox.Show("THERE IS ALREADY AN EXISTING CLASS NAME");
+                    }
+
+                }
+                else if (btnAddSection.Text == "UPDATE SECTION")
+                {
+                    //QUERY THE ORIGINAL DATA FIRST
+                    var selected = _context.Class_S.Where(q => q.ClassID == classID).FirstOrDefault();
+                    string oClassName = selected.ClassName.ToString();
+
+                    //QUERY IF CLASS NAME ALREADY EXIST
+                    var section = _context.Class_S.Where(q => q.ClassName == className).FirstOrDefault();
+                    if (section != null) //IF THERE IS AN EXISTING CLASS NAME
+                    {
+                        string qClassName = section.ClassName.ToString();
+                        if (oClassName == qClassName) //IF IT'S BECAUSE OF ORIGINAL DATA THEN PROCEED TO UPDATE
+                        {
+                            selected.ClassName = textC_name.Text.Trim();
+                            selected.YearLevel = cBYear.Text.Trim();
+                            selected.DepartmentID = (cBDepartment.SelectedItem as DepartmentValue).Value.ToString();
+                            selected.CourseID = (cBCourse.SelectedItem as courseValue).Value.ToString();
+
+                            _context.SaveChanges();
+                            MessageBox.Show("Successfully Updated");
+                            btnAddSection.Text = "ADD SECTION";
+                            CANC.Text = "CANCEL";
+                            loadData();
+                            CANC.Visible = false;
+                            CLEAR();
+                           
+
+
+                        }
+                        else // IF IT'S NOT BECAUSE OF ORIGINAL DATA
+                        {
+                            MessageBox.Show("THERE IS ALREADY AN EXISTING CLASS NAME");
+                        }
+                    }
+                    else // IF THERE IS NO EXISTING CLASS NAME FOUND
+                    {
+                        selected.ClassName = textC_name.Text.Trim();
+                        selected.YearLevel = cBYear.Text.Trim();
+                        selected.DepartmentID = (cBDepartment.SelectedItem as DepartmentValue).Value.ToString();
+                        selected.CourseID = (cBCourse.SelectedItem as courseValue).Value.ToString();
+
+                        _context.SaveChanges();
+                        MessageBox.Show("Successfully Updated");
+                        loadData();
+                        btnAddSection.Text = "ADD SECTION";
+                        CANC.Text = "CANCEL";
+                        CLEAR();
+
+                    }
                 }
             }
 
@@ -141,9 +225,9 @@ namespace FullScreenAppDemo
         }
         private void CLEAR()
         {
-            cBCourse.Items.Clear();
-            cBYear.Items.Clear();
-            cBDepartment.Items.Clear();
+            cBCourse.SelectedIndex = -1;
+            cBYear.SelectedIndex = -1;
+           
             textC_name.Clear();
         }
 
@@ -174,6 +258,101 @@ namespace FullScreenAppDemo
         {
             assignSubject mj = new assignSubject();
             mj.Show();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            var selected = _context.Class_S.Where(q => q.ClassID == classID).FirstOrDefault();
+            if (selected != null)
+            {
+                _context.Class_S.Remove(selected);
+                _context.SaveChanges();
+            }
+            btnDelete.Visible = false;
+        }
+
+        private void gunaDataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            mouseClicked = "yes";
+            if (mouseClicked == "yes")
+            {
+                loadUpdateInfo();
+            }
+            btnAddSection.Text = "UPDATE SECTION";
+            CANC.Text = "CANCEL UPDATE";
+            btnDelete.Visible = true;
+        }
+        private void loadUpdateInfo()
+        {
+            //GET THE VALUE FROM THE ORIGINAL DATA
+            var render = _context.Class_S.Where(q => q.ClassID == classID).FirstOrDefault();
+            string className = render.ClassName.ToString();
+            string yearLevel = render.YearLevel.ToString();
+            int departmentID = Convert.ToInt32(render.DepartmentID.ToString());
+            int courseID = Convert.ToInt32(render.CourseID.ToString());
+
+            loadUpdateDepartment(departmentID);
+            loadUpdateCourse(courseID);
+
+            textC_name.Text = className.ToString();
+            cBYear.SelectedIndex = cBYear.FindString(yearLevel);
+        }
+        private void loadUpdateDepartment(int departmentID)
+        {
+            //QUERY IF THERE IS DEPARTMENT NAME FOUND
+            var dp = _context.Departments.Where(q => q.Department_ID == departmentID).FirstOrDefault();
+            if (dp != null)
+            {
+                string departmentName = dp.Department_Name.ToString();
+                cBDepartment.SelectedIndex = cBDepartment.FindString(departmentName);
+            }
+        }
+
+        private void loadUpdateCourse(int courseID)
+        {
+            //QUERY IF THERE IS COURSE NAME FOUND
+            var cp = _context.Courses.Where(q => q.CourseID == courseID).FirstOrDefault();
+            if (cp != null)
+            {
+                string courseName = cp.Course_name.ToString();
+                cBCourse.SelectedIndex = cBCourse.FindString(courseName);
+            }
+        }
+
+        private void gunaDataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            CANC.Visible = true;
+            if (gunaDataGridView1.SelectedRows.Count > 0)
+            {
+                classID = Convert.ToInt32(gunaDataGridView1.SelectedRows[0].Cells[0].Value.ToString());
+                if (mouseClicked == "yes")
+                {
+                    loadUpdateInfo();
+                }
+            }
+        }
+
+        private void CANC_Click(object sender, EventArgs e)
+        {
+            if (CANC.Text == "CANCEL")
+            {
+                CLEAR();
+                CANC.Visible = false;
+            }
+            else if (CANC.Text == "CANCEL UPDATE")
+            {
+                CLEAR();
+                CANC.Visible = false;
+                btnAddSection.Text = "ADD SECTION";
+                CANC.Text = "CANCEL";
+
+            }
+          
+        }
+
+        private void textC_name_TextChanged(object sender, EventArgs e)
+        {
+            CANC.Visible = true;
         }
     }
 }

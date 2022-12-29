@@ -15,103 +15,11 @@ namespace FullScreenAppDemo
     public partial class DepartmentImport : Form
     {
         studentPortalEntities _context = new studentPortalEntities();
+        int departmentID = 0;
+        string choice = "";
 
-        private bool Drag;
-        private int MouseX;
-        private int MouseY;
-
-        private const int WM_NCHITTEST = 0x84;
-        private const int HTCLIENT = 0x1;
-        private const int HTCAPTION = 0x2;
-
-        private bool m_aeroEnabled;
-
-        private const int CS_DROPSHADOW = 0x00020000;
-        private const int WM_NCPAINT = 0x0085;
-        private const int WM_ACTIVATEAPP = 0x001C;
-
-        [System.Runtime.InteropServices.DllImport("dwmapi.dll")]
-        public static extern int DwmExtendFrameIntoClientArea(IntPtr hWnd, ref MARGINS pMarInset);
-        [System.Runtime.InteropServices.DllImport("dwmapi.dll")]
-        public static extern int DwmSetWindowAttribute(IntPtr hwnd, int attr, ref int attrValue, int attrSize);
-        [System.Runtime.InteropServices.DllImport("dwmapi.dll")]
-
-        public static extern int DwmIsCompositionEnabled(ref int pfEnabled);
-        [System.Runtime.InteropServices.DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
-        private static extern IntPtr CreateRoundRectRgn(
-            int nLeftRect,
-            int nTopRect,
-            int nRightRect,
-            int nBottomRect,
-            int nWidthEllipse,
-            int nHeightEllipse
-            );
-
-        public struct MARGINS
-        {
-            public int leftWidth;
-            public int rightWidth;
-            public int topHeight;
-            public int bottomHeight;
-        }
-        protected override CreateParams CreateParams
-        {
-            get
-            {
-                m_aeroEnabled = CheckAeroEnabled();
-                CreateParams cp = base.CreateParams;
-                if (!m_aeroEnabled)
-                    cp.ClassStyle |= CS_DROPSHADOW; return cp;
-            }
-        }
-        private bool CheckAeroEnabled()
-        {
-            if (Environment.OSVersion.Version.Major >= 6)
-            {
-                int enabled = 0; DwmIsCompositionEnabled(ref enabled);
-                return (enabled == 1) ? true : false;
-            }
-            return false;
-        }
-        protected override void WndProc(ref Message m)
-        {
-            switch (m.Msg)
-            {
-                case WM_NCPAINT:
-                    if (m_aeroEnabled)
-                    {
-                        var v = 2;
-                        DwmSetWindowAttribute(this.Handle, 2, ref v, 4);
-                        MARGINS margins = new MARGINS()
-                        {
-                            bottomHeight = 1,
-                            leftWidth = 0,
-                            rightWidth = 0,
-                            topHeight = 0
-                        }; DwmExtendFrameIntoClientArea(this.Handle, ref margins);
-                    }
-                    break;
-                default: break;
-            }
-            base.WndProc(ref m);
-            if (m.Msg == WM_NCHITTEST && (int)m.Result == HTCLIENT) m.Result = (IntPtr)HTCAPTION;
-        }
-        private void PanelMove_MouseDown(object sender, MouseEventArgs e)
-        {
-            Drag = true;
-            MouseX = Cursor.Position.X - this.Left;
-            MouseY = Cursor.Position.Y - this.Top;
-        }
-        private void PanelMove_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (Drag)
-            {
-                this.Top = Cursor.Position.Y - MouseY;
-                this.Left = Cursor.Position.X - MouseX;
-            }
-        }
-        private void PanelMove_MouseUp(object sender, MouseEventArgs e) { Drag = false; }
-        public DepartmentImport(RegisDean R)
+        
+        public DepartmentImport(RegisDean l)
         {
             InitializeComponent();
         }
@@ -125,38 +33,93 @@ namespace FullScreenAppDemo
             }
             else
             {
-                if (MessageBox.Show("Are you sure you want to Save", "Save", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                var selectedRow = _context.Departments.Where(q => q.Department_ID == departmentID).FirstOrDefault();
+                string originalDepName = selectedRow.Department_Name.ToString();
+                string depName = textDepartment_name.Text.Trim();
+                if (choice == "add")
                 {
-                    Department d = new Department
+                    var setCondition = _context.Departments.Where(q => q.Department_Name == depName).FirstOrDefault();
+
+                    if (setCondition == null)
                     {
-                        Department_Name = textDepartment_name.Text.Trim()
-                    };
+                        Department d = new Department
+                        {
+                            Department_Name = textDepartment_name.Text.Trim()
+                        };
 
-                    _context.Departments.Add(d);
-                    _context.SaveChanges();
+                        _context.Departments.Add(d);
+                        _context.SaveChanges();
+                       
+                        MessageBox.Show("Succesfully Added.");
+                        Insert();
+                        this.Close();
+                       
+                        
+                    }
+                    else
+                    {
+                        MessageBox.Show("DEPARTMENT NAME ALREADY EXIST");
+                    }
+                }
+                else if (choice == "update")
+                {
+                    var setCondition = _context.Departments.Where(q => q.Department_Name == depName).FirstOrDefault();
+                    if (setCondition != null)
+                    {
+                        string conditionDepName = setCondition.Department_Name.ToString();
+                        if (originalDepName == conditionDepName)
+                        {
+                            selectedRow.Department_Name = textDepartment_name.Text.Trim();
+                            _context.SaveChanges();
 
-                   
-                    this.Close();
-                    insert();
+
+                            Insert();
+
+                            this.Close();
+                            
+                                               
+                       
+                            MessageBox.Show("Succesfully Updated.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("DEPARTMENT NAME ALREADY EXIST");
+                        }
+                    }
+                    else
+                    {
+                        selectedRow.Department_Name = textDepartment_name.Text.Trim();
+                        _context.SaveChanges();
+
+                        Insert();
+                        this.Close();
+
+
+
+                        MessageBox.Show("Succesfully Updated.");
+                    }
                 }
             }
-           
+            Insert();
+
 
 
         }
         public delegate void UpdatDelegate(object sender, UpdateEventArgs args);
         public event UpdatDelegate UpdateEventHandler;
+        
 
         public class UpdateEventArgs : EventArgs
         {
             public string Data { get; set; }
         }
 
-        protected void insert()
+        protected void Insert()
         {
             UpdateEventArgs args = new UpdateEventArgs();
             UpdateEventHandler.Invoke(this, args);
         }
+        
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -164,6 +127,47 @@ namespace FullScreenAppDemo
 
         private void DepartmentImport_Load(object sender, EventArgs e)
         {
+            
+            departmentID = RegisDean.departmentID;
+            choice = RegisDean.choicedepartment.ToString();
+
+
+            
+            if (choice == "update")
+
+            {
+                btnSave.Text = "UPDATE";
+                var selectedRow = _context.Departments.Where(q => q.Department_ID == departmentID).FirstOrDefault();
+
+                textDepartment_name.Text = selectedRow.Department_Name.ToString();
+              
+                
+
+
+            }
+            Insert();
+
+        }
+        private void openSTList()
+        {
+            
+            RegisDashboard mj = new RegisDashboard();
+            mj.Show();
+
+            RegisDean m = new RegisDean();
+            m.TopLevel = false;
+            //m.dgvDepartmentList.DataSource = ;
+            //m.loadData();
+            
+
+            mj.DashboardPanel.Controls.Clear();
+            mj.DashboardPanel.Controls.Add(m);
+
+            m.Show();
+
+            this.Close();
+
+
 
         }
     }

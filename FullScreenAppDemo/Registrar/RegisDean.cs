@@ -19,8 +19,15 @@ namespace FullScreenAppDemo
         DepartmentValue dv = new DepartmentValue();
         courseValue cv = new courseValue();
 
-        public static string departmentID = "";
-        public static string courseID = "";
+        public static int departmentID = 0;
+       
+        public static int courseID = 0;
+
+        public static int deanID = 0;
+        public static string choicedean = "";
+        public static string choicedepartment = "";
+        public static string choicecourse = "";
+
 
         public RegisDean()
         {
@@ -29,6 +36,18 @@ namespace FullScreenAppDemo
 
 
         private void RegisDean_Load(object sender, EventArgs e)
+        {
+            
+            loadData();
+            //dgvDepartmentList.DataSource = _context.Departments.ToList();
+            loadCourse();
+            loaddep();
+
+
+
+
+        }
+        public void loadData()
         {
             var res = (
                 from dea in _context.Deans
@@ -44,9 +63,6 @@ namespace FullScreenAppDemo
              ).ToList();
 
             dgvDeanList.DataSource = res;
-            dgvDepartmentList.DataSource = _context.Departments.ToList();
-            loadCourse();
-
         }
         private void loadCourse()
         {
@@ -66,23 +82,35 @@ namespace FullScreenAppDemo
 
             dgvCourseList.DataSource = res1;
         }
-
+        private void loaddep()
+        {
+            dgvDepartmentList.DataSource = _context.Departments.ToList();
+        }
         private void btnAddDean_Click_1(object sender, EventArgs e)
         {
-            DeanImport mj = new DeanImport();
-            mj.Show();
+
+            choicedean = "add";
+            DeanImport std = new DeanImport(this);
+            std.UpdateEventHandler += F5_UpdateEventHandler1;
+            std.ShowDialog();
         }
 
         private void F2_UpdateEventHandler1(object sender, DepartmentImport.UpdateEventArgs args)
         {
-            dgvDepartmentList.DataSource = _context.Departments.ToList();
+            loaddep();
         }
+        private void F5_UpdateEventHandler1(object sender, DeanImport.UpdateEventArgs args)
+        {
+            loadData();
+        }
+       
         private void F3_UpdateEventHandler1(object sender, CourseImport.UpdateEventArgs args)
         {
             loadCourse();
         }
         private void btnAddDepartment_Click(object sender, EventArgs e)
         {
+            choicedepartment = "add";
             DepartmentImport std = new DepartmentImport(this);
             std.UpdateEventHandler += F2_UpdateEventHandler1;
             std.ShowDialog();
@@ -99,12 +127,16 @@ namespace FullScreenAppDemo
                 _context.Departments.Remove(selectedRow);
                 _context.SaveChanges();
                 dgvDepartmentList.DataSource = _context.Departments.ToList();
+
+                deletedepartment.Visible = false;
+                MessageBox.Show("Successfully Deleted");
             }
             
         }
 
         private void btnCourse_Click(object sender, EventArgs e)
         {
+            choicecourse = "add";
             CourseImport std = new CourseImport(this);
             std.UpdateEventHandler += F3_UpdateEventHandler1;
             std.ShowDialog();
@@ -113,7 +145,7 @@ namespace FullScreenAppDemo
         private void deletecourse_Click(object sender, EventArgs e)
         {
 
-            if (MessageBox.Show("Are you sure you want to Exit", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Are you sure you want to Delete", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 int departID = Int32.Parse(courseID.ToString());
                 var selectedRow = _context.Courses.Where(q => q.CourseID == departID).FirstOrDefault();
@@ -121,16 +153,18 @@ namespace FullScreenAppDemo
                 _context.Courses.Remove(selectedRow);
                 _context.SaveChanges();
                 loadCourse();
+                MessageBox.Show("Successfully Deleted");
+                deletecourse.Visible = false;
             }
            
         }
 
         private void dgvDepartmentList_SelectionChanged(object sender, EventArgs e)
         {
+
             if (dgvDepartmentList.SelectedRows.Count > 0)
             {
-                departmentID = dgvDepartmentList.SelectedRows[0].Cells[0].Value.ToString();
-
+                departmentID = Convert.ToInt32(dgvDepartmentList.SelectedRows[0].Cells[0].Value.ToString());
             }
         }
 
@@ -138,8 +172,7 @@ namespace FullScreenAppDemo
         {
             if (dgvCourseList.SelectedRows.Count > 0)
             {
-                courseID = dgvCourseList.SelectedRows[0].Cells[0].Value.ToString();
-
+                courseID = Convert.ToInt32(dgvCourseList.SelectedRows[0].Cells[0].Value.ToString());
             }
         }
 
@@ -156,6 +189,75 @@ namespace FullScreenAppDemo
         private void gunaCirclePictureBox2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dgvDeanList_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            choicedean = "update";
+            DeanImport std = new DeanImport(this);
+            std.UpdateEventHandler += F5_UpdateEventHandler1;
+            std.ShowDialog();
+        }
+
+        private void dgvDeanList_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvDeanList.SelectedRows.Count > 0)
+            {
+                deanID = Int32.Parse(dgvDeanList.SelectedRows[0].Cells[0].Value.ToString());
+            }
+        }
+
+
+        private void dgvDepartmentList_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            deletedepartment.Visible = true;
+            choicedepartment = "update";
+            DepartmentImport v = new DepartmentImport(this);
+            v.UpdateEventHandler += F2_UpdateEventHandler1;
+            v.ShowDialog();
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvCourseList_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            choicecourse = "update";
+            CourseImport std = new CourseImport(this);
+            std.UpdateEventHandler += F3_UpdateEventHandler1;
+            std.ShowDialog();
+        }
+
+        private void dgvCourseList_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            deletecourse.Visible = true;
+        }
+
+        private void dgvDepartmentList_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            deletedepartment.Visible = true;
+        }
+
+        private void gunaButton1_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to DELETE", "DELETE", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                var selectedRow = _context.Deans.Where(q => q.DeanID == deanID).FirstOrDefault();
+
+                //MessageBox.Show("Are you sure you want to delete?",)
+                _context.Deans.Remove(selectedRow);
+                _context.SaveChanges();
+
+                loadData();
+            }
+
+        }
+
+        private void dgvDeanList_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            gunaButton1.Visible = true;
         }
     }
 }
