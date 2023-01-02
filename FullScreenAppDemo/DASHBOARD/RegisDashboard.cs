@@ -28,6 +28,8 @@ namespace FullScreenAppDemo
             {
                 //this.Close();
                 Application.Exit();
+               
+
             }
         }
 
@@ -96,6 +98,18 @@ namespace FullScreenAppDemo
             DashboardPanel.Controls.Clear();
             DashboardPanel.Controls.Add(mj);
             mj.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to Logout", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+
+                this.Hide();
+                new frmlogin().Show();
+
+
+            }
         }
     }
 }

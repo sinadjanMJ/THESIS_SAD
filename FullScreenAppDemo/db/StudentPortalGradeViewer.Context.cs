@@ -35,5 +35,6 @@ namespace FullScreenAppDemo.db
         public virtual DbSet<S_Subject> S_Subject { get; set; }
         public virtual DbSet<Student_Profile> Student_Profile { get; set; }
         public virtual DbSet<studentBackground> studentBackgrounds { get; set; }
+        public virtual DbSet<login> logins { get; set; }
     }
 }

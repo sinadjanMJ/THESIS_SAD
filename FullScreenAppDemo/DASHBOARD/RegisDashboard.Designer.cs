@@ -48,6 +48,7 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.DashboardPanel = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -137,7 +138,7 @@
             this.label18.ForeColor = System.Drawing.Color.Gold;
             this.label18.Location = new System.Drawing.Point(653, 19);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(191, 16);
+            this.label18.Size = new System.Drawing.Size(185, 16);
             this.label18.TabIndex = 2;
             this.label18.Text = "Welcome to Mga Palaatik";
             // 
@@ -148,7 +149,7 @@
             this.label2.ForeColor = System.Drawing.Color.Gold;
             this.label2.Location = new System.Drawing.Point(60, 12);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(210, 16);
+            this.label2.Size = new System.Drawing.Size(192, 16);
             this.label2.TabIndex = 2;
             this.label2.Text = "CRMC STUDENT PORTAL";
             // 
@@ -165,6 +166,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.gunaButton1);
             this.panel2.Controls.Add(this.DeanBTN);
             this.panel2.Controls.Add(this.StudentBTN);
@@ -387,7 +389,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(29, 78);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(138, 16);
+            this.label1.Size = new System.Drawing.Size(134, 16);
             this.label1.TabIndex = 2;
             this.label1.Text = "Michel Jay Gwapo";
             // 
@@ -397,6 +399,16 @@
             this.DashboardPanel.Name = "DashboardPanel";
             this.DashboardPanel.Size = new System.Drawing.Size(1175, 736);
             this.DashboardPanel.TabIndex = 6;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(43, 652);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // RegisDashboard
             // 
@@ -442,5 +454,6 @@
         private Guna.UI.WinForms.GunaButton MinimizedBTN;
         private Guna.UI.WinForms.GunaButton gunaButton1;
         public System.Windows.Forms.Panel DashboardPanel;
+        private System.Windows.Forms.Button button1;
     }
 }

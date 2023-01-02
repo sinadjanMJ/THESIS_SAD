@@ -80,6 +80,21 @@
     <Compile Include="DASHBOARD\AcademicsDashboard.Designer.cs">
       <DependentUpon>AcademicsDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="db\login.cs">
+      <DependentUpon>StudentPortalGradeViewer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="frmlogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmlogin.Designer.cs">
+      <DependentUpon>frmlogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="REGISTERFRM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REGISTERFRM.Designer.cs">
+      <DependentUpon>REGISTERFRM.cs</DependentUpon>
+    </Compile>
     <Compile Include="Subject\assignSubject.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -241,6 +256,12 @@
     </Compile>
     <EmbeddedResource Include="DASHBOARD\AcademicsDashboard.resx">
       <DependentUpon>AcademicsDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmlogin.resx">
+      <DependentUpon>frmlogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REGISTERFRM.resx">
+      <DependentUpon>REGISTERFRM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Subject\assignSubject.resx">
       <DependentUpon>assignSubject.cs</DependentUpon>
