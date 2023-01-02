@@ -40,6 +40,8 @@ namespace FullScreenAppDemo
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisSubject));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.CANC = new Guna.UI.WinForms.GunaButton();
+            this.btnDelete = new Guna.UI.WinForms.GunaButton();
             this.cBYear = new Guna.UI.WinForms.GunaComboBox();
             this.cBCourse = new Guna.UI.WinForms.GunaComboBox();
             this.cBDepartment = new Guna.UI.WinForms.GunaComboBox();
@@ -50,8 +52,14 @@ namespace FullScreenAppDemo
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.gunaDataGridView1 = new Guna.UI.WinForms.GunaDataGridView();
+            this.classIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.classNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.departmentNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.courseNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sectionWithDepWithCourseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dgvSubList = new Guna.UI.WinForms.GunaDataGridView();
+            this.sSubjectBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
             this.textSubjectUnits = new Guna.UI.WinForms.GunaTextBox();
             this.gunaCirclePictureBox2 = new Guna.UI.WinForms.GunaCirclePictureBox();
@@ -61,23 +69,12 @@ namespace FullScreenAppDemo
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.textSubjectName = new Guna.UI.WinForms.GunaTextBox();
             this.textSubjectCode = new Guna.UI.WinForms.GunaTextBox();
-            this.BTNCreateSub = new Guna.UI.WinForms.GunaButton();
+            this.btnCreateSub = new Guna.UI.WinForms.GunaButton();
             this.studentPortalDataSet1 = new FullScreenAppDemo.studentPortalDataSet1();
             this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.departmentTableAdapter = new FullScreenAppDemo.studentPortalDataSet1TableAdapters.DepartmentTableAdapter();
             this.sSubjectBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.classSBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnDelete = new Guna.UI.WinForms.GunaButton();
-            this.CANC = new Guna.UI.WinForms.GunaButton();
-            this.classIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.classNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.departmentNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.courseNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sectionWithDepWithCourseBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.subjectCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subjectUnitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sSubjectBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.classSBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.courseImpsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.departmentBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -85,18 +82,24 @@ namespace FullScreenAppDemo
             this.sSubjectBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.courseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sSubjectBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.btnCancelUpdate = new Guna.UI.WinForms.GunaButton();
+            this.btnDeleteS = new Guna.UI.WinForms.GunaButton();
+            this.subjectIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subjectCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subjectNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subjectUnitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaDataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sectionWithDepWithCourseBindingSource)).BeginInit();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sSubjectBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentPortalDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sSubjectBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.classSBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sectionWithDepWithCourseBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sSubjectBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.classSBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseImpsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource1)).BeginInit();
@@ -138,6 +141,60 @@ namespace FullScreenAppDemo
             this.tabPage2.Size = new System.Drawing.Size(1152, 625);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Section";
+            // 
+            // CANC
+            // 
+            this.CANC.AnimationHoverSpeed = 0.07F;
+            this.CANC.AnimationSpeed = 0.03F;
+            this.CANC.BackColor = System.Drawing.Color.Transparent;
+            this.CANC.BaseColor = System.Drawing.Color.Maroon;
+            this.CANC.BorderColor = System.Drawing.Color.Black;
+            this.CANC.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.CANC.FocusedColor = System.Drawing.Color.Empty;
+            this.CANC.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CANC.ForeColor = System.Drawing.Color.Gold;
+            this.CANC.Image = null;
+            this.CANC.ImageSize = new System.Drawing.Size(20, 20);
+            this.CANC.Location = new System.Drawing.Point(851, 504);
+            this.CANC.Name = "CANC";
+            this.CANC.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.CANC.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.CANC.OnHoverForeColor = System.Drawing.Color.White;
+            this.CANC.OnHoverImage = null;
+            this.CANC.OnPressedColor = System.Drawing.Color.Black;
+            this.CANC.Radius = 5;
+            this.CANC.Size = new System.Drawing.Size(160, 42);
+            this.CANC.TabIndex = 29;
+            this.CANC.Text = "CANCEL";
+            this.CANC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.CANC.Click += new System.EventHandler(this.CANC_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.AnimationHoverSpeed = 0.07F;
+            this.btnDelete.AnimationSpeed = 0.03F;
+            this.btnDelete.BackColor = System.Drawing.Color.Transparent;
+            this.btnDelete.BaseColor = System.Drawing.Color.Maroon;
+            this.btnDelete.BorderColor = System.Drawing.Color.Black;
+            this.btnDelete.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnDelete.FocusedColor = System.Drawing.Color.Empty;
+            this.btnDelete.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.Gold;
+            this.btnDelete.Image = null;
+            this.btnDelete.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnDelete.Location = new System.Drawing.Point(851, 278);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnDelete.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnDelete.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnDelete.OnHoverImage = null;
+            this.btnDelete.OnPressedColor = System.Drawing.Color.Black;
+            this.btnDelete.Radius = 5;
+            this.btnDelete.Size = new System.Drawing.Size(160, 42);
+            this.btnDelete.TabIndex = 28;
+            this.btnDelete.Text = "DELETE";
+            this.btnDelete.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // cBYear
             // 
@@ -368,9 +425,43 @@ namespace FullScreenAppDemo
             this.gunaDataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gunaDataGridView1_CellClick);
             this.gunaDataGridView1.SelectionChanged += new System.EventHandler(this.gunaDataGridView1_SelectionChanged);
             // 
+            // classIDDataGridViewTextBoxColumn
+            // 
+            this.classIDDataGridViewTextBoxColumn.DataPropertyName = "classID";
+            this.classIDDataGridViewTextBoxColumn.HeaderText = "CLASS ID";
+            this.classIDDataGridViewTextBoxColumn.Name = "classIDDataGridViewTextBoxColumn";
+            this.classIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // classNameDataGridViewTextBoxColumn
+            // 
+            this.classNameDataGridViewTextBoxColumn.DataPropertyName = "className";
+            this.classNameDataGridViewTextBoxColumn.HeaderText = "CLASS NAME";
+            this.classNameDataGridViewTextBoxColumn.Name = "classNameDataGridViewTextBoxColumn";
+            this.classNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // departmentNameDataGridViewTextBoxColumn
+            // 
+            this.departmentNameDataGridViewTextBoxColumn.DataPropertyName = "departmentName";
+            this.departmentNameDataGridViewTextBoxColumn.HeaderText = "DEPARTMENT NAME";
+            this.departmentNameDataGridViewTextBoxColumn.Name = "departmentNameDataGridViewTextBoxColumn";
+            this.departmentNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // courseNameDataGridViewTextBoxColumn
+            // 
+            this.courseNameDataGridViewTextBoxColumn.DataPropertyName = "courseName";
+            this.courseNameDataGridViewTextBoxColumn.HeaderText = "COURSE NAME";
+            this.courseNameDataGridViewTextBoxColumn.Name = "courseNameDataGridViewTextBoxColumn";
+            this.courseNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sectionWithDepWithCourseBindingSource
+            // 
+            this.sectionWithDepWithCourseBindingSource.DataSource = typeof(FullScreenAppDemo.perips.sectionWithDepWithCourse);
+            // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage1.Controls.Add(this.btnDeleteS);
+            this.tabPage1.Controls.Add(this.btnCancelUpdate);
             this.tabPage1.Controls.Add(this.dgvSubList);
             this.tabPage1.Controls.Add(this.gunaLabel3);
             this.tabPage1.Controls.Add(this.textSubjectUnits);
@@ -381,7 +472,7 @@ namespace FullScreenAppDemo
             this.tabPage1.Controls.Add(this.gunaLabel1);
             this.tabPage1.Controls.Add(this.textSubjectName);
             this.tabPage1.Controls.Add(this.textSubjectCode);
-            this.tabPage1.Controls.Add(this.BTNCreateSub);
+            this.tabPage1.Controls.Add(this.btnCreateSub);
             this.tabPage1.Location = new System.Drawing.Point(4, 26);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -391,6 +482,8 @@ namespace FullScreenAppDemo
             // 
             // dgvSubList
             // 
+            this.dgvSubList.AllowUserToAddRows = false;
+            this.dgvSubList.AllowUserToDeleteRows = false;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
             this.dgvSubList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvSubList.AutoGenerateColumns = false;
@@ -409,8 +502,9 @@ namespace FullScreenAppDemo
             this.dgvSubList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvSubList.ColumnHeadersHeight = 21;
             this.dgvSubList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.subjectIDDataGridViewTextBoxColumn,
             this.subjectCodeDataGridViewTextBoxColumn,
-            this.dataGridViewTextBoxColumn,
+            this.subjectNameDataGridViewTextBoxColumn,
             this.subjectUnitDataGridViewTextBoxColumn});
             this.dgvSubList.DataSource = this.sSubjectBindingSource2;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -425,6 +519,7 @@ namespace FullScreenAppDemo
             this.dgvSubList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvSubList.Location = new System.Drawing.Point(544, 242);
             this.dgvSubList.Name = "dgvSubList";
+            this.dgvSubList.ReadOnly = true;
             this.dgvSubList.RowHeadersVisible = false;
             this.dgvSubList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSubList.Size = new System.Drawing.Size(502, 182);
@@ -443,7 +538,7 @@ namespace FullScreenAppDemo
             this.dgvSubList.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.Gold;
             this.dgvSubList.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvSubList.ThemeStyle.HeaderStyle.Height = 21;
-            this.dgvSubList.ThemeStyle.ReadOnly = false;
+            this.dgvSubList.ThemeStyle.ReadOnly = true;
             this.dgvSubList.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvSubList.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvSubList.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -451,6 +546,13 @@ namespace FullScreenAppDemo
             this.dgvSubList.ThemeStyle.RowsStyle.Height = 22;
             this.dgvSubList.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvSubList.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvSubList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSubList_CellContentClick);
+            this.dgvSubList.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvSubList_CellMouseClick);
+            this.dgvSubList.SelectionChanged += new System.EventHandler(this.dgvSubList_SelectionChanged);
+            // 
+            // sSubjectBindingSource2
+            // 
+            this.sSubjectBindingSource2.DataSource = typeof(FullScreenAppDemo.db.S_Subject);
             // 
             // gunaLabel3
             // 
@@ -479,6 +581,7 @@ namespace FullScreenAppDemo
             this.textSubjectUnits.SelectedText = "";
             this.textSubjectUnits.Size = new System.Drawing.Size(314, 35);
             this.textSubjectUnits.TabIndex = 19;
+            this.textSubjectUnits.TextChanged += new System.EventHandler(this.textSubjectUnits_TextChanged);
             // 
             // gunaCirclePictureBox2
             // 
@@ -567,6 +670,7 @@ namespace FullScreenAppDemo
             this.textSubjectName.SelectedText = "";
             this.textSubjectName.Size = new System.Drawing.Size(314, 35);
             this.textSubjectName.TabIndex = 12;
+            this.textSubjectName.TextChanged += new System.EventHandler(this.textSubjectName_TextChanged);
             // 
             // textSubjectCode
             // 
@@ -585,33 +689,34 @@ namespace FullScreenAppDemo
             this.textSubjectCode.SelectedText = "";
             this.textSubjectCode.Size = new System.Drawing.Size(314, 35);
             this.textSubjectCode.TabIndex = 11;
+            this.textSubjectCode.TextChanged += new System.EventHandler(this.textSubjectCode_TextChanged);
             // 
-            // BTNCreateSub
+            // btnCreateSub
             // 
-            this.BTNCreateSub.AnimationHoverSpeed = 0.07F;
-            this.BTNCreateSub.AnimationSpeed = 0.03F;
-            this.BTNCreateSub.BackColor = System.Drawing.Color.Transparent;
-            this.BTNCreateSub.BaseColor = System.Drawing.Color.Maroon;
-            this.BTNCreateSub.BorderColor = System.Drawing.Color.Black;
-            this.BTNCreateSub.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.BTNCreateSub.FocusedColor = System.Drawing.Color.Empty;
-            this.BTNCreateSub.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTNCreateSub.ForeColor = System.Drawing.Color.Gold;
-            this.BTNCreateSub.Image = null;
-            this.BTNCreateSub.ImageSize = new System.Drawing.Size(20, 20);
-            this.BTNCreateSub.Location = new System.Drawing.Point(377, 458);
-            this.BTNCreateSub.Name = "BTNCreateSub";
-            this.BTNCreateSub.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.BTNCreateSub.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.BTNCreateSub.OnHoverForeColor = System.Drawing.Color.White;
-            this.BTNCreateSub.OnHoverImage = null;
-            this.BTNCreateSub.OnPressedColor = System.Drawing.Color.Black;
-            this.BTNCreateSub.Radius = 5;
-            this.BTNCreateSub.Size = new System.Drawing.Size(107, 42);
-            this.BTNCreateSub.TabIndex = 9;
-            this.BTNCreateSub.Text = "CREATE SUBJECT";
-            this.BTNCreateSub.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.BTNCreateSub.Click += new System.EventHandler(this.BTNCreateSub_Click_1);
+            this.btnCreateSub.AnimationHoverSpeed = 0.07F;
+            this.btnCreateSub.AnimationSpeed = 0.03F;
+            this.btnCreateSub.BackColor = System.Drawing.Color.Transparent;
+            this.btnCreateSub.BaseColor = System.Drawing.Color.Maroon;
+            this.btnCreateSub.BorderColor = System.Drawing.Color.Black;
+            this.btnCreateSub.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnCreateSub.FocusedColor = System.Drawing.Color.Empty;
+            this.btnCreateSub.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreateSub.ForeColor = System.Drawing.Color.Gold;
+            this.btnCreateSub.Image = null;
+            this.btnCreateSub.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnCreateSub.Location = new System.Drawing.Point(377, 458);
+            this.btnCreateSub.Name = "btnCreateSub";
+            this.btnCreateSub.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnCreateSub.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnCreateSub.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnCreateSub.OnHoverImage = null;
+            this.btnCreateSub.OnPressedColor = System.Drawing.Color.Black;
+            this.btnCreateSub.Radius = 5;
+            this.btnCreateSub.Size = new System.Drawing.Size(107, 42);
+            this.btnCreateSub.TabIndex = 9;
+            this.btnCreateSub.Text = "CREATE SUBJECT";
+            this.btnCreateSub.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnCreateSub.Click += new System.EventHandler(this.btnCreateSub_Click_2);
             // 
             // studentPortalDataSet1
             // 
@@ -626,114 +731,6 @@ namespace FullScreenAppDemo
             // departmentTableAdapter
             // 
             this.departmentTableAdapter.ClearBeforeFill = true;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.AnimationHoverSpeed = 0.07F;
-            this.btnDelete.AnimationSpeed = 0.03F;
-            this.btnDelete.BackColor = System.Drawing.Color.Transparent;
-            this.btnDelete.BaseColor = System.Drawing.Color.Maroon;
-            this.btnDelete.BorderColor = System.Drawing.Color.Black;
-            this.btnDelete.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnDelete.FocusedColor = System.Drawing.Color.Empty;
-            this.btnDelete.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.ForeColor = System.Drawing.Color.Gold;
-            this.btnDelete.Image = null;
-            this.btnDelete.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnDelete.Location = new System.Drawing.Point(851, 278);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.btnDelete.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnDelete.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnDelete.OnHoverImage = null;
-            this.btnDelete.OnPressedColor = System.Drawing.Color.Black;
-            this.btnDelete.Radius = 5;
-            this.btnDelete.Size = new System.Drawing.Size(160, 42);
-            this.btnDelete.TabIndex = 28;
-            this.btnDelete.Text = "DELETE";
-            this.btnDelete.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // CANC
-            // 
-            this.CANC.AnimationHoverSpeed = 0.07F;
-            this.CANC.AnimationSpeed = 0.03F;
-            this.CANC.BackColor = System.Drawing.Color.Transparent;
-            this.CANC.BaseColor = System.Drawing.Color.Maroon;
-            this.CANC.BorderColor = System.Drawing.Color.Black;
-            this.CANC.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.CANC.FocusedColor = System.Drawing.Color.Empty;
-            this.CANC.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CANC.ForeColor = System.Drawing.Color.Gold;
-            this.CANC.Image = null;
-            this.CANC.ImageSize = new System.Drawing.Size(20, 20);
-            this.CANC.Location = new System.Drawing.Point(851, 504);
-            this.CANC.Name = "CANC";
-            this.CANC.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.CANC.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.CANC.OnHoverForeColor = System.Drawing.Color.White;
-            this.CANC.OnHoverImage = null;
-            this.CANC.OnPressedColor = System.Drawing.Color.Black;
-            this.CANC.Radius = 5;
-            this.CANC.Size = new System.Drawing.Size(160, 42);
-            this.CANC.TabIndex = 29;
-            this.CANC.Text = "CANCEL";
-            this.CANC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.CANC.Click += new System.EventHandler(this.CANC_Click);
-            // 
-            // classIDDataGridViewTextBoxColumn
-            // 
-            this.classIDDataGridViewTextBoxColumn.DataPropertyName = "classID";
-            this.classIDDataGridViewTextBoxColumn.HeaderText = "CLASS ID";
-            this.classIDDataGridViewTextBoxColumn.Name = "classIDDataGridViewTextBoxColumn";
-            this.classIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // classNameDataGridViewTextBoxColumn
-            // 
-            this.classNameDataGridViewTextBoxColumn.DataPropertyName = "className";
-            this.classNameDataGridViewTextBoxColumn.HeaderText = "CLASS NAME";
-            this.classNameDataGridViewTextBoxColumn.Name = "classNameDataGridViewTextBoxColumn";
-            this.classNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // departmentNameDataGridViewTextBoxColumn
-            // 
-            this.departmentNameDataGridViewTextBoxColumn.DataPropertyName = "departmentName";
-            this.departmentNameDataGridViewTextBoxColumn.HeaderText = "DEPARTMENT NAME";
-            this.departmentNameDataGridViewTextBoxColumn.Name = "departmentNameDataGridViewTextBoxColumn";
-            this.departmentNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // courseNameDataGridViewTextBoxColumn
-            // 
-            this.courseNameDataGridViewTextBoxColumn.DataPropertyName = "courseName";
-            this.courseNameDataGridViewTextBoxColumn.HeaderText = "COURSE NAME";
-            this.courseNameDataGridViewTextBoxColumn.Name = "courseNameDataGridViewTextBoxColumn";
-            this.courseNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sectionWithDepWithCourseBindingSource
-            // 
-            this.sectionWithDepWithCourseBindingSource.DataSource = typeof(FullScreenAppDemo.perips.sectionWithDepWithCourse);
-            // 
-            // subjectCodeDataGridViewTextBoxColumn
-            // 
-            this.subjectCodeDataGridViewTextBoxColumn.DataPropertyName = "SubjectCode";
-            this.subjectCodeDataGridViewTextBoxColumn.HeaderText = "SUBJECT CODE";
-            this.subjectCodeDataGridViewTextBoxColumn.Name = "subjectCodeDataGridViewTextBoxColumn";
-            // 
-            // dataGridViewTextBoxColumn
-            // 
-            this.dataGridViewTextBoxColumn.DataPropertyName = "SubjectName";
-            this.dataGridViewTextBoxColumn.HeaderText = "SUBJECT NAME";
-            this.dataGridViewTextBoxColumn.Name = "dataGridViewTextBoxColumn";
-            // 
-            // subjectUnitDataGridViewTextBoxColumn
-            // 
-            this.subjectUnitDataGridViewTextBoxColumn.DataPropertyName = "SubjectUnit";
-            this.subjectUnitDataGridViewTextBoxColumn.HeaderText = "SUBJECT UNIT";
-            this.subjectUnitDataGridViewTextBoxColumn.Name = "subjectUnitDataGridViewTextBoxColumn";
-            // 
-            // sSubjectBindingSource2
-            // 
-            this.sSubjectBindingSource2.DataSource = typeof(FullScreenAppDemo.db.S_Subject);
             // 
             // classSBindingSource1
             // 
@@ -763,6 +760,89 @@ namespace FullScreenAppDemo
             // 
             this.sSubjectBindingSource3.DataSource = typeof(FullScreenAppDemo.db.S_Subject);
             // 
+            // btnCancelUpdate
+            // 
+            this.btnCancelUpdate.AnimationHoverSpeed = 0.07F;
+            this.btnCancelUpdate.AnimationSpeed = 0.03F;
+            this.btnCancelUpdate.BackColor = System.Drawing.Color.Transparent;
+            this.btnCancelUpdate.BaseColor = System.Drawing.Color.Maroon;
+            this.btnCancelUpdate.BorderColor = System.Drawing.Color.Black;
+            this.btnCancelUpdate.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnCancelUpdate.FocusedColor = System.Drawing.Color.Empty;
+            this.btnCancelUpdate.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelUpdate.ForeColor = System.Drawing.Color.Gold;
+            this.btnCancelUpdate.Image = null;
+            this.btnCancelUpdate.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnCancelUpdate.Location = new System.Drawing.Point(264, 458);
+            this.btnCancelUpdate.Name = "btnCancelUpdate";
+            this.btnCancelUpdate.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnCancelUpdate.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnCancelUpdate.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnCancelUpdate.OnHoverImage = null;
+            this.btnCancelUpdate.OnPressedColor = System.Drawing.Color.Black;
+            this.btnCancelUpdate.Radius = 5;
+            this.btnCancelUpdate.Size = new System.Drawing.Size(107, 42);
+            this.btnCancelUpdate.TabIndex = 22;
+            this.btnCancelUpdate.Text = "CANCEL";
+            this.btnCancelUpdate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnCancelUpdate.Click += new System.EventHandler(this.btnCancelUpdate_Click);
+            // 
+            // btnDeleteS
+            // 
+            this.btnDeleteS.AnimationHoverSpeed = 0.07F;
+            this.btnDeleteS.AnimationSpeed = 0.03F;
+            this.btnDeleteS.BackColor = System.Drawing.Color.Transparent;
+            this.btnDeleteS.BaseColor = System.Drawing.Color.Maroon;
+            this.btnDeleteS.BorderColor = System.Drawing.Color.Black;
+            this.btnDeleteS.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnDeleteS.FocusedColor = System.Drawing.Color.Empty;
+            this.btnDeleteS.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteS.ForeColor = System.Drawing.Color.Gold;
+            this.btnDeleteS.Image = null;
+            this.btnDeleteS.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnDeleteS.Location = new System.Drawing.Point(657, 194);
+            this.btnDeleteS.Name = "btnDeleteS";
+            this.btnDeleteS.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnDeleteS.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnDeleteS.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnDeleteS.OnHoverImage = null;
+            this.btnDeleteS.OnPressedColor = System.Drawing.Color.Black;
+            this.btnDeleteS.Radius = 5;
+            this.btnDeleteS.Size = new System.Drawing.Size(107, 42);
+            this.btnDeleteS.TabIndex = 23;
+            this.btnDeleteS.Text = "DELETE";
+            this.btnDeleteS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnDeleteS.Visible = false;
+            this.btnDeleteS.Click += new System.EventHandler(this.btnDeleteS_Click);
+            // 
+            // subjectIDDataGridViewTextBoxColumn
+            // 
+            this.subjectIDDataGridViewTextBoxColumn.DataPropertyName = "SubjectID";
+            this.subjectIDDataGridViewTextBoxColumn.HeaderText = "SubjectID";
+            this.subjectIDDataGridViewTextBoxColumn.Name = "subjectIDDataGridViewTextBoxColumn";
+            this.subjectIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // subjectCodeDataGridViewTextBoxColumn
+            // 
+            this.subjectCodeDataGridViewTextBoxColumn.DataPropertyName = "SubjectCode";
+            this.subjectCodeDataGridViewTextBoxColumn.HeaderText = "SubjectCode";
+            this.subjectCodeDataGridViewTextBoxColumn.Name = "subjectCodeDataGridViewTextBoxColumn";
+            this.subjectCodeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // subjectNameDataGridViewTextBoxColumn
+            // 
+            this.subjectNameDataGridViewTextBoxColumn.DataPropertyName = "SubjectName";
+            this.subjectNameDataGridViewTextBoxColumn.HeaderText = "SubjectName";
+            this.subjectNameDataGridViewTextBoxColumn.Name = "subjectNameDataGridViewTextBoxColumn";
+            this.subjectNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // subjectUnitDataGridViewTextBoxColumn
+            // 
+            this.subjectUnitDataGridViewTextBoxColumn.DataPropertyName = "SubjectUnit";
+            this.subjectUnitDataGridViewTextBoxColumn.HeaderText = "SubjectUnit";
+            this.subjectUnitDataGridViewTextBoxColumn.Name = "subjectUnitDataGridViewTextBoxColumn";
+            this.subjectUnitDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // RegisSubject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -777,16 +857,16 @@ namespace FullScreenAppDemo
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaDataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sectionWithDepWithCourseBindingSource)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sSubjectBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentPortalDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sSubjectBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.classSBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sectionWithDepWithCourseBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sSubjectBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.classSBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseImpsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource1)).EndInit();
@@ -814,7 +894,7 @@ namespace FullScreenAppDemo
         private Guna.UI.WinForms.GunaTextBox textSubjectName;
         private Guna.UI.WinForms.GunaTextBox textSubjectCode;
         private System.Windows.Forms.BindingSource sSubjectBindingSource;
-        private Guna.UI.WinForms.GunaButton BTNCreateSub;
+        private Guna.UI.WinForms.GunaButton btnCreateSub;
         private Guna.UI.WinForms.GunaCirclePictureBox gunaCirclePictureBox2;
         private System.Windows.Forms.Label label4;
        
@@ -837,9 +917,6 @@ namespace FullScreenAppDemo
         private System.Windows.Forms.BindingSource sSubjectBindingSource3;
         private Guna.UI.WinForms.GunaDataGridView dgvSubList;
         private System.Windows.Forms.BindingSource sSubjectBindingSource4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn subjectCodeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn subjectUnitDataGridViewTextBoxColumn;
         private Guna.UI.WinForms.GunaButton btnDelete;
         private Guna.UI.WinForms.GunaButton CANC;
         private System.Windows.Forms.DataGridViewTextBoxColumn classIDDataGridViewTextBoxColumn;
@@ -847,5 +924,11 @@ namespace FullScreenAppDemo
         private System.Windows.Forms.DataGridViewTextBoxColumn departmentNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn courseNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource sectionWithDepWithCourseBindingSource;
+        private Guna.UI.WinForms.GunaButton btnCancelUpdate;
+        private Guna.UI.WinForms.GunaButton btnDeleteS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn subjectIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn subjectCodeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn subjectNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn subjectUnitDataGridViewTextBoxColumn;
     }
 }

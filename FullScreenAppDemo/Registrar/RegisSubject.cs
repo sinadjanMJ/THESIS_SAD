@@ -24,6 +24,9 @@ namespace FullScreenAppDemo
         public static string departmentID = "";
         public static string courseID = "";
 
+        public static int subjectID = 0;
+        string SUBmouseClicked = "";
+
 
 
         string mouseClicked = "";
@@ -60,6 +63,8 @@ namespace FullScreenAppDemo
             loadDepartment();
             loadSubs();
             CANC.Visible = false;
+            btnCancelUpdate.Visible = false;
+            dgvSubList.Columns[0].Visible = false;
 
         }
         private void loadData()
@@ -137,7 +142,7 @@ namespace FullScreenAppDemo
 
                         _context.Class_S.Add(cs);
                         _context.SaveChanges();
-                        MessageBox.Show("Successfully Added");
+                        MessageBox.Show("Succesfully Added", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         loadData();
                         CANC.Visible = false;
@@ -145,7 +150,8 @@ namespace FullScreenAppDemo
                     }
                     else
                     {
-                        MessageBox.Show("THERE IS ALREADY AN EXISTING CLASS NAME");
+                        MessageBox.Show("THERE IS ALREADY AN EXISTING CLASS NAME", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
                     }
 
                 }
@@ -168,7 +174,8 @@ namespace FullScreenAppDemo
                             selected.CourseID = (cBCourse.SelectedItem as courseValue).Value.ToString();
 
                             _context.SaveChanges();
-                            MessageBox.Show("Successfully Updated");
+                            
+                            MessageBox.Show("Succesfully Updated", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             btnAddSection.Text = "ADD SECTION";
                             CANC.Text = "CANCEL";
                             loadData();
@@ -180,7 +187,9 @@ namespace FullScreenAppDemo
                         }
                         else // IF IT'S NOT BECAUSE OF ORIGINAL DATA
                         {
-                            MessageBox.Show("THERE IS ALREADY AN EXISTING CLASS NAME");
+                       
+                             MessageBox.Show("THERE IS ALREADY AN EXISTING CLASS NAME", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
                         }
                     }
                     else // IF THERE IS NO EXISTING CLASS NAME FOUND
@@ -191,7 +200,8 @@ namespace FullScreenAppDemo
                         selected.CourseID = (cBCourse.SelectedItem as courseValue).Value.ToString();
 
                         _context.SaveChanges();
-                        MessageBox.Show("Successfully Updated");
+                        MessageBox.Show("Succesfully Updated", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                         loadData();
                         btnAddSection.Text = "ADD SECTION";
                         CANC.Text = "CANCEL";
@@ -241,17 +251,148 @@ namespace FullScreenAppDemo
 
         private void BTNCreateSub_Click_1(object sender, EventArgs e)
         {
-            S_Subject s = new S_Subject
+            if (textSubjectCode.Text == "" || textSubjectName.Text == "" || textSubjectUnits.Text == "" )
             {
-                SubjectCode = textSubjectCode.Text.Trim(),
-                SubjectName = textSubjectName.Text.Trim(),
-                SubjectUnit = textSubjectUnits.Text.Trim()
-            };
+                MessageBox.Show("Fill out the Designated Credential first", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                string subCode = textSubjectCode.Text.Trim();
+                string subName = textSubjectName.Text.Trim();
 
-            _context.S_Subject.Add(s);
-            _context.SaveChanges();
+                if (btnCreateSub.Text == "CREATE SUBJECT")
+                {
+                    var selectedRow = _context.S_Subject.Where(q => q.SubjectCode == subCode).FirstOrDefault();
 
-            loadSubs();
+                    if (selectedRow == null)
+                    {
+                        var selectedRow2 = _context.S_Subject.Where(q => q.SubjectName == subName).FirstOrDefault();
+
+                        if (selectedRow2 == null)
+                        {
+                            S_Subject s = new S_Subject
+                            {
+                                SubjectCode = textSubjectCode.Text.Trim(),
+                                SubjectName = textSubjectName.Text.Trim(),
+                                SubjectUnit = textSubjectUnits.Text.Trim()
+                            };
+
+                            _context.S_Subject.Add(s);
+                            _context.SaveChanges();
+                        }
+                        else
+                        {
+                            MessageBox.Show("SUBJECT NAME ALREADY EXISTED!");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("SUBJECT CODE ALREADY EXISTED!");
+                    }
+                }
+                else if (btnCreateSub.Text == "UPDATE SUBJECT")
+                {
+                    var selectedRows = _context.S_Subject.Where(q => q.SubjectID == subjectID).FirstOrDefault();
+                    string originalSub = selectedRows.SubjectName.ToString();
+                    string originalSubCode = selectedRows.SubjectCode.ToString();
+
+                    var selectedRow = _context.S_Subject.Where(q => q.SubjectCode == subCode).FirstOrDefault();
+
+
+                    if (selectedRow != null)
+                    {
+                        string conditionCode = selectedRow.SubjectCode.ToString();
+                        if (conditionCode == originalSubCode)
+                        {
+                            var selectedRow2 = _context.S_Subject.Where(q => q.SubjectName == subName).FirstOrDefault();
+
+
+                            if (selectedRow2 != null)
+                            {
+
+                                string conditionSubName = selectedRow2.SubjectName.ToString();
+                                if (conditionSubName == originalSub)
+                                {
+                                    selectedRows.SubjectCode = textSubjectCode.Text.Trim();
+                                    selectedRows.SubjectName = textSubjectName.Text.Trim();
+                                    selectedRows.SubjectUnit = textSubjectUnits.Text.Trim();
+
+                                    mouseClicked = "";
+                                    btnCreateSub.Text = "CREATE SUBJECT";
+                                    _context.SaveChanges();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("SUBJECT NAME ALREADY EXISTED!");
+                                    mouseClicked = "";
+                                    btnCreateSub.Text = "CREATE SUBJECT";
+                                }
+                            }
+                            else
+                            {
+
+                                selectedRows.SubjectCode = textSubjectCode.Text.Trim();
+                                selectedRows.SubjectName = textSubjectName.Text.Trim();
+                                selectedRows.SubjectUnit = textSubjectUnits.Text.Trim();
+
+                                mouseClicked = "";
+                                btnCreateSub.Text = "CREATE SUBJECT";
+                                _context.SaveChanges();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("SUBJECT CODE ALREADY EXISTED!");
+                            mouseClicked = "";
+                            btnCreateSub.Text = "CREATE SUBJECT";
+                        }
+                    }
+                    else
+                    {
+                        var selectedRow2 = _context.S_Subject.Where(q => q.SubjectName == subName).FirstOrDefault();
+                        //string conditionSubName = selectedRow2.SubjectName.ToString();
+
+                        if (selectedRow2 != null)
+                        {
+                            string conditionSubName = selectedRow2.SubjectName.ToString();
+                            if (conditionSubName == originalSub)
+                            {
+                                selectedRows.SubjectCode = textSubjectCode.Text.Trim();
+                                selectedRows.SubjectName = textSubjectName.Text.Trim();
+                                selectedRows.SubjectUnit = textSubjectUnits.Text.Trim();
+
+                                mouseClicked = "";
+                                btnCreateSub.Text = "CREATE SUBJECT";
+                                _context.SaveChanges();
+                            }
+                            else
+                            {
+                                MessageBox.Show("SUBJECT NAME ALREADY EXISTED!");
+                                mouseClicked = "";
+                                btnCreateSub.Text = "CREATE SUBJECT";
+                            }
+                        }
+                        else
+                        {
+                            selectedRows.SubjectCode = textSubjectCode.Text.Trim();
+                            selectedRows.SubjectName = textSubjectName.Text.Trim();
+                            selectedRows.SubjectUnit = textSubjectUnits.Text.Trim();
+
+                            mouseClicked = "";
+                            btnCreateSub.Text = "CREATE SUBJECT";
+                            _context.SaveChanges();
+                        }
+                    }
+                }
+
+                btnDelete.Visible = false;
+                textSubjectCode.Text = "";
+                textSubjectName.Text = "";
+                textSubjectUnits.Text = "";
+
+                loadSubs();
+            }
+            
         }
 
         private void BTNAssignSub_Click_1(object sender, EventArgs e)
@@ -262,13 +403,18 @@ namespace FullScreenAppDemo
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            var selected = _context.Class_S.Where(q => q.ClassID == classID).FirstOrDefault();
-            if (selected != null)
+            if (MessageBox.Show("Are you sure you want to Delete", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                _context.Class_S.Remove(selected);
-                _context.SaveChanges();
+                var selected = _context.Class_S.Where(q => q.ClassID == classID).FirstOrDefault();
+                if (selected != null)
+                {
+                    _context.Class_S.Remove(selected);
+                    _context.SaveChanges();
+                }
+                btnDelete.Visible = false;
+                MessageBox.Show("Succesfully Deleted","Deleted",MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
-            btnDelete.Visible = false;
         }
 
         private void gunaDataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -353,6 +499,270 @@ namespace FullScreenAppDemo
         private void textC_name_TextChanged(object sender, EventArgs e)
         {
             CANC.Visible = true;
+        }
+
+        private void btnCreateSub_Click_2(object sender, EventArgs e)
+        {
+            string subCode = textSubjectCode.Text.Trim();
+            string subName = textSubjectName.Text.Trim();
+            if (textSubjectCode.Text == "" || textSubjectName.Text == "" || textSubjectUnits.Text == "")
+            {
+                MessageBox.Show("Fill out the Designated Credential first", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                if (MessageBox.Show("Are you sure you want to Save", "Save", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                   
+
+                    if (btnCreateSub.Text == "CREATE SUBJECT")
+                    {
+                        var selectedRow = _context.S_Subject.Where(q => q.SubjectCode == subCode).FirstOrDefault();
+
+                        if (selectedRow == null)
+                        {
+                            var selectedRow2 = _context.S_Subject.Where(q => q.SubjectName == subName).FirstOrDefault();
+
+                            if (selectedRow2 == null)
+                            {
+                                S_Subject s = new S_Subject
+                                {
+                                    SubjectCode = textSubjectCode.Text.Trim(),
+                                    SubjectName = textSubjectName.Text.Trim(),
+                                    SubjectUnit = textSubjectUnits.Text.Trim()
+                                };
+
+                                _context.S_Subject.Add(s);
+                                _context.SaveChanges();
+                                MessageBox.Show("Succesfully added", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+                                MessageBox.Show("SUBJECT NAME ALREADY EXISTED!", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("SUBJECT CODE ALREADY EXISTED!", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                        }
+                    }
+                }
+                else if (btnCreateSub.Text == "UPDATE SUBJECT")
+                {
+                    if (MessageBox.Show("Are you sure you want to Update", "Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+
+                    {
+                        var selectedRows = _context.S_Subject.Where(q => q.SubjectID == subjectID).FirstOrDefault();
+                        string originalSub = selectedRows.SubjectName.ToString();
+                        string originalSubCode = selectedRows.SubjectCode.ToString();
+
+                        var selectedRow = _context.S_Subject.Where(q => q.SubjectCode == subCode).FirstOrDefault();
+
+
+                        if (selectedRow != null)
+                        {
+                            string conditionCode = selectedRow.SubjectCode.ToString();
+                            if (conditionCode == originalSubCode)
+                            {
+                                var selectedRow2 = _context.S_Subject.Where(q => q.SubjectName == subName).FirstOrDefault();
+
+
+                                if (selectedRow2 != null)
+                                {
+
+                                    string conditionSubName = selectedRow2.SubjectName.ToString();
+                                    if (conditionSubName == originalSub)
+                                    {
+                                        selectedRows.SubjectCode = textSubjectCode.Text.Trim();
+                                        selectedRows.SubjectName = textSubjectName.Text.Trim();
+                                        selectedRows.SubjectUnit = textSubjectUnits.Text.Trim();
+
+                                        SUBmouseClicked = "";
+                                        btnCreateSub.Text = "CREATE SUBJECT";
+                                        _context.SaveChanges();
+                                        btnCancelUpdate.Text = "CANCEL";
+                                        MessageBox.Show("Succesfully Updated", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("SUBJECT NAME ALREADY EXISTED!", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        SUBmouseClicked = "";
+                                        btnCreateSub.Text = "CREATE SUBJECT";
+                                    }
+                                }
+                                else
+                                {
+
+                                    selectedRows.SubjectCode = textSubjectCode.Text.Trim();
+                                    selectedRows.SubjectName = textSubjectName.Text.Trim();
+                                    selectedRows.SubjectUnit = textSubjectUnits.Text.Trim();
+
+                                    SUBmouseClicked = "";
+                                    btnCreateSub.Text = "CREATE SUBJECT";
+                                    _context.SaveChanges();
+                                    btnCancelUpdate.Text = "CANCEL";
+                                    MessageBox.Show("Succesfully Updated", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("SUBJECT CODE ALREADY EXISTED!", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                                SUBmouseClicked = "";
+                                btnCreateSub.Text = "CREATE SUBJECT";
+                            }
+                        }
+                        else
+                        {
+                            var selectedRow2 = _context.S_Subject.Where(q => q.SubjectName == subName).FirstOrDefault();
+                            //string conditionSubName = selectedRow2.SubjectName.ToString();
+
+                            if (selectedRow2 != null)
+                            {
+                                string conditionSubName = selectedRow2.SubjectName.ToString();
+                                if (conditionSubName == originalSub)
+                                {
+                                    selectedRows.SubjectCode = textSubjectCode.Text.Trim();
+                                    selectedRows.SubjectName = textSubjectName.Text.Trim();
+                                    selectedRows.SubjectUnit = textSubjectUnits.Text.Trim();
+
+                                    SUBmouseClicked = "";
+                                    btnCreateSub.Text = "CREATE SUBJECT";
+                                    _context.SaveChanges();
+                                    btnCancelUpdate.Text = "CANCEL";
+                                    MessageBox.Show("Succesfully Updated", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+                                }
+                                else
+                                {
+                                    MessageBox.Show("SUBJECT NAME ALREADY EXISTED!", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    SUBmouseClicked = "";
+
+                                    btnCreateSub.Text = "CREATE SUBJECT";
+                                }
+                            }
+                            else
+                            {
+                                selectedRows.SubjectCode = textSubjectCode.Text.Trim();
+                                selectedRows.SubjectName = textSubjectName.Text.Trim();
+                                selectedRows.SubjectUnit = textSubjectUnits.Text.Trim();
+
+                                SUBmouseClicked = "";
+                                btnCreateSub.Text = "CREATE SUBJECT";
+                                _context.SaveChanges();
+                                btnCancelUpdate.Text = "CANCEL";
+                                MessageBox.Show("Succesfully Updated", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            }
+                        }
+                    }
+                }
+
+                btnDelete.Visible = false;
+                textSubjectCode.Text = "";
+                textSubjectName.Text = "";
+                textSubjectUnits.Text = "";
+
+                loadSubs();
+            }
+
+        }
+
+        private void btnCancelUpdate_Click(object sender, EventArgs e)
+        {
+
+            if (btnCancelUpdate.Text == "CANCEL")
+            {
+                textSubjectCode.Text = "";
+                textSubjectName.Text = "";
+                textSubjectUnits.Text = "";
+                btnCancelUpdate.Visible = false;
+            }
+            else if (btnCancelUpdate.Text == "CANCEL UPDATE")
+            {
+                textSubjectCode.Text = "";
+                textSubjectName.Text = "";
+                textSubjectUnits.Text = "";
+                SUBmouseClicked = "";
+                btnCreateSub.Text = "CREATE SUBJECT";
+                btnDeleteS.Visible = false;
+                btnCancelUpdate.Text = "CANCEL";
+
+            }
+           
+        }
+
+        private void btnDeleteS_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to Delete", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                var selectedRow = _context.S_Subject.Where(q => q.SubjectID == subjectID).FirstOrDefault();
+
+                _context.S_Subject.Remove(selectedRow);
+                _context.SaveChanges();
+
+                textSubjectCode.Text = "";
+                textSubjectName.Text = "";
+                textSubjectUnits.Text = "";
+
+                SUBmouseClicked = "";
+                btnCreateSub.Text = "CREATE SUBJECT";
+                btnDelete.Visible = false;
+
+                loadSubs();
+
+                MessageBox.Show("Succesfully Deleted", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void textSubjectCode_TextChanged(object sender, EventArgs e)
+        {
+            btnCancelUpdate.Visible = true;
+        }
+
+        private void textSubjectName_TextChanged(object sender, EventArgs e)
+        {
+            btnCancelUpdate.Visible = true;
+        }
+
+        private void textSubjectUnits_TextChanged(object sender, EventArgs e)
+        {
+            btnCancelUpdate.Visible = true;
+        }
+
+        private void dgvSubList_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvSubList.SelectedRows.Count > 0)
+            {
+                subjectID = Convert.ToInt32(dgvSubList.SelectedRows[0].Cells[0].Value.ToString());
+
+                if (SUBmouseClicked == "yes")
+                {
+                    var selectedRow = _context.S_Subject.Where(q => q.SubjectID == subjectID).FirstOrDefault();
+
+                    textSubjectCode.Text = selectedRow.SubjectCode.ToString();
+                    textSubjectName.Text = selectedRow.SubjectName.ToString();
+                    textSubjectUnits.Text = selectedRow.SubjectUnit.ToString();
+
+                    btnDeleteS.Visible = true;
+                    btnCreateSub.Text = "UPDATE SUBJECT";
+                    btnCancelUpdate.Text = "CANCEL UPDATE";
+                }
+            }
+        }
+
+        private void dgvSubList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            SUBmouseClicked = "yes";
+        }
+
+        private void dgvSubList_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            SUBmouseClicked = "yes";
         }
     }
 }

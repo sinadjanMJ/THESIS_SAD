@@ -238,7 +238,8 @@ namespace FullScreenAppDemo
                 _context.SaveChanges();
                 updatedProfile();
                 openSTList();
-               
+                MessageBox.Show("Succesfully Updated", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
            
         }
@@ -404,7 +405,7 @@ namespace FullScreenAppDemo
 
 
                 gunaButton1.Visible = false;
-                MessageBox.Show("SUCCESSFULLY DELETED");
+                MessageBox.Show("Succesfully Deleted", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             
         }

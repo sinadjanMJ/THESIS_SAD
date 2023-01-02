@@ -58,12 +58,14 @@ namespace FullScreenAppDemo
                             _context.SaveChanges();
                             this.Close();
                             insert();
-                            MessageBox.Show("Succesfully Added.");
+                            MessageBox.Show("Succesfully Added", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                     else
                     {
-                        MessageBox.Show("There is already designated dean to the selected Department. Pick another.");
+                       
+                        MessageBox.Show("There is already designated dean to the selected Department. Pick another.", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
                     }
                 }
                 else if (choice == "update")
@@ -92,11 +94,13 @@ namespace FullScreenAppDemo
                             _context.SaveChanges();
                             this.Close();
                             insert();
-                            MessageBox.Show("Succesfully Updated.");
+                            MessageBox.Show("Succesfully Updated", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         else
                         {
-                            MessageBox.Show("There is already designated dean to the selected Department. Pick another.");
+                       
+                            MessageBox.Show("There is already designated dean to the selected Department. Pick another.", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
                         }
                     }
                 }

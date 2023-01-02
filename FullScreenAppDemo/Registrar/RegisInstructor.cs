@@ -16,93 +16,79 @@ namespace FullScreenAppDemo
     {
 
         studentPortalEntities _context = new studentPortalEntities();
+        public static string instructorID = "";
+        public static string choice = "";
         public RegisInstructor()
         {
             InitializeComponent();
         }
 
-        private void CloseBTN_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Are you sure you want to Exit", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                this.Close();
-            }
-        }
+        
 
-        private void MinimizedBTN_Click(object sender, EventArgs e)
+        private void F2_UpdateEventHandler1(object sender, InstructorImport.UpdateEventArgs args)
         {
-            this.WindowState = FormWindowState.Minimized;
+            loadins();
         }
-
-        private void DashboardBTN_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            RegisDashboard mj = new RegisDashboard();
-            mj.Show();
-        }
-
-        private void StudentBTN_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            RegisStudent mj = new RegisStudent();
-            mj.Show();
-        }
-
-        private void InstructorBTN_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            RegisInstructor mj = new RegisInstructor();
-            mj.Show();
-        }
-
-        private void AcademicsBTN_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            RegisAcademics mj = new RegisAcademics();
-            mj.Show();
-        }
-
-        private void DeanBTN_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            RegisDean mj = new RegisDean();
-            mj.Show();
-        }
-
-        private void btnBackMenu_Click(object sender, EventArgs e)
-        {
-           
-           
-        }
-
         private void btnAddInstructor_Click(object sender, EventArgs e)
         {
-            InstructorImport mj = new InstructorImport();
-            mj.Show();
+            choice = "add";
+            InstructorImport std = new InstructorImport(this);
+            std.UpdateEventHandler += F2_UpdateEventHandler1;
+            std.ShowDialog();
         }
 
         private void RegisInstructor_Load(object sender, EventArgs e)
         {
+            loadins();
+        }
+
+        public void loadins()
+        {
             var res1 = (
-                from ins in _context.Instructors
-                join deps in _context.Departments
-                on ins.Department_ID equals deps.Department_ID.ToString()
+                           from ins in _context.Instructors
+                           join deps in _context.Departments
+                           on ins.Department_ID equals deps.Department_ID.ToString()
 
-                select new InstructorWithDept
-                {
-                    InstructorID = ins.InstructorID,
-                    Instructor_Name = ins.Instructor_fname + ", " + ins.Instructor_lname,
-                    Department_Name = deps.Department_Name
-                }
+                           select new InstructorWithDept
+                           {
+                               InstructorID = ins.InstructorID,
+                               Instructor_Name = ins.Instructor_fname + ", " + ins.Instructor_lname,
+                               Department_Name = deps.Department_Name
+                           }
 
-                ).ToList();
+                           ).ToList();
 
             dgvInstructorList.DataSource = res1;
         }
 
         private void btnDELETE_Click(object sender, EventArgs e)
         {
+            int convertInstructorID = Int32.Parse(instructorID.ToString());
+            var selectedRow = _context.Instructors.Where(q => q.InstructorID == convertInstructorID).FirstOrDefault();
 
+            //MessageBox.Show("Are you sure you want to delete?",)
+            _context.Instructors.Remove(selectedRow);
+            _context.SaveChanges();
+
+            loadins();
+            btnDELETE.Visible = false;
+        }
+
+        private void dgvInstructorList_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvInstructorList.SelectedRows.Count > 0)
+            {
+                instructorID = dgvInstructorList.SelectedRows[0].Cells[0].Value.ToString();
+            }
+            btnDELETE.Visible = true;
+        }
+
+        private void dgvInstructorList_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            choice = "update";
+            InstructorImport std = new InstructorImport(this);
+            std.UpdateEventHandler += F2_UpdateEventHandler1;
+            std.ShowDialog();
         }
     }
 }

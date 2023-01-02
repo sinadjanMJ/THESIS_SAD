@@ -27,15 +27,18 @@ namespace FullScreenAppDemo
         private void btnSave_Click(object sender, EventArgs e)
         {
 
+            var selectedRow = _context.Departments.Where(q => q.Department_ID == departmentID).FirstOrDefault();
+            string originalDepName = selectedRow.Department_Name.ToString();
+            string depName = textDepartment_name.Text.Trim();
+
             if (textDepartment_name.Text == "" )
             {
                 MessageBox.Show("Fill out the Designated Credential first", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                var selectedRow = _context.Departments.Where(q => q.Department_ID == departmentID).FirstOrDefault();
-                string originalDepName = selectedRow.Department_Name.ToString();
-                string depName = textDepartment_name.Text.Trim();
+                
+
                 if (choice == "add")
                 {
                     var setCondition = _context.Departments.Where(q => q.Department_Name == depName).FirstOrDefault();
@@ -50,7 +53,8 @@ namespace FullScreenAppDemo
                         _context.Departments.Add(d);
                         _context.SaveChanges();
                        
-                        MessageBox.Show("Succesfully Added.");
+                       
+                        MessageBox.Show("Succesfully added", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Insert();
                         this.Close();
                        
@@ -58,7 +62,8 @@ namespace FullScreenAppDemo
                     }
                     else
                     {
-                        MessageBox.Show("DEPARTMENT NAME ALREADY EXIST");
+                        MessageBox.Show("DEPARTMENT NAME ALREADY EXIST!!", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
                     }
                 }
                 else if (choice == "update")
@@ -76,14 +81,17 @@ namespace FullScreenAppDemo
                             Insert();
 
                             this.Close();
+
+
+                            MessageBox.Show("Succesfully Updated", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             
-                                               
-                       
-                            MessageBox.Show("Succesfully Updated.");
                         }
                         else
                         {
-                            MessageBox.Show("DEPARTMENT NAME ALREADY EXIST");
+                            
+
+                            MessageBox.Show("DEPARTMENT NAME ALREADY EXIST!!", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
                         }
                     }
                     else
@@ -96,7 +104,7 @@ namespace FullScreenAppDemo
 
 
 
-                        MessageBox.Show("Succesfully Updated.");
+                        MessageBox.Show("Succesfully Updated", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }

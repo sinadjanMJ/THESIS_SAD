@@ -251,6 +251,7 @@ namespace FullScreenAppDemo
                 _context.SaveChanges();
 
                 loadData();
+                MessageBox.Show("Succesfully Deleted", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
         }
@@ -258,6 +259,23 @@ namespace FullScreenAppDemo
         private void dgvDeanList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             gunaButton1.Visible = true;
+        }
+
+        private void dgvDepartmentList_CellMouseDoubleClick_1(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            choicedepartment = "update";
+            DepartmentImport std = new DepartmentImport(this);
+            std.UpdateEventHandler += F2_UpdateEventHandler1;
+            std.ShowDialog();
+        }
+
+        private void dgvDepartmentList_SelectionChanged_1(object sender, EventArgs e)
+        {
+            if (dgvDepartmentList.SelectedRows.Count > 0)
+            {
+                departmentID = Convert.ToInt32(dgvDepartmentList.SelectedRows[0].Cells[0].Value.ToString());
+            }
+            deletedepartment.Visible = true;
         }
     }
 }

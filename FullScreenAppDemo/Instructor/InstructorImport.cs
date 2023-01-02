@@ -16,7 +16,7 @@ namespace FullScreenAppDemo
     {
         studentPortalEntities _context = new studentPortalEntities();
         DepartmentValue dv = new DepartmentValue();
-        public InstructorImport()
+        public InstructorImport(RegisInstructor R)
         {
             InitializeComponent();
         }
@@ -56,10 +56,10 @@ namespace FullScreenAppDemo
 
                     _context.Instructors.Add(i);
                     _context.SaveChanges();
+                    insert();
+                    MessageBox.Show("Succesfully Added", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    RegisInstructor ii = new RegisInstructor();
-                    ii.Show();
-                    this.Hide();
+                    this.Close();
                 }
             }
             
@@ -67,25 +67,24 @@ namespace FullScreenAppDemo
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            RegisInstructor ii = new RegisInstructor();
-            ii.Show();
-            this.Hide();
+            this.Close();
         }
 
-        private void gunaButton2_Click(object sender, EventArgs e)
+       
+
+        public delegate void UpdatDelegate(object sender, UpdateEventArgs args);
+        public event UpdatDelegate UpdateEventHandler;
+
+        public class UpdateEventArgs : EventArgs
         {
-            this.WindowState = FormWindowState.Minimized;
-
+            public string Data { get; set; }
         }
 
-        private void gunaButton1_Click(object sender, EventArgs e)
+        protected void insert()
         {
-            DialogResult dr = MessageBox.Show("Do you want to exit.", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dr == DialogResult.Yes)
-            {
-                Application.ExitThread();
-
-            }
+            UpdateEventArgs args = new UpdateEventArgs();
+            UpdateEventHandler.Invoke(this, args);
         }
+
     }
 }

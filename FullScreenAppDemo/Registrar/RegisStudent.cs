@@ -73,6 +73,8 @@ namespace FullScreenAppDemo
                 studentID = dgvStudentList.SelectedRows[0].Cells[0].Value.ToString();
 
             }
+            btnDelete.Visible = true;
+
         }
 
         private void gunaButton1_Click(object sender, EventArgs e)
@@ -134,6 +136,9 @@ namespace FullScreenAppDemo
                 _context.studentBackgrounds.Remove(selectedRow);
                 _context.SaveChanges();
                 dgvStudentList.DataSource = _context.studentBackgrounds.ToList();
+                btnDelete.Visible = false;
+                MessageBox.Show("Succesfully Deleted", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
             }
             
         }
@@ -357,7 +362,8 @@ namespace FullScreenAppDemo
                     _context.SaveChanges();
                     saveProfile();
                     Clear();
-                    MessageBox.Show("STUDENT ADDED SUCCESSFULLY");
+                    
+                    MessageBox.Show("STUDENT ADDED SUCCESSFULLY", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     openStudList();
                     dgvStudentList.DataSource = _context.studentBackgrounds.ToList();
 

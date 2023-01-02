@@ -1163,8 +1163,8 @@ namespace FullScreenAppDemo
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1371, 788);
-            this.Controls.Add(this.NEXTPANEL);
             this.Controls.Add(this.UPDATEPANEL);
+            this.Controls.Add(this.NEXTPANEL);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "UPDATESTUDENT";
             this.Text = "UPDATESTUDENT";

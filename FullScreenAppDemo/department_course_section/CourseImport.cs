@@ -120,17 +120,23 @@ namespace FullScreenAppDemo
                                 _context.Courses.Add(c);
                                 _context.SaveChanges();
                                 insert();
-                                MessageBox.Show("Succesfully Added");
+
+                                MessageBox.Show("Succesfully Added", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                                 this.Close();
                             }
                             else
                             {
-                                MessageBox.Show("THE DATA ALREADY EXIST!");
+                                
+                                MessageBox.Show("THE DATA ALREADY EXIST!", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
                             }
                         }
                         else
                         {
-                            MessageBox.Show("COURSE NAME ALREADY EXIST!");
+                          
+                            MessageBox.Show("COURSE NAME ALREADY EXIST!", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
                         }
                     }
                 }
@@ -162,12 +168,12 @@ namespace FullScreenAppDemo
 
                                         _context.SaveChanges();
                                         insert();
-                                        MessageBox.Show("Successfully Updated");
+                                        MessageBox.Show("Succesfully Updated", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                         this.Close();
                                     }
                                     else
                                     {
-                                        MessageBox.Show("CONDITION 1");
+                                
                                         MessageBox.Show("THE DATA ALREADY EXIST!");
                                     }
                                 }
@@ -178,14 +184,13 @@ namespace FullScreenAppDemo
 
                                     _context.SaveChanges();
                                     insert();
-                                    MessageBox.Show("Successfully Updated");
+                                    MessageBox.Show("Succesfully Updated", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     this.Close();
                                 }
                             }
                             else
                             {
-                                MessageBox.Show("CONDITION 2");
-                                MessageBox.Show("THE COURSE NAME ALREADY EXIST!");
+                                MessageBox.Show("COURSE NAME ALREADY EXIST!", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             }
                         }
                         else
@@ -203,12 +208,15 @@ namespace FullScreenAppDemo
 
                                     _context.SaveChanges();
                                     insert();
-                                    MessageBox.Show("Successfully Updated");
+                                
+                                    MessageBox.Show("Succesfully Updated", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     this.Close();
                                 }
                                 else
                                 {
-                                    MessageBox.Show("THE DATA ALREADY EXIST!");
+                                  
+                                    MessageBox.Show("THE DATA ALREADY EXIST!", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
                                 }
                             }
                             else
@@ -219,7 +227,8 @@ namespace FullScreenAppDemo
                                 _context.SaveChanges();
                                 insert();
                                 
-                                MessageBox.Show("Successfully Updated");
+                               
+                                MessageBox.Show("Succesfully Updated", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 this.Close();
                             }
                         }
