@@ -15,9 +15,13 @@ namespace FullScreenAppDemo
     public partial class UPDATESTUDENT : Form
     {
         //int selectedRow = 0;
+
         
         studentPortalEntities _context = new studentPortalEntities();
         int studID;
+
+        public static string schoolID = "";
+        public static string updateChoice = "";
 
         //string[] spid = new string[255];
         List<string> spid = new List<string>();
@@ -36,6 +40,7 @@ namespace FullScreenAppDemo
 
         private void gunaButton2_Click(object sender, EventArgs e)
         {
+            this.Close();
             openSTList();
         }
         private void openSTList()
@@ -53,14 +58,13 @@ namespace FullScreenAppDemo
             m.Show();
 
             this.Close();
-       
-
 
 
         }
 
         private void UPDATESTUDENT_Load(object sender, EventArgs e)
         {
+            
             UPDATEPANEL.Hide();
             NEXTPANEL.Show();
 
@@ -68,19 +72,24 @@ namespace FullScreenAppDemo
             dgvSubAssignment.Columns[0].Visible = false;
             dgvSubAssignment.Columns[5].Visible = false;
             dgvSubAssignment.Columns[6].Visible = false;
-            UloadList();
-            UyearLoad();
-            UloadSemester();
-            UloadSubs();
+
+            loadList();
+            yearLoad();
+            loadSemester();
+            loadSubs();
         }
-        public void UloadList()
+        public void loadList()
         {
             //textS_StudentID.Text = studentList.studentID;
             studID = Int32.Parse(RegisStudent.studentID.ToString());
-            var selectedRowID = _context.studentBackgrounds.Where(q => q.StudentID == studID).FirstOrDefault();
+            schoolID = RegisStudent.schoolID.ToString();
+            //MessageBox.Show(studID.ToString());
+            //var selectedRowID = _context.studentBackgrounds.Where(q => q.StudentID == studID).FirstOrDefault();
             //var selectedRow = _context.userAccs.Where(q => q.id == selectedRowID).FirstOrDefault();
 
-            textS_StudentID.Text = selectedRowID.StudentID.ToString().Trim();
+            var selectedRowID = _context.studentBackgrounds.Where(q => q.S_SchoolID == schoolID).FirstOrDefault();
+
+            textS_StudentID.Text = selectedRowID.S_SchoolID.ToString().Trim();
             textS_Fname.Text = selectedRowID.S_fname.ToString().Trim();
             textS_Mname.Text = selectedRowID.S_mname.ToString().Trim();
             textS_Lname.Text = selectedRowID.S_lname.ToString().Trim();
@@ -98,12 +107,12 @@ namespace FullScreenAppDemo
             textS_Guardian_LName.Text = selectedRowID.S_Guardian_lname.ToString().Trim();
             textS_Guardian_Contact.Text = selectedRowID.S_Guardian_contact.ToString().Trim();
 
-            UloadDepartment();
+            loadDepartment();
         }
 
 
 
-        private void UloadDepartment()
+        private void loadDepartment()
         {
             var selected = _context.Departments.ToList();
 
@@ -126,11 +135,12 @@ namespace FullScreenAppDemo
             }
 
             cBDepartment.SelectedIndex = cBDepartment.FindString(studDepNames);
-            UloadCourse();
+            loadCourse();
         }
 
-        private void UloadCourse()
+        private void loadCourse()
         {
+
             cBCourse.Items.Clear();
             string depID = (cBDepartment.SelectedItem as DepartmentValue).Value.ToString();
             var selectedC = _context.Courses.ToList();
@@ -157,9 +167,9 @@ namespace FullScreenAppDemo
             //cBCourse.SelectedIndex = -1;
             //cBDepartment.SelectedIndex = cBDepartment.FindString(studDepNames);
             cBCourse.SelectedIndex = cBCourse.FindString(studCourseNames);
-            UloadSection();
+            loadSection();
         }
-        private void UloadSubs()
+        private void loadSubs()
         {
             string depID = (cBDepartment.SelectedItem as DepartmentValue).Value.ToString();
             string corID = (cBCourse.SelectedItem as courseValue).Value.ToString();
@@ -214,32 +224,41 @@ namespace FullScreenAppDemo
         {
             if (MessageBox.Show("Are you sure you want to UPDATE", "UPDATE", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                var selectedRowID = _context.studentBackgrounds.Where(q => q.StudentID == studID).FirstOrDefault();
+                  string schoolID = textS_StudentID.Text.Trim();
 
-                selectedRowID.S_fname = textS_Fname.Text.Trim();
-                selectedRowID.S_mname = textS_Mname.Text.Trim();
-                selectedRowID.S_lname = textS_Lname.Text.Trim();
-                selectedRowID.S_Sex = comboGender.Text.Trim();
-                selectedRowID.S_Birthdate = date_S_Birthdate.Text.Trim();
-                selectedRowID.S_mNumber = textS_MobileNumber.Text.Trim();
-                selectedRowID.S_emailAdd = textS_EmailAdd.Text.Trim();
-                selectedRowID.S_Religion = textS_Religion.Text.Trim();
-                selectedRowID.S_Citizenship = textS_Citizenship.Text.Trim();
-                selectedRowID.S_Province = textS_Province.Text.Trim();
-                selectedRowID.S_municipality = textS_Municipality.Text.Trim();
-                selectedRowID.S_barangay = textS_Barangay.Text.Trim();
-                selectedRowID.S_Guardian_fname = textS_Guardian_Fname.Text.Trim();
-                selectedRowID.S_Guardian_mname = textS_Guardian_Mname.Text.Trim();
-                selectedRowID.S_Guardian_lname = textS_Guardian_LName.Text.Trim();
-                selectedRowID.S_Guardian_contact = textS_Guardian_Contact.Text.Trim();
+
+                var res = _context.studentBackgrounds.Where(q => q.S_SchoolID == schoolID).ToList();
+
+                _context.studentBackgrounds.Where(q => q.S_SchoolID == schoolID.ToString()).ToList().ForEach(
+                    stud =>
+                    {
+                        stud.S_fname = textS_Fname.Text.Trim();
+                        stud.S_mname = textS_Mname.Text.Trim();
+                        stud.S_lname = textS_Lname.Text.Trim();
+                        stud.S_Sex = comboGender.Text.Trim();
+                        stud.S_Birthdate = date_S_Birthdate.Text.Trim();
+                        stud.S_mNumber = textS_MobileNumber.Text.Trim();
+                        stud.S_emailAdd = textS_EmailAdd.Text.Trim();
+                        stud.S_Religion = textS_Religion.Text.Trim();
+                        stud.S_Citizenship = textS_Citizenship.Text.Trim();
+                        stud.S_Province = textS_Province.Text.Trim();
+                        stud.S_municipality = textS_Municipality.Text.Trim();
+                        stud.S_barangay = textS_Barangay.Text.Trim();
+                        stud.S_Guardian_fname = textS_Guardian_Fname.Text.Trim();
+                        stud.S_Guardian_mname = textS_Guardian_Mname.Text.Trim();
+                        stud.S_Guardian_lname = textS_Guardian_LName.Text.Trim();
+                        stud.S_Guardian_contact = textS_Guardian_Contact.Text.Trim();
+                    }
+                    );
 
                 var selectedDepID = _context.Student_Profile.Where(q => q.StudentID == studID.ToString()).FirstOrDefault();
 
                 _context.SaveChanges();
                 updatedProfile();
-                openSTList();
                 MessageBox.Show("Succesfully Updated", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                openSTList();
+                
             }
            
         }
@@ -248,6 +267,7 @@ namespace FullScreenAppDemo
         {
             loadUpdateCourse();
             loadUpdatedSection();
+           
         }
 
         private void cBCourse_SelectedIndexChanged(object sender, EventArgs e)
@@ -306,50 +326,123 @@ namespace FullScreenAppDemo
 
         private void updatedProfile()
         {
+            string schoolID = textS_StudentID.Text.Trim();
+            //RENDER IF THERE IS ALREADY AN EXISITNG DATA UNDER THE SELECTED SCHOOL ID
+            //GET THE SELECTED COMBO BOXES
+            string departmentID = (cBDepartment.SelectedItem as DepartmentValue).Value.ToString();
+            string courseID = (cBCourse.SelectedItem as courseValue).Value.ToString();
+            string yearLevel = cBYear.Text.Trim();
+            string classID = (cBSection.SelectedItem as classValue).Value.ToString();
+            string semester = cBSemester.Text.Trim();
 
 
-            for (int i = 0; i < spid.Count; i++)
+            var render = _context.Student_Profile.Where(q => q.SchoolID == schoolID
+            && q.DepartmentID == departmentID && q.CourseID == courseID && q.YearLevel == yearLevel
+            && q.ClassID == classID && q.Semester == semester).FirstOrDefault();
+
+            if (render != null)
             {
-                if (spid[i] != null || spid[i] != "")
+                string studentID = RegisStudent.studentID.ToString();
+                //CHECK IF IT'S BECAUSE OF ORIGINAL VALUE
+                var res = _context.Student_Profile.Where(q => q.StudentID == studentID).FirstOrDefault();
+                string odepartmentID = res.DepartmentID;
+                string ocourseID = res.CourseID;
+                string oyearLevel = res.YearLevel;
+                string oclassID = res.ClassID;
+                string osemester = res.Semester;
+
+                if (odepartmentID == departmentID && ocourseID == courseID && oyearLevel == yearLevel
+                    && oclassID == classID && osemester == semester) // MEANS IT'S BECAUSE OF ORIGINAL DATA
                 {
-                    int convertSPID = int.Parse(spid[i].ToString());
-                    var selectedRowID = _context.Student_Profile.Where(q => q.SP_ID == convertSPID).FirstOrDefault();
-                    _context.Student_Profile.Remove(selectedRowID);
+                    //Get the values that is missing and remove it.
+                    //string d = spid.Length.ToString();
+
+                    for (int i = 0; i < spid.Count; i++)
+                    {
+                        if (spid[i] != null || spid[i] != "")
+                        {
+                            int convertSPID = int.Parse(spid[i].ToString());
+                            var selectedRowID = _context.Student_Profile.Where(q => q.SP_ID == convertSPID).FirstOrDefault();
+                            _context.Student_Profile.Remove(selectedRowID);
+                        }
+                    }
+                    _context.SaveChanges();
+
+                    //int studID = Convert.ToInt32(textS_StudentID.ToString());
+                    _context.Student_Profile.Where(q => q.StudentID == studID.ToString()).ToList().ForEach(
+                        x =>
+                        {
+                            x.DepartmentID = (cBDepartment.SelectedItem as DepartmentValue).Value.ToString();
+                            x.CourseID = (cBCourse.SelectedItem as courseValue).Value.ToString();
+                            x.YearLevel = cBYear.Text.Trim();
+                            x.ClassID = (cBSection.SelectedItem as classValue).Value.ToString();
+                            x.Semester = cBSemester.Text.Trim();
+                        }
+                        );
+
+                    /*db.tblTemp.Where(x => x.ProductID == parmProductID && x.IsActive == true).ToList().ForEach(x =>
+                    {
+                        x.IsActive = false; x.UpdatedTimeStamp = DateTime.Now;
+                    });
+                    db.SaveChanges();*/
+
+                    _context.SaveChanges();
+                    openSTList();
+                }
+                else
+                {
+                    MessageBox.Show("THERE IS ALREADY AN EXISITNG RECORD IN THIS SELECTED ID");
                 }
             }
-            _context.SaveChanges();
-
-            //int studID = Convert.ToInt32(textS_StudentID.ToString());
-            _context.Student_Profile.Where(q => q.StudentID == studID.ToString()).ToList().ForEach(
-                x =>
-                {
-                    x.DepartmentID = (cBDepartment.SelectedItem as DepartmentValue).Value.ToString();
-                    x.CourseID = (cBCourse.SelectedItem as courseValue).Value.ToString();
-                    x.YearLevel = cBYear.Text.Trim();
-                    x.ClassID = (cBSection.SelectedItem as classValue).Value.ToString();
-                    x.Semester = cBSemester.Text.Trim();
-                }
-                );
-
-            /*db.tblTemp.Where(x => x.ProductID == parmProductID && x.IsActive == true).ToList().ForEach(x =>
+            else
             {
-                x.IsActive = false; x.UpdatedTimeStamp = DateTime.Now;
-            });
-            db.SaveChanges();*/
+                //Get the values that is missing and remove it.
+                //string d = spid.Length.ToString();
 
-            _context.SaveChanges();
+                for (int i = 0; i < spid.Count; i++)
+                {
+                    if (spid[i] != null || spid[i] != "")
+                    {
+                        int convertSPID = int.Parse(spid[i].ToString());
+                        var selectedRowID = _context.Student_Profile.Where(q => q.SP_ID == convertSPID).FirstOrDefault();
+                        _context.Student_Profile.Remove(selectedRowID);
+                    }
+                }
+                _context.SaveChanges();
+
+                //int studID = Convert.ToInt32(textS_StudentID.ToString());
+                _context.Student_Profile.Where(q => q.StudentID == studID.ToString()).ToList().ForEach(
+                    x =>
+                    {
+                        x.DepartmentID = (cBDepartment.SelectedItem as DepartmentValue).Value.ToString();
+                        x.CourseID = (cBCourse.SelectedItem as courseValue).Value.ToString();
+                        x.YearLevel = cBYear.Text.Trim();
+                        x.ClassID = (cBSection.SelectedItem as classValue).Value.ToString();
+                        x.Semester = cBSemester.Text.Trim();
+                    }
+                    );
+
+                /*db.tblTemp.Where(x => x.ProductID == parmProductID && x.IsActive == true).ToList().ForEach(x =>
+                {
+                    x.IsActive = false; x.UpdatedTimeStamp = DateTime.Now;
+                });
+                db.SaveChanges();*/
+
+                _context.SaveChanges();
+                openSTList();
+            }
         }
 
-        private void UyearLoad()
+        private void yearLoad()
         {
             var studProf = _context.Student_Profile.FirstOrDefault(q => q.StudentID == studID.ToString());
             string studYear = studProf.YearLevel.ToString();
 
             cBYear.SelectedIndex = cBYear.FindString(studYear);
-            UloadSection();
+            loadSection();
         }
 
-        private void UloadSemester()
+        private void loadSemester()
         {
             var studProf = _context.Student_Profile.FirstOrDefault(q => q.StudentID == studID.ToString());
             string studSem = studProf.Semester.ToString();
@@ -357,7 +450,7 @@ namespace FullScreenAppDemo
             cBSemester.SelectedIndex = cBSemester.FindString(studSem);
         }
 
-        private void UloadSection()
+        private void loadSection()
         {
             cBSection.Items.Clear();
             string Department_ID = (cBDepartment.SelectedItem as DepartmentValue).Value.ToString();
@@ -425,5 +518,26 @@ namespace FullScreenAppDemo
             UPDATEPANEL.Hide();
             NEXTPANEL.Show();
         }
+
+        private void btnAddNew_Click(object sender, EventArgs e)
+        {
+
+            
+
+            schoolID = textS_StudentID.Text.Trim();
+            updateChoice = "addExisting";
+
+            RegisStudent mj = new RegisStudent();
+            mj.TopLevel = false;
+            NEXTPANEL.Controls.Clear();
+            NEXTPANEL.Controls.Add(mj);
+            mj.Show();
+
+
+
+
+
+        }
+      
     }
 }

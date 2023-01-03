@@ -35,6 +35,7 @@ namespace FullScreenAppDemo
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.NEXTPANEL = new System.Windows.Forms.Panel();
+            this.btnAddNew = new Guna.UI.WinForms.GunaButton();
             this.gunaLabel5 = new Guna.UI.WinForms.GunaLabel();
             this.textS_StudentID = new Guna.UI.WinForms.GunaTextBox();
             this.gunaCirclePictureBox2 = new Guna.UI.WinForms.GunaCirclePictureBox();
@@ -110,6 +111,7 @@ namespace FullScreenAppDemo
             // 
             // NEXTPANEL
             // 
+            this.NEXTPANEL.Controls.Add(this.btnAddNew);
             this.NEXTPANEL.Controls.Add(this.gunaLabel5);
             this.NEXTPANEL.Controls.Add(this.textS_StudentID);
             this.NEXTPANEL.Controls.Add(this.gunaCirclePictureBox2);
@@ -150,8 +152,35 @@ namespace FullScreenAppDemo
             this.NEXTPANEL.Controls.Add(this.textS_Fname);
             this.NEXTPANEL.Location = new System.Drawing.Point(3, 4);
             this.NEXTPANEL.Name = "NEXTPANEL";
-            this.NEXTPANEL.Size = new System.Drawing.Size(1362, 698);
+            this.NEXTPANEL.Size = new System.Drawing.Size(1362, 760);
             this.NEXTPANEL.TabIndex = 11;
+            // 
+            // btnAddNew
+            // 
+            this.btnAddNew.AnimationHoverSpeed = 0.07F;
+            this.btnAddNew.AnimationSpeed = 0.03F;
+            this.btnAddNew.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddNew.BaseColor = System.Drawing.Color.Maroon;
+            this.btnAddNew.BorderColor = System.Drawing.Color.Black;
+            this.btnAddNew.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnAddNew.FocusedColor = System.Drawing.Color.Empty;
+            this.btnAddNew.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddNew.ForeColor = System.Drawing.Color.Gold;
+            this.btnAddNew.Image = null;
+            this.btnAddNew.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnAddNew.Location = new System.Drawing.Point(205, 637);
+            this.btnAddNew.Name = "btnAddNew";
+            this.btnAddNew.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnAddNew.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnAddNew.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnAddNew.OnHoverImage = null;
+            this.btnAddNew.OnPressedColor = System.Drawing.Color.Black;
+            this.btnAddNew.Radius = 5;
+            this.btnAddNew.Size = new System.Drawing.Size(160, 42);
+            this.btnAddNew.TabIndex = 73;
+            this.btnAddNew.Text = "ADD NEW RECORD";
+            this.btnAddNew.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
             // 
             // gunaLabel5
             // 
@@ -159,9 +188,9 @@ namespace FullScreenAppDemo
             this.gunaLabel5.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel5.Location = new System.Drawing.Point(751, 238);
             this.gunaLabel5.Name = "gunaLabel5";
-            this.gunaLabel5.Size = new System.Drawing.Size(108, 16);
+            this.gunaLabel5.Size = new System.Drawing.Size(98, 16);
             this.gunaLabel5.TabIndex = 72;
-            this.gunaLabel5.Text = "STUDENT ID";
+            this.gunaLabel5.Text = "SCHOOL ID";
             this.gunaLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textS_StudentID
@@ -1182,8 +1211,6 @@ namespace FullScreenAppDemo
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel NEXTPANEL;
         private Guna.UI.WinForms.GunaCirclePictureBox gunaCirclePictureBox2;
         private System.Windows.Forms.Label label16;
         private Guna.UI.WinForms.GunaButton gunaButton2;
@@ -1249,5 +1276,7 @@ namespace FullScreenAppDemo
         private System.Windows.Forms.DataGridViewTextBoxColumn subjectidDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn instructoridDataGridViewTextBoxColumn;
         private Guna.UI.WinForms.GunaButton gunaButton4;
+        private Guna.UI.WinForms.GunaButton btnAddNew;
+        public System.Windows.Forms.Panel NEXTPANEL;
     }
 }

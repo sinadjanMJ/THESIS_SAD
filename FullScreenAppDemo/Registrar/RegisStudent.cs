@@ -20,10 +20,16 @@ namespace FullScreenAppDemo
         public static string studentID = "";
         public static string schoolID = "";
 
+        string choice = "";
+        string sschoolID = "";
+
         DepartmentValue dv = new DepartmentValue();
         courseValue cv = new courseValue();
         classValue cvs = new classValue();
-       
+        studentAssignSub sb = new studentAssignSub();
+
+        List<studentAssignSub> res;
+
         public RegisStudent()
         {
             InitializeComponent();
@@ -44,6 +50,68 @@ namespace FullScreenAppDemo
             dgvSubAssignment.Columns[0].Visible = false;
             dgvSubAssignment.Columns[5].Visible = false;
             dgvSubAssignment.Columns[6].Visible = false;
+
+            choice = UPDATESTUDENT.updateChoice.ToString();
+
+            if (choice == "addExisting")
+            {
+                loadExisting();
+                savepanel();
+
+
+            }
+            else
+            {
+                openStudList();
+            }
+
+
+        }
+        private void loadExisting()
+        {
+            //RENDER USING SCHOOL ID PROVIDED
+            sschoolID = UPDATESTUDENT.schoolID.ToString();
+
+            var studentBack = _context.studentBackgrounds.Where(q => q.S_SchoolID == sschoolID).FirstOrDefault();
+
+            if (studentBack != null)
+            {
+                txtS_SchoolID.Text = studentBack.S_SchoolID.ToString().Trim();
+                textS_Fname.Text = studentBack.S_fname.ToString().Trim();
+                textS_Mname.Text = studentBack.S_mname.ToString().Trim();
+                textS_Lname.Text = studentBack.S_lname.ToString().Trim();
+                comboGender.Text = studentBack.S_Sex.ToString().Trim();
+                date_S_Birthdate.Value = Convert.ToDateTime(studentBack.S_Birthdate.ToString());
+                textS_MobileNumber.Text = studentBack.S_mNumber.ToString().Trim();
+                textS_EmailAdd.Text = studentBack.S_emailAdd.ToString().Trim();
+                textS_Religion.Text = studentBack.S_Religion.ToString().Trim();
+                textS_Citizenship.Text = studentBack.S_Citizenship.ToString().Trim();
+                textS_Province.Text = studentBack.S_Province.ToString().Trim();
+                textS_Municipality.Text = studentBack.S_municipality.ToString().Trim();
+                textS_Barangay.Text = studentBack.S_barangay.ToString().Trim();
+                textS_Guardian_Fname.Text = studentBack.S_Guardian_fname.ToString().Trim();
+                textS_Guardian_Mname.Text = studentBack.S_Guardian_mname.ToString().Trim();
+                textS_Guardian_LName.Text = studentBack.S_Guardian_lname.ToString().Trim();
+                textS_Guardian_Contact.Text = studentBack.S_Guardian_contact.ToString().Trim();
+
+                txtS_SchoolID.Enabled = false;
+                textS_Fname.Enabled = false;
+                textS_Mname.Enabled = false;
+                textS_Lname.Enabled = false;
+                comboGender.Enabled = false;
+                date_S_Birthdate.Enabled = false;
+                textS_MobileNumber.Enabled = false;
+                textS_EmailAdd.Enabled = false;
+                textS_Religion.Enabled = false;
+                textS_Citizenship.Enabled = false;
+                textS_Province.Enabled = false;
+                textS_Municipality.Enabled = false;
+                textS_Barangay.Enabled = false;
+                textS_Guardian_Fname.Enabled = false;
+                textS_Guardian_Mname.Enabled = false;
+                textS_Guardian_LName.Enabled = false;
+                textS_Guardian_Contact.Enabled = false;
+            }
         }
 
         private void loadfpStudentList()
@@ -83,11 +151,7 @@ namespace FullScreenAppDemo
 
         private void dgvStudentList_SelectionChanged(object sender, EventArgs e)
         {
-            //if (dgvStudentList.SelectedRows.Count > 0)
-            //{
-            //    studentID = dgvStudentList.SelectedRows[0].Cells[0].Value.ToString();
-
-            //}
+           
 
             if (dgvStudentList.SelectedRows.Count > 0)
             {
@@ -102,6 +166,7 @@ namespace FullScreenAppDemo
 
         private void gunaButton1_Click(object sender, EventArgs e)
         {
+
             saveDATA.Hide();
             studentdataPanel.Hide();
             addstudentPanel.Show();
@@ -135,18 +200,18 @@ namespace FullScreenAppDemo
         private void dgvStudentList_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
            
-            UPDATESTUDENT mj = new UPDATESTUDENT();
-            mj.TopLevel = false;
-            studentdataPanel.Controls.Clear();
-            studentdataPanel.Controls.Add(mj);
-            mj.Show();
+            //UPDATESTUDENT mj = new UPDATESTUDENT();
+            //mj.TopLevel = false;
+            //studentdataPanel.Controls.Clear();
+            //studentdataPanel.Controls.Add(mj);
+            //mj.Show();
         }
-        private void openSTList()
+        private void savepanel()
         {
-            saveDATA.Show();
+            saveDATA.Hide();
             studentdataPanel.Hide();
-            addstudentPanel.Hide();
-        
+            addstudentPanel.Show();
+
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -240,6 +305,43 @@ namespace FullScreenAppDemo
         }
         private void loadStudentSubs()
         {
+            //dgvSubAssignment.DataSource = null;
+            //this.dgvSubAssignment.Rows.Clear();
+            //labelUnits.Text = "0";
+            //if (cBSection.Text.Trim() != "")
+            //{
+            //    string class_ID = (cBSection.SelectedItem as classValue).Value.ToString();
+            //    //var selectedClass = _context.assignSubjects.ToList();
+            //    string sems = cBSemester.Text.Trim();
+
+            //    var res = (
+            //        from ai in _context.assignSubjects
+            //        join il in _context.Instructors on ai.a_instructorID equals il.InstructorID.ToString()
+            //        join sl in _context.S_Subject on ai.a_subjectID equals sl.SubjectID.ToString()
+            //        where ai.a_classID == class_ID && ai.a_semester == sems
+
+            //        select new studentAssignSub
+            //        {
+            //            SubjectID = sl.SubjectID,
+            //            CODE = sl.SubjectCode,
+            //            SUBJECT = sl.SubjectName,
+            //            INSTRUCTOR = il.Instructor_fname + ", " + il.Instructor_lname,
+            //            UNITS = sl.SubjectUnit,
+            //            instructor_id = il.InstructorID,
+            //            subject_id = sl.SubjectID
+            //        }
+
+            //    ).ToList();
+
+            //    ListtoDataTableConverter converter = new ListtoDataTableConverter();
+            //    DataTable dt = converter.ToDataTable(res);
+            //    //SqlDataReader da = new SqlDataReader(res);
+
+            //    dgvSubAssignment.DataSource = dt;
+            //    //dgvSubAssignment.Columns["instructor_id"].Visible = false;
+
+            //    calculateUnit();
+            //}
             dgvSubAssignment.DataSource = null;
             this.dgvSubAssignment.Rows.Clear();
             labelUnits.Text = "0";
@@ -249,33 +351,36 @@ namespace FullScreenAppDemo
                 //var selectedClass = _context.assignSubjects.ToList();
                 string sems = cBSemester.Text.Trim();
 
-                var res = (
-                    from ai in _context.assignSubjects
-                    join il in _context.Instructors on ai.a_instructorID equals il.InstructorID.ToString()
-                    join sl in _context.S_Subject on ai.a_subjectID equals sl.SubjectID.ToString()
-                    where ai.a_classID == class_ID && ai.a_semester == sems
+                res = new List<studentAssignSub>(
+                from ai in _context.assignSubjects
+                join il in _context.Instructors on ai.a_instructorID equals il.InstructorID.ToString()
+                join sl in _context.S_Subject on ai.a_subjectID equals sl.SubjectID.ToString()
+                where ai.a_classID == class_ID && ai.a_semester == sems
 
-                    select new studentAssignSub
-                    {
-                        SubjectID = sl.SubjectID,
-                        CODE = sl.SubjectCode,
-                        SUBJECT = sl.SubjectName,
-                        INSTRUCTOR = il.Instructor_fname + ", " + il.Instructor_lname,
-                        UNITS = sl.SubjectUnit,
-                        instructor_id = il.InstructorID,
-                        subject_id = sl.SubjectID
-                    }
+                select new studentAssignSub
+                {
+                    SubjectID = sl.SubjectID,
+                    CODE = sl.SubjectCode,
+                    SUBJECT = sl.SubjectName,
+                    INSTRUCTOR = il.Instructor_fname + ", " + il.Instructor_lname,
+                    UNITS = sl.SubjectUnit,
+                    instructor_id = il.InstructorID,
+                    subject_id = sl.SubjectID
+                }
 
-                ).ToList();
+            ).ToList();
+
+
 
                 ListtoDataTableConverter converter = new ListtoDataTableConverter();
                 DataTable dt = converter.ToDataTable(res);
-                //SqlDataReader da = new SqlDataReader(res);
+
 
                 dgvSubAssignment.DataSource = dt;
-                //dgvSubAssignment.Columns["instructor_id"].Visible = false;
+
 
                 calculateUnit();
+
             }
         }
         private void calculateUnit()
@@ -297,6 +402,8 @@ namespace FullScreenAppDemo
         private void saveProfile()
         {
             int sti = _context.studentBackgrounds.Count();
+
+            //GET THE LATEST VALUE FROM THE STUDENT BACKGROUND
             int halu = _context.studentBackgrounds.Select(q => q.StudentID).DefaultIfEmpty(0).Max();
             for (int i = 0; i < dgvSubAssignment.Rows.Count; i++)
             {
@@ -309,7 +416,8 @@ namespace FullScreenAppDemo
                     ClassID = (cBSection.SelectedItem as classValue).Value.ToString(),
                     Semester = cBSemester.Text.Trim(),
                     SubjectID = Convert.ToString(dgvSubAssignment.Rows[i].Cells[5].Value),
-                    InstructorID = Convert.ToString(dgvSubAssignment.Rows[i].Cells[6].Value)
+                    InstructorID = Convert.ToString(dgvSubAssignment.Rows[i].Cells[6].Value),
+                    SchoolID = txtS_SchoolID.Text.Trim()
                 };
                 _context.Student_Profile.Add(sp);
                 _context.SaveChanges();
@@ -335,6 +443,7 @@ namespace FullScreenAppDemo
             textS_Guardian_Mname.Clear();
             textS_Guardian_LName.Clear();
             textS_Guardian_Contact.Clear();
+            txtS_SchoolID.Clear();
           
 
 
@@ -356,68 +465,137 @@ namespace FullScreenAppDemo
             string schoolID = txtS_SchoolID.Text.Trim();
             var studentBack = _context.studentBackgrounds.Where(q => q.S_SchoolID == schoolID).FirstOrDefault();
 
-            if (cBCourse.SelectedIndex == -1 || cBYear.SelectedIndex == -1 || cBSemester.SelectedIndex == -1 || cBDepartment.SelectedIndex == -1 || cBSection.SelectedIndex == -1)
+            if (studentBack == null)
             {
-                MessageBox.Show("Fill out the Designated Credential first", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                studentBackground s = new studentBackground
+                {
+                    S_fname = textS_Fname.Text.Trim(),
+                    S_mname = textS_Mname.Text.Trim(),
+                    S_lname = textS_Lname.Text.Trim(),
+                    S_Sex = comboGender.Text.Trim(),
+                    S_Birthdate = date_S_Birthdate.Text.Trim(),
+                    S_mNumber = textS_MobileNumber.Text.Trim(),
+                    S_emailAdd = textS_EmailAdd.Text.Trim(),
+                    S_Religion = textS_Religion.Text.Trim(),
+                    S_Citizenship = textS_Citizenship.Text.Trim(),
+                    S_Province = textS_Province.Text.Trim(),
+                    S_municipality = textS_Municipality.Text.Trim(),
+                    S_barangay = textS_Barangay.Text.Trim(),
+                    S_Guardian_fname = textS_Guardian_Fname.Text.Trim(),
+                    S_Guardian_mname = textS_Guardian_Mname.Text.Trim(),
+                    S_Guardian_lname = textS_Guardian_LName.Text.Trim(),
+                    S_Guardian_contact = textS_Guardian_Contact.Text.Trim(),
+                    S_SchoolID = txtS_SchoolID.Text.Trim()
+                };
+
+                _context.studentBackgrounds.Add(s);
+                _context.SaveChanges();
+                saveProfile();
+                MessageBox.Show("STUDENT ADDED SUCCESSFULLY");
+                Clear();
+                loadfpStudentList();
+                openStudList();
             }
             else
             {
-                if (MessageBox.Show("Are you sure you want to Save", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (choice == "addExisting")
                 {
+                    //RENDER IF THERE IS ALREADY AN EXISITNG DATA UNDER THE SELECTED SCHOOL ID
+                    //GET THE SELECTED COMBO BOXES
+                    string departmentID = (cBDepartment.SelectedItem as DepartmentValue).Value.ToString();
+                    string courseID = (cBCourse.SelectedItem as courseValue).Value.ToString();
+                    string yearLevel = cBYear.Text.Trim();
+                    string classID = (cBSection.SelectedItem as classValue).Value.ToString();
+                    string semester = cBSemester.Text.Trim();
 
-                    studentBackground s = new studentBackground
+
+                    var render = _context.Student_Profile.Where(q => q.SchoolID == schoolID
+                    && q.DepartmentID == departmentID && q.CourseID == courseID && q.YearLevel == yearLevel
+                    && q.ClassID == classID && q.Semester == semester).FirstOrDefault();
+
+                    if (render == null)
                     {
-                        S_fname = textS_Fname.Text.Trim(),
-                        S_mname = textS_Mname.Text.Trim(),
-                        S_lname = textS_Lname.Text.Trim(),
-                        S_Sex = comboGender.Text.Trim(),
-                        S_Birthdate = date_S_Birthdate.Text.Trim(),
-                        S_mNumber = textS_MobileNumber.Text.Trim(),
-                        S_emailAdd = textS_EmailAdd.Text.Trim(),
-                        S_Religion = textS_Religion.Text.Trim(),
-                        S_Citizenship = textS_Citizenship.Text.Trim(),
-                        S_Province = textS_Province.Text.Trim(),
-                        S_municipality = textS_Municipality.Text.Trim(),
-                        S_barangay = textS_Barangay.Text.Trim(),
-                        S_Guardian_fname = textS_Guardian_Fname.Text.Trim(),
-                        S_Guardian_mname = textS_Guardian_Mname.Text.Trim(),
-                        S_Guardian_lname = textS_Guardian_LName.Text.Trim(),
-                        S_Guardian_contact = textS_Guardian_Contact.Text.Trim(),
-                        S_SchoolID = txtS_SchoolID.Text.Trim()
-                    };
+                        studentBackground s = new studentBackground
+                        {
+                            S_fname = textS_Fname.Text.Trim(),
+                            S_mname = textS_Mname.Text.Trim(),
+                            S_lname = textS_Lname.Text.Trim(),
+                            S_Sex = comboGender.Text.Trim(),
+                            S_Birthdate = date_S_Birthdate.Text.Trim(),
+                            S_mNumber = textS_MobileNumber.Text.Trim(),
+                            S_emailAdd = textS_EmailAdd.Text.Trim(),
+                            S_Religion = textS_Religion.Text.Trim(),
+                            S_Citizenship = textS_Citizenship.Text.Trim(),
+                            S_Province = textS_Province.Text.Trim(),
+                            S_municipality = textS_Municipality.Text.Trim(),
+                            S_barangay = textS_Barangay.Text.Trim(),
+                            S_Guardian_fname = textS_Guardian_Fname.Text.Trim(),
+                            S_Guardian_mname = textS_Guardian_Mname.Text.Trim(),
+                            S_Guardian_lname = textS_Guardian_LName.Text.Trim(),
+                            S_Guardian_contact = textS_Guardian_Contact.Text.Trim(),
+                            S_SchoolID = txtS_SchoolID.Text.Trim()
+                        };
 
-                    _context.studentBackgrounds.Add(s);
-                    _context.SaveChanges();
-                    saveProfile();
-                    Clear();
-                    
-                    MessageBox.Show("STUDENT ADDED SUCCESSFULLY", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    openStudList();
-                    dgvStudentList.DataSource = _context.studentBackgrounds.ToList();
+                        /*_CONTEXT.STUDENTBACKGROUNDS.ADD(S);
+                        _CONTEXT.SAVECHANGES();
+                        SAVEPROFILE();*/
 
+                        _context.studentBackgrounds.Add(s);
+                        _context.SaveChanges();
+                        saveProfile();
+                        Clear();
+                        loadfpStudentList();
+
+
+                        //saveNewProfile();
+                        MessageBox.Show("NEW RECORD ADDED SUCCESSFULLY");
+                        openStudList();
+                    }
+                    else
+                    {
+                        MessageBox.Show("THERE IS ALREADY AN EXISTING PROFILE RECORDS");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("There is already an existing SCHOOL ID in the records.");
                 }
             }
-           
+
 
         }
 
         private void PROCEED_Click(object sender, EventArgs e)
         {
-            if(textS_Municipality.Text =="" || textS_Citizenship.Text == "" || textS_EmailAdd.Text == "" || textS_Mname.Text == "" || textS_Province.Text == "" || textS_Religion.Text == "" || textS_MobileNumber.Text == "" || comboGender.Text == "" || textS_Fname.Text == "" || textS_Barangay.Text == "" || textS_Lname.Text == "" || txtS_SchoolID.Text == "" )
+            choice = UPDATESTUDENT.updateChoice.ToString();
+
+            if (choice == "addExisting")
             {
 
-                MessageBox.Show("Fill out the field first", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                saveDATA.Show();
+                studentdataPanel.Hide();
+                addstudentPanel.Hide();
 
             }
             else
             {
-                saveDATA.Show();
-                studentdataPanel.Hide();
-                addstudentPanel.Hide();
-              
-               
+                if (textS_Municipality.Text == "" || textS_Citizenship.Text == "" || textS_EmailAdd.Text == "" || textS_Mname.Text == "" || textS_Province.Text == "" || textS_Religion.Text == "" || textS_MobileNumber.Text == "" || comboGender.Text == "" || textS_Fname.Text == "" || textS_Barangay.Text == "" || textS_Lname.Text == "" || txtS_SchoolID.Text == "")
+                {
 
+                    MessageBox.Show("Fill out the field first", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                }
+                else
+                {
+                    saveDATA.Show();
+                    studentdataPanel.Hide();
+                    addstudentPanel.Hide();
+
+
+
+                }
             }
+            
         }
 
         private void gunaButton4_Click(object sender, EventArgs e)
@@ -503,6 +681,16 @@ namespace FullScreenAppDemo
                 _context.SaveChanges();
             }
             loadfpStudentList();
+        }
+
+        private void dgvStudentLoad_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
+            UPDATESTUDENT mj = new UPDATESTUDENT();
+            mj.TopLevel = false;
+            studentdataPanel.Controls.Clear();
+            studentdataPanel.Controls.Add(mj);
+            mj.Show();
         }
     }
 }
