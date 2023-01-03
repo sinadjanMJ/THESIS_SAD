@@ -23,5 +23,7 @@ namespace FullScreenAppDemo.db
         public string Semester { get; set; }
         public string SubjectID { get; set; }
         public string InstructorID { get; set; }
+        public string Grade { get; set; }
+        public string SchoolID { get; set; }
     }
 }

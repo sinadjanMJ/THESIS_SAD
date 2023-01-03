@@ -31,5 +31,6 @@ namespace FullScreenAppDemo.db
         public string S_Guardian_lname { get; set; }
         public string S_Guardian_mname { get; set; }
         public string S_Guardian_contact { get; set; }
+        public string S_SchoolID { get; set; }
     }
 }

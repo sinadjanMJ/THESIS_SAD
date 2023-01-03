@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,6 +18,8 @@ namespace FullScreenAppDemo
     {
         studentPortalEntities _context = new studentPortalEntities();
         public static string studentID = "";
+        public static string schoolID = "";
+
         DepartmentValue dv = new DepartmentValue();
         courseValue cv = new courseValue();
         classValue cvs = new classValue();
@@ -32,10 +35,10 @@ namespace FullScreenAppDemo
         {
 
 
-            dgvStudentList.DataSource = _context.studentBackgrounds.ToList();
+          
 
             openStudList();
-
+            loadfpStudentList();
 
             loadDepartment();
             dgvSubAssignment.Columns[0].Visible = false;
@@ -43,6 +46,18 @@ namespace FullScreenAppDemo
             dgvSubAssignment.Columns[6].Visible = false;
         }
 
+        private void loadfpStudentList()
+        {
+
+
+            var res = (
+                from hel in _context.studentBackgrounds
+                select new { hel.S_SchoolID, hel.S_fname, hel.S_mname, hel.S_lname }
+                ).Distinct();
+
+            dgvStudentList.DataSource = res.ToList();
+
+        }
         private void loadDepartment()
         {
             var selected = _context.Departments.ToList();
@@ -68,10 +83,18 @@ namespace FullScreenAppDemo
 
         private void dgvStudentList_SelectionChanged(object sender, EventArgs e)
         {
+            //if (dgvStudentList.SelectedRows.Count > 0)
+            //{
+            //    studentID = dgvStudentList.SelectedRows[0].Cells[0].Value.ToString();
+
+            //}
+
             if (dgvStudentList.SelectedRows.Count > 0)
             {
-                studentID = dgvStudentList.SelectedRows[0].Cells[0].Value.ToString();
-
+                studentLoad();
+                //studentID = dgvStudentList.SelectedRows[0].Cells[0].Value.ToString();
+                schoolID = dgvStudentList.SelectedRows[0].Cells[0].Value.ToString();
+                //var selectedRow = _context.userAccs.Where(q => q.id == selectedRowID).FirstOrDefault();
             }
             btnDelete.Visible = true;
 
@@ -135,7 +158,7 @@ namespace FullScreenAppDemo
 
                 _context.studentBackgrounds.Remove(selectedRow);
                 _context.SaveChanges();
-                dgvStudentList.DataSource = _context.studentBackgrounds.ToList();
+                loadfpStudentList();
                 btnDelete.Visible = false;
                 MessageBox.Show("Succesfully Deleted", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 
@@ -329,6 +352,10 @@ namespace FullScreenAppDemo
 
         private void gunaButton3_Click(object sender, EventArgs e)
         {
+
+            string schoolID = txtS_SchoolID.Text.Trim();
+            var studentBack = _context.studentBackgrounds.Where(q => q.S_SchoolID == schoolID).FirstOrDefault();
+
             if (cBCourse.SelectedIndex == -1 || cBYear.SelectedIndex == -1 || cBSemester.SelectedIndex == -1 || cBDepartment.SelectedIndex == -1 || cBSection.SelectedIndex == -1)
             {
                 MessageBox.Show("Fill out the Designated Credential first", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -355,7 +382,8 @@ namespace FullScreenAppDemo
                         S_Guardian_fname = textS_Guardian_Fname.Text.Trim(),
                         S_Guardian_mname = textS_Guardian_Mname.Text.Trim(),
                         S_Guardian_lname = textS_Guardian_LName.Text.Trim(),
-                        S_Guardian_contact = textS_Guardian_Contact.Text.Trim()
+                        S_Guardian_contact = textS_Guardian_Contact.Text.Trim(),
+                        S_SchoolID = txtS_SchoolID.Text.Trim()
                     };
 
                     _context.studentBackgrounds.Add(s);
@@ -375,7 +403,7 @@ namespace FullScreenAppDemo
 
         private void PROCEED_Click(object sender, EventArgs e)
         {
-            if(textS_Municipality.Text =="" || textS_Citizenship.Text == "" || textS_EmailAdd.Text == "" || textS_Mname.Text == "" || textS_Province.Text == "" || textS_Religion.Text == "" || textS_MobileNumber.Text == "" || comboGender.Text == "" || textS_Fname.Text == "" || textS_Barangay.Text == "" || textS_Lname.Text == "")
+            if(textS_Municipality.Text =="" || textS_Citizenship.Text == "" || textS_EmailAdd.Text == "" || textS_Mname.Text == "" || textS_Province.Text == "" || textS_Religion.Text == "" || textS_MobileNumber.Text == "" || comboGender.Text == "" || textS_Fname.Text == "" || textS_Barangay.Text == "" || textS_Lname.Text == "" || txtS_SchoolID.Text == "" )
             {
 
                 MessageBox.Show("Fill out the field first", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -398,6 +426,83 @@ namespace FullScreenAppDemo
 
             dgvSubAssignment.Refresh();
             calculateUnit();
+        }
+
+        private void gunaButton5_Click(object sender, EventArgs e)
+        {
+            saveDATA.Hide();
+            studentdataPanel.Hide();
+            addstudentPanel.Show();
+        }
+
+        private void dgvStudentList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            studentLoad();
+        }
+        private void studentLoad()
+        {
+            schoolID = dgvStudentList.SelectedRows[0].Cells[0].Value.ToString();
+            var res = (
+                from sp in _context.Student_Profile
+                join hel in _context.studentBackgrounds on sp.SchoolID equals hel.S_SchoolID
+                join dep in _context.Departments on sp.DepartmentID equals dep.Department_ID.ToString()
+                join cor in _context.Courses on sp.CourseID equals cor.CourseID.ToString()
+                where sp.SchoolID == schoolID
+
+                select new fPStudentList
+                {
+
+                    STUDENT_ID = sp.StudentID.ToString(),
+                    SCHOOL_ID = hel.S_SchoolID,
+                    DEPARTMENT = dep.Department_Name,
+                    COURSE = cor.Course_name,
+                    yearLevel = sp.YearLevel,
+                    semester = sp.Semester
+
+                }
+                ).Distinct();
+
+            dgvStudentLoad.DataSource = res.ToList();
+        }
+
+        private void dgvStudentLoad_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvStudentLoad.SelectedRows.Count > 0)
+            {
+                studentID = dgvStudentLoad.SelectedRows[0].Cells[0].Value.ToString();
+                schoolID = dgvStudentLoad.SelectedRows[0].Cells[1].Value.ToString();
+            }
+        }
+
+        private void txtSearchSID_TextChanged(object sender, EventArgs e)
+        {
+            var res = (
+            from hel in _context.studentBackgrounds
+            .Where(q => DbFunctions.Like(q.S_SchoolID, "%" + txtSearchSID.Text + "%"))
+
+            select new { hel.S_SchoolID, hel.S_fname, hel.S_mname, hel.S_lname }
+            ).Distinct();
+
+            dgvStudentList.DataSource = res.ToList();
+        }
+
+        private void gunaButton7_Click(object sender, EventArgs e)
+        {
+            var res = from c in _context.Student_Profile
+                      where c.StudentID == studentID.ToString()
+                      select c;
+
+            if (res == null)
+            {
+                MessageBox.Show("THERE IS SOMETHING WRONG");
+            }
+            else
+            {
+                // Remove the matching customers from the database.
+                _context.Student_Profile.RemoveRange(res);
+                _context.SaveChanges();
+            }
+            loadfpStudentList();
         }
     }
 }

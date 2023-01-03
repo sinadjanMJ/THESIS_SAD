@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="studentPortalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="studentPortalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="assign_Instructor">
           <Key>
             <PropertyRef Name="ai_ID" />
@@ -24,6 +24,7 @@
           <Property Name="a_classID" Type="varchar" MaxLength="50" />
           <Property Name="a_semester" Type="varchar" MaxLength="50" />
           <Property Name="a_instructorID" Type="varchar" MaxLength="50" />
+          <Property Name="a_status" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Class_S">
           <Key>
@@ -100,6 +101,8 @@
           <Property Name="Semester" Type="varchar" MaxLength="50" />
           <Property Name="SubjectID" Type="varchar" MaxLength="50" />
           <Property Name="InstructorID" Type="varchar" MaxLength="50" />
+          <Property Name="Grade" Type="varchar" MaxLength="50" />
+          <Property Name="SchoolID" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="studentBackground">
           <Key>
@@ -122,6 +125,32 @@
           <Property Name="S_Guardian_lname" Type="varchar" MaxLength="50" />
           <Property Name="S_Guardian_mname" Type="varchar" MaxLength="50" />
           <Property Name="S_Guardian_contact" Type="varchar" MaxLength="50" />
+          <Property Name="S_SchoolID" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="transactionGrade">
+          <Key>
+            <PropertyRef Name="tran_ID" />
+          </Key>
+          <Property Name="tran_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="classID" Type="varchar" MaxLength="50" />
+          <Property Name="subjectID" Type="varchar" MaxLength="50" />
+          <Property Name="instructorID" Type="varchar" MaxLength="50" />
+          <Property Name="feedback_Instructor" Type="varchar" MaxLength="50" />
+          <Property Name="status_Instructor" Type="varchar" MaxLength="50" />
+          <Property Name="status_Dean" Type="varchar" MaxLength="50" />
+          <Property Name="feedback_Dean" Type="varchar" MaxLength="50" />
+          <Property Name="status_Registrar" Type="varchar" MaxLength="50" />
+          <Property Name="feedback_Registrar" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="userLogin">
+          <Key>
+            <PropertyRef Name="accountID" />
+          </Key>
+          <Property Name="accountID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="username" Type="varchar" MaxLength="50" />
+          <Property Name="password" Type="varchar" MaxLength="50" />
+          <Property Name="userType" Type="varchar" MaxLength="50" />
+          <Property Name="userID" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityContainer Name="studentPortalModelStoreContainer">
           <EntitySet Name="assign_Instructor" EntityType="Self.assign_Instructor" Schema="dbo" store:Type="Tables" />
@@ -135,8 +164,11 @@
           <EntitySet Name="S_Subject" EntityType="Self.S_Subject" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Student_Profile" EntityType="Self.Student_Profile" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="studentBackground" EntityType="Self.studentBackground" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="transactionGrade" EntityType="Self.transactionGrade" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="userLogin" EntityType="Self.userLogin" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="studentPortalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -159,6 +191,7 @@
           <Property Name="a_classID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="a_semester" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="a_instructorID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="a_status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Class_S">
           <Key>
@@ -205,6 +238,14 @@
           <Property Name="Instructor_lname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Department_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityType Name="login">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
         <EntityType Name="S_Subject">
           <Key>
             <PropertyRef Name="SubjectID" />
@@ -227,6 +268,8 @@
           <Property Name="Semester" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="SubjectID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="InstructorID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Grade" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SchoolID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="studentBackground">
           <Key>
@@ -249,6 +292,32 @@
           <Property Name="S_Guardian_lname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="S_Guardian_mname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="S_Guardian_contact" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="S_SchoolID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="transactionGrade">
+          <Key>
+            <PropertyRef Name="tran_ID" />
+          </Key>
+          <Property Name="tran_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="classID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="subjectID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="instructorID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="feedback_Instructor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="status_Instructor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="status_Dean" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="feedback_Dean" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="status_Registrar" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="feedback_Registrar" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="userLogin">
+          <Key>
+            <PropertyRef Name="accountID" />
+          </Key>
+          <Property Name="accountID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="userType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="userID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityContainer Name="studentPortalEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="assign_Instructor" EntityType="Self.assign_Instructor" />
@@ -258,19 +327,13 @@
           <EntitySet Name="Deans" EntityType="Self.Dean" />
           <EntitySet Name="Departments" EntityType="Self.Department" />
           <EntitySet Name="Instructors" EntityType="Self.Instructor" />
+          <EntitySet Name="logins" EntityType="Self.login" />
           <EntitySet Name="S_Subject" EntityType="Self.S_Subject" />
           <EntitySet Name="Student_Profile" EntityType="Self.Student_Profile" />
           <EntitySet Name="studentBackgrounds" EntityType="Self.studentBackground" />
-          <EntitySet Name="logins" EntityType="studentPortalModel.login" />
+          <EntitySet Name="transactionGrades" EntityType="Self.transactionGrade" />
+          <EntitySet Name="userLogins" EntityType="Self.userLogin" />
         </EntityContainer>
-        <EntityType Name="login">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -296,6 +359,7 @@
                 <ScalarProperty Name="a_classID" ColumnName="a_classID" />
                 <ScalarProperty Name="a_semester" ColumnName="a_semester" />
                 <ScalarProperty Name="a_instructorID" ColumnName="a_instructorID" />
+                <ScalarProperty Name="a_status" ColumnName="a_status" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -349,6 +413,15 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="logins">
+            <EntityTypeMapping TypeName="studentPortalModel.login">
+              <MappingFragment StoreEntitySet="login">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="S_Subject">
             <EntityTypeMapping TypeName="studentPortalModel.S_Subject">
               <MappingFragment StoreEntitySet="S_Subject">
@@ -371,6 +444,8 @@
                 <ScalarProperty Name="Semester" ColumnName="Semester" />
                 <ScalarProperty Name="SubjectID" ColumnName="SubjectID" />
                 <ScalarProperty Name="InstructorID" ColumnName="InstructorID" />
+                <ScalarProperty Name="Grade" ColumnName="Grade" />
+                <ScalarProperty Name="SchoolID" ColumnName="SchoolID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -394,15 +469,34 @@
                 <ScalarProperty Name="S_Guardian_lname" ColumnName="S_Guardian_lname" />
                 <ScalarProperty Name="S_Guardian_mname" ColumnName="S_Guardian_mname" />
                 <ScalarProperty Name="S_Guardian_contact" ColumnName="S_Guardian_contact" />
+                <ScalarProperty Name="S_SchoolID" ColumnName="S_SchoolID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="logins">
-            <EntityTypeMapping TypeName="studentPortalModel.login">
-              <MappingFragment StoreEntitySet="login">
-                <ScalarProperty Name="password" ColumnName="password" />
+          <EntitySetMapping Name="transactionGrades">
+            <EntityTypeMapping TypeName="studentPortalModel.transactionGrade">
+              <MappingFragment StoreEntitySet="transactionGrade">
+                <ScalarProperty Name="tran_ID" ColumnName="tran_ID" />
+                <ScalarProperty Name="classID" ColumnName="classID" />
+                <ScalarProperty Name="subjectID" ColumnName="subjectID" />
+                <ScalarProperty Name="instructorID" ColumnName="instructorID" />
+                <ScalarProperty Name="feedback_Instructor" ColumnName="feedback_Instructor" />
+                <ScalarProperty Name="status_Instructor" ColumnName="status_Instructor" />
+                <ScalarProperty Name="status_Dean" ColumnName="status_Dean" />
+                <ScalarProperty Name="feedback_Dean" ColumnName="feedback_Dean" />
+                <ScalarProperty Name="status_Registrar" ColumnName="status_Registrar" />
+                <ScalarProperty Name="feedback_Registrar" ColumnName="feedback_Registrar" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="userLogins">
+            <EntityTypeMapping TypeName="studentPortalModel.userLogin">
+              <MappingFragment StoreEntitySet="userLogin">
+                <ScalarProperty Name="accountID" ColumnName="accountID" />
                 <ScalarProperty Name="username" ColumnName="username" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="userType" ColumnName="userType" />
+                <ScalarProperty Name="userID" ColumnName="userID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

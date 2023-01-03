@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="6275ee84471647c88f0272091194157d" Name="Diagram1">
+      <Diagram DiagramId="dff82435b87a4cebbb5129b8f2b10909" Name="Diagram1">
         <EntityTypeShape EntityType="studentPortalModel.assign_Instructor" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="studentPortalModel.assignSubject" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="studentPortalModel.Class_S" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
@@ -12,10 +12,12 @@
         <EntityTypeShape EntityType="studentPortalModel.Dean" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="studentPortalModel.Department" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="studentPortalModel.Instructor" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="studentPortalModel.S_Subject" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="studentPortalModel.Student_Profile" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="studentPortalModel.studentBackground" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="studentPortalModel.login" Width="1.5" PointX="9.375" PointY="0.75" />
+        <EntityTypeShape EntityType="studentPortalModel.login" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="studentPortalModel.S_Subject" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="studentPortalModel.Student_Profile" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="studentPortalModel.studentBackground" Width="1.5" PointX="4.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="studentPortalModel.transactionGrade" Width="1.5" PointX="6.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="studentPortalModel.userLogin" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
