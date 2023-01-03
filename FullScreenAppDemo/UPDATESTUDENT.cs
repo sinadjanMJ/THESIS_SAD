@@ -40,6 +40,8 @@ namespace FullScreenAppDemo
 
         private void gunaButton2_Click(object sender, EventArgs e)
         {
+            
+
             RegisStudent mj = new RegisStudent();
             mj.TopLevel = false;
             NEXTPANEL.Controls.Clear();
@@ -48,19 +50,24 @@ namespace FullScreenAppDemo
         }
         private void openSTList()
         {
-            RegisDashboard mj = new RegisDashboard();
-            mj.Show();
+            //RegisDashboard mj = new RegisDashboard();
+            //mj.Show();
 
-            RegisStudent m = new RegisStudent();
-            m.TopLevel = false;
+            //RegisStudent m = new RegisStudent();
+            //m.TopLevel = false;
 
           
-            mj.DashboardPanel.Controls.Clear();
-            mj.DashboardPanel.Controls.Add(m);
+            //mj.DashboardPanel.Controls.Clear();
+            //mj.DashboardPanel.Controls.Add(m);
 
-            m.Show();
+            //m.Show();
 
-            this.Close();
+
+            RegisStudent mj = new RegisStudent();
+            mj.TopLevel = false;
+            NEXTPANEL.Controls.Clear();
+            NEXTPANEL.Controls.Add(mj);
+            mj.Show();
 
 
         }

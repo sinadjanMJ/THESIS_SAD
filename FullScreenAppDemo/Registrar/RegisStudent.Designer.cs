@@ -306,7 +306,7 @@
             this.gunaButton7.ForeColor = System.Drawing.Color.Gold;
             this.gunaButton7.Image = null;
             this.gunaButton7.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton7.Location = new System.Drawing.Point(894, 594);
+            this.gunaButton7.Location = new System.Drawing.Point(894, 596);
             this.gunaButton7.Name = "gunaButton7";
             this.gunaButton7.OnHoverBaseColor = System.Drawing.Color.Red;
             this.gunaButton7.OnHoverBorderColor = System.Drawing.Color.Black;
