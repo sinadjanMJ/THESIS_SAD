@@ -40,8 +40,11 @@ namespace FullScreenAppDemo
 
         private void gunaButton2_Click(object sender, EventArgs e)
         {
-            this.Close();
-            openSTList();
+            RegisStudent mj = new RegisStudent();
+            mj.TopLevel = false;
+            NEXTPANEL.Controls.Clear();
+            NEXTPANEL.Controls.Add(mj);
+            mj.Show();
         }
         private void openSTList()
         {

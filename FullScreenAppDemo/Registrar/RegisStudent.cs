@@ -218,11 +218,23 @@ namespace FullScreenAppDemo
         {
             if (MessageBox.Show("Are you sure you want to Delete", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                int studID = Int32.Parse(studentID.ToString());
-                var selectedRow = _context.studentBackgrounds.Where(q => q.StudentID == studID).FirstOrDefault();
+                int studID = Int32.Parse(dgvStudentList.SelectedRows[0].Cells[0].Value.ToString());
+                var selectedRow = _context.studentBackgrounds.Where(q => q.S_SchoolID == schoolID).FirstOrDefault();
 
                 _context.studentBackgrounds.Remove(selectedRow);
+                var customers = from c in _context.Student_Profile
+                                group c by c.SchoolID into g
+                                where g.Count() > 1
+                                select g.FirstOrDefault();
+
+                foreach (var customer in customers)
+                {
+                    _context.Student_Profile.Remove(customer);
+                }
+
                 _context.SaveChanges();
+                //dgvStudentList.DataSource = _context.studentBackgrounds.ToList();
+
                 loadfpStudentList();
                 btnDelete.Visible = false;
                 MessageBox.Show("Succesfully Deleted", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
