@@ -474,58 +474,20 @@ namespace FullScreenAppDemo
         private void gunaButton3_Click(object sender, EventArgs e)
         {
 
-            string schoolID = txtS_SchoolID.Text.Trim();
-            var studentBack = _context.studentBackgrounds.Where(q => q.S_SchoolID == schoolID).FirstOrDefault();
 
-            if (studentBack == null)
+            if (cBCourse.SelectedIndex == -1 || cBYear.SelectedIndex == -1 || cBSemester.SelectedIndex == -1 || cBDepartment.SelectedIndex == -1 || cBSection.SelectedIndex == -1
+)
             {
-                studentBackground s = new studentBackground
-                {
-                    S_fname = textS_Fname.Text.Trim(),
-                    S_mname = textS_Mname.Text.Trim(),
-                    S_lname = textS_Lname.Text.Trim(),
-                    S_Sex = comboGender.Text.Trim(),
-                    S_Birthdate = date_S_Birthdate.Text.Trim(),
-                    S_mNumber = textS_MobileNumber.Text.Trim(),
-                    S_emailAdd = textS_EmailAdd.Text.Trim(),
-                    S_Religion = textS_Religion.Text.Trim(),
-                    S_Citizenship = textS_Citizenship.Text.Trim(),
-                    S_Province = textS_Province.Text.Trim(),
-                    S_municipality = textS_Municipality.Text.Trim(),
-                    S_barangay = textS_Barangay.Text.Trim(),
-                    S_Guardian_fname = textS_Guardian_Fname.Text.Trim(),
-                    S_Guardian_mname = textS_Guardian_Mname.Text.Trim(),
-                    S_Guardian_lname = textS_Guardian_LName.Text.Trim(),
-                    S_Guardian_contact = textS_Guardian_Contact.Text.Trim(),
-                    S_SchoolID = txtS_SchoolID.Text.Trim()
-                };
-
-                _context.studentBackgrounds.Add(s);
-                _context.SaveChanges();
-                saveProfile();
-                MessageBox.Show("STUDENT ADDED SUCCESSFULLY");
-                Clear();
-                loadfpStudentList();
-                openStudList();
+                MessageBox.Show("Fill out the Designated Credential first", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                if (choice == "addExisting")
+                if (MessageBox.Show("Are you sure you want to Save", "Save", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    //RENDER IF THERE IS ALREADY AN EXISITNG DATA UNDER THE SELECTED SCHOOL ID
-                    //GET THE SELECTED COMBO BOXES
-                    string departmentID = (cBDepartment.SelectedItem as DepartmentValue).Value.ToString();
-                    string courseID = (cBCourse.SelectedItem as courseValue).Value.ToString();
-                    string yearLevel = cBYear.Text.Trim();
-                    string classID = (cBSection.SelectedItem as classValue).Value.ToString();
-                    string semester = cBSemester.Text.Trim();
+                    string schoolID = txtS_SchoolID.Text.Trim();
+                    var studentBack = _context.studentBackgrounds.Where(q => q.S_SchoolID == schoolID).FirstOrDefault();
 
-
-                    var render = _context.Student_Profile.Where(q => q.SchoolID == schoolID
-                    && q.DepartmentID == departmentID && q.CourseID == courseID && q.YearLevel == yearLevel
-                    && q.ClassID == classID && q.Semester == semester).FirstOrDefault();
-
-                    if (render == null)
+                    if (studentBack == null)
                     {
                         studentBackground s = new studentBackground
                         {
@@ -548,32 +510,88 @@ namespace FullScreenAppDemo
                             S_SchoolID = txtS_SchoolID.Text.Trim()
                         };
 
-                        /*_CONTEXT.STUDENTBACKGROUNDS.ADD(S);
-                        _CONTEXT.SAVECHANGES();
-                        SAVEPROFILE();*/
-
                         _context.studentBackgrounds.Add(s);
                         _context.SaveChanges();
                         saveProfile();
+                        
+                        MessageBox.Show("STUDENT ADDED SUCCESSFULLY", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                         Clear();
                         loadfpStudentList();
-
-
-                        //saveNewProfile();
-                        MessageBox.Show("NEW RECORD ADDED SUCCESSFULLY");
                         openStudList();
                     }
                     else
                     {
-                        MessageBox.Show("THERE IS ALREADY AN EXISTING PROFILE RECORDS");
+                        if (choice == "addExisting")
+                        {
+                            //RENDER IF THERE IS ALREADY AN EXISITNG DATA UNDER THE SELECTED SCHOOL ID
+                            //GET THE SELECTED COMBO BOXES
+                            string departmentID = (cBDepartment.SelectedItem as DepartmentValue).Value.ToString();
+                            string courseID = (cBCourse.SelectedItem as courseValue).Value.ToString();
+                            string yearLevel = cBYear.Text.Trim();
+                            string classID = (cBSection.SelectedItem as classValue).Value.ToString();
+                            string semester = cBSemester.Text.Trim();
+
+
+                            var render = _context.Student_Profile.Where(q => q.SchoolID == schoolID
+                            && q.DepartmentID == departmentID && q.CourseID == courseID && q.YearLevel == yearLevel
+                            && q.ClassID == classID && q.Semester == semester).FirstOrDefault();
+
+                            if (render == null)
+                            {
+                                studentBackground s = new studentBackground
+                                {
+                                    S_fname = textS_Fname.Text.Trim(),
+                                    S_mname = textS_Mname.Text.Trim(),
+                                    S_lname = textS_Lname.Text.Trim(),
+                                    S_Sex = comboGender.Text.Trim(),
+                                    S_Birthdate = date_S_Birthdate.Text.Trim(),
+                                    S_mNumber = textS_MobileNumber.Text.Trim(),
+                                    S_emailAdd = textS_EmailAdd.Text.Trim(),
+                                    S_Religion = textS_Religion.Text.Trim(),
+                                    S_Citizenship = textS_Citizenship.Text.Trim(),
+                                    S_Province = textS_Province.Text.Trim(),
+                                    S_municipality = textS_Municipality.Text.Trim(),
+                                    S_barangay = textS_Barangay.Text.Trim(),
+                                    S_Guardian_fname = textS_Guardian_Fname.Text.Trim(),
+                                    S_Guardian_mname = textS_Guardian_Mname.Text.Trim(),
+                                    S_Guardian_lname = textS_Guardian_LName.Text.Trim(),
+                                    S_Guardian_contact = textS_Guardian_Contact.Text.Trim(),
+                                    S_SchoolID = txtS_SchoolID.Text.Trim()
+                                };
+
+                                /*_CONTEXT.STUDENTBACKGROUNDS.ADD(S);
+                                _CONTEXT.SAVECHANGES();
+                                SAVEPROFILE();*/
+
+                                _context.studentBackgrounds.Add(s);
+                                _context.SaveChanges();
+                                saveProfile();
+                                Clear();
+                                loadfpStudentList();
+
+
+                                //saveNewProfile();
+                                
+                                MessageBox.Show("NEW RECORD ADDED SUCCESSFULLY", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                openStudList();
+                            }
+                            else
+                            {
+                               
+                                MessageBox.Show("THERE IS ALREADY AN EXISTING PROFILE RECORDS", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
+                        }
+                        else
+                        {
+                            
+                            MessageBox.Show("There is already an existing SCHOOL ID in the records.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
                     }
-                }
-                else
-                {
-                    MessageBox.Show("There is already an existing SCHOOL ID in the records.");
+
                 }
             }
-
 
         }
 
