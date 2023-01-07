@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="studentPortalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="studentPortalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="assign_Instructor">
           <Key>
             <PropertyRef Name="ai_ID" />
@@ -132,6 +132,7 @@
             <PropertyRef Name="tran_ID" />
           </Key>
           <Property Name="tran_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="a_ID" Type="varchar" MaxLength="50" />
           <Property Name="classID" Type="varchar" MaxLength="50" />
           <Property Name="subjectID" Type="varchar" MaxLength="50" />
           <Property Name="instructorID" Type="varchar" MaxLength="50" />
@@ -167,8 +168,7 @@
           <EntitySet Name="transactionGrade" EntityType="Self.transactionGrade" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="userLogin" EntityType="Self.userLogin" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="studentPortalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -308,6 +308,7 @@
           <Property Name="feedback_Dean" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="status_Registrar" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="feedback_Registrar" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="a_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="userLogin">
           <Key>
@@ -476,6 +477,7 @@
           <EntitySetMapping Name="transactionGrades">
             <EntityTypeMapping TypeName="studentPortalModel.transactionGrade">
               <MappingFragment StoreEntitySet="transactionGrade">
+                <ScalarProperty Name="a_ID" ColumnName="a_ID" />
                 <ScalarProperty Name="tran_ID" ColumnName="tran_ID" />
                 <ScalarProperty Name="classID" ColumnName="classID" />
                 <ScalarProperty Name="subjectID" ColumnName="subjectID" />

@@ -84,84 +84,112 @@ namespace FullScreenAppDemo
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-
-            if (textCourse_name.Text == "" || gunaComboBox1.SelectedIndex == -1)
+            try
             {
-                MessageBox.Show("Fill out the Designated Credential first", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
-            {
-
-                string getCourseName = textCourse_name.Text.Trim();
-                string getDepID = (gunaComboBox1.SelectedItem as DepartmentValue).Value.ToString();
-
-                var originalCourse = _context.Courses.Where(q => q.CourseID == courseID).FirstOrDefault();
-                string originalCourseName = originalCourse.Course_name.ToString();
-                string originalDepID = originalCourse.DepartmentID.ToString();
-
-                if (choice == "add")
+                if (textCourse_name.Text == "" || gunaComboBox1.SelectedIndex == -1)
                 {
-                    if (MessageBox.Show("Are you sure you want to Save", "Save", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    MessageBox.Show("Fill out the Designated Credential first", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+
+                    //string getCourseName = textCourse_name.Text.Trim();
+                    //string getDepID = (gunaComboBox1.SelectedItem as DepartmentValue).Value.ToString();
+
+                    //var originalCourse = _context.Courses.Where(q => q.CourseID == courseID).FirstOrDefault();
+                    //string originalCourseName = originalCourse.Course_name.ToString();
+                    //string originalDepID = originalCourse.DepartmentID.ToString();
+                    string getCourseName = textCourse_name.Text.Trim();
+                    string getDepID = (gunaComboBox1.SelectedItem as DepartmentValue).Value.ToString();
+
+                    string originalCourseName = "";
+                    string originalDepID = "";
+                    var originalCourse = _context.Courses.Where(q => q.CourseID == courseID).FirstOrDefault();
+                    if (originalCourse != null)
                     {
+                        originalCourseName = originalCourse.Course_name.ToString();
+                        originalDepID = originalCourse.DepartmentID.ToString();
+                    }
 
-                        var setCondition = _context.Courses.Where(q => q.Course_name == getCourseName).FirstOrDefault();
-
-                        if (setCondition == null)
+                    if (choice == "add")
+                    {
+                        if (MessageBox.Show("Are you sure you want to Save", "Save", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
-                            var setCondition2 = _context.Courses.Where(q => q.DepartmentID == getDepID && q.Course_name == getCourseName).FirstOrDefault();
-                            if (setCondition2 == null)
+
+                            var setCondition = _context.Courses.Where(q => q.Course_name == getCourseName).FirstOrDefault();
+
+                            if (setCondition == null)
                             {
-                                Course c = new Course
+                                var setCondition2 = _context.Courses.Where(q => q.DepartmentID == getDepID && q.Course_name == getCourseName).FirstOrDefault();
+                                if (setCondition2 == null)
                                 {
-                                    Course_name = textCourse_name.Text.Trim(),
-                                    DepartmentID = (gunaComboBox1.SelectedItem as DepartmentValue).Value.ToString()
-                                };
+                                    Course c = new Course
+                                    {
+                                        Course_name = textCourse_name.Text.Trim(),
+                                        DepartmentID = (gunaComboBox1.SelectedItem as DepartmentValue).Value.ToString()
+                                    };
 
-                                _context.Courses.Add(c);
-                                _context.SaveChanges();
-                                insert();
+                                    _context.Courses.Add(c);
+                                    _context.SaveChanges();
+                                    insert();
 
-                                MessageBox.Show("Succesfully Added", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    MessageBox.Show("Succesfully Added", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                                this.Close();
+                                    this.Close();
+                                }
+                                else
+                                {
+
+                                    MessageBox.Show("THE DATA ALREADY EXIST!", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                                }
                             }
                             else
                             {
-                                
-                                MessageBox.Show("THE DATA ALREADY EXIST!", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                                MessageBox.Show("COURSE NAME ALREADY EXIST!", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                             }
                         }
-                        else
-                        {
-                          
-                            MessageBox.Show("COURSE NAME ALREADY EXIST!", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                        }
                     }
-                }
-                else if (choice == "update")
-                {
-                    var setCondition = _context.Courses.Where(q => q.Course_name == getCourseName).FirstOrDefault();
-                    var selectedCourse = _context.Courses.Where(q => q.CourseID == courseID).FirstOrDefault();
-
-
-                    if (MessageBox.Show("Are you sure you want to Update", "Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    else if (choice == "update")
                     {
+                        var setCondition = _context.Courses.Where(q => q.Course_name == getCourseName).FirstOrDefault();
+                        var selectedCourse = _context.Courses.Where(q => q.CourseID == courseID).FirstOrDefault();
 
 
-                        if (setCondition != null)
+                        if (MessageBox.Show("Are you sure you want to Update", "Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
-                            string conditionCourseName = setCondition.Course_name.ToString();
-                            if (conditionCourseName == originalCourseName)
-                            {
-                                var setCondition2 = _context.Courses.Where(q => q.DepartmentID == getDepID && q.Course_name == getCourseName).FirstOrDefault();
-                                if (setCondition2 != null)
-                                {
-                                    conditionCourseName = setCondition2.Course_name.ToString();
-                                    string conditionDepID = setCondition2.DepartmentID.ToString();
 
-                                    if (conditionCourseName == originalCourseName && conditionDepID == originalDepID)
+
+                            if (setCondition != null)
+                            {
+                                string conditionCourseName = setCondition.Course_name.ToString();
+                                if (conditionCourseName == originalCourseName)
+                                {
+                                    var setCondition2 = _context.Courses.Where(q => q.DepartmentID == getDepID && q.Course_name == getCourseName).FirstOrDefault();
+                                    if (setCondition2 != null)
+                                    {
+                                        conditionCourseName = setCondition2.Course_name.ToString();
+                                        string conditionDepID = setCondition2.DepartmentID.ToString();
+
+                                        if (conditionCourseName == originalCourseName && conditionDepID == originalDepID)
+                                        {
+                                            selectedCourse.Course_name = textCourse_name.Text.Trim();
+                                            selectedCourse.DepartmentID = (gunaComboBox1.SelectedItem as DepartmentValue).Value.ToString();
+
+                                            _context.SaveChanges();
+                                            insert();
+                                            MessageBox.Show("Succesfully Updated", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                            this.Close();
+                                        }
+                                        else
+                                        {
+
+                                            MessageBox.Show("THE DATA ALREADY EXIST!");
+                                        }
+                                    }
+                                    else
                                     {
                                         selectedCourse.Course_name = textCourse_name.Text.Trim();
                                         selectedCourse.DepartmentID = (gunaComboBox1.SelectedItem as DepartmentValue).Value.ToString();
@@ -171,10 +199,36 @@ namespace FullScreenAppDemo
                                         MessageBox.Show("Succesfully Updated", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                         this.Close();
                                     }
+                                }
+                                else
+                                {
+                                    MessageBox.Show("COURSE NAME ALREADY EXIST!", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                }
+                            }
+                            else
+                            {
+                                var setCondition2 = _context.Courses.Where(q => q.DepartmentID == getDepID && q.Course_name == getCourseName).FirstOrDefault();
+                                if (setCondition2 != null)
+                                {
+                                    string conditionCourseName = setCondition2.Course_name.ToString();
+                                    string conditionDepID = setCondition2.DepartmentID.ToString();
+
+                                    if (conditionCourseName == originalCourseName && conditionDepID == originalDepID)
+                                    {
+                                        selectedCourse.Course_name = textCourse_name.Text.Trim();
+                                        selectedCourse.DepartmentID = (gunaComboBox1.SelectedItem as DepartmentValue).Value.ToString();
+
+                                        _context.SaveChanges();
+                                        insert();
+
+                                        MessageBox.Show("Succesfully Updated", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        this.Close();
+                                    }
                                     else
                                     {
-                                
-                                        MessageBox.Show("THE DATA ALREADY EXIST!");
+
+                                        MessageBox.Show("THE DATA ALREADY EXIST!", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
                                     }
                                 }
                                 else
@@ -184,61 +238,26 @@ namespace FullScreenAppDemo
 
                                     _context.SaveChanges();
                                     insert();
+
+
                                     MessageBox.Show("Succesfully Updated", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     this.Close();
                                 }
                             }
-                            else
-                            {
-                                MessageBox.Show("COURSE NAME ALREADY EXIST!", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            }
                         }
-                        else
-                        {
-                            var setCondition2 = _context.Courses.Where(q => q.DepartmentID == getDepID && q.Course_name == getCourseName).FirstOrDefault();
-                            if (setCondition2 != null)
-                            {
-                                string conditionCourseName = setCondition2.Course_name.ToString();
-                                string conditionDepID = setCondition2.DepartmentID.ToString();
 
-                                if (conditionCourseName == originalCourseName && conditionDepID == originalDepID)
-                                {
-                                    selectedCourse.Course_name = textCourse_name.Text.Trim();
-                                    selectedCourse.DepartmentID = (gunaComboBox1.SelectedItem as DepartmentValue).Value.ToString();
 
-                                    _context.SaveChanges();
-                                    insert();
-                                
-                                    MessageBox.Show("Succesfully Updated", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    this.Close();
-                                }
-                                else
-                                {
-                                  
-                                    MessageBox.Show("THE DATA ALREADY EXIST!", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                                }
-                            }
-                            else
-                            {
-                                selectedCourse.Course_name = textCourse_name.Text.Trim();
-                                selectedCourse.DepartmentID = (gunaComboBox1.SelectedItem as DepartmentValue).Value.ToString();
-
-                                _context.SaveChanges();
-                                insert();
-                                
-                               
-                                MessageBox.Show("Succesfully Updated", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                this.Close();
-                            }
-                        }
+                        this.Close();
                     }
-
-
-                    this.Close();
                 }
             }
-          
+            catch
+            {
+                MessageBox.Show("THERE'S SOMETHING ERROR HAPPEN", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
+
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

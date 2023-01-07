@@ -26,89 +26,113 @@ namespace FullScreenAppDemo
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-
-            var selectedRow = _context.Departments.Where(q => q.Department_ID == departmentID).FirstOrDefault();
-            string originalDepName = selectedRow.Department_Name.ToString();
-            string depName = textDepartment_name.Text.Trim();
-
-            if (textDepartment_name.Text == "" )
+            try
             {
-                MessageBox.Show("Fill out the Designated Credential first", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
-            {
-                
-
-                if (choice == "add")
+                //var selectedRow = _context.Departments.Where(q => q.Department_ID == departmentID).FirstOrDefault();
+                //string originalDepName = selectedRow.Department_Name.ToString();
+                //string depName = textDepartment_name.Text.Trim();
+                string originalDepName = "";
+                var selectedRow = _context.Departments.Where(q => q.Department_ID == departmentID).FirstOrDefault();
+                if (selectedRow != null)
                 {
-                    var setCondition = _context.Departments.Where(q => q.Department_Name == depName).FirstOrDefault();
-
-                    if (setCondition == null)
-                    {
-                        Department d = new Department
-                        {
-                            Department_Name = textDepartment_name.Text.Trim()
-                        };
-
-                        _context.Departments.Add(d);
-                        _context.SaveChanges();
-                       
-                       
-                        MessageBox.Show("Succesfully added", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        Insert();
-                        this.Close();
-                       
-                        
-                    }
-                    else
-                    {
-                        MessageBox.Show("DEPARTMENT NAME ALREADY EXIST!!", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                    }
+                    originalDepName = selectedRow.Department_Name.ToString();
                 }
-                else if (choice == "update")
+                string depName = textDepartment_name.Text.Trim();
+
+                if (textDepartment_name.Text == "")
                 {
-                    var setCondition = _context.Departments.Where(q => q.Department_Name == depName).FirstOrDefault();
-                    if (setCondition != null)
+                    MessageBox.Show("Fill out the Designated Credential first", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+
+
+                    if (choice == "add")
                     {
-                        string conditionDepName = setCondition.Department_Name.ToString();
-                        if (originalDepName == conditionDepName)
+                        if (MessageBox.Show("Are you sure you want to Save", "Save", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
-                            selectedRow.Department_Name = textDepartment_name.Text.Trim();
-                            _context.SaveChanges();
+
+                            var setCondition = _context.Departments.Where(q => q.Department_Name == depName).FirstOrDefault();
+
+                            if (setCondition == null)
+                            {
+                                Department d = new Department
+                                {
+                                    Department_Name = textDepartment_name.Text.Trim()
+                                };
+
+                                _context.Departments.Add(d);
+                                _context.SaveChanges();
 
 
-                            Insert();
+                                MessageBox.Show("Succesfully added", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                Insert();
+                                this.Close();
 
-                            this.Close();
 
+                            }
+                            else
+                            {
+                                MessageBox.Show("DEPARTMENT NAME ALREADY EXIST!!", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-                            MessageBox.Show("Succesfully Updated", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            
-                        }
-                        else
-                        {
-                            
-
-                            MessageBox.Show("DEPARTMENT NAME ALREADY EXIST!!", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                            }
                         }
                     }
-                    else
+                    else if (choice == "update")
                     {
-                        selectedRow.Department_Name = textDepartment_name.Text.Trim();
-                        _context.SaveChanges();
+                        var setCondition = _context.Departments.Where(q => q.Department_Name == depName).FirstOrDefault();
+                        if (MessageBox.Show("Are you sure you want to Update", "Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
 
-                        Insert();
-                        this.Close();
+                            if (setCondition != null)
+                            {
+                                string conditionDepName = setCondition.Department_Name.ToString();
+                                if (originalDepName == conditionDepName)
+                                {
+                                    selectedRow.Department_Name = textDepartment_name.Text.Trim();
+                                    _context.SaveChanges();
+
+
+                                    Insert();
+
+                                    this.Close();
+
+
+                                    MessageBox.Show("Succesfully Updated", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                }
+                                else
+                                {
+
+
+                                    MessageBox.Show("DEPARTMENT NAME ALREADY EXIST!!", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                                }
+                            }
+                            else
+                            {
+                                selectedRow.Department_Name = textDepartment_name.Text.Trim();
+                                _context.SaveChanges();
+
+                                Insert();
+                                this.Close();
 
 
 
-                        MessageBox.Show("Succesfully Updated", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Succesfully Updated", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+
+                        }
                     }
                 }
+                Insert();
             }
-            Insert();
+            catch
+            {
+                MessageBox.Show("ERROR HAPPENS", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
 
 
 

@@ -24,5 +24,6 @@ namespace FullScreenAppDemo.db
         public string feedback_Dean { get; set; }
         public string status_Registrar { get; set; }
         public string feedback_Registrar { get; set; }
+        public string a_ID { get; set; }
     }
 }

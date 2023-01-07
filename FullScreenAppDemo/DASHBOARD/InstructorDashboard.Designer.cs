@@ -29,16 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InstructorDashboard));
-            this.gunaCirclePictureBox3 = new Guna.UI.WinForms.GunaCirclePictureBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.Validate_DGV = new System.Windows.Forms.DataGridView();
-            this.ValidatePanel = new System.Windows.Forms.Panel();
-            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
-            this.InstructorStudentPanel = new System.Windows.Forms.Panel();
-            this.Student_DGV2 = new System.Windows.Forms.DataGridView();
-            this.gunaCirclePictureBox2 = new Guna.UI.WinForms.GunaCirclePictureBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.Student_DGV1 = new System.Windows.Forms.DataGridView();
             this.gunaCirclePictureBox1 = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.StudentBTN = new Guna.UI.WinForms.GunaButton();
             this.ValidateBTN = new Guna.UI.WinForms.GunaButton();
@@ -54,129 +44,14 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.InstructorDashboardPanel = new System.Windows.Forms.Panel();
-            this.gunaElipsePanel1 = new Guna.UI.WinForms.GunaElipsePanel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label7 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Validate_DGV)).BeginInit();
-            this.ValidatePanel.SuspendLayout();
-            this.InstructorStudentPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Student_DGV2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Student_DGV1)).BeginInit();
+            this.instructordashoardpanel = new System.Windows.Forms.Panel();
+            this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.InstructorDashboardPanel.SuspendLayout();
-            this.gunaElipsePanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // gunaCirclePictureBox3
-            // 
-            this.gunaCirclePictureBox3.BaseColor = System.Drawing.Color.White;
-            this.gunaCirclePictureBox3.ErrorImage = null;
-            this.gunaCirclePictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("gunaCirclePictureBox3.Image")));
-            this.gunaCirclePictureBox3.Location = new System.Drawing.Point(135, 53);
-            this.gunaCirclePictureBox3.Name = "gunaCirclePictureBox3";
-            this.gunaCirclePictureBox3.Size = new System.Drawing.Size(92, 91);
-            this.gunaCirclePictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.gunaCirclePictureBox3.TabIndex = 15;
-            this.gunaCirclePictureBox3.TabStop = false;
-            this.gunaCirclePictureBox3.UseTransfarantBackground = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(233, 75);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(389, 46);
-            this.label5.TabIndex = 14;
-            this.label5.Text = "Validate Grade Form";
-            // 
-            // Validate_DGV
-            // 
-            this.Validate_DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Validate_DGV.Location = new System.Drawing.Point(135, 243);
-            this.Validate_DGV.Name = "Validate_DGV";
-            this.Validate_DGV.Size = new System.Drawing.Size(912, 358);
-            this.Validate_DGV.TabIndex = 12;
-            // 
-            // ValidatePanel
-            // 
-            this.ValidatePanel.Controls.Add(this.gunaCirclePictureBox3);
-            this.ValidatePanel.Controls.Add(this.label5);
-            this.ValidatePanel.Controls.Add(this.gunaLabel1);
-            this.ValidatePanel.Controls.Add(this.Validate_DGV);
-            this.ValidatePanel.Location = new System.Drawing.Point(193, 52);
-            this.ValidatePanel.Name = "ValidatePanel";
-            this.ValidatePanel.Size = new System.Drawing.Size(1175, 655);
-            this.ValidatePanel.TabIndex = 21;
-            // 
-            // gunaLabel1
-            // 
-            this.gunaLabel1.AutoSize = true;
-            this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel1.Location = new System.Drawing.Point(128, 187);
-            this.gunaLabel1.Name = "gunaLabel1";
-            this.gunaLabel1.Size = new System.Drawing.Size(206, 37);
-            this.gunaLabel1.TabIndex = 13;
-            this.gunaLabel1.Text = "Validate Grades";
-            // 
-            // InstructorStudentPanel
-            // 
-            this.InstructorStudentPanel.Controls.Add(this.Student_DGV2);
-            this.InstructorStudentPanel.Controls.Add(this.gunaCirclePictureBox2);
-            this.InstructorStudentPanel.Controls.Add(this.label4);
-            this.InstructorStudentPanel.Controls.Add(this.Student_DGV1);
-            this.InstructorStudentPanel.Location = new System.Drawing.Point(193, 52);
-            this.InstructorStudentPanel.Name = "InstructorStudentPanel";
-            this.InstructorStudentPanel.Size = new System.Drawing.Size(1175, 655);
-            this.InstructorStudentPanel.TabIndex = 19;
-            // 
-            // Student_DGV2
-            // 
-            this.Student_DGV2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Student_DGV2.Location = new System.Drawing.Point(112, 363);
-            this.Student_DGV2.Name = "Student_DGV2";
-            this.Student_DGV2.Size = new System.Drawing.Size(912, 232);
-            this.Student_DGV2.TabIndex = 12;
-            // 
-            // gunaCirclePictureBox2
-            // 
-            this.gunaCirclePictureBox2.BaseColor = System.Drawing.Color.White;
-            this.gunaCirclePictureBox2.ErrorImage = null;
-            this.gunaCirclePictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("gunaCirclePictureBox2.Image")));
-            this.gunaCirclePictureBox2.Location = new System.Drawing.Point(128, 14);
-            this.gunaCirclePictureBox2.Name = "gunaCirclePictureBox2";
-            this.gunaCirclePictureBox2.Size = new System.Drawing.Size(92, 91);
-            this.gunaCirclePictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.gunaCirclePictureBox2.TabIndex = 11;
-            this.gunaCirclePictureBox2.TabStop = false;
-            this.gunaCirclePictureBox2.UseTransfarantBackground = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(226, 36);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(356, 46);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Student Data Form";
-            // 
-            // Student_DGV1
-            // 
-            this.Student_DGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Student_DGV1.Location = new System.Drawing.Point(112, 170);
-            this.Student_DGV1.Name = "Student_DGV1";
-            this.Student_DGV1.Size = new System.Drawing.Size(912, 168);
-            this.Student_DGV1.TabIndex = 2;
             // 
             // gunaCirclePictureBox1
             // 
@@ -215,7 +90,7 @@
             this.StudentBTN.Radius = 20;
             this.StudentBTN.Size = new System.Drawing.Size(177, 45);
             this.StudentBTN.TabIndex = 10;
-            this.StudentBTN.Text = "Student";
+            this.StudentBTN.Text = "Class";
             this.StudentBTN.TextOffsetX = 10;
             this.StudentBTN.Click += new System.EventHandler(this.StudentBTN_Click);
             // 
@@ -243,7 +118,7 @@
             this.ValidateBTN.Radius = 20;
             this.ValidateBTN.Size = new System.Drawing.Size(177, 45);
             this.ValidateBTN.TabIndex = 8;
-            this.ValidateBTN.Text = "Validate";
+            this.ValidateBTN.Text = "Send to Pending";
             this.ValidateBTN.TextOffsetX = 10;
             this.ValidateBTN.Click += new System.EventHandler(this.ValidateBTN_Click);
             // 
@@ -402,6 +277,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel2.Controls.Add(this.gunaButton1);
             this.panel2.Controls.Add(this.StudentBTN);
             this.panel2.Controls.Add(this.ValidateBTN);
             this.panel2.Controls.Add(this.DashboardBTN);
@@ -427,84 +303,52 @@
             this.panel1.Size = new System.Drawing.Size(1371, 52);
             this.panel1.TabIndex = 17;
             // 
-            // InstructorDashboardPanel
+            // instructordashoardpanel
             // 
-            this.InstructorDashboardPanel.Controls.Add(this.gunaElipsePanel1);
-            this.InstructorDashboardPanel.Location = new System.Drawing.Point(193, 52);
-            this.InstructorDashboardPanel.Name = "InstructorDashboardPanel";
-            this.InstructorDashboardPanel.Size = new System.Drawing.Size(1175, 655);
-            this.InstructorDashboardPanel.TabIndex = 22;
+            this.instructordashoardpanel.Location = new System.Drawing.Point(198, 52);
+            this.instructordashoardpanel.Name = "instructordashoardpanel";
+            this.instructordashoardpanel.Size = new System.Drawing.Size(1173, 733);
+            this.instructordashoardpanel.TabIndex = 23;
             // 
-            // gunaElipsePanel1
+            // gunaButton1
             // 
-            this.gunaElipsePanel1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaElipsePanel1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(124)))), ((int)(((byte)(49)))));
-            this.gunaElipsePanel1.Controls.Add(this.label6);
-            this.gunaElipsePanel1.Controls.Add(this.pictureBox2);
-            this.gunaElipsePanel1.Controls.Add(this.label7);
-            this.gunaElipsePanel1.Location = new System.Drawing.Point(80, 51);
-            this.gunaElipsePanel1.Name = "gunaElipsePanel1";
-            this.gunaElipsePanel1.Radius = 20;
-            this.gunaElipsePanel1.Size = new System.Drawing.Size(241, 140);
-            this.gunaElipsePanel1.TabIndex = 14;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(124)))), ((int)(((byte)(49)))));
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(13, 55);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(32, 33);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "5";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(124)))), ((int)(((byte)(49)))));
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(183, 16);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(40, 38);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(124)))), ((int)(((byte)(49)))));
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(14, 18);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(68, 18);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "Pending";
+            this.gunaButton1.AnimationHoverSpeed = 0.07F;
+            this.gunaButton1.AnimationSpeed = 0.03F;
+            this.gunaButton1.BackColor = System.Drawing.Color.Transparent;
+            this.gunaButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.gunaButton1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(170)))), ((int)(((byte)(231)))));
+            this.gunaButton1.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaButton1.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.gunaButton1.ForeColor = System.Drawing.Color.Gray;
+            this.gunaButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaButton1.Image")));
+            this.gunaButton1.ImageOffsetX = 5;
+            this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaButton1.Location = new System.Drawing.Point(9, 352);
+            this.gunaButton1.Name = "gunaButton1";
+            this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(170)))), ((int)(((byte)(231)))));
+            this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaButton1.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaButton1.OnHoverImage = ((System.Drawing.Image)(resources.GetObject("gunaButton1.OnHoverImage")));
+            this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton1.Radius = 20;
+            this.gunaButton1.Size = new System.Drawing.Size(177, 45);
+            this.gunaButton1.TabIndex = 11;
+            this.gunaButton1.Text = "Rejected";
+            this.gunaButton1.TextOffsetX = 10;
             // 
             // InstructorDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1371, 788);
-            this.Controls.Add(this.ValidatePanel);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.InstructorStudentPanel);
-            this.Controls.Add(this.InstructorDashboardPanel);
+            this.Controls.Add(this.instructordashoardpanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "InstructorDashboard";
             this.Text = "InstructorDashboard";
-            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Validate_DGV)).EndInit();
-            this.ValidatePanel.ResumeLayout(false);
-            this.ValidatePanel.PerformLayout();
-            this.InstructorStudentPanel.ResumeLayout(false);
-            this.InstructorStudentPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Student_DGV2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Student_DGV1)).EndInit();
+            this.Load += new System.EventHandler(this.InstructorDashboard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -512,25 +356,11 @@
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.InstructorDashboardPanel.ResumeLayout(false);
-            this.gunaElipsePanel1.ResumeLayout(false);
-            this.gunaElipsePanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private Guna.UI.WinForms.GunaCirclePictureBox gunaCirclePictureBox3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridView Validate_DGV;
-        private System.Windows.Forms.Panel ValidatePanel;
-        private Guna.UI.WinForms.GunaLabel gunaLabel1;
-        private System.Windows.Forms.Panel InstructorStudentPanel;
-        private Guna.UI.WinForms.GunaCirclePictureBox gunaCirclePictureBox2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridView Student_DGV1;
         private Guna.UI.WinForms.GunaCirclePictureBox gunaCirclePictureBox1;
         private Guna.UI.WinForms.GunaButton StudentBTN;
         private Guna.UI.WinForms.GunaButton ValidateBTN;
@@ -546,11 +376,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel InstructorDashboardPanel;
-        private Guna.UI.WinForms.GunaElipsePanel gunaElipsePanel1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DataGridView Student_DGV2;
+        private Guna.UI.WinForms.GunaButton gunaButton1;
+        private System.Windows.Forms.Panel instructordashoardpanel;
     }
 }

@@ -43,6 +43,8 @@ namespace FullScreenAppDemo
             loadCourse();
             loaddep();
 
+            deletedepartment.Visible = false;
+
 
 
 
@@ -118,19 +120,27 @@ namespace FullScreenAppDemo
 
         private void deletedepartment_Click(object sender, EventArgs e)
         {
-
-            if (MessageBox.Show("Are you sure you want to Delete", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            try
             {
-                int departID = Int32.Parse(departmentID.ToString());
-                var selectedRow = _context.Departments.Where(q => q.Department_ID == departID).FirstOrDefault();
+                if (MessageBox.Show("Are you sure you want to Delete", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    int departID = Int32.Parse(departmentID.ToString());
+                    var selectedRow = _context.Departments.Where(q => q.Department_ID == departID).FirstOrDefault();
 
-                _context.Departments.Remove(selectedRow);
-                _context.SaveChanges();
-                dgvDepartmentList.DataSource = _context.Departments.ToList();
+                    _context.Departments.Remove(selectedRow);
+                    _context.SaveChanges();
+                    dgvDepartmentList.DataSource = _context.Departments.ToList();
 
-                deletedepartment.Visible = false;
-                MessageBox.Show("Successfully Deleted");
+                    deletedepartment.Visible = false;
+                    MessageBox.Show("Successfully Deleted");
+                }
             }
+            catch
+            {
+                MessageBox.Show("ERROR HAPPENS", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
+          
             
         }
 
@@ -144,18 +154,25 @@ namespace FullScreenAppDemo
 
         private void deletecourse_Click(object sender, EventArgs e)
         {
-
-            if (MessageBox.Show("Are you sure you want to Delete", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            try
             {
-                int departID = Int32.Parse(courseID.ToString());
-                var selectedRow = _context.Courses.Where(q => q.CourseID == departID).FirstOrDefault();
+                if (MessageBox.Show("Are you sure you want to Delete", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    int departID = Int32.Parse(courseID.ToString());
+                    var selectedRow = _context.Courses.Where(q => q.CourseID == departID).FirstOrDefault();
 
-                _context.Courses.Remove(selectedRow);
-                _context.SaveChanges();
-                loadCourse();
-                MessageBox.Show("Successfully Deleted");
-                deletecourse.Visible = false;
+                    _context.Courses.Remove(selectedRow);
+                    _context.SaveChanges();
+                    loadCourse();
+                    MessageBox.Show("Successfully Deleted");
+                    deletecourse.Visible = false;
+                }
             }
+            catch
+            {
+                MessageBox.Show("ERROR HAPPENS", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
            
         }
 
@@ -217,11 +234,6 @@ namespace FullScreenAppDemo
             v.ShowDialog();
         }
 
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void dgvCourseList_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             choicecourse = "update";
@@ -242,17 +254,25 @@ namespace FullScreenAppDemo
 
         private void gunaButton1_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want to DELETE", "DELETE", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            try
             {
-                var selectedRow = _context.Deans.Where(q => q.DeanID == deanID).FirstOrDefault();
+                if (MessageBox.Show("Are you sure you want to DELETE", "DELETE", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    var selectedRow = _context.Deans.Where(q => q.DeanID == deanID).FirstOrDefault();
 
-                //MessageBox.Show("Are you sure you want to delete?",)
-                _context.Deans.Remove(selectedRow);
-                _context.SaveChanges();
+                    //MessageBox.Show("Are you sure you want to delete?",)
+                    _context.Deans.Remove(selectedRow);
+                    _context.SaveChanges();
 
-                loadData();
-                MessageBox.Show("Succesfully Deleted", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    loadData();
+                    MessageBox.Show("Succesfully Deleted", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
+            catch
+            {
+                MessageBox.Show("ERROR HAPPENS", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
 
         }
 

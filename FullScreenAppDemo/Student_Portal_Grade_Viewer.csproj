@@ -74,6 +74,12 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="USERinstructor\Class.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="USERinstructor\Class.Designer.cs">
+      <DependentUpon>Class.cs</DependentUpon>
+    </Compile>
     <Compile Include="DASHBOARD\AcademicsDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,17 +140,30 @@
     <Compile Include="db\userLogin.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="frmlogin.cs">
+    <Compile Include="USERinstructor\instructorDSHBRD.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmlogin.Designer.cs">
+    <Compile Include="USERinstructor\instructorDSHBRD.Designer.cs">
+      <DependentUpon>instructorDSHBRD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="perips\userInWithClassList.cs" />
+    <Compile Include="USERinstructor\loginInstructor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="USERinstructor\loginInstructor.Designer.cs">
+      <DependentUpon>loginInstructor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegisLogin\frmlogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegisLogin\frmlogin.Designer.cs">
       <DependentUpon>frmlogin.cs</DependentUpon>
     </Compile>
     <Compile Include="perips\fPStudentList.cs" />
-    <Compile Include="REGISTERFRM.cs">
+    <Compile Include="RegisLogin\REGISTERFRM.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="REGISTERFRM.Designer.cs">
+    <Compile Include="RegisLogin\REGISTERFRM.Designer.cs">
       <DependentUpon>REGISTERFRM.cs</DependentUpon>
     </Compile>
     <Compile Include="Subject\assignSubject.cs">
@@ -255,19 +274,28 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>studentPortalDataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="UPDATESTUDENT.cs">
+    <Compile Include="Student\UPDATESTUDENT.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UPDATESTUDENT.Designer.cs">
+    <Compile Include="Student\UPDATESTUDENT.Designer.cs">
       <DependentUpon>UPDATESTUDENT.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="USERinstructor\Class.resx">
+      <DependentUpon>Class.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DASHBOARD\AcademicsDashboard.resx">
       <DependentUpon>AcademicsDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmlogin.resx">
+    <EmbeddedResource Include="USERinstructor\instructorDSHBRD.resx">
+      <DependentUpon>instructorDSHBRD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="USERinstructor\loginInstructor.resx">
+      <DependentUpon>loginInstructor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegisLogin\frmlogin.resx">
       <DependentUpon>frmlogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="REGISTERFRM.resx">
+    <EmbeddedResource Include="RegisLogin\REGISTERFRM.resx">
       <DependentUpon>REGISTERFRM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Subject\assignSubject.resx">
@@ -321,7 +349,7 @@
     <EmbeddedResource Include="Registrar\RegisStudent.resx">
       <DependentUpon>RegisStudent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UPDATESTUDENT.resx">
+    <EmbeddedResource Include="Student\UPDATESTUDENT.resx">
       <DependentUpon>UPDATESTUDENT.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="db\Model1.edmx">
@@ -344,6 +372,7 @@
     <None Include="Properties\DataSources\FullScreenAppDemo.perips.InstructorWithDept.datasource" />
     <None Include="Properties\DataSources\FullScreenAppDemo.perips.sectionWithDepWithCourse.datasource" />
     <None Include="Properties\DataSources\FullScreenAppDemo.perips.studentAssignSub.datasource" />
+    <None Include="Properties\DataSources\FullScreenAppDemo.perips.userInWithClassList.datasource" />
     <None Include="Properties\DataSources\RegisDean.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -382,6 +411,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Academics\" />
+    <Folder Include="USERacademics\" />
+    <Folder Include="USERdean\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

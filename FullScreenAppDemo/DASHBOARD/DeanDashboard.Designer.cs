@@ -128,7 +128,7 @@
             this.ApprovedBTN.Radius = 20;
             this.ApprovedBTN.Size = new System.Drawing.Size(177, 45);
             this.ApprovedBTN.TabIndex = 10;
-            this.ApprovedBTN.Text = "Approved";
+            this.ApprovedBTN.Text = "Rejected";
             this.ApprovedBTN.TextOffsetX = 10;
             this.ApprovedBTN.Click += new System.EventHandler(this.ApprovedBTN_Click);
             // 
@@ -351,10 +351,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Swis721 Blk BT", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(226, 122);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(540, 48);
+            this.label4.Size = new System.Drawing.Size(453, 46);
             this.label4.TabIndex = 10;
             this.label4.Text = "Approved Request Form";
             // 
@@ -514,10 +514,10 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Swis721 Blk BT", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(233, 75);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(515, 48);
+            this.label5.Size = new System.Drawing.Size(429, 46);
             this.label5.TabIndex = 14;
             this.label5.Text = "Pending Request Form";
             // 
@@ -544,11 +544,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1371, 788);
-            this.Controls.Add(this.DeansDashboardPanel);
             this.Controls.Add(this.DeansPendingPanel);
             this.Controls.Add(this.DeansApprovedPanel);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.DeansDashboardPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DeanDashboard";
             this.Text = "DeanDashboard";

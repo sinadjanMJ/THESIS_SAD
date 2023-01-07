@@ -5259,6 +5259,9 @@
         bqnzoCmmmGKKKaaYcnVLnQdNMcUUU0wxxZSrWWD8fx6R2e07gpsAAAAAAElFTkSuQmCC
 </value>
   </data>
+  <metadata name="courseImpsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>211, 56</value>
+  </metadata>
   <metadata name="departmentBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 56</value>
   </metadata>
@@ -10400,9 +10403,6 @@
         bqnzoCmmmGKKKaaYcnVLnQdNMcUUU0wxxZSrWWD8fx6R2e07gpsAAAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="courseImpsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>211, 56</value>
-  </metadata>
   <metadata name="studentPortalDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>202, 17</value>
   </metadata>

@@ -28,84 +28,95 @@ namespace FullScreenAppDemo
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (textDean_fname.Text == "" || textDean_lname.Text == "" || gunaComboBox1.SelectedIndex == -1)
+
+           
+            try
             {
-                MessageBox.Show("Fill out the Designated Credential first", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
-            {
-                
+                if (textDean_fname.Text == "" || textDean_lname.Text == "" || gunaComboBox1.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Fill out the Designated Credential first", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+
                     string depID = (gunaComboBox1.SelectedItem as DepartmentValue).Value.ToString();
                     var selected = _context.Deans.Where(q => q.Department_ID == depID).FirstOrDefault();
-                if (choice == "add")
+                    if (choice == "add")
 
-                {
-                    
-
-                    if (selected == null)
                     {
-                        if (MessageBox.Show("Are you sure you want to Save", "Save", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+
+
+                        if (selected == null)
                         {
-                            Dean dn = new Dean
+                            if (MessageBox.Show("Are you sure you want to Save", "Save", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                             {
-                                Dean_fname = textDean_fname.Text.Trim(),
-                                Dean_mname = textDean_mname.Text.Trim(),
-                                Dean_lname = textDean_lname.Text.Trim(),
-                                Department_ID = (gunaComboBox1.SelectedItem as DepartmentValue).Value.ToString()
-                            };
+                                Dean dn = new Dean
+                                {
+                                    Dean_fname = textDean_fname.Text.Trim(),
+                                    Dean_mname = textDean_mname.Text.Trim(),
+                                    Dean_lname = textDean_lname.Text.Trim(),
+                                    Department_ID = (gunaComboBox1.SelectedItem as DepartmentValue).Value.ToString()
+                                };
 
-                            _context.Deans.Add(dn);
-                            _context.SaveChanges();
-                            this.Close();
-                            insert();
-                            MessageBox.Show("Succesfully Added", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                    }
-                    else
-                    {
-                       
-                        MessageBox.Show("There is already designated dean to the selected Department. Pick another.", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                    }
-                }
-                else if (choice == "update")
-
-                {
-                    
-
-                    if (MessageBox.Show("Are you sure you want to Update", "Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-
-                        int convertdepID = Int32.Parse(depID);
-
-                        var selDep = _context.Departments.Where(q => q.Department_ID == convertdepID).FirstOrDefault();
-                        var deanDep = _context.Deans.Where(q => q.DeanID == deanID).FirstOrDefault();
-
-                        string deanDepID = deanDep.Department_ID;
-                        string selDepID = selDep.Department_ID.ToString();
-
-                        if (deanDepID == selDepID || selected == null)
-                        {
-                            deanDep.Dean_fname = textDean_fname.Text.Trim();
-                            deanDep.Dean_mname = textDean_mname.Text.Trim();
-                            deanDep.Dean_lname = textDean_lname.Text.Trim();
-                            deanDep.Department_ID = (gunaComboBox1.SelectedItem as DepartmentValue).Value.ToString();
-
-                            _context.SaveChanges();
-                            this.Close();
-                            insert();
-                            MessageBox.Show("Succesfully Updated", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                _context.Deans.Add(dn);
+                                _context.SaveChanges();
+                                this.Close();
+                                insert();
+                                MessageBox.Show("Succesfully Added", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
                         }
                         else
                         {
-                       
+
                             MessageBox.Show("There is already designated dean to the selected Department. Pick another.", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                         }
                     }
+                    else if (choice == "update")
+
+                    {
+
+
+                        if (MessageBox.Show("Are you sure you want to Update", "Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
+
+                            int convertdepID = Int32.Parse(depID);
+
+                            var selDep = _context.Departments.Where(q => q.Department_ID == convertdepID).FirstOrDefault();
+                            var deanDep = _context.Deans.Where(q => q.DeanID == deanID).FirstOrDefault();
+
+                            string deanDepID = deanDep.Department_ID;
+                            string selDepID = selDep.Department_ID.ToString();
+
+                            if (deanDepID == selDepID || selected == null)
+                            {
+                                deanDep.Dean_fname = textDean_fname.Text.Trim();
+                                deanDep.Dean_mname = textDean_mname.Text.Trim();
+                                deanDep.Dean_lname = textDean_lname.Text.Trim();
+                                deanDep.Department_ID = (gunaComboBox1.SelectedItem as DepartmentValue).Value.ToString();
+
+                                _context.SaveChanges();
+                                this.Close();
+                                insert();
+                                MessageBox.Show("Succesfully Updated", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+
+                                MessageBox.Show("There is already designated dean to the selected Department. Pick another.", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                            }
+                        }
+                    }
                 }
             }
-           
+            catch
+            {
+                MessageBox.Show("There SOMETHING ERROR HAPPEN", "EEROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
+
 
         }
 

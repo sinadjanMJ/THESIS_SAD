@@ -47,7 +47,7 @@ namespace FullScreenAppDemo
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("MS Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
+            this.label1.ForeColor = System.Drawing.Color.Maroon;
             this.label1.Location = new System.Drawing.Point(28, 68);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
@@ -58,7 +58,7 @@ namespace FullScreenAppDemo
             // 
             // txtUsername
             // 
-            this.txtUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
+            this.txtUsername.BackColor = System.Drawing.Color.Gainsboro;
             this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsername.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.Location = new System.Drawing.Point(33, 146);
@@ -71,6 +71,7 @@ namespace FullScreenAppDemo
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.DimGray;
             this.label2.Location = new System.Drawing.Point(30, 126);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 17);
@@ -80,6 +81,7 @@ namespace FullScreenAppDemo
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.DimGray;
             this.label3.Location = new System.Drawing.Point(30, 191);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 17);
@@ -88,7 +90,7 @@ namespace FullScreenAppDemo
             // 
             // txtPassword
             // 
-            this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
+            this.txtPassword.BackColor = System.Drawing.Color.Gainsboro;
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(33, 211);
@@ -101,6 +103,7 @@ namespace FullScreenAppDemo
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.DimGray;
             this.label4.Location = new System.Drawing.Point(30, 258);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(120, 17);
@@ -109,7 +112,7 @@ namespace FullScreenAppDemo
             // 
             // txtComPassword
             // 
-            this.txtComPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
+            this.txtComPassword.BackColor = System.Drawing.Color.Gainsboro;
             this.txtComPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtComPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtComPassword.Location = new System.Drawing.Point(33, 278);
@@ -124,6 +127,7 @@ namespace FullScreenAppDemo
             this.CheckbxShowPas.AutoSize = true;
             this.CheckbxShowPas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CheckbxShowPas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CheckbxShowPas.ForeColor = System.Drawing.Color.DimGray;
             this.CheckbxShowPas.Location = new System.Drawing.Point(130, 312);
             this.CheckbxShowPas.Name = "CheckbxShowPas";
             this.CheckbxShowPas.Size = new System.Drawing.Size(119, 21);
@@ -134,7 +138,7 @@ namespace FullScreenAppDemo
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
+            this.button1.BackColor = System.Drawing.Color.Maroon;
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -152,7 +156,7 @@ namespace FullScreenAppDemo
             this.button2.BackColor = System.Drawing.Color.White;
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
+            this.button2.ForeColor = System.Drawing.Color.Maroon;
             this.button2.Location = new System.Drawing.Point(33, 400);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(216, 35);
@@ -164,6 +168,7 @@ namespace FullScreenAppDemo
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.DimGray;
             this.label5.Location = new System.Drawing.Point(65, 456);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(163, 17);
@@ -173,7 +178,8 @@ namespace FullScreenAppDemo
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
+            this.label6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label6.ForeColor = System.Drawing.Color.Maroon;
             this.label6.Location = new System.Drawing.Point(86, 479);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(97, 17);

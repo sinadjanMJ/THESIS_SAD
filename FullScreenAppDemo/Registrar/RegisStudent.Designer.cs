@@ -47,8 +47,20 @@
             this.label_SchoolID = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel6 = new Guna.UI.WinForms.GunaLabel();
             this.dgvStudentLoad = new Guna.UI.WinForms.GunaDataGridView();
+            this.sTUDENTIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sCHOOLIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dEPARTMENTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cOURSEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.yearLevelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.semesterDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fPStudentListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gunaButton7 = new Guna.UI.WinForms.GunaButton();
             this.dgvStudentList = new Guna.UI.WinForms.GunaDataGridView();
+            this.sSchoolIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sfnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.smnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.slnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentBackgroundBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.btnDelete = new Guna.UI.WinForms.GunaButton();
             this.addstudentPanel = new System.Windows.Forms.Panel();
@@ -101,6 +113,14 @@
             this.cBSemester = new Guna.UI.WinForms.GunaComboBox();
             this.gunaLabel10 = new Guna.UI.WinForms.GunaLabel();
             this.dgvSubAssignment = new Guna.UI.WinForms.GunaDataGridView();
+            this.subjectIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cODEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sUBJECTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uNITSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iNSTRUCTORDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subjectidDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.instructoridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentAssignSubBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label32 = new System.Windows.Forms.Label();
             this.gunaCirclePictureBox4 = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.gunaLabel15 = new Guna.UI.WinForms.GunaLabel();
@@ -113,41 +133,21 @@
             this.studentBackgroundBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.studentBackgroundBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.studentPortalEntitiesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sTUDENTIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sCHOOLIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dEPARTMENTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cOURSEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.yearLevelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.semesterDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fPStudentListBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sSchoolIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sfnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.smnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.slnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.studentBackgroundBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
-            this.subjectIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cODEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sUBJECTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.uNITSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iNSTRUCTORDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subjectidDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.instructoridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.studentAssignSubBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.studentdataPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentLoad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fPStudentListBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBackgroundBindingSource3)).BeginInit();
             this.addstudentPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubAssignment)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentAssignSubBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox4)).BeginInit();
             this.saveDATA.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentBackgroundBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBackgroundBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBackgroundBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentPortalEntitiesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fPStudentListBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentBackgroundBindingSource3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentAssignSubBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // studentdataPanel
@@ -224,6 +224,7 @@
             this.dgvStudentLoad.AutoGenerateColumns = false;
             this.dgvStudentLoad.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvStudentLoad.BackgroundColor = System.Drawing.Color.White;
+            this.dgvStudentLoad.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvStudentLoad.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvStudentLoad.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -293,6 +294,52 @@
             this.dgvStudentLoad.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvStudentLoad_CellMouseDoubleClick);
             this.dgvStudentLoad.SelectionChanged += new System.EventHandler(this.dgvStudentLoad_SelectionChanged);
             // 
+            // sTUDENTIDDataGridViewTextBoxColumn
+            // 
+            this.sTUDENTIDDataGridViewTextBoxColumn.DataPropertyName = "STUDENT_ID";
+            this.sTUDENTIDDataGridViewTextBoxColumn.HeaderText = "STUDENT_ID";
+            this.sTUDENTIDDataGridViewTextBoxColumn.Name = "sTUDENTIDDataGridViewTextBoxColumn";
+            this.sTUDENTIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sCHOOLIDDataGridViewTextBoxColumn
+            // 
+            this.sCHOOLIDDataGridViewTextBoxColumn.DataPropertyName = "SCHOOL_ID";
+            this.sCHOOLIDDataGridViewTextBoxColumn.HeaderText = "SCHOOL_ID";
+            this.sCHOOLIDDataGridViewTextBoxColumn.Name = "sCHOOLIDDataGridViewTextBoxColumn";
+            this.sCHOOLIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dEPARTMENTDataGridViewTextBoxColumn
+            // 
+            this.dEPARTMENTDataGridViewTextBoxColumn.DataPropertyName = "DEPARTMENT";
+            this.dEPARTMENTDataGridViewTextBoxColumn.HeaderText = "DEPARTMENT";
+            this.dEPARTMENTDataGridViewTextBoxColumn.Name = "dEPARTMENTDataGridViewTextBoxColumn";
+            this.dEPARTMENTDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cOURSEDataGridViewTextBoxColumn
+            // 
+            this.cOURSEDataGridViewTextBoxColumn.DataPropertyName = "COURSE";
+            this.cOURSEDataGridViewTextBoxColumn.HeaderText = "COURSE";
+            this.cOURSEDataGridViewTextBoxColumn.Name = "cOURSEDataGridViewTextBoxColumn";
+            this.cOURSEDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // yearLevelDataGridViewTextBoxColumn
+            // 
+            this.yearLevelDataGridViewTextBoxColumn.DataPropertyName = "yearLevel";
+            this.yearLevelDataGridViewTextBoxColumn.HeaderText = "YEAR LEVEL";
+            this.yearLevelDataGridViewTextBoxColumn.Name = "yearLevelDataGridViewTextBoxColumn";
+            this.yearLevelDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // semesterDataGridViewTextBoxColumn
+            // 
+            this.semesterDataGridViewTextBoxColumn.DataPropertyName = "semester";
+            this.semesterDataGridViewTextBoxColumn.HeaderText = "SEMESTER";
+            this.semesterDataGridViewTextBoxColumn.Name = "semesterDataGridViewTextBoxColumn";
+            this.semesterDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fPStudentListBindingSource
+            // 
+            this.fPStudentListBindingSource.DataSource = typeof(FullScreenAppDemo.perips.fPStudentList);
+            // 
             // gunaButton7
             // 
             this.gunaButton7.AnimationHoverSpeed = 0.07F;
@@ -330,6 +377,7 @@
             this.dgvStudentList.AutoGenerateColumns = false;
             this.dgvStudentList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvStudentList.BackgroundColor = System.Drawing.Color.White;
+            this.dgvStudentList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvStudentList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvStudentList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -397,6 +445,38 @@
             this.dgvStudentList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStudentList_CellContentClick);
             this.dgvStudentList.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvStudentList_CellMouseDoubleClick);
             this.dgvStudentList.SelectionChanged += new System.EventHandler(this.dgvStudentList_SelectionChanged);
+            // 
+            // sSchoolIDDataGridViewTextBoxColumn
+            // 
+            this.sSchoolIDDataGridViewTextBoxColumn.DataPropertyName = "S_SchoolID";
+            this.sSchoolIDDataGridViewTextBoxColumn.HeaderText = "SCHOOL ID";
+            this.sSchoolIDDataGridViewTextBoxColumn.Name = "sSchoolIDDataGridViewTextBoxColumn";
+            this.sSchoolIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sfnameDataGridViewTextBoxColumn
+            // 
+            this.sfnameDataGridViewTextBoxColumn.DataPropertyName = "S_fname";
+            this.sfnameDataGridViewTextBoxColumn.HeaderText = "FIRST NAME";
+            this.sfnameDataGridViewTextBoxColumn.Name = "sfnameDataGridViewTextBoxColumn";
+            this.sfnameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // smnameDataGridViewTextBoxColumn
+            // 
+            this.smnameDataGridViewTextBoxColumn.DataPropertyName = "S_mname";
+            this.smnameDataGridViewTextBoxColumn.HeaderText = "MIDDLE NAME";
+            this.smnameDataGridViewTextBoxColumn.Name = "smnameDataGridViewTextBoxColumn";
+            this.smnameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // slnameDataGridViewTextBoxColumn
+            // 
+            this.slnameDataGridViewTextBoxColumn.DataPropertyName = "S_lname";
+            this.slnameDataGridViewTextBoxColumn.HeaderText = "LAST NAME";
+            this.slnameDataGridViewTextBoxColumn.Name = "slnameDataGridViewTextBoxColumn";
+            this.slnameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // studentBackgroundBindingSource3
+            // 
+            this.studentBackgroundBindingSource3.DataSource = typeof(FullScreenAppDemo.db.studentBackground);
             // 
             // gunaButton1
             // 
@@ -1300,6 +1380,59 @@
             this.dgvSubAssignment.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvSubAssignment.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
+            // subjectIDDataGridViewTextBoxColumn
+            // 
+            this.subjectIDDataGridViewTextBoxColumn.DataPropertyName = "SubjectID";
+            this.subjectIDDataGridViewTextBoxColumn.HeaderText = "SubjectID";
+            this.subjectIDDataGridViewTextBoxColumn.Name = "subjectIDDataGridViewTextBoxColumn";
+            this.subjectIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cODEDataGridViewTextBoxColumn
+            // 
+            this.cODEDataGridViewTextBoxColumn.DataPropertyName = "CODE";
+            this.cODEDataGridViewTextBoxColumn.HeaderText = "CODE";
+            this.cODEDataGridViewTextBoxColumn.Name = "cODEDataGridViewTextBoxColumn";
+            this.cODEDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sUBJECTDataGridViewTextBoxColumn
+            // 
+            this.sUBJECTDataGridViewTextBoxColumn.DataPropertyName = "SUBJECT";
+            this.sUBJECTDataGridViewTextBoxColumn.HeaderText = "SUBJECT";
+            this.sUBJECTDataGridViewTextBoxColumn.Name = "sUBJECTDataGridViewTextBoxColumn";
+            this.sUBJECTDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // uNITSDataGridViewTextBoxColumn
+            // 
+            this.uNITSDataGridViewTextBoxColumn.DataPropertyName = "UNITS";
+            this.uNITSDataGridViewTextBoxColumn.HeaderText = "UNITS";
+            this.uNITSDataGridViewTextBoxColumn.Name = "uNITSDataGridViewTextBoxColumn";
+            this.uNITSDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // iNSTRUCTORDataGridViewTextBoxColumn
+            // 
+            this.iNSTRUCTORDataGridViewTextBoxColumn.DataPropertyName = "INSTRUCTOR";
+            this.iNSTRUCTORDataGridViewTextBoxColumn.HeaderText = "INSTRUCTOR";
+            this.iNSTRUCTORDataGridViewTextBoxColumn.Name = "iNSTRUCTORDataGridViewTextBoxColumn";
+            this.iNSTRUCTORDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // subjectidDataGridViewTextBoxColumn1
+            // 
+            this.subjectidDataGridViewTextBoxColumn1.DataPropertyName = "subject_id";
+            this.subjectidDataGridViewTextBoxColumn1.HeaderText = "SUBJECT ID";
+            this.subjectidDataGridViewTextBoxColumn1.Name = "subjectidDataGridViewTextBoxColumn1";
+            this.subjectidDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // instructoridDataGridViewTextBoxColumn
+            // 
+            this.instructoridDataGridViewTextBoxColumn.DataPropertyName = "instructor_id";
+            this.instructoridDataGridViewTextBoxColumn.HeaderText = "INSTRUCTOR ID";
+            this.instructoridDataGridViewTextBoxColumn.Name = "instructoridDataGridViewTextBoxColumn";
+            this.instructoridDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // studentAssignSubBindingSource
+            // 
+            this.studentAssignSubBindingSource.DataSource = typeof(FullScreenAppDemo.perips.studentAssignSub);
+            // 
             // label32
             // 
             this.label32.AutoSize = true;
@@ -1449,145 +1582,14 @@
             this.gunaButton4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.gunaButton4.Click += new System.EventHandler(this.gunaButton4_Click);
             // 
-            // sTUDENTIDDataGridViewTextBoxColumn
-            // 
-            this.sTUDENTIDDataGridViewTextBoxColumn.DataPropertyName = "STUDENT_ID";
-            this.sTUDENTIDDataGridViewTextBoxColumn.HeaderText = "STUDENT_ID";
-            this.sTUDENTIDDataGridViewTextBoxColumn.Name = "sTUDENTIDDataGridViewTextBoxColumn";
-            this.sTUDENTIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sCHOOLIDDataGridViewTextBoxColumn
-            // 
-            this.sCHOOLIDDataGridViewTextBoxColumn.DataPropertyName = "SCHOOL_ID";
-            this.sCHOOLIDDataGridViewTextBoxColumn.HeaderText = "SCHOOL_ID";
-            this.sCHOOLIDDataGridViewTextBoxColumn.Name = "sCHOOLIDDataGridViewTextBoxColumn";
-            this.sCHOOLIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dEPARTMENTDataGridViewTextBoxColumn
-            // 
-            this.dEPARTMENTDataGridViewTextBoxColumn.DataPropertyName = "DEPARTMENT";
-            this.dEPARTMENTDataGridViewTextBoxColumn.HeaderText = "DEPARTMENT";
-            this.dEPARTMENTDataGridViewTextBoxColumn.Name = "dEPARTMENTDataGridViewTextBoxColumn";
-            this.dEPARTMENTDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cOURSEDataGridViewTextBoxColumn
-            // 
-            this.cOURSEDataGridViewTextBoxColumn.DataPropertyName = "COURSE";
-            this.cOURSEDataGridViewTextBoxColumn.HeaderText = "COURSE";
-            this.cOURSEDataGridViewTextBoxColumn.Name = "cOURSEDataGridViewTextBoxColumn";
-            this.cOURSEDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // yearLevelDataGridViewTextBoxColumn
-            // 
-            this.yearLevelDataGridViewTextBoxColumn.DataPropertyName = "yearLevel";
-            this.yearLevelDataGridViewTextBoxColumn.HeaderText = "YEAR LEVEL";
-            this.yearLevelDataGridViewTextBoxColumn.Name = "yearLevelDataGridViewTextBoxColumn";
-            this.yearLevelDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // semesterDataGridViewTextBoxColumn
-            // 
-            this.semesterDataGridViewTextBoxColumn.DataPropertyName = "semester";
-            this.semesterDataGridViewTextBoxColumn.HeaderText = "SEMESTER";
-            this.semesterDataGridViewTextBoxColumn.Name = "semesterDataGridViewTextBoxColumn";
-            this.semesterDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fPStudentListBindingSource
-            // 
-            this.fPStudentListBindingSource.DataSource = typeof(FullScreenAppDemo.perips.fPStudentList);
-            // 
-            // sSchoolIDDataGridViewTextBoxColumn
-            // 
-            this.sSchoolIDDataGridViewTextBoxColumn.DataPropertyName = "S_SchoolID";
-            this.sSchoolIDDataGridViewTextBoxColumn.HeaderText = "SCHOOL ID";
-            this.sSchoolIDDataGridViewTextBoxColumn.Name = "sSchoolIDDataGridViewTextBoxColumn";
-            this.sSchoolIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sfnameDataGridViewTextBoxColumn
-            // 
-            this.sfnameDataGridViewTextBoxColumn.DataPropertyName = "S_fname";
-            this.sfnameDataGridViewTextBoxColumn.HeaderText = "FIRST NAME";
-            this.sfnameDataGridViewTextBoxColumn.Name = "sfnameDataGridViewTextBoxColumn";
-            this.sfnameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // smnameDataGridViewTextBoxColumn
-            // 
-            this.smnameDataGridViewTextBoxColumn.DataPropertyName = "S_mname";
-            this.smnameDataGridViewTextBoxColumn.HeaderText = "MIDDLE NAME";
-            this.smnameDataGridViewTextBoxColumn.Name = "smnameDataGridViewTextBoxColumn";
-            this.smnameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // slnameDataGridViewTextBoxColumn
-            // 
-            this.slnameDataGridViewTextBoxColumn.DataPropertyName = "S_lname";
-            this.slnameDataGridViewTextBoxColumn.HeaderText = "LAST NAME";
-            this.slnameDataGridViewTextBoxColumn.Name = "slnameDataGridViewTextBoxColumn";
-            this.slnameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // studentBackgroundBindingSource3
-            // 
-            this.studentBackgroundBindingSource3.DataSource = typeof(FullScreenAppDemo.db.studentBackground);
-            // 
-            // subjectIDDataGridViewTextBoxColumn
-            // 
-            this.subjectIDDataGridViewTextBoxColumn.DataPropertyName = "SubjectID";
-            this.subjectIDDataGridViewTextBoxColumn.HeaderText = "SubjectID";
-            this.subjectIDDataGridViewTextBoxColumn.Name = "subjectIDDataGridViewTextBoxColumn";
-            this.subjectIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cODEDataGridViewTextBoxColumn
-            // 
-            this.cODEDataGridViewTextBoxColumn.DataPropertyName = "CODE";
-            this.cODEDataGridViewTextBoxColumn.HeaderText = "CODE";
-            this.cODEDataGridViewTextBoxColumn.Name = "cODEDataGridViewTextBoxColumn";
-            this.cODEDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sUBJECTDataGridViewTextBoxColumn
-            // 
-            this.sUBJECTDataGridViewTextBoxColumn.DataPropertyName = "SUBJECT";
-            this.sUBJECTDataGridViewTextBoxColumn.HeaderText = "SUBJECT";
-            this.sUBJECTDataGridViewTextBoxColumn.Name = "sUBJECTDataGridViewTextBoxColumn";
-            this.sUBJECTDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // uNITSDataGridViewTextBoxColumn
-            // 
-            this.uNITSDataGridViewTextBoxColumn.DataPropertyName = "UNITS";
-            this.uNITSDataGridViewTextBoxColumn.HeaderText = "UNITS";
-            this.uNITSDataGridViewTextBoxColumn.Name = "uNITSDataGridViewTextBoxColumn";
-            this.uNITSDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // iNSTRUCTORDataGridViewTextBoxColumn
-            // 
-            this.iNSTRUCTORDataGridViewTextBoxColumn.DataPropertyName = "INSTRUCTOR";
-            this.iNSTRUCTORDataGridViewTextBoxColumn.HeaderText = "INSTRUCTOR";
-            this.iNSTRUCTORDataGridViewTextBoxColumn.Name = "iNSTRUCTORDataGridViewTextBoxColumn";
-            this.iNSTRUCTORDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // subjectidDataGridViewTextBoxColumn1
-            // 
-            this.subjectidDataGridViewTextBoxColumn1.DataPropertyName = "subject_id";
-            this.subjectidDataGridViewTextBoxColumn1.HeaderText = "SUBJECT ID";
-            this.subjectidDataGridViewTextBoxColumn1.Name = "subjectidDataGridViewTextBoxColumn1";
-            this.subjectidDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // instructoridDataGridViewTextBoxColumn
-            // 
-            this.instructoridDataGridViewTextBoxColumn.DataPropertyName = "instructor_id";
-            this.instructoridDataGridViewTextBoxColumn.HeaderText = "INSTRUCTOR ID";
-            this.instructoridDataGridViewTextBoxColumn.Name = "instructoridDataGridViewTextBoxColumn";
-            this.instructoridDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // studentAssignSubBindingSource
-            // 
-            this.studentAssignSubBindingSource.DataSource = typeof(FullScreenAppDemo.perips.studentAssignSub);
-            // 
             // RegisStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1175, 736);
+            this.Controls.Add(this.studentdataPanel);
             this.Controls.Add(this.saveDATA);
             this.Controls.Add(this.addstudentPanel);
-            this.Controls.Add(this.studentdataPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RegisStudent";
             this.Text = "RegisStudentDashboard";
@@ -1595,11 +1597,14 @@
             this.studentdataPanel.ResumeLayout(false);
             this.studentdataPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentLoad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fPStudentListBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBackgroundBindingSource3)).EndInit();
             this.addstudentPanel.ResumeLayout(false);
             this.addstudentPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubAssignment)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentAssignSubBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox4)).EndInit();
             this.saveDATA.ResumeLayout(false);
             this.saveDATA.PerformLayout();
@@ -1607,9 +1612,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.studentBackgroundBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBackgroundBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentPortalEntitiesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fPStudentListBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentBackgroundBindingSource3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentAssignSubBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -38,102 +38,172 @@ namespace FullScreenAppDemo
 
         private void btnSaveAssign_Click(object sender, EventArgs e)
         {
-            //GET THE NECESSARY DATA FROM COMBO BOX
-            string classID = (cBSection.SelectedItem as classValue).Value.ToString();
-            string semester = cBSemester.Text.Trim();
-            string subjectID = (cBSubject.SelectedItem as subjectValue).Value.ToString();
-            string instructorID = (cBInstructor.SelectedItem as instructorValue).Value.ToString();
+            try
+            {
+                //GET THE NECESSARY DATA FROM COMBO BOX
+                string classID = (cBSection.SelectedItem as classValue).Value.ToString();
+                string semester = cBSemester.Text.Trim();
+                string subjectID = (cBSubject.SelectedItem as subjectValue).Value.ToString();
+                string instructorID = (cBInstructor.SelectedItem as instructorValue).Value.ToString();
 
-            if (cBCourse.SelectedIndex == -1 || cBYear.SelectedIndex == -1 || cBSemester.SelectedIndex == -1 || cBDepartment.SelectedIndex == -1 || cBSection.SelectedIndex == -1)
-            {
-                MessageBox.Show("Fill out the Designated Credential first", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
-            {
-                if (btnSaveAssign.Text == "ADD SUBJECT")
+                if (cBCourse.SelectedIndex == -1 || cBYear.SelectedIndex == -1 || cBSemester.SelectedIndex == -1 || cBDepartment.SelectedIndex == -1 || cBSection.SelectedIndex == -1)
                 {
-
-                    if (MessageBox.Show("Are you sure you want to Save", "Save", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-                        //RENDER IF THERE IS ANY EXISTING DATA
-                        var classInfo = _context.assignSubjects.Where(q =>
-                    q.a_classID == classID && q.a_semester == semester && q.a_subjectID == subjectID && q.a_instructorID == instructorID).FirstOrDefault();
-
-                        if (classInfo == null) //IT MEANS THERE IS NO EXISTING DATA
-                        {
-                            //RENDER IF THERE IS ALREADY AN EXISTING SUBJECT IN THE SECTION
-                            var subSec = _context.assignSubjects.Where(q => q.a_classID == classID && q.a_subjectID == subjectID).FirstOrDefault();
-
-                            if (subSec == null) //IT MEANS THERE IS NO EXISITNG SUBJECT IN THE SECTION
-                            {
-                                db.assignSubject halu = new db.assignSubject
-                                {
-                                    a_subjectID = (cBSubject.SelectedItem as subjectValue).Value.ToString(),
-                                    a_classID = (cBSection.SelectedItem as classValue).Value.ToString(),
-                                    a_semester = cBSemester.Text.Trim(),
-                                    a_instructorID = (cBInstructor.SelectedItem as instructorValue).Value.ToString()
-                                };
-
-                                _context.assignSubjects.Add(halu);
-                                _context.SaveChanges();
-
-                                loadAssignment();
-                                clear();
-                                MessageBox.Show("Succesfully Added", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
-                            }
-                            else // IT MEANS THERE IS AN EXISTING SUBJECT IN THE SECTION FOUND
-                            {
-                                int convertID = Convert.ToInt32(classID.ToString());
-                                var secName = _context.Class_S.Where(q => q.ClassID == convertID).FirstOrDefault();
-                                string className = secName.ClassName.ToString();
-                             
-                                MessageBox.Show("THERE IS ALREADY AN EXISTING SUBJECT IN CLASS : " + className.ToString(), "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            }
-                        }
-                        else // IT MEANS THERE IS NO EXISTING DATA FOUND
-                        {
-                           
-                            MessageBox.Show("THERE IS ALREADY AN EXISTING DATA", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
-                    }
+                    MessageBox.Show("Fill out the Designated Credential first", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                else if (btnSaveAssign.Text == "UPDATE")
+                else
                 {
-                    if (MessageBox.Show("Are you sure you want to Update", "Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (btnSaveAssign.Text == "ADD SUBJECT")
                     {
-                        //GET YOUR ORIGINAL DATA FROM THE SELECTED CELL
-                        var assignSub = _context.assignSubjects.Where(q => q.a_id == assignSubjectID).FirstOrDefault();
-                        string oClassID = assignSub.a_classID.ToString();
-                        string oSemester = assignSub.a_semester.ToString();
-                        string oSubjectID = assignSub.a_subjectID.ToString();
-                        string oInstructorID = assignSub.a_instructorID.ToString();
 
-                        //GET THE NECESSARY DATA FROM COMBO BOX
-                        classID = (cBSection.SelectedItem as classValue).Value.ToString();
-                        semester = cBSemester.Text.Trim();
-                        subjectID = (cBSubject.SelectedItem as subjectValue).Value.ToString();
-                        instructorID = (cBInstructor.SelectedItem as instructorValue).Value.ToString();
-
-                        //RENDER IF THERE IS ANY EXISTING DATA
-                        var classInfo = _context.assignSubjects.Where(q =>
+                        if (MessageBox.Show("Are you sure you want to Save", "Save", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
+                            //RENDER IF THERE IS ANY EXISTING DATA
+                            var classInfo = _context.assignSubjects.Where(q =>
                         q.a_classID == classID && q.a_semester == semester && q.a_subjectID == subjectID && q.a_instructorID == instructorID).FirstOrDefault();
 
-                        if (classInfo != null)
-                        {
-                            //IF THERE IS AN EXISITNG DATA. CHECK IF IT'S BECAUSE OF YOUR SELECTED CELL
-                            string ciClassID = classInfo.a_classID.ToString();
-                            string ciSemester = classInfo.a_semester.ToString();
-                            string ciSubjectID = classInfo.a_subjectID.ToString();
-                            string ciInstructorID = classInfo.a_instructorID.ToString();
+                            if (classInfo == null) //IT MEANS THERE IS NO EXISTING DATA
+                            {
+                                //RENDER IF THERE IS ALREADY AN EXISTING SUBJECT IN THE SECTION
+                                var subSec = _context.assignSubjects.Where(q => q.a_classID == classID && q.a_subjectID == subjectID).FirstOrDefault();
 
-                            if (oClassID == ciClassID && oSemester == ciSemester && oSubjectID == ciSubjectID && oInstructorID == ciInstructorID) // IF IT'S BECAUSE OF THE ORIGINAL DATA. THEN PROCEED
+                                if (subSec == null) //IT MEANS THERE IS NO EXISITNG SUBJECT IN THE SECTION
+                                {
+                                    db.assignSubject halu = new db.assignSubject
+                                    {
+                                        a_subjectID = (cBSubject.SelectedItem as subjectValue).Value.ToString(),
+                                        a_classID = (cBSection.SelectedItem as classValue).Value.ToString(),
+                                        a_semester = cBSemester.Text.Trim(),
+                                        a_instructorID = (cBInstructor.SelectedItem as instructorValue).Value.ToString()
+                                    };
+
+                                    _context.assignSubjects.Add(halu);
+                                    _context.SaveChanges();
+
+                                    loadAssignment();
+                                    clear();
+                                    MessageBox.Show("Succesfully Added", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+                                }
+                                else // IT MEANS THERE IS AN EXISTING SUBJECT IN THE SECTION FOUND
+                                {
+                                    int convertID = Convert.ToInt32(classID.ToString());
+                                    var secName = _context.Class_S.Where(q => q.ClassID == convertID).FirstOrDefault();
+                                    string className = secName.ClassName.ToString();
+
+                                    MessageBox.Show("THERE IS ALREADY AN EXISTING SUBJECT IN CLASS : " + className.ToString(), "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                }
+                            }
+                            else // IT MEANS THERE IS NO EXISTING DATA FOUND
+                            {
+
+                                MessageBox.Show("THERE IS ALREADY AN EXISTING DATA", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
+                        }
+                    }
+                    else if (btnSaveAssign.Text == "UPDATE")
+                    {
+                        if (MessageBox.Show("Are you sure you want to Update", "Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
+                            //GET YOUR ORIGINAL DATA FROM THE SELECTED CELL
+                            var assignSub = _context.assignSubjects.Where(q => q.a_id == assignSubjectID).FirstOrDefault();
+                            string oClassID = assignSub.a_classID.ToString();
+                            string oSemester = assignSub.a_semester.ToString();
+                            string oSubjectID = assignSub.a_subjectID.ToString();
+                            string oInstructorID = assignSub.a_instructorID.ToString();
+
+                            //GET THE NECESSARY DATA FROM COMBO BOX
+                            classID = (cBSection.SelectedItem as classValue).Value.ToString();
+                            semester = cBSemester.Text.Trim();
+                            subjectID = (cBSubject.SelectedItem as subjectValue).Value.ToString();
+                            instructorID = (cBInstructor.SelectedItem as instructorValue).Value.ToString();
+
+                            //RENDER IF THERE IS ANY EXISTING DATA
+                            var classInfo = _context.assignSubjects.Where(q =>
+                            q.a_classID == classID && q.a_semester == semester && q.a_subjectID == subjectID && q.a_instructorID == instructorID).FirstOrDefault();
+
+                            if (classInfo != null)
+                            {
+                                //IF THERE IS AN EXISITNG DATA. CHECK IF IT'S BECAUSE OF YOUR SELECTED CELL
+                                string ciClassID = classInfo.a_classID.ToString();
+                                string ciSemester = classInfo.a_semester.ToString();
+                                string ciSubjectID = classInfo.a_subjectID.ToString();
+                                string ciInstructorID = classInfo.a_instructorID.ToString();
+
+                                if (oClassID == ciClassID && oSemester == ciSemester && oSubjectID == ciSubjectID && oInstructorID == ciInstructorID) // IF IT'S BECAUSE OF THE ORIGINAL DATA. THEN PROCEED
+                                {
+                                    //RENDER IF THERE'S AN EXISTING SUBJECT IN THE SECTION
+                                    var subSec = _context.assignSubjects.Where(q => q.a_classID == classID && q.a_subjectID == subjectID).FirstOrDefault();
+                                    if (subSec != null) //EXISTING SUBJECT FOUND
+                                    {
+                                        //IF THERE IS AN EXISITNG SUBJECT. CHECK IF IT'S BECAUSE OF YOUR SELECTED CELL
+                                        if (oClassID == ciClassID && oSubjectID == ciSubjectID) // IT'S BECAUSE OF THE SELECTED CELL. PROCEED
+                                        {
+                                            var updateASub = _context.assignSubjects.Where(q => q.a_id == assignSubjectID).FirstOrDefault();
+                                            updateASub.a_classID = (cBSection.SelectedItem as classValue).Value.ToString();
+                                            updateASub.a_semester = cBSemester.Text.Trim();
+                                            updateASub.a_subjectID = (cBSubject.SelectedItem as subjectValue).Value.ToString();
+                                            updateASub.a_instructorID = (cBInstructor.SelectedItem as instructorValue).Value.ToString();
+
+                                            _context.SaveChanges();
+                                            loadAssignment();
+                                            clear();
+                                            btnSaveAssign.Text = "ADD SUBJECT";
+                                            btnBack.Text = "GO BACK";
+
+                                            MessageBox.Show("Succesfully Updated", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                            btnDelete.Visible = false;
+
+
+
+                                        }
+                                        else
+                                        {
+                                            int convertID = Convert.ToInt32(classID.ToString());
+                                            var secName = _context.Class_S.Where(q => q.ClassID == convertID).FirstOrDefault();
+                                            string className = secName.ClassName.ToString();
+                                            MessageBox.Show("THERE IS ALREADY AN EXISTING SUBJECT IN CLASS : " + className.ToString(), "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+
+                                        }
+                                    }
+                                    else // IF THERE IS NO EXISTING SUBJECT FOUND
+                                    {
+                                        var updateASub = _context.assignSubjects.Where(q => q.a_id == assignSubjectID).FirstOrDefault();
+                                        updateASub.a_classID = (cBSection.SelectedItem as classValue).Value.ToString();
+                                        updateASub.a_semester = cBSemester.Text.Trim();
+                                        updateASub.a_subjectID = (cBSubject.SelectedItem as subjectValue).Value.ToString();
+                                        updateASub.a_instructorID = (cBInstructor.SelectedItem as instructorValue).Value.ToString();
+
+                                        _context.SaveChanges();
+                                        loadAssignment();
+
+                                        clear();
+                                        MessageBox.Show("Succesfully Updated", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        btnSaveAssign.Text = "ADD SUBJECT";
+                                        btnBack.Text = "GO BACK";
+                                        btnDelete.Visible = false;
+
+
+
+                                    }
+                                }
+                                else // NOT BECAUSE OF ORIGINAL DATA
+                                {
+
+                                    MessageBox.Show("THERE IS ALREADY AN EXISTING DATA", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                                }
+                            }
+                            else
                             {
                                 //RENDER IF THERE'S AN EXISTING SUBJECT IN THE SECTION
                                 var subSec = _context.assignSubjects.Where(q => q.a_classID == classID && q.a_subjectID == subjectID).FirstOrDefault();
                                 if (subSec != null) //EXISTING SUBJECT FOUND
                                 {
+                                    string ciClassID = subSec.a_classID.ToString();
+                                    string ciSubjectID = subSec.a_subjectID.ToString();
+
                                     //IF THERE IS AN EXISITNG SUBJECT. CHECK IF IT'S BECAUSE OF YOUR SELECTED CELL
                                     if (oClassID == ciClassID && oSubjectID == ciSubjectID) // IT'S BECAUSE OF THE SELECTED CELL. PROCEED
                                     {
@@ -144,25 +214,21 @@ namespace FullScreenAppDemo
                                         updateASub.a_instructorID = (cBInstructor.SelectedItem as instructorValue).Value.ToString();
 
                                         _context.SaveChanges();
+
                                         loadAssignment();
                                         clear();
+                                        MessageBox.Show("Succesfully Updated", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                         btnSaveAssign.Text = "ADD SUBJECT";
                                         btnBack.Text = "GO BACK";
-                                        
-                                        MessageBox.Show("Succesfully Updated", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                         btnDelete.Visible = false;
-
-
-
                                     }
                                     else
                                     {
                                         int convertID = Convert.ToInt32(classID.ToString());
                                         var secName = _context.Class_S.Where(q => q.ClassID == convertID).FirstOrDefault();
                                         string className = secName.ClassName.ToString();
+
                                         MessageBox.Show("THERE IS ALREADY AN EXISTING SUBJECT IN CLASS : " + className.ToString(), "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-
                                     }
                                 }
                                 else // IF THERE IS NO EXISTING SUBJECT FOUND
@@ -175,7 +241,6 @@ namespace FullScreenAppDemo
 
                                     _context.SaveChanges();
                                     loadAssignment();
-
                                     clear();
                                     MessageBox.Show("Succesfully Updated", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     btnSaveAssign.Text = "ADD SUBJECT";
@@ -183,75 +248,17 @@ namespace FullScreenAppDemo
                                     btnDelete.Visible = false;
 
 
-
                                 }
-                            }
-                            else // NOT BECAUSE OF ORIGINAL DATA
-                            {
-                              
-                                MessageBox.Show("THERE IS ALREADY AN EXISTING DATA", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                            }
-                        }
-                        else
-                        {
-                            //RENDER IF THERE'S AN EXISTING SUBJECT IN THE SECTION
-                            var subSec = _context.assignSubjects.Where(q => q.a_classID == classID && q.a_subjectID == subjectID).FirstOrDefault();
-                            if (subSec != null) //EXISTING SUBJECT FOUND
-                            {
-                                string ciClassID = subSec.a_classID.ToString();
-                                string ciSubjectID = subSec.a_subjectID.ToString();
-
-                                //IF THERE IS AN EXISITNG SUBJECT. CHECK IF IT'S BECAUSE OF YOUR SELECTED CELL
-                                if (oClassID == ciClassID && oSubjectID == ciSubjectID) // IT'S BECAUSE OF THE SELECTED CELL. PROCEED
-                                {
-                                    var updateASub = _context.assignSubjects.Where(q => q.a_id == assignSubjectID).FirstOrDefault();
-                                    updateASub.a_classID = (cBSection.SelectedItem as classValue).Value.ToString();
-                                    updateASub.a_semester = cBSemester.Text.Trim();
-                                    updateASub.a_subjectID = (cBSubject.SelectedItem as subjectValue).Value.ToString();
-                                    updateASub.a_instructorID = (cBInstructor.SelectedItem as instructorValue).Value.ToString();
-
-                                    _context.SaveChanges();
-
-                                    loadAssignment();
-                                    clear();
-                                    MessageBox.Show("Succesfully Updated", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    btnSaveAssign.Text = "ADD SUBJECT";
-                                    btnBack.Text = "GO BACK";
-                                    btnDelete.Visible = false;
-                                }
-                                else
-                                {
-                                    int convertID = Convert.ToInt32(classID.ToString());
-                                    var secName = _context.Class_S.Where(q => q.ClassID == convertID).FirstOrDefault();
-                                    string className = secName.ClassName.ToString();
-                                   
-                                    MessageBox.Show("THERE IS ALREADY AN EXISTING SUBJECT IN CLASS : " + className.ToString(), "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                }
-                            }
-                            else // IF THERE IS NO EXISTING SUBJECT FOUND
-                            {
-                                var updateASub = _context.assignSubjects.Where(q => q.a_id == assignSubjectID).FirstOrDefault();
-                                updateASub.a_classID = (cBSection.SelectedItem as classValue).Value.ToString();
-                                updateASub.a_semester = cBSemester.Text.Trim();
-                                updateASub.a_subjectID = (cBSubject.SelectedItem as subjectValue).Value.ToString();
-                                updateASub.a_instructorID = (cBInstructor.SelectedItem as instructorValue).Value.ToString();
-
-                                _context.SaveChanges();
-                                loadAssignment();
-                                clear();
-                                MessageBox.Show("Succesfully Updated", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                btnSaveAssign.Text = "ADD SUBJECT";
-                                btnBack.Text = "GO BACK";
-                                btnDelete.Visible = false;
-
-
                             }
                         }
                     }
                 }
             }
-           
+            catch
+            {
+                MessageBox.Show("ERROR HAPPENS", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void assignSubject_Load(object sender, EventArgs e)
@@ -409,12 +416,7 @@ namespace FullScreenAppDemo
 
         public void clear()
         {
-            cBSemester.SelectedIndex = -1;
-            cBCourse.SelectedIndex = -1;
-            //cBDepartment.SelectedIndex = -1;
-            cBYear.SelectedIndex = -1;
-            cBInstructor.SelectedIndex = -1;
-            cBSection.SelectedIndex = -1;
+           
             cBSubject.SelectedIndex = -1;
         }
 

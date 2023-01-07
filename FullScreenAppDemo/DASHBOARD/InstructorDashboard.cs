@@ -21,7 +21,8 @@ namespace FullScreenAppDemo
         {
             if (MessageBox.Show("Are you sure you want to Exit", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                this.Close();
+                //this.Close();
+                Application.Exit();
             }
         }
 
@@ -32,23 +33,36 @@ namespace FullScreenAppDemo
 
         private void DashboardBTN_Click(object sender, EventArgs e)
         {
-            InstructorDashboardPanel.Show();
-            InstructorStudentPanel.Hide();
-            ValidatePanel.Hide();
+            instructorDSHBRD mj = new instructorDSHBRD();
+            mj.TopLevel = false;
+            instructordashoardpanel.Controls.Clear();
+            instructordashoardpanel.Controls.Add(mj);
+            mj.Show();
         }
 
         private void StudentBTN_Click(object sender, EventArgs e)
         {
-            InstructorDashboardPanel.Hide();
-            InstructorStudentPanel.Show();
-            ValidatePanel.Hide();
+            Class mj = new Class();
+            mj.TopLevel = false;
+            instructordashoardpanel.Controls.Clear();
+            instructordashoardpanel.Controls.Add(mj);
+            mj.Show();
         }
 
         private void ValidateBTN_Click(object sender, EventArgs e)
         {
-            InstructorDashboardPanel.Hide();
-            InstructorStudentPanel.Hide();
-            ValidatePanel.Show();
+            //InstructorDashboardPanel.Hide();
+            //InstructorStudentPanel.Hide();
+            //ValidatePanel.Show();
+        }
+
+        private void InstructorDashboard_Load(object sender, EventArgs e)
+        {
+            instructorDSHBRD mj = new instructorDSHBRD();
+            mj.TopLevel = false;
+            instructordashoardpanel.Controls.Clear();
+            instructordashoardpanel.Controls.Add(mj);
+            mj.Show();
         }
     }
 }

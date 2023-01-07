@@ -24,12 +24,12 @@ namespace FullScreenAppDemo
         {
             if (CheckbxShowPas.Checked)
             {
-                txtPassword.PasswordChar = '\0';
+                textBox1.PasswordChar = '\0';
               
             }
             else
             {
-                txtPassword.PasswordChar = '•';
+                textBox1.PasswordChar = '•';
                
             }
         }
@@ -37,7 +37,7 @@ namespace FullScreenAppDemo
         private void button1_Click(object sender, EventArgs e)
         {
            
-            if (_context.logins.Where(q=>q.username==txtUsername.Text && q.password == txtPassword.Text).Count()>0)
+            if (_context.logins.Where(q=>q.username==txtUsername.Text && q.password == textBox1.Text).Count()>0)
             {
                 MessageBox.Show("Successfully Loging in", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 new RegisDashboard().Show();
@@ -48,7 +48,7 @@ namespace FullScreenAppDemo
                 MessageBox.Show("Invalid Username or Password, Please Try Again", "Login failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 
                 txtUsername.Text = "";
-                txtPassword.Text = "";
+                textBox1.Text = "";
                 txtUsername.Focus();
             }
         }
@@ -56,7 +56,7 @@ namespace FullScreenAppDemo
         private void button2_Click(object sender, EventArgs e)
         {
             txtUsername.Text = "";
-            txtPassword.Text = "";
+            textBox1.Text = "";
             txtUsername.Focus();
         }
 

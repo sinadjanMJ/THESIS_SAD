@@ -37,10 +37,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.DeanBTN = new Guna.UI.WinForms.GunaButton();
             this.StudentBTN = new Guna.UI.WinForms.GunaButton();
-            this.AcademicsBTN = new Guna.UI.WinForms.GunaButton();
             this.InstructorBTN = new Guna.UI.WinForms.GunaButton();
             this.DashboardBTN = new Guna.UI.WinForms.GunaButton();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -48,7 +48,7 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.DashboardPanel = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.gunaButton2 = new Guna.UI.WinForms.GunaButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -136,11 +136,11 @@
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.Gold;
-            this.label18.Location = new System.Drawing.Point(653, 19);
+            this.label18.Location = new System.Drawing.Point(574, 12);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(185, 16);
+            this.label18.Size = new System.Drawing.Size(331, 16);
             this.label18.TabIndex = 2;
-            this.label18.Text = "Welcome to Mga Palaatik";
+            this.label18.Text = "STUDENT PORTAL GRADE VIEWER SYSTEM";
             // 
             // label2
             // 
@@ -166,11 +166,11 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel2.Controls.Add(this.gunaButton2);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.gunaButton1);
             this.panel2.Controls.Add(this.DeanBTN);
             this.panel2.Controls.Add(this.StudentBTN);
-            this.panel2.Controls.Add(this.AcademicsBTN);
             this.panel2.Controls.Add(this.InstructorBTN);
             this.panel2.Controls.Add(this.DashboardBTN);
             this.panel2.Controls.Add(this.panel4);
@@ -179,6 +179,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(195, 736);
             this.panel2.TabIndex = 5;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(43, 652);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // gunaButton1
             // 
@@ -194,7 +204,7 @@
             this.gunaButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaButton1.Image")));
             this.gunaButton1.ImageOffsetX = 5;
             this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton1.Location = new System.Drawing.Point(10, 462);
+            this.gunaButton1.Location = new System.Drawing.Point(10, 411);
             this.gunaButton1.Name = "gunaButton1";
             this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(170)))), ((int)(((byte)(231)))));
             this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -222,7 +232,7 @@
             this.DeanBTN.Image = ((System.Drawing.Image)(resources.GetObject("DeanBTN.Image")));
             this.DeanBTN.ImageOffsetX = 5;
             this.DeanBTN.ImageSize = new System.Drawing.Size(20, 20);
-            this.DeanBTN.Location = new System.Drawing.Point(10, 407);
+            this.DeanBTN.Location = new System.Drawing.Point(10, 353);
             this.DeanBTN.Name = "DeanBTN";
             this.DeanBTN.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(170)))), ((int)(((byte)(231)))));
             this.DeanBTN.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -263,34 +273,6 @@
             this.StudentBTN.Text = "Student";
             this.StudentBTN.TextOffsetX = 10;
             this.StudentBTN.Click += new System.EventHandler(this.StudentBTN_Click);
-            // 
-            // AcademicsBTN
-            // 
-            this.AcademicsBTN.AnimationHoverSpeed = 0.07F;
-            this.AcademicsBTN.AnimationSpeed = 0.03F;
-            this.AcademicsBTN.BackColor = System.Drawing.Color.Transparent;
-            this.AcademicsBTN.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.AcademicsBTN.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(170)))), ((int)(((byte)(231)))));
-            this.AcademicsBTN.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.AcademicsBTN.FocusedColor = System.Drawing.Color.Empty;
-            this.AcademicsBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.AcademicsBTN.ForeColor = System.Drawing.Color.Gray;
-            this.AcademicsBTN.Image = ((System.Drawing.Image)(resources.GetObject("AcademicsBTN.Image")));
-            this.AcademicsBTN.ImageOffsetX = 5;
-            this.AcademicsBTN.ImageSize = new System.Drawing.Size(20, 20);
-            this.AcademicsBTN.Location = new System.Drawing.Point(10, 351);
-            this.AcademicsBTN.Name = "AcademicsBTN";
-            this.AcademicsBTN.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(170)))), ((int)(((byte)(231)))));
-            this.AcademicsBTN.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.AcademicsBTN.OnHoverForeColor = System.Drawing.Color.White;
-            this.AcademicsBTN.OnHoverImage = ((System.Drawing.Image)(resources.GetObject("AcademicsBTN.OnHoverImage")));
-            this.AcademicsBTN.OnPressedColor = System.Drawing.Color.Black;
-            this.AcademicsBTN.Radius = 20;
-            this.AcademicsBTN.Size = new System.Drawing.Size(177, 45);
-            this.AcademicsBTN.TabIndex = 9;
-            this.AcademicsBTN.Text = "Academics";
-            this.AcademicsBTN.TextOffsetX = 10;
-            this.AcademicsBTN.Click += new System.EventHandler(this.AcademicsBTN_Click);
             // 
             // InstructorBTN
             // 
@@ -400,15 +382,33 @@
             this.DashboardPanel.Size = new System.Drawing.Size(1175, 736);
             this.DashboardPanel.TabIndex = 6;
             // 
-            // button1
+            // gunaButton2
             // 
-            this.button1.Location = new System.Drawing.Point(43, 652);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.gunaButton2.AnimationHoverSpeed = 0.07F;
+            this.gunaButton2.AnimationSpeed = 0.03F;
+            this.gunaButton2.BackColor = System.Drawing.Color.Transparent;
+            this.gunaButton2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.gunaButton2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(170)))), ((int)(((byte)(231)))));
+            this.gunaButton2.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaButton2.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.gunaButton2.ForeColor = System.Drawing.Color.Gray;
+            this.gunaButton2.Image = ((System.Drawing.Image)(resources.GetObject("gunaButton2.Image")));
+            this.gunaButton2.ImageOffsetX = 5;
+            this.gunaButton2.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaButton2.Location = new System.Drawing.Point(10, 470);
+            this.gunaButton2.Name = "gunaButton2";
+            this.gunaButton2.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(170)))), ((int)(((byte)(231)))));
+            this.gunaButton2.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaButton2.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaButton2.OnHoverImage = ((System.Drawing.Image)(resources.GetObject("gunaButton2.OnHoverImage")));
+            this.gunaButton2.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton2.Radius = 20;
+            this.gunaButton2.Size = new System.Drawing.Size(177, 45);
+            this.gunaButton2.TabIndex = 14;
+            this.gunaButton2.Text = "Academics";
+            this.gunaButton2.TextOffsetX = 10;
+            this.gunaButton2.Click += new System.EventHandler(this.gunaButton2_Click);
             // 
             // RegisDashboard
             // 
@@ -447,7 +447,6 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label1;
         private Guna.UI.WinForms.GunaButton StudentBTN;
-        private Guna.UI.WinForms.GunaButton AcademicsBTN;
         private Guna.UI.WinForms.GunaButton InstructorBTN;
         private Guna.UI.WinForms.GunaButton DeanBTN;
         private Guna.UI.WinForms.GunaButton CloseBTN;
@@ -455,5 +454,6 @@
         private Guna.UI.WinForms.GunaButton gunaButton1;
         public System.Windows.Forms.Panel DashboardPanel;
         private System.Windows.Forms.Button button1;
+        private Guna.UI.WinForms.GunaButton gunaButton2;
     }
 }

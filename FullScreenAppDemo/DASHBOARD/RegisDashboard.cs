@@ -60,14 +60,7 @@ namespace FullScreenAppDemo
             mj.Show();
         }
 
-        private void AcademicsBTN_Click(object sender, EventArgs e)
-        {
-            RegisAcademics mj = new RegisAcademics();
-            mj.TopLevel = false;
-            DashboardPanel.Controls.Clear();
-            DashboardPanel.Controls.Add(mj);
-            mj.Show();
-        }
+      
 
         private void DeanBTN_Click(object sender, EventArgs e)
         {
@@ -110,6 +103,15 @@ namespace FullScreenAppDemo
 
 
             }
+        }
+
+        private void gunaButton2_Click(object sender, EventArgs e)
+        {
+            RegisAcademics mj = new RegisAcademics();
+            mj.TopLevel = false;
+            DashboardPanel.Controls.Clear();
+            DashboardPanel.Controls.Add(mj);
+            mj.Show();
         }
     }
 }

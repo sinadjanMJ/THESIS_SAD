@@ -38,31 +38,40 @@ namespace FullScreenAppDemo
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (textInstructor_fname.Text == "" || textInstructor_lname.Text == "" || textInstructor_mname.Text == "" || gunaComboBox1.Text == "")
+            try
             {
-                MessageBox.Show("Fill out the Designated Credential first", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
-            {
-                if (MessageBox.Show("Are you sure you want to Save", "Save", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (textInstructor_fname.Text == "" || textInstructor_lname.Text == "" || textInstructor_mname.Text == "" || gunaComboBox1.Text == "")
                 {
-                    Instructor i = new Instructor
+                    MessageBox.Show("Fill out the Designated Credential first", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    if (MessageBox.Show("Are you sure you want to Save", "Save", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        Instructor_fname = textInstructor_fname.Text.Trim(),
-                        Instructor_mname = textInstructor_mname.Text.Trim(),
-                        Instructor_lname = textInstructor_lname.Text.Trim(),
-                        Department_ID = (gunaComboBox1.SelectedItem as DepartmentValue).Value.ToString()
-                    };
+                        Instructor i = new Instructor
+                        {
+                            Instructor_fname = textInstructor_fname.Text.Trim(),
+                            Instructor_mname = textInstructor_mname.Text.Trim(),
+                            Instructor_lname = textInstructor_lname.Text.Trim(),
+                            Department_ID = (gunaComboBox1.SelectedItem as DepartmentValue).Value.ToString()
+                        };
 
-                    _context.Instructors.Add(i);
-                    _context.SaveChanges();
-                    insert();
-                    MessageBox.Show("Succesfully Added", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        _context.Instructors.Add(i);
+                        _context.SaveChanges();
+                        insert();
+                        MessageBox.Show("Succesfully Added", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    this.Close();
+                        this.Close();
+                    }
                 }
             }
-            
+            catch
+            {
+                MessageBox.Show("ERROR HAPPENS", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
+
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

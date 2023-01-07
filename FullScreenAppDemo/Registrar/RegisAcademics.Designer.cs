@@ -41,7 +41,7 @@
             this.gunaCirclePictureBox2.BaseColor = System.Drawing.Color.White;
             this.gunaCirclePictureBox2.ErrorImage = null;
             this.gunaCirclePictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("gunaCirclePictureBox2.Image")));
-            this.gunaCirclePictureBox2.Location = new System.Drawing.Point(419, 68);
+            this.gunaCirclePictureBox2.Location = new System.Drawing.Point(249, 59);
             this.gunaCirclePictureBox2.Name = "gunaCirclePictureBox2";
             this.gunaCirclePictureBox2.Size = new System.Drawing.Size(92, 91);
             this.gunaCirclePictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -53,7 +53,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(517, 90);
+            this.label4.Location = new System.Drawing.Point(347, 81);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(417, 54);
             this.label4.TabIndex = 8;
@@ -65,7 +65,7 @@
             this.DashboardPanel.Controls.Add(this.label4);
             this.DashboardPanel.Location = new System.Drawing.Point(3, 4);
             this.DashboardPanel.Name = "DashboardPanel";
-            this.DashboardPanel.Size = new System.Drawing.Size(1175, 683);
+            this.DashboardPanel.Size = new System.Drawing.Size(1169, 683);
             this.DashboardPanel.TabIndex = 11;
             // 
             // RegisAcademics
