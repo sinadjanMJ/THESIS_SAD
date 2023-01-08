@@ -42,6 +42,7 @@ namespace FullScreenAppDemo
             // 
             // InstructorDashboardPanel
             // 
+            this.InstructorDashboardPanel.BackColor = System.Drawing.SystemColors.Control;
             this.InstructorDashboardPanel.Controls.Add(this.gunaElipsePanel1);
             this.InstructorDashboardPanel.Location = new System.Drawing.Point(4, 4);
             this.InstructorDashboardPanel.Name = "InstructorDashboardPanel";

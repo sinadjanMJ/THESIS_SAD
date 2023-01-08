@@ -12,6 +12,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -51,10 +53,16 @@
     <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
       <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
@@ -74,6 +82,31 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="USERinstructor\ChangeStudentLoad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="USERinstructor\ChangeStudentLoad.Designer.cs">
+      <DependentUpon>ChangeStudentLoad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="USERinstructor\RejectedGrades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="USERinstructor\RejectedGrades.Designer.cs">
+      <DependentUpon>RejectedGrades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="USERinstructor\GradeSenderInstructor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="USERinstructor\GradeSenderInstructor.Designer.cs">
+      <DependentUpon>GradeSenderInstructor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="perips\studentLoadwithInst.cs" />
+    <Compile Include="USERinstructor\StudentLoad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="USERinstructor\StudentLoad.Designer.cs">
+      <DependentUpon>StudentLoad.cs</DependentUpon>
+    </Compile>
     <Compile Include="USERinstructor\Class.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -280,6 +313,18 @@
     <Compile Include="Student\UPDATESTUDENT.Designer.cs">
       <DependentUpon>UPDATESTUDENT.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="USERinstructor\ChangeStudentLoad.resx">
+      <DependentUpon>ChangeStudentLoad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="USERinstructor\RejectedGrades.resx">
+      <DependentUpon>RejectedGrades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="USERinstructor\GradeSenderInstructor.resx">
+      <DependentUpon>GradeSenderInstructor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="USERinstructor\StudentLoad.resx">
+      <DependentUpon>StudentLoad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="USERinstructor\Class.resx">
       <DependentUpon>Class.cs</DependentUpon>
     </EmbeddedResource>
@@ -372,6 +417,7 @@
     <None Include="Properties\DataSources\FullScreenAppDemo.perips.InstructorWithDept.datasource" />
     <None Include="Properties\DataSources\FullScreenAppDemo.perips.sectionWithDepWithCourse.datasource" />
     <None Include="Properties\DataSources\FullScreenAppDemo.perips.studentAssignSub.datasource" />
+    <None Include="Properties\DataSources\FullScreenAppDemo.perips.studentLoadwithInst.datasource" />
     <None Include="Properties\DataSources\FullScreenAppDemo.perips.userInWithClassList.datasource" />
     <None Include="Properties\DataSources\RegisDean.datasource" />
     <None Include="Properties\Settings.settings">

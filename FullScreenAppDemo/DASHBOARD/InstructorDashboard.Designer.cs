@@ -43,9 +43,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.instructordashoardpanel = new System.Windows.Forms.Panel();
-            this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -118,7 +118,7 @@
             this.ValidateBTN.Radius = 20;
             this.ValidateBTN.Size = new System.Drawing.Size(177, 45);
             this.ValidateBTN.TabIndex = 8;
-            this.ValidateBTN.Text = "Send to Pending";
+            this.ValidateBTN.Text = "Pending Grades";
             this.ValidateBTN.TextOffsetX = 10;
             this.ValidateBTN.Click += new System.EventHandler(this.ValidateBTN_Click);
             // 
@@ -288,28 +288,6 @@
             this.panel2.Size = new System.Drawing.Size(195, 736);
             this.panel2.TabIndex = 18;
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Maroon;
-            this.panel1.Controls.Add(this.CloseBTN);
-            this.panel1.Controls.Add(this.MinimizedBTN);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label18);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1371, 52);
-            this.panel1.TabIndex = 17;
-            // 
-            // instructordashoardpanel
-            // 
-            this.instructordashoardpanel.Location = new System.Drawing.Point(198, 52);
-            this.instructordashoardpanel.Name = "instructordashoardpanel";
-            this.instructordashoardpanel.Size = new System.Drawing.Size(1173, 733);
-            this.instructordashoardpanel.TabIndex = 23;
-            // 
             // gunaButton1
             // 
             this.gunaButton1.AnimationHoverSpeed = 0.07F;
@@ -336,6 +314,29 @@
             this.gunaButton1.TabIndex = 11;
             this.gunaButton1.Text = "Rejected";
             this.gunaButton1.TextOffsetX = 10;
+            this.gunaButton1.Click += new System.EventHandler(this.gunaButton1_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Maroon;
+            this.panel1.Controls.Add(this.CloseBTN);
+            this.panel1.Controls.Add(this.MinimizedBTN);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label18);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1371, 52);
+            this.panel1.TabIndex = 17;
+            // 
+            // instructordashoardpanel
+            // 
+            this.instructordashoardpanel.Location = new System.Drawing.Point(198, 52);
+            this.instructordashoardpanel.Name = "instructordashoardpanel";
+            this.instructordashoardpanel.Size = new System.Drawing.Size(1173, 733);
+            this.instructordashoardpanel.TabIndex = 23;
             // 
             // InstructorDashboard
             // 

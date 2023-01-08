@@ -73,7 +73,8 @@ namespace FullScreenAppDemo
                                         a_subjectID = (cBSubject.SelectedItem as subjectValue).Value.ToString(),
                                         a_classID = (cBSection.SelectedItem as classValue).Value.ToString(),
                                         a_semester = cBSemester.Text.Trim(),
-                                        a_instructorID = (cBInstructor.SelectedItem as instructorValue).Value.ToString()
+                                        a_instructorID = (cBInstructor.SelectedItem as instructorValue).Value.ToString(),
+                                        a_status = "edit"
                                     };
 
                                     _context.assignSubjects.Add(halu);
