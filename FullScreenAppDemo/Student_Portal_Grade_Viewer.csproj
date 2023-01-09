@@ -82,6 +82,39 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="USERdean\DH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="USERdean\DH.Designer.cs">
+      <DependentUpon>DH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="USERdean\DEANSTUDENTGRADE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="USERdean\DEANSTUDENTGRADE.Designer.cs">
+      <DependentUpon>DEANSTUDENTGRADE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="USERdean\DeanClassList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="USERdean\.Designer.cs">
+      <DependentUpon>DeanClassList.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="USERdean\DeanformDH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="USERdean\DeanformDH.Designer.cs">
+      <DependentUpon>DeanformDH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="USERdean\loginDean.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="USERdean\loginDean.Designer.cs">
+      <DependentUpon>loginDean.cs</DependentUpon>
+    </Compile>
+    <Compile Include="perips\uDeanClassWithRequestsCounter.cs" />
+    <Compile Include="perips\uDeanListGrade.cs" />
     <Compile Include="USERinstructor\ChangeStudentLoad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -217,10 +250,10 @@
     <Compile Include="department_course_section\CourseImport.Designer.cs">
       <DependentUpon>CourseImport.cs</DependentUpon>
     </Compile>
-    <Compile Include="DASHBOARD\DeanDashboard.cs">
+    <Compile Include="USERdean\DeanDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DASHBOARD\DeanDashboard.Designer.cs">
+    <Compile Include="USERdean\DeanDashboard.Designer.cs">
       <DependentUpon>DeanDashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="department_course_section\DepartmentImport.cs">
@@ -229,10 +262,10 @@
     <Compile Include="department_course_section\DepartmentImport.Designer.cs">
       <DependentUpon>DepartmentImport.cs</DependentUpon>
     </Compile>
-    <Compile Include="DASHBOARD\InstructorDashboard.cs">
+    <Compile Include="USERinstructor\InstructorDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DASHBOARD\InstructorDashboard.Designer.cs">
+    <Compile Include="USERinstructor\InstructorDashboard.Designer.cs">
       <DependentUpon>InstructorDashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="Instructor\InstructorImport.cs">
@@ -313,6 +346,21 @@
     <Compile Include="Student\UPDATESTUDENT.Designer.cs">
       <DependentUpon>UPDATESTUDENT.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="USERdean\DH.resx">
+      <DependentUpon>DH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="USERdean\DEANSTUDENTGRADE.resx">
+      <DependentUpon>DEANSTUDENTGRADE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="USERdean\DeanClassList.resx">
+      <DependentUpon>DeanClassList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="USERdean\DeanformDH.resx">
+      <DependentUpon>DeanformDH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="USERdean\loginDean.resx">
+      <DependentUpon>loginDean.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="USERinstructor\ChangeStudentLoad.resx">
       <DependentUpon>ChangeStudentLoad.cs</DependentUpon>
     </EmbeddedResource>
@@ -352,13 +400,13 @@
     <EmbeddedResource Include="department_course_section\CourseImport.resx">
       <DependentUpon>CourseImport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DASHBOARD\DeanDashboard.resx">
+    <EmbeddedResource Include="USERdean\DeanDashboard.resx">
       <DependentUpon>DeanDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="department_course_section\DepartmentImport.resx">
       <DependentUpon>DepartmentImport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DASHBOARD\InstructorDashboard.resx">
+    <EmbeddedResource Include="USERinstructor\InstructorDashboard.resx">
       <DependentUpon>InstructorDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Instructor\InstructorImport.resx">
@@ -418,6 +466,8 @@
     <None Include="Properties\DataSources\FullScreenAppDemo.perips.sectionWithDepWithCourse.datasource" />
     <None Include="Properties\DataSources\FullScreenAppDemo.perips.studentAssignSub.datasource" />
     <None Include="Properties\DataSources\FullScreenAppDemo.perips.studentLoadwithInst.datasource" />
+    <None Include="Properties\DataSources\FullScreenAppDemo.perips.uDeanClassWithRequestsCounter.datasource" />
+    <None Include="Properties\DataSources\FullScreenAppDemo.perips.uDeanListGrade.datasource" />
     <None Include="Properties\DataSources\FullScreenAppDemo.perips.userInWithClassList.datasource" />
     <None Include="Properties\DataSources\RegisDean.datasource" />
     <None Include="Properties\Settings.settings">
@@ -458,7 +508,6 @@
   <ItemGroup>
     <Folder Include="Academics\" />
     <Folder Include="USERacademics\" />
-    <Folder Include="USERdean\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

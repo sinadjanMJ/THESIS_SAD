@@ -30,11 +30,13 @@ namespace FullScreenAppDemo
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentLoad));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.uipanel = new System.Windows.Forms.Panel();
+            this.gunaCirclePictureBox2 = new Guna.UI.WinForms.GunaCirclePictureBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.PROCEED = new Guna.UI.WinForms.GunaButton();
             this.lblSubject = new Guna.UI.WinForms.GunaLabel();
@@ -42,17 +44,17 @@ namespace FullScreenAppDemo
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.dgvStudentLoad = new Guna.UI.WinForms.GunaDataGridView();
+            this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
             this.studentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.schoolIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sTUDENTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gRADEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.studentLoadwithInstBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gunaCirclePictureBox2 = new Guna.UI.WinForms.GunaCirclePictureBox();
-            this.label16 = new System.Windows.Forms.Label();
             this.uipanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStudentLoad)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentLoadwithInstBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStudentLoad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentLoadwithInstBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // uipanel
@@ -67,10 +69,34 @@ namespace FullScreenAppDemo
             this.uipanel.Controls.Add(this.gunaLabel3);
             this.uipanel.Controls.Add(this.gunaLabel1);
             this.uipanel.Controls.Add(this.dgvStudentLoad);
+            this.uipanel.Controls.Add(this.gunaPictureBox1);
             this.uipanel.Location = new System.Drawing.Point(2, 1);
             this.uipanel.Name = "uipanel";
             this.uipanel.Size = new System.Drawing.Size(1161, 727);
             this.uipanel.TabIndex = 71;
+            // 
+            // gunaCirclePictureBox2
+            // 
+            this.gunaCirclePictureBox2.BaseColor = System.Drawing.Color.White;
+            this.gunaCirclePictureBox2.ErrorImage = null;
+            this.gunaCirclePictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("gunaCirclePictureBox2.Image")));
+            this.gunaCirclePictureBox2.Location = new System.Drawing.Point(85, 81);
+            this.gunaCirclePictureBox2.Name = "gunaCirclePictureBox2";
+            this.gunaCirclePictureBox2.Size = new System.Drawing.Size(92, 91);
+            this.gunaCirclePictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.gunaCirclePictureBox2.TabIndex = 81;
+            this.gunaCirclePictureBox2.TabStop = false;
+            this.gunaCirclePictureBox2.UseTransfarantBackground = false;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(183, 103);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(330, 46);
+            this.label16.TabIndex = 80;
+            this.label16.Text = " Class Data Form";
             // 
             // gunaButton1
             // 
@@ -170,22 +196,22 @@ namespace FullScreenAppDemo
             // 
             this.dgvStudentLoad.AllowUserToAddRows = false;
             this.dgvStudentLoad.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dgvStudentLoad.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvStudentLoad.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvStudentLoad.AutoGenerateColumns = false;
             this.dgvStudentLoad.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvStudentLoad.BackgroundColor = System.Drawing.Color.White;
             this.dgvStudentLoad.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvStudentLoad.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvStudentLoad.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Firebrick;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvStudentLoad.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvStudentLoad.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvStudentLoad.ColumnHeadersHeight = 21;
             this.dgvStudentLoad.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.studentIDDataGridViewTextBoxColumn,
@@ -193,14 +219,14 @@ namespace FullScreenAppDemo
             this.sTUDENTDataGridViewTextBoxColumn,
             this.gRADEDataGridViewTextBoxColumn});
             this.dgvStudentLoad.DataSource = this.studentLoadwithInstBindingSource;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvStudentLoad.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvStudentLoad.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvStudentLoad.EnableHeadersVisualStyles = false;
             this.dgvStudentLoad.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvStudentLoad.Location = new System.Drawing.Point(85, 323);
@@ -232,6 +258,17 @@ namespace FullScreenAppDemo
             this.dgvStudentLoad.ThemeStyle.RowsStyle.Height = 22;
             this.dgvStudentLoad.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvStudentLoad.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            // 
+            // gunaPictureBox1
+            // 
+            this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
+            this.gunaPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("gunaPictureBox1.Image")));
+            this.gunaPictureBox1.Location = new System.Drawing.Point(476, -208);
+            this.gunaPictureBox1.Name = "gunaPictureBox1";
+            this.gunaPictureBox1.Size = new System.Drawing.Size(734, 896);
+            this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.gunaPictureBox1.TabIndex = 82;
+            this.gunaPictureBox1.TabStop = false;
             // 
             // studentIDDataGridViewTextBoxColumn
             // 
@@ -265,29 +302,6 @@ namespace FullScreenAppDemo
             // 
             this.studentLoadwithInstBindingSource.DataSource = typeof(FullScreenAppDemo.perips.studentLoadwithInst);
             // 
-            // gunaCirclePictureBox2
-            // 
-            this.gunaCirclePictureBox2.BaseColor = System.Drawing.Color.White;
-            this.gunaCirclePictureBox2.ErrorImage = null;
-            this.gunaCirclePictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("gunaCirclePictureBox2.Image")));
-            this.gunaCirclePictureBox2.Location = new System.Drawing.Point(85, 81);
-            this.gunaCirclePictureBox2.Name = "gunaCirclePictureBox2";
-            this.gunaCirclePictureBox2.Size = new System.Drawing.Size(92, 91);
-            this.gunaCirclePictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.gunaCirclePictureBox2.TabIndex = 81;
-            this.gunaCirclePictureBox2.TabStop = false;
-            this.gunaCirclePictureBox2.UseTransfarantBackground = false;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(183, 103);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(330, 46);
-            this.label16.TabIndex = 80;
-            this.label16.Text = " Class Data Form";
-            // 
             // StudentLoad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -301,9 +315,10 @@ namespace FullScreenAppDemo
             this.Load += new System.EventHandler(this.StudentLoad_Load);
             this.uipanel.ResumeLayout(false);
             this.uipanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStudentLoad)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentLoadwithInstBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStudentLoad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentLoadwithInstBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -324,5 +339,6 @@ namespace FullScreenAppDemo
         private System.Windows.Forms.DataGridViewTextBoxColumn gRADEDataGridViewTextBoxColumn;
         private Guna.UI.WinForms.GunaCirclePictureBox gunaCirclePictureBox2;
         private System.Windows.Forms.Label label16;
+        private Guna.UI.WinForms.GunaPictureBox gunaPictureBox1;
     }
 }

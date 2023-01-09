@@ -38,14 +38,14 @@ namespace FullScreenAppDemo
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.textFeedback = new Guna.UI.WinForms.GunaTextBox();
             this.dgvPendingGrade = new Guna.UI.WinForms.GunaDataGridView();
+            this.userInWithClassListBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.gunaButton2 = new Guna.UI.WinForms.GunaButton();
             this.uipanel = new System.Windows.Forms.Panel();
+            this.gunaCirclePictureBox2 = new Guna.UI.WinForms.GunaCirclePictureBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.gunaButton3 = new Guna.UI.WinForms.GunaButton();
             this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.userInWithClassListBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gunaCirclePictureBox2 = new Guna.UI.WinForms.GunaCirclePictureBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.userInWithClassListBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.aIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.classIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.classnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,10 +54,10 @@ namespace FullScreenAppDemo
             this.yearLevelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sEMESTERDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPendingGrade)).BeginInit();
-            this.uipanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.userInWithClassListBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userInWithClassListBindingSource1)).BeginInit();
+            this.uipanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userInWithClassListBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // gunaLabel3
@@ -91,6 +91,7 @@ namespace FullScreenAppDemo
             this.textFeedback.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.textFeedback.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.textFeedback.Location = new System.Drawing.Point(199, 469);
+            this.textFeedback.Multiline = true;
             this.textFeedback.Name = "textFeedback";
             this.textFeedback.PasswordChar = '\0';
             this.textFeedback.SelectedText = "";
@@ -170,6 +171,10 @@ namespace FullScreenAppDemo
             this.dgvPendingGrade.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPendingGrade_CellClick);
             this.dgvPendingGrade.SelectionChanged += new System.EventHandler(this.dgvPendingGrade_SelectionChanged);
             // 
+            // userInWithClassListBindingSource1
+            // 
+            this.userInWithClassListBindingSource1.DataSource = typeof(FullScreenAppDemo.perips.userInWithClassList);
+            // 
             // gunaButton2
             // 
             this.gunaButton2.AnimationHoverSpeed = 0.07F;
@@ -214,6 +219,29 @@ namespace FullScreenAppDemo
             this.uipanel.Name = "uipanel";
             this.uipanel.Size = new System.Drawing.Size(1169, 724);
             this.uipanel.TabIndex = 0;
+            // 
+            // gunaCirclePictureBox2
+            // 
+            this.gunaCirclePictureBox2.BaseColor = System.Drawing.Color.White;
+            this.gunaCirclePictureBox2.ErrorImage = null;
+            this.gunaCirclePictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("gunaCirclePictureBox2.Image")));
+            this.gunaCirclePictureBox2.Location = new System.Drawing.Point(179, 79);
+            this.gunaCirclePictureBox2.Name = "gunaCirclePictureBox2";
+            this.gunaCirclePictureBox2.Size = new System.Drawing.Size(92, 91);
+            this.gunaCirclePictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.gunaCirclePictureBox2.TabIndex = 88;
+            this.gunaCirclePictureBox2.TabStop = false;
+            this.gunaCirclePictureBox2.UseTransfarantBackground = false;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(277, 101);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(307, 46);
+            this.label16.TabIndex = 87;
+            this.label16.Text = "Pending Grades";
             // 
             // gunaButton3
             // 
@@ -268,33 +296,6 @@ namespace FullScreenAppDemo
             this.gunaButton1.Text = "BACK";
             this.gunaButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // gunaCirclePictureBox2
-            // 
-            this.gunaCirclePictureBox2.BaseColor = System.Drawing.Color.White;
-            this.gunaCirclePictureBox2.ErrorImage = null;
-            this.gunaCirclePictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("gunaCirclePictureBox2.Image")));
-            this.gunaCirclePictureBox2.Location = new System.Drawing.Point(179, 79);
-            this.gunaCirclePictureBox2.Name = "gunaCirclePictureBox2";
-            this.gunaCirclePictureBox2.Size = new System.Drawing.Size(92, 91);
-            this.gunaCirclePictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.gunaCirclePictureBox2.TabIndex = 88;
-            this.gunaCirclePictureBox2.TabStop = false;
-            this.gunaCirclePictureBox2.UseTransfarantBackground = false;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(277, 101);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(307, 46);
-            this.label16.TabIndex = 87;
-            this.label16.Text = "Pending Grades";
-            // 
-            // userInWithClassListBindingSource1
-            // 
-            this.userInWithClassListBindingSource1.DataSource = typeof(FullScreenAppDemo.perips.userInWithClassList);
-            // 
             // aIDDataGridViewTextBoxColumn
             // 
             this.aIDDataGridViewTextBoxColumn.DataPropertyName = "a_ID";
@@ -305,35 +306,35 @@ namespace FullScreenAppDemo
             // classIDDataGridViewTextBoxColumn
             // 
             this.classIDDataGridViewTextBoxColumn.DataPropertyName = "ClassID";
-            this.classIDDataGridViewTextBoxColumn.HeaderText = "ClassID";
+            this.classIDDataGridViewTextBoxColumn.HeaderText = "CLASS ID";
             this.classIDDataGridViewTextBoxColumn.Name = "classIDDataGridViewTextBoxColumn";
             this.classIDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // classnameDataGridViewTextBoxColumn
             // 
             this.classnameDataGridViewTextBoxColumn.DataPropertyName = "Class_name";
-            this.classnameDataGridViewTextBoxColumn.HeaderText = "Class_name";
+            this.classnameDataGridViewTextBoxColumn.HeaderText = "CLASS NAME";
             this.classnameDataGridViewTextBoxColumn.Name = "classnameDataGridViewTextBoxColumn";
             this.classnameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // subjectIDDataGridViewTextBoxColumn
             // 
             this.subjectIDDataGridViewTextBoxColumn.DataPropertyName = "SubjectID";
-            this.subjectIDDataGridViewTextBoxColumn.HeaderText = "SubjectID";
+            this.subjectIDDataGridViewTextBoxColumn.HeaderText = "SUBJECT ID";
             this.subjectIDDataGridViewTextBoxColumn.Name = "subjectIDDataGridViewTextBoxColumn";
             this.subjectIDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // subjectDataGridViewTextBoxColumn
             // 
             this.subjectDataGridViewTextBoxColumn.DataPropertyName = "Subject";
-            this.subjectDataGridViewTextBoxColumn.HeaderText = "Subject";
+            this.subjectDataGridViewTextBoxColumn.HeaderText = "SUBJECT";
             this.subjectDataGridViewTextBoxColumn.Name = "subjectDataGridViewTextBoxColumn";
             this.subjectDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // yearLevelDataGridViewTextBoxColumn
             // 
             this.yearLevelDataGridViewTextBoxColumn.DataPropertyName = "yearLevel";
-            this.yearLevelDataGridViewTextBoxColumn.HeaderText = "yearLevel";
+            this.yearLevelDataGridViewTextBoxColumn.HeaderText = "YEAR LEVEL";
             this.yearLevelDataGridViewTextBoxColumn.Name = "yearLevelDataGridViewTextBoxColumn";
             this.yearLevelDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -355,11 +356,11 @@ namespace FullScreenAppDemo
             this.Text = "GradeSenderInstructor";
             this.Load += new System.EventHandler(this.GradeSenderInstructor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPendingGrade)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userInWithClassListBindingSource1)).EndInit();
             this.uipanel.ResumeLayout(false);
             this.uipanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.userInWithClassListBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userInWithClassListBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userInWithClassListBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

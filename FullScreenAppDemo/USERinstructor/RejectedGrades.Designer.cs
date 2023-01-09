@@ -30,18 +30,18 @@ namespace FullScreenAppDemo
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RejectedGrades));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.PROCEED = new Guna.UI.WinForms.GunaButton();
+            this.gunaCirclePictureBox2 = new Guna.UI.WinForms.GunaCirclePictureBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.lblDeanFeedback = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel5 = new Guna.UI.WinForms.GunaLabel();
             this.dgvRejected = new Guna.UI.WinForms.GunaDataGridView();
             this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
-            this.gunaCirclePictureBox2 = new Guna.UI.WinForms.GunaCirclePictureBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.userInWithClassListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.aIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.classIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.classnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,10 +49,10 @@ namespace FullScreenAppDemo
             this.subjectDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.yearLevelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sEMESTERDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PROCEED = new Guna.UI.WinForms.GunaButton();
+            this.userInWithClassListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRejected)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRejected)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userInWithClassListBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,11 +70,61 @@ namespace FullScreenAppDemo
             this.panel1.Size = new System.Drawing.Size(1173, 726);
             this.panel1.TabIndex = 0;
             // 
+            // PROCEED
+            // 
+            this.PROCEED.AnimationHoverSpeed = 0.07F;
+            this.PROCEED.AnimationSpeed = 0.03F;
+            this.PROCEED.BackColor = System.Drawing.Color.Transparent;
+            this.PROCEED.BaseColor = System.Drawing.Color.Maroon;
+            this.PROCEED.BorderColor = System.Drawing.Color.Black;
+            this.PROCEED.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.PROCEED.FocusedColor = System.Drawing.Color.Empty;
+            this.PROCEED.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PROCEED.ForeColor = System.Drawing.Color.Gold;
+            this.PROCEED.Image = null;
+            this.PROCEED.ImageSize = new System.Drawing.Size(20, 20);
+            this.PROCEED.Location = new System.Drawing.Point(780, 471);
+            this.PROCEED.Name = "PROCEED";
+            this.PROCEED.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.PROCEED.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.PROCEED.OnHoverForeColor = System.Drawing.Color.White;
+            this.PROCEED.OnHoverImage = null;
+            this.PROCEED.OnPressedColor = System.Drawing.Color.Black;
+            this.PROCEED.Radius = 5;
+            this.PROCEED.Size = new System.Drawing.Size(174, 42);
+            this.PROCEED.TabIndex = 75;
+            this.PROCEED.Text = "SEND TO PENDING";
+            this.PROCEED.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.PROCEED.Click += new System.EventHandler(this.PROCEED_Click);
+            // 
+            // gunaCirclePictureBox2
+            // 
+            this.gunaCirclePictureBox2.BaseColor = System.Drawing.Color.White;
+            this.gunaCirclePictureBox2.ErrorImage = null;
+            this.gunaCirclePictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("gunaCirclePictureBox2.Image")));
+            this.gunaCirclePictureBox2.Location = new System.Drawing.Point(193, 134);
+            this.gunaCirclePictureBox2.Name = "gunaCirclePictureBox2";
+            this.gunaCirclePictureBox2.Size = new System.Drawing.Size(92, 91);
+            this.gunaCirclePictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.gunaCirclePictureBox2.TabIndex = 74;
+            this.gunaCirclePictureBox2.TabStop = false;
+            this.gunaCirclePictureBox2.UseTransfarantBackground = false;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(291, 156);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(519, 46);
+            this.label16.TabIndex = 73;
+            this.label16.Text = "Rejected Grades Data Form";
+            // 
             // lblDeanFeedback
             // 
             this.lblDeanFeedback.AutoSize = true;
             this.lblDeanFeedback.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDeanFeedback.Location = new System.Drawing.Point(230, 413);
+            this.lblDeanFeedback.Location = new System.Drawing.Point(359, 471);
             this.lblDeanFeedback.Name = "lblDeanFeedback";
             this.lblDeanFeedback.Size = new System.Drawing.Size(28, 21);
             this.lblDeanFeedback.TabIndex = 22;
@@ -84,7 +134,7 @@ namespace FullScreenAppDemo
             // 
             this.gunaLabel5.AutoSize = true;
             this.gunaLabel5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel5.Location = new System.Drawing.Point(60, 413);
+            this.gunaLabel5.Location = new System.Drawing.Point(189, 471);
             this.gunaLabel5.Name = "gunaLabel5";
             this.gunaLabel5.Size = new System.Drawing.Size(164, 21);
             this.gunaLabel5.TabIndex = 20;
@@ -94,21 +144,22 @@ namespace FullScreenAppDemo
             // 
             this.dgvRejected.AllowUserToAddRows = false;
             this.dgvRejected.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.dgvRejected.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvRejected.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvRejected.AutoGenerateColumns = false;
             this.dgvRejected.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvRejected.BackgroundColor = System.Drawing.Color.White;
+            this.dgvRejected.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvRejected.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvRejected.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRejected.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRejected.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvRejected.ColumnHeadersHeight = 21;
             this.dgvRejected.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.aIDDataGridViewTextBoxColumn,
@@ -119,17 +170,17 @@ namespace FullScreenAppDemo
             this.yearLevelDataGridViewTextBoxColumn,
             this.sEMESTERDataGridViewTextBoxColumn});
             this.dgvRejected.DataSource = this.userInWithClassListBindingSource;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvRejected.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvRejected.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvRejected.EnableHeadersVisualStyles = false;
             this.dgvRejected.GridColor = System.Drawing.Color.Gray;
-            this.dgvRejected.Location = new System.Drawing.Point(64, 254);
+            this.dgvRejected.Location = new System.Drawing.Point(193, 312);
             this.dgvRejected.Name = "dgvRejected";
             this.dgvRejected.ReadOnly = true;
             this.dgvRejected.RowHeadersVisible = false;
@@ -164,38 +215,11 @@ namespace FullScreenAppDemo
             // 
             this.gunaLabel4.AutoSize = true;
             this.gunaLabel4.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel4.Location = new System.Drawing.Point(57, 214);
+            this.gunaLabel4.Location = new System.Drawing.Point(186, 272);
             this.gunaLabel4.Name = "gunaLabel4";
             this.gunaLabel4.Size = new System.Drawing.Size(143, 37);
             this.gunaLabel4.TabIndex = 18;
             this.gunaLabel4.Text = "REJECTED";
-            // 
-            // gunaCirclePictureBox2
-            // 
-            this.gunaCirclePictureBox2.BaseColor = System.Drawing.Color.White;
-            this.gunaCirclePictureBox2.ErrorImage = null;
-            this.gunaCirclePictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("gunaCirclePictureBox2.Image")));
-            this.gunaCirclePictureBox2.Location = new System.Drawing.Point(64, 54);
-            this.gunaCirclePictureBox2.Name = "gunaCirclePictureBox2";
-            this.gunaCirclePictureBox2.Size = new System.Drawing.Size(92, 91);
-            this.gunaCirclePictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.gunaCirclePictureBox2.TabIndex = 74;
-            this.gunaCirclePictureBox2.TabStop = false;
-            this.gunaCirclePictureBox2.UseTransfarantBackground = false;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(162, 76);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(519, 46);
-            this.label16.TabIndex = 73;
-            this.label16.Text = "Rejected Grades Data Form";
-            // 
-            // userInWithClassListBindingSource
-            // 
-            this.userInWithClassListBindingSource.DataSource = typeof(FullScreenAppDemo.perips.userInWithClassList);
             // 
             // aIDDataGridViewTextBoxColumn
             // 
@@ -246,32 +270,9 @@ namespace FullScreenAppDemo
             this.sEMESTERDataGridViewTextBoxColumn.Name = "sEMESTERDataGridViewTextBoxColumn";
             this.sEMESTERDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // PROCEED
+            // userInWithClassListBindingSource
             // 
-            this.PROCEED.AnimationHoverSpeed = 0.07F;
-            this.PROCEED.AnimationSpeed = 0.03F;
-            this.PROCEED.BackColor = System.Drawing.Color.Transparent;
-            this.PROCEED.BaseColor = System.Drawing.Color.Maroon;
-            this.PROCEED.BorderColor = System.Drawing.Color.Black;
-            this.PROCEED.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.PROCEED.FocusedColor = System.Drawing.Color.Empty;
-            this.PROCEED.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PROCEED.ForeColor = System.Drawing.Color.Gold;
-            this.PROCEED.Image = null;
-            this.PROCEED.ImageSize = new System.Drawing.Size(20, 20);
-            this.PROCEED.Location = new System.Drawing.Point(651, 413);
-            this.PROCEED.Name = "PROCEED";
-            this.PROCEED.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.PROCEED.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.PROCEED.OnHoverForeColor = System.Drawing.Color.White;
-            this.PROCEED.OnHoverImage = null;
-            this.PROCEED.OnPressedColor = System.Drawing.Color.Black;
-            this.PROCEED.Radius = 5;
-            this.PROCEED.Size = new System.Drawing.Size(174, 42);
-            this.PROCEED.TabIndex = 75;
-            this.PROCEED.Text = "SEND TO PENDING";
-            this.PROCEED.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.PROCEED.Click += new System.EventHandler(this.PROCEED_Click);
+            this.userInWithClassListBindingSource.DataSource = typeof(FullScreenAppDemo.perips.userInWithClassList);
             // 
             // RejectedGrades
             // 
@@ -285,8 +286,8 @@ namespace FullScreenAppDemo
             this.Load += new System.EventHandler(this.RejectedGrades_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRejected)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRejected)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userInWithClassListBindingSource)).EndInit();
             this.ResumeLayout(false);
 
