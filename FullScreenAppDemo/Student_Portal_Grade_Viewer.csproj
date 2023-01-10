@@ -82,6 +82,34 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Academics\Academicslogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Academics\Academicslogin.Designer.cs">
+      <DependentUpon>Academicslogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Academics\AcdemicsRegisterAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Academics\AcdemicsRegisterAccount.Designer.cs">
+      <DependentUpon>AcdemicsRegisterAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="db\regisGrade.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Academics\uAcademic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Academics\.Designer.cs">
+      <DependentUpon>uAcademic.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Academics\uAcademicStudentList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Academics\uAcademicStudentList.Designer.cs">
+      <DependentUpon>uAcademicStudentList.cs</DependentUpon>
+    </Compile>
     <Compile Include="USERdean\DH.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,10 +174,10 @@
     <Compile Include="USERinstructor\Class.Designer.cs">
       <DependentUpon>Class.cs</DependentUpon>
     </Compile>
-    <Compile Include="DASHBOARD\AcademicsDashboard.cs">
+    <Compile Include="Academics\AcademicsDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DASHBOARD\AcademicsDashboard.Designer.cs">
+    <Compile Include="Academics\AcademicsDashboard.Designer.cs">
       <DependentUpon>AcademicsDashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="db\assignSubject.cs">
@@ -346,6 +374,18 @@
     <Compile Include="Student\UPDATESTUDENT.Designer.cs">
       <DependentUpon>UPDATESTUDENT.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Academics\Academicslogin.resx">
+      <DependentUpon>Academicslogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Academics\AcdemicsRegisterAccount.resx">
+      <DependentUpon>AcdemicsRegisterAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Academics\uAcademic.resx">
+      <DependentUpon>uAcademic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Academics\uAcademicStudentList.resx">
+      <DependentUpon>uAcademicStudentList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="USERdean\DH.resx">
       <DependentUpon>DH.cs</DependentUpon>
     </EmbeddedResource>
@@ -376,7 +416,7 @@
     <EmbeddedResource Include="USERinstructor\Class.resx">
       <DependentUpon>Class.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DASHBOARD\AcademicsDashboard.resx">
+    <EmbeddedResource Include="Academics\AcademicsDashboard.resx">
       <DependentUpon>AcademicsDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="USERinstructor\instructorDSHBRD.resx">
@@ -505,10 +545,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Academics\" />
-    <Folder Include="USERacademics\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>

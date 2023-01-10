@@ -18,6 +18,7 @@
         <EntityTypeShape EntityType="studentPortalModel.studentBackground" Width="1.5" PointX="4.75" PointY="7.75" IsExpanded="true" />
         <EntityTypeShape EntityType="studentPortalModel.userLogin" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="studentPortalModel.transactionGrade" Width="1.5" PointX="6.75" PointY="7.75" />
+        <EntityTypeShape EntityType="studentPortalModel.regisGrade" Width="1.5" PointX="0.75" PointY="9.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

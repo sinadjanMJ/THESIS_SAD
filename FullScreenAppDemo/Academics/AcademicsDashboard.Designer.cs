@@ -29,25 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AcademicsDashboard));
-            this.gunaCirclePictureBox3 = new Guna.UI.WinForms.GunaCirclePictureBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.Pending_DGV = new System.Windows.Forms.DataGridView();
-            this.AcademicsPendingPanel = new System.Windows.Forms.Panel();
-            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
-            this.label12 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.gunaElipsePanel3 = new Guna.UI.WinForms.GunaElipsePanel();
             this.label15 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label17 = new System.Windows.Forms.Label();
             this.gunaElipsePanel4 = new Guna.UI.WinForms.GunaElipsePanel();
             this.AcademicsDashboardPanel = new System.Windows.Forms.Panel();
-            this.AcademicsApprovedPanel = new System.Windows.Forms.Panel();
-            this.gunaCirclePictureBox2 = new Guna.UI.WinForms.GunaCirclePictureBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
-            this.APPROVED_DGV = new System.Windows.Forms.DataGridView();
             this.PendingBTN = new Guna.UI.WinForms.GunaButton();
             this.gunaCirclePictureBox1 = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -63,123 +49,15 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.CloseBTN = new Guna.UI.WinForms.GunaButton();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pending_DGV)).BeginInit();
-            this.AcademicsPendingPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.gunaElipsePanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.gunaElipsePanel4.SuspendLayout();
             this.AcademicsDashboardPanel.SuspendLayout();
-            this.AcademicsApprovedPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.APPROVED_DGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // gunaCirclePictureBox3
-            // 
-            this.gunaCirclePictureBox3.BaseColor = System.Drawing.Color.White;
-            this.gunaCirclePictureBox3.ErrorImage = null;
-            this.gunaCirclePictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("gunaCirclePictureBox3.Image")));
-            this.gunaCirclePictureBox3.Location = new System.Drawing.Point(135, 53);
-            this.gunaCirclePictureBox3.Name = "gunaCirclePictureBox3";
-            this.gunaCirclePictureBox3.Size = new System.Drawing.Size(92, 91);
-            this.gunaCirclePictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.gunaCirclePictureBox3.TabIndex = 15;
-            this.gunaCirclePictureBox3.TabStop = false;
-            this.gunaCirclePictureBox3.UseTransfarantBackground = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Swis721 Blk BT", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(233, 75);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(515, 48);
-            this.label5.TabIndex = 14;
-            this.label5.Text = "Pending Request Form";
-            // 
-            // Pending_DGV
-            // 
-            this.Pending_DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Pending_DGV.Location = new System.Drawing.Point(135, 243);
-            this.Pending_DGV.Name = "Pending_DGV";
-            this.Pending_DGV.Size = new System.Drawing.Size(912, 358);
-            this.Pending_DGV.TabIndex = 12;
-            // 
-            // AcademicsPendingPanel
-            // 
-            this.AcademicsPendingPanel.Controls.Add(this.gunaCirclePictureBox3);
-            this.AcademicsPendingPanel.Controls.Add(this.label5);
-            this.AcademicsPendingPanel.Controls.Add(this.gunaLabel1);
-            this.AcademicsPendingPanel.Controls.Add(this.Pending_DGV);
-            this.AcademicsPendingPanel.Location = new System.Drawing.Point(193, 52);
-            this.AcademicsPendingPanel.Name = "AcademicsPendingPanel";
-            this.AcademicsPendingPanel.Size = new System.Drawing.Size(1175, 655);
-            this.AcademicsPendingPanel.TabIndex = 21;
-            // 
-            // gunaLabel1
-            // 
-            this.gunaLabel1.AutoSize = true;
-            this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel1.Location = new System.Drawing.Point(128, 187);
-            this.gunaLabel1.Name = "gunaLabel1";
-            this.gunaLabel1.Size = new System.Drawing.Size(222, 37);
-            this.gunaLabel1.TabIndex = 13;
-            this.gunaLabel1.Text = "Pending Request";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(193)))), ((int)(((byte)(85)))));
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(14, 55);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(49, 33);
-            this.label12.TabIndex = 2;
-            this.label12.Text = "30";
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(193)))), ((int)(((byte)(85)))));
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(184, 16);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(40, 38);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 4;
-            this.pictureBox4.TabStop = false;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(193)))), ((int)(((byte)(85)))));
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(15, 18);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(78, 18);
-            this.label14.TabIndex = 3;
-            this.label14.Text = "Approved";
-            // 
-            // gunaElipsePanel3
-            // 
-            this.gunaElipsePanel3.BackColor = System.Drawing.Color.Transparent;
-            this.gunaElipsePanel3.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(193)))), ((int)(((byte)(85)))));
-            this.gunaElipsePanel3.Controls.Add(this.label12);
-            this.gunaElipsePanel3.Controls.Add(this.pictureBox4);
-            this.gunaElipsePanel3.Controls.Add(this.label14);
-            this.gunaElipsePanel3.Location = new System.Drawing.Point(39, 53);
-            this.gunaElipsePanel3.Name = "gunaElipsePanel3";
-            this.gunaElipsePanel3.Radius = 20;
-            this.gunaElipsePanel3.Size = new System.Drawing.Size(241, 140);
-            this.gunaElipsePanel3.TabIndex = 12;
             // 
             // label15
             // 
@@ -223,7 +101,7 @@
             this.gunaElipsePanel4.Controls.Add(this.label15);
             this.gunaElipsePanel4.Controls.Add(this.pictureBox5);
             this.gunaElipsePanel4.Controls.Add(this.label17);
-            this.gunaElipsePanel4.Location = new System.Drawing.Point(306, 53);
+            this.gunaElipsePanel4.Location = new System.Drawing.Point(55, 44);
             this.gunaElipsePanel4.Name = "gunaElipsePanel4";
             this.gunaElipsePanel4.Radius = 20;
             this.gunaElipsePanel4.Size = new System.Drawing.Size(241, 140);
@@ -232,63 +110,10 @@
             // AcademicsDashboardPanel
             // 
             this.AcademicsDashboardPanel.Controls.Add(this.gunaElipsePanel4);
-            this.AcademicsDashboardPanel.Controls.Add(this.gunaElipsePanel3);
             this.AcademicsDashboardPanel.Location = new System.Drawing.Point(193, 52);
             this.AcademicsDashboardPanel.Name = "AcademicsDashboardPanel";
-            this.AcademicsDashboardPanel.Size = new System.Drawing.Size(1175, 655);
+            this.AcademicsDashboardPanel.Size = new System.Drawing.Size(1175, 733);
             this.AcademicsDashboardPanel.TabIndex = 20;
-            // 
-            // AcademicsApprovedPanel
-            // 
-            this.AcademicsApprovedPanel.Controls.Add(this.gunaCirclePictureBox2);
-            this.AcademicsApprovedPanel.Controls.Add(this.label4);
-            this.AcademicsApprovedPanel.Controls.Add(this.gunaLabel2);
-            this.AcademicsApprovedPanel.Controls.Add(this.APPROVED_DGV);
-            this.AcademicsApprovedPanel.Location = new System.Drawing.Point(193, 52);
-            this.AcademicsApprovedPanel.Name = "AcademicsApprovedPanel";
-            this.AcademicsApprovedPanel.Size = new System.Drawing.Size(1175, 655);
-            this.AcademicsApprovedPanel.TabIndex = 19;
-            // 
-            // gunaCirclePictureBox2
-            // 
-            this.gunaCirclePictureBox2.BaseColor = System.Drawing.Color.White;
-            this.gunaCirclePictureBox2.ErrorImage = null;
-            this.gunaCirclePictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("gunaCirclePictureBox2.Image")));
-            this.gunaCirclePictureBox2.Location = new System.Drawing.Point(128, 100);
-            this.gunaCirclePictureBox2.Name = "gunaCirclePictureBox2";
-            this.gunaCirclePictureBox2.Size = new System.Drawing.Size(92, 91);
-            this.gunaCirclePictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.gunaCirclePictureBox2.TabIndex = 11;
-            this.gunaCirclePictureBox2.TabStop = false;
-            this.gunaCirclePictureBox2.UseTransfarantBackground = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Swis721 Blk BT", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(226, 122);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(540, 48);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Approved Request Form";
-            // 
-            // gunaLabel2
-            // 
-            this.gunaLabel2.AutoSize = true;
-            this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel2.Location = new System.Drawing.Point(121, 234);
-            this.gunaLabel2.Name = "gunaLabel2";
-            this.gunaLabel2.Size = new System.Drawing.Size(242, 37);
-            this.gunaLabel2.TabIndex = 3;
-            this.gunaLabel2.Text = "Approved Request";
-            // 
-            // APPROVED_DGV
-            // 
-            this.APPROVED_DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.APPROVED_DGV.Location = new System.Drawing.Point(128, 290);
-            this.APPROVED_DGV.Name = "APPROVED_DGV";
-            this.APPROVED_DGV.Size = new System.Drawing.Size(912, 358);
-            this.APPROVED_DGV.TabIndex = 2;
             // 
             // PendingBTN
             // 
@@ -544,29 +369,16 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1371, 788);
-            this.Controls.Add(this.AcademicsDashboardPanel);
-            this.Controls.Add(this.AcademicsPendingPanel);
-            this.Controls.Add(this.AcademicsApprovedPanel);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.AcademicsDashboardPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AcademicsDashboard";
             this.Text = "AcademicsDashboard";
-            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pending_DGV)).EndInit();
-            this.AcademicsPendingPanel.ResumeLayout(false);
-            this.AcademicsPendingPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.gunaElipsePanel3.ResumeLayout(false);
-            this.gunaElipsePanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.gunaElipsePanel4.ResumeLayout(false);
             this.gunaElipsePanel4.PerformLayout();
             this.AcademicsDashboardPanel.ResumeLayout(false);
-            this.AcademicsApprovedPanel.ResumeLayout(false);
-            this.AcademicsApprovedPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.APPROVED_DGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -579,26 +391,11 @@
         }
 
         #endregion
-
-        private Guna.UI.WinForms.GunaCirclePictureBox gunaCirclePictureBox3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridView Pending_DGV;
-        private System.Windows.Forms.Panel AcademicsPendingPanel;
-        private Guna.UI.WinForms.GunaLabel gunaLabel1;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Label label14;
-        private Guna.UI.WinForms.GunaElipsePanel gunaElipsePanel3;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label label17;
         private Guna.UI.WinForms.GunaElipsePanel gunaElipsePanel4;
         private System.Windows.Forms.Panel AcademicsDashboardPanel;
-        private System.Windows.Forms.Panel AcademicsApprovedPanel;
-        private Guna.UI.WinForms.GunaCirclePictureBox gunaCirclePictureBox2;
-        private System.Windows.Forms.Label label4;
-        private Guna.UI.WinForms.GunaLabel gunaLabel2;
-        private System.Windows.Forms.DataGridView APPROVED_DGV;
         private Guna.UI.WinForms.GunaButton PendingBTN;
         private Guna.UI.WinForms.GunaCirclePictureBox gunaCirclePictureBox1;
         private System.Windows.Forms.Label label1;

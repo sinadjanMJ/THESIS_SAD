@@ -21,7 +21,7 @@ namespace FullScreenAppDemo
         {
             if (MessageBox.Show("Are you sure you want to Exit", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                this.Close();
+                Application.Exit();
             }
         }
 
@@ -33,23 +33,21 @@ namespace FullScreenAppDemo
 
         private void DashboardBTN_Click(object sender, EventArgs e)
         {
-            AcademicsDashboardPanel.Show();
-            AcademicsPendingPanel.Hide();
-            AcademicsApprovedPanel.Hide();
+            
         }
 
         private void ApprovedBTN_Click(object sender, EventArgs e)
         {
-            AcademicsDashboardPanel.Hide();
-            AcademicsPendingPanel.Hide();
-            AcademicsApprovedPanel.Show();
+           
         }
 
         private void PendingBTN_Click(object sender, EventArgs e)
         {
-            AcademicsDashboardPanel.Hide();
-            AcademicsPendingPanel.Show();
-            AcademicsApprovedPanel.Hide();
+            uAcademic mj = new uAcademic();
+            mj.TopLevel = false;
+            AcademicsDashboardPanel.Controls.Clear();
+            AcademicsDashboardPanel.Controls.Add(mj);
+            mj.Show();
         }
     }
 }

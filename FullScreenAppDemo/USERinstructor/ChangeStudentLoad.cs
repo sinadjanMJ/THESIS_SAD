@@ -283,7 +283,10 @@ namespace FullScreenAppDemo
             dgvStudentLoad.Refresh();
             checkList();
         }
-    
 
+        private void gunaPictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

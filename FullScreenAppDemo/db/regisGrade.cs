@@ -12,16 +12,13 @@ namespace FullScreenAppDemo.db
     using System;
     using System.Collections.Generic;
     
-    public partial class transactionGrade
+    public partial class regisGrade
     {
-        public int tran_ID { get; set; }
-        public string a_ID { get; set; }
-        public string feedback_Instructor { get; set; }
-        public string status_Instructor { get; set; }
-        public string status_Dean { get; set; }
-        public string feedback_Dean { get; set; }
-        public string status_Registrar { get; set; }
-        public string feedback_Registrar { get; set; }
-        public string tran_grade { get; set; }
+        public int regis_ID { get; set; }
+        public string SP_ID { get; set; }
+        public string studentID { get; set; }
+        public string schoolID { get; set; }
+        public string classID { get; set; }
+        public string grade { get; set; }
     }
 }

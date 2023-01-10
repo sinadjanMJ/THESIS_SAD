@@ -16,7 +16,7 @@ namespace FullScreenAppDemo
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new loginInstructor());
+            Application.Run(new Academicslogin());
         }
     }
 }
