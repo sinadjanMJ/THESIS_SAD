@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FullScreenAppDemo
 {
-    public partial class RegisAcademics : Form
+    public partial class SelectUserForm : Form
     {
-        public RegisAcademics()
+        public SelectUserForm()
         {
             InitializeComponent();
         }
@@ -21,7 +21,10 @@ namespace FullScreenAppDemo
         {
             if (MessageBox.Show("Are you sure you want to Exit", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                this.Close();
+                //this.Close();
+                Application.Exit();
+
+
             }
         }
 
@@ -32,37 +35,31 @@ namespace FullScreenAppDemo
 
         private void DashboardBTN_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            RegisDashboard mj = new RegisDashboard();
+            frmlogin mj = new frmlogin();
             mj.Show();
+            this.Hide();
+
         }
 
-        private void StudentBTN_Click(object sender, EventArgs e)
+        private void gunaButton1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            RegisStudent mj = new RegisStudent();
+            Academicslogin mj = new Academicslogin();
             mj.Show();
+            this.Hide();
         }
 
-        private void InstructorBTN_Click(object sender, EventArgs e)
+        private void gunaButton2_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            RegisInstructor mj = new RegisInstructor();
+            loginDean mj = new loginDean();
             mj.Show();
+            this.Hide();
         }
 
-        private void AcademicsBTN_Click(object sender, EventArgs e)
+        private void gunaButton3_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            RegisAcademics mj = new RegisAcademics();
+            loginInstructor mj = new loginInstructor();
             mj.Show();
-        }
-
-        private void DeanBTN_Click(object sender, EventArgs e)
-        {
             this.Hide();
-            RegisDean mj = new RegisDean();
-            mj.Show();
         }
     }
 }

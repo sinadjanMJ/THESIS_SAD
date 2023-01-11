@@ -25,5 +25,6 @@ namespace FullScreenAppDemo.db
         public string InstructorID { get; set; }
         public string Grade { get; set; }
         public string SchoolID { get; set; }
+        public string status { get; set; }
     }
 }

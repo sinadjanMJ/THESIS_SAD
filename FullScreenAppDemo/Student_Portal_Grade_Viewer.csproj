@@ -35,6 +35,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ComponentFactory.Krypton.Docking">
+      <HintPath>..\..\..\Users\Lenovo\Documents\guiguna\Krypton-master\Bin\ComponentFactory.Krypton.Docking.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Navigator">
+      <HintPath>..\..\..\Users\Lenovo\Documents\guiguna\Krypton-master\Bin\ComponentFactory.Krypton.Navigator.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Ribbon">
+      <HintPath>..\..\..\Users\Lenovo\Documents\guiguna\Krypton-master\Bin\ComponentFactory.Krypton.Ribbon.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Toolkit">
+      <HintPath>..\..\..\Users\Lenovo\Documents\guiguna\Krypton-master\Bin\ComponentFactory.Krypton.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Workspace">
+      <HintPath>..\..\..\Users\Lenovo\Documents\guiguna\Krypton-master\Bin\ComponentFactory.Krypton.Workspace.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -94,9 +109,6 @@
     <Compile Include="Academics\AcdemicsRegisterAccount.Designer.cs">
       <DependentUpon>AcdemicsRegisterAccount.cs</DependentUpon>
     </Compile>
-    <Compile Include="db\regisGrade.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Academics\uAcademic.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +121,99 @@
     </Compile>
     <Compile Include="Academics\uAcademicStudentList.Designer.cs">
       <DependentUpon>uAcademicStudentList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="db\academicslogin.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db\assignSubject.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db\assign_Instructor.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db\Class_S.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db\Course.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db\Dean.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db\Department.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db\Instructor.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="db\regisGrade.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db\RegistrarLogin.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db\studentBackground.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db\Student_Profile.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db\S_Subject.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db\transactionGrade.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db\usertypeLogin.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="perips\uAcademicClassList.cs" />
+    <Compile Include="perips\uAcademicPendingsClass.cs" />
+    <Compile Include="perips\uStudentLoadSubs.cs" />
+    <Compile Include="selectuser\SelectUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="selectuser\SelectUserForm.Designer.cs">
+      <DependentUpon>SelectUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Academics\uAcademicPendings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Academics\uAcademicPendings.Designer.cs">
+      <DependentUpon>uAcademicPendings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Academics\uAcademicGradePendings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Academics\uAcademicGradePendings.Designer.cs">
+      <DependentUpon>uAcademicGradePendings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Academics\uAcademicStudentLoad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Academics\uAcademicStudentLoad.Designer.cs">
+      <DependentUpon>uAcademicStudentLoad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="USERdean\uDeanRejectedForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="USERdean\uDeanRejectedForm.Designer.cs">
+      <DependentUpon>uDeanRejectedForm.cs</DependentUpon>
     </Compile>
     <Compile Include="USERdean\DH.cs">
       <SubType>Form</SubType>
@@ -179,60 +284,6 @@
     </Compile>
     <Compile Include="Academics\AcademicsDashboard.Designer.cs">
       <DependentUpon>AcademicsDashboard.cs</DependentUpon>
-    </Compile>
-    <Compile Include="db\assignSubject.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="db\assign_Instructor.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="db\Class_S.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="db\Course.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="db\Dean.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="db\Department.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="db\Instructor.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="db\login.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="db\Model1.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="db\Model1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="db\Model1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="db\studentBackground.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="db\Student_Profile.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="db\S_Subject.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="db\transactionGrade.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="db\userLogin.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="USERinstructor\instructorDSHBRD.cs">
       <SubType>Form</SubType>
@@ -326,12 +377,6 @@
     <Compile Include="Registrar\RegisSubject.Designer.cs">
       <DependentUpon>RegisSubject.cs</DependentUpon>
     </Compile>
-    <Compile Include="Registrar\RegisAcademics.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Registrar\RegisAcademics.Designer.cs">
-      <DependentUpon>RegisAcademics.cs</DependentUpon>
-    </Compile>
     <Compile Include="Registrar\RegisDean.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -383,8 +428,23 @@
     <EmbeddedResource Include="Academics\uAcademic.resx">
       <DependentUpon>uAcademic.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Academics\uAcademicPendings.resx">
+      <DependentUpon>uAcademicPendings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Academics\uAcademicStudentList.resx">
       <DependentUpon>uAcademicStudentList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="selectuser\SelectUserForm.resx">
+      <DependentUpon>SelectUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Academics\uAcademicGradePendings.resx">
+      <DependentUpon>uAcademicGradePendings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Academics\uAcademicStudentLoad.resx">
+      <DependentUpon>uAcademicStudentLoad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="USERdean\uDeanRejectedForm.resx">
+      <DependentUpon>uDeanRejectedForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="USERdean\DH.resx">
       <DependentUpon>DH.cs</DependentUpon>
@@ -467,9 +527,6 @@
     <EmbeddedResource Include="Registrar\RegisSubject.resx">
       <DependentUpon>RegisSubject.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Registrar\RegisAcademics.resx">
-      <DependentUpon>RegisAcademics.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="DASHBOARD\RegisDashboard.resx">
       <DependentUpon>RegisDashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -506,9 +563,12 @@
     <None Include="Properties\DataSources\FullScreenAppDemo.perips.sectionWithDepWithCourse.datasource" />
     <None Include="Properties\DataSources\FullScreenAppDemo.perips.studentAssignSub.datasource" />
     <None Include="Properties\DataSources\FullScreenAppDemo.perips.studentLoadwithInst.datasource" />
+    <None Include="Properties\DataSources\FullScreenAppDemo.perips.uAcademicClassList.datasource" />
+    <None Include="Properties\DataSources\FullScreenAppDemo.perips.uAcademicPendingsClass.datasource" />
     <None Include="Properties\DataSources\FullScreenAppDemo.perips.uDeanClassWithRequestsCounter.datasource" />
     <None Include="Properties\DataSources\FullScreenAppDemo.perips.uDeanListGrade.datasource" />
     <None Include="Properties\DataSources\FullScreenAppDemo.perips.userInWithClassList.datasource" />
+    <None Include="Properties\DataSources\FullScreenAppDemo.perips.uStudentLoadSubs.datasource" />
     <None Include="Properties\DataSources\RegisDean.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -545,7 +605,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
@@ -560,6 +619,35 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel1">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

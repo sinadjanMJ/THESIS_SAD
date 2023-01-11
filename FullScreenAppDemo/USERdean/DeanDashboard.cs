@@ -72,5 +72,14 @@ namespace FullScreenAppDemo
             DeansDashboardPanel.Controls.Add(mj);
             mj.Show();
         }
+
+        private void gunaButton1_Click(object sender, EventArgs e)
+        {
+            uDeanRejectedForm mj = new uDeanRejectedForm();
+            mj.TopLevel = false;
+            DeansDashboardPanel.Controls.Clear();
+            DeansDashboardPanel.Controls.Add(mj);
+            mj.Show();
+        }
     }
 }

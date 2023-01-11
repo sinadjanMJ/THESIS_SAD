@@ -22,21 +22,30 @@ namespace FullScreenAppDemo
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            if (_context.logins.Where(q => q.username == txtUsername.Text && q.password == textBox1.Text).Count() > 0)
+            try
             {
-                MessageBox.Show("Successfully Loging in", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                new AcademicsDashboard().Show();
-                this.Hide();
-            }
-            else
-            {
-                MessageBox.Show("Invalid Username or Password, Please Try Again", "Login failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (_context.academicslogins.Where(q => q.username == txtUsername.Text && q.password == textBox1.Text).Count() > 0)
+                {
+                    MessageBox.Show("Successfully Loging in", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    new AcademicsDashboard().Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Invalid Username or Password, Please Try Again", "Login failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                txtUsername.Text = "";
-                textBox1.Text = "";
-                txtUsername.Focus();
+                    txtUsername.Text = "";
+                    textBox1.Text = "";
+                    txtUsername.Focus();
+                }
             }
+            catch
+            {
+              
+                MessageBox.Show("Something Went Wrong", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+        
         }
 
         private void CheckbxShowPas_CheckedChanged(object sender, EventArgs e)

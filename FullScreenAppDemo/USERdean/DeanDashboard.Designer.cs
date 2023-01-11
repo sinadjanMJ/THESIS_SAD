@@ -191,8 +191,9 @@
             this.gunaButton1.Radius = 20;
             this.gunaButton1.Size = new System.Drawing.Size(177, 45);
             this.gunaButton1.TabIndex = 11;
-            this.gunaButton1.Text = "Record";
+            this.gunaButton1.Text = "Rejected";
             this.gunaButton1.TextOffsetX = 10;
+            this.gunaButton1.Click += new System.EventHandler(this.gunaButton1_Click);
             // 
             // CloseBTN
             // 

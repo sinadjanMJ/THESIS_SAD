@@ -18,6 +18,8 @@ namespace FullScreenAppDemo
         public static int schoolID = 0;
         public static int classID = 0;
         public static string sem = "";
+        public static int studentID = 0;
+
         public uAcademicStudentList()
         {
             InitializeComponent();
@@ -25,18 +27,22 @@ namespace FullScreenAppDemo
 
         private void dgvStudentList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvStudentList.SelectedRows.Count > 0)
+            if (dgvStud.SelectedRows.Count > 0)
             {
-                schoolID = Int32.Parse(dgvStudentList.SelectedRows[0].Cells[0].Value.ToString());
-                sem = cbSemester.Text.Trim();
+                studentID = Int32.Parse(dgvStud.SelectedRows[0].Cells[0].Value.ToString());
+                schoolID = Int32.Parse(dgvStud.SelectedRows[0].Cells[1].Value.ToString());
+                sem = dgvStud.SelectedRows[0].Cells[3].Value.ToString();
             }
         }
 
         private void uAcademicStudentList_Load(object sender, EventArgs e)
         {
             loadClass();
-            loadStudentList();
+            //loadStudentList();
+            loadStudent();
             cbSemester.SelectedIndex = 0;
+
+            dgvStud.Columns[0].Visible = false;
         }
         private void loadClass()
         {
@@ -55,58 +61,34 @@ namespace FullScreenAppDemo
             }
         }
 
-        private void loadStudentList()
-        {
-            load1stSem();
-        }
+        //private void loadStudentList()
+        //{
+        //    load1stSem();
+        //}
 
-        private void load1stSem()
-        {
-            try
-            {
-                cbSemester.SelectedIndex = 0;
-                string semester = "1st Semester";
-                var res = (
-                    from st in _context.Student_Profile
-                    join sb in _context.studentBackgrounds on st.SchoolID equals sb.S_SchoolID.ToString()
-                    where st.ClassID == classID.ToString() && st.Semester == semester
-
-                    select new studentLoadwithInst
-                    {
-                        schoolID = st.SchoolID,
-                        STUDENT = sb.S_lname + ", " + sb.S_fname
-                    }
-
-                    ).Distinct().ToList();
-
-                dgvStudentList.DataSource = res;
-            }
-            catch
-            {
-                MessageBox.Show("Error occured loadStudentList()");
-            }
-
-        }
+       
 
         private void btnFilter_Click(object sender, EventArgs e)
         {
             try
             {
-                string semester = cbSemester.Text.Trim();
+                string sem = cbSemester.Text.Trim();
                 var res = (
-                    from st in _context.Student_Profile
-                    join sb in _context.studentBackgrounds on st.SchoolID equals sb.S_SchoolID.ToString()
-                    where st.ClassID == classID.ToString() && st.Semester == semester
+                    from sb in _context.studentBackgrounds
+                    join st in _context.Student_Profile on sb.StudentID.ToString() equals st.StudentID
+                    join cl in _context.Class_S on st.ClassID equals cl.ClassID.ToString()
+                    where cl.ClassID == classID && st.Semester == sem
 
                     select new studentLoadwithInst
                     {
-                        schoolID = st.SchoolID,
-                        STUDENT = sb.S_lname + ", " + sb.S_fname
+                        studentID = sb.StudentID,
+                        schoolID = sb.S_SchoolID,
+                        STUDENT = sb.S_lname + ", " + sb.S_fname,
+                        CODE = st.Semester
                     }
-
                     ).Distinct().ToList();
 
-                dgvStudentList.DataSource = res;
+                dgvStud.DataSource = res;
             }
             catch
             {
@@ -116,12 +98,47 @@ namespace FullScreenAppDemo
 
         private void gunaButton1_Click(object sender, EventArgs e)
         {
-            load1stSem();
+            loadStudent();
+        }
+        private void loadStudent()
+        {
+            try
+            {
+                var res = (
+                    from sb in _context.studentBackgrounds
+                    join st in _context.Student_Profile on sb.StudentID.ToString() equals st.StudentID
+                    join cl in _context.Class_S on st.ClassID equals cl.ClassID.ToString()
+                    where cl.ClassID == classID
+
+                    select new studentLoadwithInst
+                    {
+                        studentID = sb.StudentID,
+                        schoolID = sb.S_SchoolID,
+                        STUDENT = sb.S_lname + ", " + sb.S_fname,
+                        CODE = st.Semester
+                    }
+                    ).Distinct().ToList();
+
+                dgvStud.DataSource = res;
+            }
+            catch
+            {
+                MessageBox.Show("Error occured loadStudentList()");
+            }
         }
 
         private void gunaButton2_Click(object sender, EventArgs e)
         {
             uAcademic mj = new uAcademic();
+            mj.TopLevel = false;
+            panel1.Controls.Clear();
+            panel1.Controls.Add(mj);
+            mj.Show();
+        }
+
+        private void dgvStud_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            uAcademicStudentLoad mj = new uAcademicStudentLoad();
             mj.TopLevel = false;
             panel1.Controls.Clear();
             panel1.Controls.Add(mj);

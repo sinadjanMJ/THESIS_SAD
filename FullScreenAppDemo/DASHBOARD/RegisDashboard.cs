@@ -105,13 +105,6 @@ namespace FullScreenAppDemo
             }
         }
 
-        private void gunaButton2_Click(object sender, EventArgs e)
-        {
-            RegisAcademics mj = new RegisAcademics();
-            mj.TopLevel = false;
-            DashboardPanel.Controls.Clear();
-            DashboardPanel.Controls.Add(mj);
-            mj.Show();
-        }
+       
     }
 }

@@ -24,22 +24,34 @@ namespace FullScreenAppDemo
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (txt_DeanID.Text != "")
+            try
             {
-                deanID = Int32.Parse(txt_DeanID.Text.Trim());
-            }
+                if (txt_DeanID.Text != "")
+                {
+                    deanID = Int32.Parse(txt_DeanID.Text.Trim());
+                }
 
-            var res = _context.Deans.Where(q => q.DeanID == deanID).FirstOrDefault();
-            if (res != null)
-            {
-                MessageBox.Show("Welcome, " + res.Dean_fname);
-                DeanDashboard ud = new DeanDashboard();
-                ud.Show();
-                this.Hide();
+                var res = _context.Deans.Where(q => q.DeanID == deanID).FirstOrDefault();
+                if (res != null)
+                {
+                    //MessageBox.Show("Welcome, " );
+                    MessageBox.Show("Welcome," + res.Dean_fname, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    DeanDashboard ud = new DeanDashboard();
+                    ud.Show();
+                    this.Hide();
+                }
+                else
+                {
+                   
+                    MessageBox.Show("DEAN NOT FOUND", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                }
             }
-            else
+            catch
             {
-                MessageBox.Show("DEAN NOT FOUND");
+                MessageBox.Show("Something Went Wrong", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
     }

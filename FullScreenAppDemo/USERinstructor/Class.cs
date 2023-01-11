@@ -20,6 +20,9 @@ namespace FullScreenAppDemo
         public static int classID = 0;
         public static int subjectID = 0;
         public static int a_ID = 0;
+
+
+        public static string sem = "";
         public Class()
         {
             InitializeComponent();
@@ -123,6 +126,7 @@ namespace FullScreenAppDemo
             a_ID = Convert.ToInt32(dgvAssignment.SelectedRows[0].Cells[0].Value.ToString());
             classID = Convert.ToInt32(dgvAssignment.SelectedRows[0].Cells[1].Value.ToString());
             subjectID = Convert.ToInt32(dgvAssignment.SelectedRows[0].Cells[3].Value.ToString());
+            sem = dgvAssignment.SelectedRows[0].Cells[6].Value.ToString();
         }
 
         private void dgvAssignment_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

@@ -102,7 +102,7 @@ namespace FullScreenAppDemo
             this.gunaCirclePictureBox2.BaseColor = System.Drawing.Color.White;
             this.gunaCirclePictureBox2.ErrorImage = null;
             this.gunaCirclePictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("gunaCirclePictureBox2.Image")));
-            this.gunaCirclePictureBox2.Location = new System.Drawing.Point(193, 134);
+            this.gunaCirclePictureBox2.Location = new System.Drawing.Point(129, 139);
             this.gunaCirclePictureBox2.Name = "gunaCirclePictureBox2";
             this.gunaCirclePictureBox2.Size = new System.Drawing.Size(92, 91);
             this.gunaCirclePictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -114,7 +114,7 @@ namespace FullScreenAppDemo
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(291, 156);
+            this.label16.Location = new System.Drawing.Point(227, 161);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(519, 46);
             this.label16.TabIndex = 73;

@@ -105,6 +105,7 @@ namespace FullScreenAppDemo
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DH";
             this.Text = "DH";
+            this.Load += new System.EventHandler(this.DH_Load);
             this.panel1.ResumeLayout(false);
             this.gunaElipsePanel3.ResumeLayout(false);
             this.gunaElipsePanel3.PerformLayout();

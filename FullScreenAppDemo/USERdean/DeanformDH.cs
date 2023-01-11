@@ -60,22 +60,15 @@ namespace FullScreenAppDemo
 
         private void loadClassList()
         {
-            int convertID = Int32.Parse(courseID);
-            var res = _context.Courses.Where(q => q.CourseID == convertID).FirstOrDefault();
-
-            if (res != null)
-            {
-                lblCourse.Text = res.Course_name;
-            }
-
             var result = (
                 from ai in _context.assignSubjects
                 join cls in _context.Class_S on ai.a_classID equals cls.ClassID.ToString()
+                join dn in _context.Deans on cls.DepartmentID equals dn.Department_ID.ToString()
                 join cor in _context.Courses on cls.CourseID equals cor.CourseID.ToString()
                 join sub in _context.S_Subject on ai.a_subjectID equals sub.SubjectID.ToString()
                 join tgs in _context.transactionGrades on ai.a_id.ToString() equals tgs.a_ID
                 join ins in _context.Instructors on ai.a_instructorID equals ins.InstructorID.ToString()
-                where cor.CourseID == convertID && tgs.status_Instructor == "sent" && tgs.status_Dean == "pending"
+                where dn.DeanID == deanID && tgs.status_Instructor == "sent" && tgs.status_Dean == "pending"
 
                 select new uDeanListGrade
                 {
@@ -96,10 +89,9 @@ namespace FullScreenAppDemo
         }
         private void DeanformDH_Load(object sender, EventArgs e)
         {
+           
             dgvClassList.Columns[0].Visible = false;
-            dgvClassList.Columns[1].Visible = false;
-            dgvClassList.Columns[3].Visible = false;
-            dgvClassList.Columns[5].Visible = false;
+
 
             dgvClass.Columns[0].Visible = false;
 
@@ -107,8 +99,9 @@ namespace FullScreenAppDemo
             var res = _context.Deans.Where(q => q.DeanID == deanID).FirstOrDefault();
             if (res != null)
             {
-               // lblName.Text = res.Dean_fname + " " + res.Dean_mname + " " + res.Dean_lname;
+              //  lblName.Text = res.Dean_fname + " " + res.Dean_mname + " " + res.Dean_lname;
                 departmentID = res.Department_ID.ToString();
+                loadClassList();
             }
 
             int convertID = Int32.Parse(departmentID);

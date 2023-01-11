@@ -113,7 +113,26 @@ namespace FullScreenAppDemo
                 textS_Guardian_Contact.Enabled = false;
             }
         }
+        private void saveRegistrar()
+        {
+            int sti = _context.studentBackgrounds.Count();
+            int halu = _context.studentBackgrounds.Select(q => q.StudentID).DefaultIfEmpty(0).Max();
+            var res = _context.Student_Profile.Where(q => q.StudentID == halu.ToString()).ToList();
+            foreach (var item in res)
+            {
+                regisGrade sp = new regisGrade
+                {
+                    studentID = halu.ToString(),
+                    classID = (cBSection.SelectedItem as classValue).Value.ToString(),
+                    schoolID = txtS_SchoolID.Text.Trim(),
+                    SP_ID = item.SP_ID.ToString()
+                };
+                _context.regisGrades.Add(sp);
+                _context.SaveChanges();
+            }
 
+
+        }
         private void loadfpStudentList()
         {
 
@@ -520,6 +539,7 @@ namespace FullScreenAppDemo
                             _context.studentBackgrounds.Add(s);
                             _context.SaveChanges();
                             saveProfile();
+                            saveRegistrar();
 
                             MessageBox.Show("STUDENT ADDED SUCCESSFULLY", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -574,6 +594,7 @@ namespace FullScreenAppDemo
                                     _context.studentBackgrounds.Add(s);
                                     _context.SaveChanges();
                                     saveProfile();
+                                    saveRegistrar();
                                     Clear();
                                     loadfpStudentList();
 

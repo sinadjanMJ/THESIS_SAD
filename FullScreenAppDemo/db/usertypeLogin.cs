@@ -12,10 +12,12 @@ namespace FullScreenAppDemo.db
     using System;
     using System.Collections.Generic;
     
-    public partial class login
+    public partial class usertypeLogin
     {
-        public int ID { get; set; }
+        public int accountID { get; set; }
         public string username { get; set; }
         public string password { get; set; }
+        public string userType { get; set; }
+        public string userID { get; set; }
     }
 }

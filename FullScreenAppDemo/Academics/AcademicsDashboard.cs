@@ -38,12 +38,16 @@ namespace FullScreenAppDemo
 
         private void ApprovedBTN_Click(object sender, EventArgs e)
         {
-           
+            uAcademic mj = new uAcademic();
+            mj.TopLevel = false;
+            AcademicsDashboardPanel.Controls.Clear();
+            AcademicsDashboardPanel.Controls.Add(mj);
+            mj.Show();
         }
 
         private void PendingBTN_Click(object sender, EventArgs e)
         {
-            uAcademic mj = new uAcademic();
+            uAcademicPendings mj = new uAcademicPendings();
             mj.TopLevel = false;
             AcademicsDashboardPanel.Controls.Clear();
             AcademicsDashboardPanel.Controls.Add(mj);

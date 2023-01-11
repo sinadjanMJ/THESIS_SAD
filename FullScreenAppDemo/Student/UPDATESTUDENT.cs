@@ -336,33 +336,80 @@ namespace FullScreenAppDemo
 
         private void updatedProfile()
         {
-            string schoolID = textS_StudentID.Text.Trim();
-            //RENDER IF THERE IS ALREADY AN EXISITNG DATA UNDER THE SELECTED SCHOOL ID
-            //GET THE SELECTED COMBO BOXES
-            string departmentID = (cBDepartment.SelectedItem as DepartmentValue).Value.ToString();
-            string courseID = (cBCourse.SelectedItem as courseValue).Value.ToString();
-            string yearLevel = cBYear.Text.Trim();
-            string classID = (cBSection.SelectedItem as classValue).Value.ToString();
-            string semester = cBSemester.Text.Trim();
-
-
-            var render = _context.Student_Profile.Where(q => q.SchoolID == schoolID
-            && q.DepartmentID == departmentID && q.CourseID == courseID && q.YearLevel == yearLevel
-            && q.ClassID == classID && q.Semester == semester).FirstOrDefault();
-
-            if (render != null)
+            try
             {
-                string studentID = RegisStudent.studentID.ToString();
-                //CHECK IF IT'S BECAUSE OF ORIGINAL VALUE
-                var res = _context.Student_Profile.Where(q => q.StudentID == studentID).FirstOrDefault();
-                string odepartmentID = res.DepartmentID;
-                string ocourseID = res.CourseID;
-                string oyearLevel = res.YearLevel;
-                string oclassID = res.ClassID;
-                string osemester = res.Semester;
+                string schoolID = textS_StudentID.Text.Trim();
+                //RENDER IF THERE IS ALREADY AN EXISITNG DATA UNDER THE SELECTED SCHOOL ID
+                //GET THE SELECTED COMBO BOXES
+                string departmentID = (cBDepartment.SelectedItem as DepartmentValue).Value.ToString();
+                string courseID = (cBCourse.SelectedItem as courseValue).Value.ToString();
+                string yearLevel = cBYear.Text.Trim();
+                string classID = (cBSection.SelectedItem as classValue).Value.ToString();
+                string semester = cBSemester.Text.Trim();
 
-                if (odepartmentID == departmentID && ocourseID == courseID && oyearLevel == yearLevel
-                    && oclassID == classID && osemester == semester) // MEANS IT'S BECAUSE OF ORIGINAL DATA
+
+                var render = _context.Student_Profile.Where(q => q.SchoolID == schoolID
+                && q.DepartmentID == departmentID && q.CourseID == courseID && q.YearLevel == yearLevel
+                && q.ClassID == classID && q.Semester == semester).FirstOrDefault();
+
+                if (render != null)
+                {
+                    string studentID = RegisStudent.studentID.ToString();
+                    //CHECK IF IT'S BECAUSE OF ORIGINAL VALUE
+                    var res = _context.Student_Profile.Where(q => q.StudentID == studentID).FirstOrDefault();
+                    string odepartmentID = res.DepartmentID;
+                    string ocourseID = res.CourseID;
+                    string oyearLevel = res.YearLevel;
+                    string oclassID = res.ClassID;
+                    string osemester = res.Semester;
+
+                    if (odepartmentID == departmentID && ocourseID == courseID && oyearLevel == yearLevel
+                        && oclassID == classID && osemester == semester) // MEANS IT'S BECAUSE OF ORIGINAL DATA
+                    {
+                        //Get the values that is missing and remove it.
+                        //string d = spid.Length.ToString();
+
+                        for (int i = 0; i < spid.Count; i++)
+                        {
+                            if (spid[i] != null || spid[i] != "")
+                            {
+                                int convertSPID = int.Parse(spid[i].ToString());
+                                string spidString = spid[i].ToString();
+                                var selectedRegis = _context.regisGrades.Where(q => q.SP_ID == spidString).FirstOrDefault();
+                                var selectedRowID = _context.Student_Profile.Where(q => q.SP_ID == convertSPID).FirstOrDefault();
+                                _context.regisGrades.Remove(selectedRegis);
+                                _context.Student_Profile.Remove(selectedRowID);
+                            }
+                        }
+                        _context.SaveChanges();
+
+                        //int studID = Convert.ToInt32(textS_StudentID.ToString());
+                        _context.Student_Profile.Where(q => q.StudentID == studID.ToString()).ToList().ForEach(
+                            x =>
+                            {
+                                x.DepartmentID = (cBDepartment.SelectedItem as DepartmentValue).Value.ToString();
+                                x.CourseID = (cBCourse.SelectedItem as courseValue).Value.ToString();
+                                x.YearLevel = cBYear.Text.Trim();
+                                x.ClassID = (cBSection.SelectedItem as classValue).Value.ToString();
+                                x.Semester = cBSemester.Text.Trim();
+                            }
+                            );
+
+                        /*db.tblTemp.Where(x => x.ProductID == parmProductID && x.IsActive == true).ToList().ForEach(x =>
+                        {
+                            x.IsActive = false; x.UpdatedTimeStamp = DateTime.Now;
+                        });
+                        db.SaveChanges();*/
+
+                        _context.SaveChanges();
+                        openSTList();
+                    }
+                    else
+                    {
+                        MessageBox.Show("THERE IS ALREADY AN EXISITNG RECORD IN THIS SELECTED ID");
+                    }
+                }
+                else
                 {
                     //Get the values that is missing and remove it.
                     //string d = spid.Length.ToString();
@@ -372,7 +419,10 @@ namespace FullScreenAppDemo
                         if (spid[i] != null || spid[i] != "")
                         {
                             int convertSPID = int.Parse(spid[i].ToString());
+                            string spidString = spid[i].ToString();
+                            var selectedRegis = _context.regisGrades.Where(q => q.SP_ID == spidString).FirstOrDefault();
                             var selectedRowID = _context.Student_Profile.Where(q => q.SP_ID == convertSPID).FirstOrDefault();
+                            _context.regisGrades.Remove(selectedRegis);
                             _context.Student_Profile.Remove(selectedRowID);
                         }
                     }
@@ -399,47 +449,11 @@ namespace FullScreenAppDemo
                     _context.SaveChanges();
                     openSTList();
                 }
-                else
-                {
-                    MessageBox.Show("THERE IS ALREADY AN EXISITNG RECORD IN THIS SELECTED ID");
-                }
             }
-            else
+            catch
             {
-                //Get the values that is missing and remove it.
-                //string d = spid.Length.ToString();
+                MessageBox.Show("Something Went Wrong", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                for (int i = 0; i < spid.Count; i++)
-                {
-                    if (spid[i] != null || spid[i] != "")
-                    {
-                        int convertSPID = int.Parse(spid[i].ToString());
-                        var selectedRowID = _context.Student_Profile.Where(q => q.SP_ID == convertSPID).FirstOrDefault();
-                        _context.Student_Profile.Remove(selectedRowID);
-                    }
-                }
-                _context.SaveChanges();
-
-                //int studID = Convert.ToInt32(textS_StudentID.ToString());
-                _context.Student_Profile.Where(q => q.StudentID == studID.ToString()).ToList().ForEach(
-                    x =>
-                    {
-                        x.DepartmentID = (cBDepartment.SelectedItem as DepartmentValue).Value.ToString();
-                        x.CourseID = (cBCourse.SelectedItem as courseValue).Value.ToString();
-                        x.YearLevel = cBYear.Text.Trim();
-                        x.ClassID = (cBSection.SelectedItem as classValue).Value.ToString();
-                        x.Semester = cBSemester.Text.Trim();
-                    }
-                    );
-
-                /*db.tblTemp.Where(x => x.ProductID == parmProductID && x.IsActive == true).ToList().ForEach(x =>
-                {
-                    x.IsActive = false; x.UpdatedTimeStamp = DateTime.Now;
-                });
-                db.SaveChanges();*/
-
-                _context.SaveChanges();
-                openSTList();
             }
         }
 

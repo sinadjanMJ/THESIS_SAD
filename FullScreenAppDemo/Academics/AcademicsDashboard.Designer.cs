@@ -49,6 +49,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.CloseBTN = new Guna.UI.WinForms.GunaButton();
+            this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.gunaElipsePanel4.SuspendLayout();
             this.AcademicsDashboardPanel.SuspendLayout();
@@ -190,7 +191,7 @@
             this.ApprovedBTN.Radius = 20;
             this.ApprovedBTN.Size = new System.Drawing.Size(177, 45);
             this.ApprovedBTN.TabIndex = 10;
-            this.ApprovedBTN.Text = "Approved";
+            this.ApprovedBTN.Text = "Approved Grades";
             this.ApprovedBTN.TextOffsetX = 10;
             this.ApprovedBTN.Click += new System.EventHandler(this.ApprovedBTN_Click);
             // 
@@ -247,6 +248,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel2.Controls.Add(this.gunaButton1);
             this.panel2.Controls.Add(this.ApprovedBTN);
             this.panel2.Controls.Add(this.PendingBTN);
             this.panel2.Controls.Add(this.DashboardBTN);
@@ -364,6 +366,33 @@
             this.CloseBTN.TabIndex = 4;
             this.CloseBTN.Click += new System.EventHandler(this.CloseBTN_Click);
             // 
+            // gunaButton1
+            // 
+            this.gunaButton1.AnimationHoverSpeed = 0.07F;
+            this.gunaButton1.AnimationSpeed = 0.03F;
+            this.gunaButton1.BackColor = System.Drawing.Color.Transparent;
+            this.gunaButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.gunaButton1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(170)))), ((int)(((byte)(231)))));
+            this.gunaButton1.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaButton1.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.gunaButton1.ForeColor = System.Drawing.Color.Gray;
+            this.gunaButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaButton1.Image")));
+            this.gunaButton1.ImageOffsetX = 5;
+            this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaButton1.Location = new System.Drawing.Point(9, 353);
+            this.gunaButton1.Name = "gunaButton1";
+            this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(170)))), ((int)(((byte)(231)))));
+            this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaButton1.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaButton1.OnHoverImage = ((System.Drawing.Image)(resources.GetObject("gunaButton1.OnHoverImage")));
+            this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton1.Radius = 20;
+            this.gunaButton1.Size = new System.Drawing.Size(177, 45);
+            this.gunaButton1.TabIndex = 11;
+            this.gunaButton1.Text = "Pending";
+            this.gunaButton1.TextOffsetX = 10;
+            // 
             // AcademicsDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -411,5 +440,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
         private Guna.UI.WinForms.GunaButton CloseBTN;
+        private Guna.UI.WinForms.GunaButton gunaButton1;
     }
 }

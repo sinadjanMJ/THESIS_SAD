@@ -117,9 +117,9 @@ namespace FullScreenAppDemo
             this.label17.ForeColor = System.Drawing.Color.White;
             this.label17.Location = new System.Drawing.Point(14, 18);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(68, 18);
+            this.label17.Size = new System.Drawing.Size(95, 18);
             this.label17.TabIndex = 3;
-            this.label17.Text = "Pending";
+            this.label17.Text = "Department";
             // 
             // gunaElipsePanel3
             // 
@@ -294,6 +294,7 @@ namespace FullScreenAppDemo
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RegistarFormData";
             this.Text = "RegistarFormData";
+            this.Load += new System.EventHandler(this.RegistarFormData_Load);
             this.DashboardPanel.ResumeLayout(false);
             this.DashboardPanel.PerformLayout();
             this.gunaElipsePanel4.ResumeLayout(false);

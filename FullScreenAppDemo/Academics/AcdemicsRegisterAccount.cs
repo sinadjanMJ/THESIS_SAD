@@ -28,14 +28,14 @@ namespace FullScreenAppDemo
             }
             else if (txtPassword.Text == txtComPassword.Text)
             {
-                login c = new login
+                academicslogin  c = new academicslogin
                 {
                     username = txtUsername.Text.Trim(),
                     password = txtPassword.Text.Trim()
 
                 };
 
-                _context.logins.Add(c);
+                _context.academicslogins.Add(c);
                 _context.SaveChanges();
 
                 MessageBox.Show("Your Account has been Successfully Created", "Registration Success", MessageBoxButtons.OK, MessageBoxIcon.Information);

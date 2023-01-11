@@ -12,14 +12,10 @@ namespace FullScreenAppDemo.db
     using System;
     using System.Collections.Generic;
     
-    public partial class assignSubject
+    public partial class RegistrarLogin
     {
-        public int a_id { get; set; }
-        public string a_subjectID { get; set; }
-        public string a_classID { get; set; }
-        public string a_semester { get; set; }
-        public string a_instructorID { get; set; }
-        public string a_status { get; set; }
-        public string a_FileLocation { get; set; }
+        public int ID { get; set; }
+        public string username { get; set; }
+        public string password { get; set; }
     }
 }

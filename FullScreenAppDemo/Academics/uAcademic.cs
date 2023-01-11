@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FullScreenAppDemo.db;
 using FullScreenAppDemo.perips;
+using Microsoft.Office.Interop.Excel;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace FullScreenAppDemo
 {
@@ -18,6 +20,9 @@ namespace FullScreenAppDemo
         int departmentID = 0;
         int courseID = 0;
         public static int classID = 0;
+        public static int a_ID = 0;
+
+        string fileName = "";
 
         public uAcademic()
         {
@@ -29,13 +34,18 @@ namespace FullScreenAppDemo
             dgvDepartmentList.Columns[0].Visible = false;
             dgvCourseList.Columns[0].Visible = false;
             dgvClass.Columns[0].Visible = false;
+
+            dgvSubs.Columns[0].Visible = false;
+            dgvSubs.Columns[1].Visible = false;
+            dgvSubs.Columns[3].Visible = false;
+
             loadDepartment();
         }
         private void loadDepartment()
         {
             var res = _context.Departments.ToList();
             ListtoDataTableConverter converter = new ListtoDataTableConverter();
-            DataTable dt = converter.ToDataTable(res);
+            System.Data.DataTable dt = converter.ToDataTable(res);
             dgvDepartmentList.DataSource = dt;
         }
 
@@ -47,9 +57,7 @@ namespace FullScreenAppDemo
                 {
                     departmentID = Int32.Parse(dgvDepartmentList.SelectedRows[0].Cells[0].Value.ToString());
                 }
-                /*dgvCourseList.AllowUserToAddRows = false;
-                dgvCourseList.Rows.Clear();
-                dgvCourseList.AllowUserToAddRows = true;*/
+
                 loadCourse();
             }
             catch
@@ -101,10 +109,13 @@ namespace FullScreenAppDemo
             {
                 var res = _context.Class_S.Where(q => q.CourseID == courseID.ToString()).ToList();
                 ListtoDataTableConverter converter = new ListtoDataTableConverter();
-                DataTable dt = converter.ToDataTable(res);
+                System.Data.DataTable dt = converter.ToDataTable(res);
                 dgvClass.DataSource = dt;
             }
-            catch { MessageBox.Show("Error occured at loadSection()"); }
+            catch
+            {
+                MessageBox.Show("Error occured at loadSection()");
+            }
         }
 
         private void dgvClass_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -129,6 +140,51 @@ namespace FullScreenAppDemo
             uipanel.Controls.Clear();
             uipanel.Controls.Add(mj);
             mj.Show();
+        }
+
+        private void dgvSubs_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvSubs.SelectedRows.Count > 0)
+            {
+                a_ID = Int32.Parse(dgvSubs.SelectedRows[0].Cells[0].Value.ToString());
+            }
+        }
+
+        private void dgvSubs_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var res = _context.assignSubjects.Where(q => q.a_id == a_ID).FirstOrDefault();
+            if (res != null)
+            {
+                fileName = res.a_FileLocation;
+                openFile();
+            }
+            else
+            {
+                MessageBox.Show("Entity not found.");
+            }
+        }
+        private void openFile()
+        {
+            try
+            {
+                //MessageBox.Show(fileName);
+                if (fileName != "")
+                {
+                    var excelApp = new Excel.Application();
+                    excelApp.Visible = true;
+
+                    Excel.Workbooks books = excelApp.Workbooks;
+                    Excel.Workbook sheet = books.Open(fileName, ReadOnly: true);
+                }
+                else
+                {
+                    MessageBox.Show("File not found. Sent it back to the Instructor to create a corresponding file.");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Couldn't find excel file.");
+            }
         }
     }
 }
