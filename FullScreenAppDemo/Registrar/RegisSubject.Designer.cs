@@ -40,6 +40,8 @@ namespace FullScreenAppDemo
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisSubject));
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.gunaDataGridView1 = new Guna.UI.WinForms.GunaDataGridView();
             this.CANC = new Guna.UI.WinForms.GunaButton();
             this.btnDelete = new Guna.UI.WinForms.GunaButton();
             this.cBYear = new Guna.UI.WinForms.GunaComboBox();
@@ -51,11 +53,11 @@ namespace FullScreenAppDemo
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.gunaDataGridView1 = new Guna.UI.WinForms.GunaDataGridView();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.dgvSubList = new Guna.UI.WinForms.GunaDataGridView();
             this.btnDeleteS = new Guna.UI.WinForms.GunaButton();
             this.btnCancelUpdate = new Guna.UI.WinForms.GunaButton();
-            this.dgvSubList = new Guna.UI.WinForms.GunaDataGridView();
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
             this.textSubjectUnits = new Guna.UI.WinForms.GunaTextBox();
             this.gunaCirclePictureBox2 = new Guna.UI.WinForms.GunaCirclePictureBox();
@@ -71,8 +73,6 @@ namespace FullScreenAppDemo
             this.departmentTableAdapter = new FullScreenAppDemo.studentPortalDataSet1TableAdapters.DepartmentTableAdapter();
             this.sSubjectBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.classSBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.classIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.classNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.departmentNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -90,19 +90,22 @@ namespace FullScreenAppDemo
             this.sSubjectBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.courseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sSubjectBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.gunaCirclePictureBox1 = new Guna.UI.WinForms.GunaCirclePictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
             tabControl1 = new System.Windows.Forms.TabControl();
             tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaDataGridView1)).BeginInit();
             this.tabPage1.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentPortalDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sSubjectBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.classSBindingSource)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sectionWithDepWithCourseBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sSubjectBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.classSBindingSource1)).BeginInit();
@@ -112,6 +115,8 @@ namespace FullScreenAppDemo
             ((System.ComponentModel.ISupportInitialize)(this.sSubjectBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sSubjectBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -122,12 +127,14 @@ namespace FullScreenAppDemo
             tabControl1.Location = new System.Drawing.Point(3, 4);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new System.Drawing.Size(1160, 655);
+            tabControl1.Size = new System.Drawing.Size(1160, 732);
             tabControl1.TabIndex = 8;
             // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage2.Controls.Add(this.gunaCirclePictureBox1);
+            this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Controls.Add(this.panel2);
             this.tabPage2.Controls.Add(this.CANC);
             this.tabPage2.Controls.Add(this.btnDelete);
@@ -143,215 +150,18 @@ namespace FullScreenAppDemo
             this.tabPage2.Location = new System.Drawing.Point(4, 46);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1152, 605);
+            this.tabPage2.Size = new System.Drawing.Size(1152, 682);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "SECTION";
             // 
-            // CANC
+            // panel2
             // 
-            this.CANC.AnimationHoverSpeed = 0.07F;
-            this.CANC.AnimationSpeed = 0.03F;
-            this.CANC.BackColor = System.Drawing.Color.Transparent;
-            this.CANC.BaseColor = System.Drawing.Color.Maroon;
-            this.CANC.BorderColor = System.Drawing.Color.Black;
-            this.CANC.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.CANC.FocusedColor = System.Drawing.Color.Empty;
-            this.CANC.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CANC.ForeColor = System.Drawing.Color.Gold;
-            this.CANC.Image = null;
-            this.CANC.ImageSize = new System.Drawing.Size(20, 20);
-            this.CANC.Location = new System.Drawing.Point(851, 504);
-            this.CANC.Name = "CANC";
-            this.CANC.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.CANC.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.CANC.OnHoverForeColor = System.Drawing.Color.White;
-            this.CANC.OnHoverImage = null;
-            this.CANC.OnPressedColor = System.Drawing.Color.Black;
-            this.CANC.Radius = 5;
-            this.CANC.Size = new System.Drawing.Size(160, 42);
-            this.CANC.TabIndex = 29;
-            this.CANC.Text = "CANCEL";
-            this.CANC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.CANC.Click += new System.EventHandler(this.CANC_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.AnimationHoverSpeed = 0.07F;
-            this.btnDelete.AnimationSpeed = 0.03F;
-            this.btnDelete.BackColor = System.Drawing.Color.Transparent;
-            this.btnDelete.BaseColor = System.Drawing.Color.Maroon;
-            this.btnDelete.BorderColor = System.Drawing.Color.Black;
-            this.btnDelete.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnDelete.FocusedColor = System.Drawing.Color.Empty;
-            this.btnDelete.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.ForeColor = System.Drawing.Color.Gold;
-            this.btnDelete.Image = null;
-            this.btnDelete.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnDelete.Location = new System.Drawing.Point(851, 278);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.btnDelete.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnDelete.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnDelete.OnHoverImage = null;
-            this.btnDelete.OnPressedColor = System.Drawing.Color.Black;
-            this.btnDelete.Radius = 5;
-            this.btnDelete.Size = new System.Drawing.Size(160, 42);
-            this.btnDelete.TabIndex = 28;
-            this.btnDelete.Text = "DELETE";
-            this.btnDelete.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // cBYear
-            // 
-            this.cBYear.BackColor = System.Drawing.Color.Transparent;
-            this.cBYear.BaseColor = System.Drawing.Color.White;
-            this.cBYear.BorderColor = System.Drawing.Color.Silver;
-            this.cBYear.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cBYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cBYear.FocusedColor = System.Drawing.Color.Empty;
-            this.cBYear.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cBYear.ForeColor = System.Drawing.Color.Black;
-            this.cBYear.FormattingEnabled = true;
-            this.cBYear.ItemHeight = 25;
-            this.cBYear.Items.AddRange(new object[] {
-            "1st Year",
-            "2nd Year",
-            "3rd Year",
-            "4thYear"});
-            this.cBYear.Location = new System.Drawing.Point(675, 453);
-            this.cBYear.Name = "cBYear";
-            this.cBYear.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.cBYear.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.cBYear.Radius = 5;
-            this.cBYear.Size = new System.Drawing.Size(189, 31);
-            this.cBYear.TabIndex = 27;
-            // 
-            // cBCourse
-            // 
-            this.cBCourse.BackColor = System.Drawing.Color.Transparent;
-            this.cBCourse.BaseColor = System.Drawing.Color.White;
-            this.cBCourse.BorderColor = System.Drawing.Color.Silver;
-            this.cBCourse.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cBCourse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cBCourse.FocusedColor = System.Drawing.Color.Empty;
-            this.cBCourse.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cBCourse.ForeColor = System.Drawing.Color.Black;
-            this.cBCourse.FormattingEnabled = true;
-            this.cBCourse.ItemHeight = 25;
-            this.cBCourse.Location = new System.Drawing.Point(144, 450);
-            this.cBCourse.Name = "cBCourse";
-            this.cBCourse.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.cBCourse.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.cBCourse.Radius = 5;
-            this.cBCourse.Size = new System.Drawing.Size(510, 31);
-            this.cBCourse.TabIndex = 26;
-            // 
-            // cBDepartment
-            // 
-            this.cBDepartment.BackColor = System.Drawing.Color.Transparent;
-            this.cBDepartment.BaseColor = System.Drawing.Color.White;
-            this.cBDepartment.BorderColor = System.Drawing.Color.Silver;
-            this.cBDepartment.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cBDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cBDepartment.FocusedColor = System.Drawing.Color.Empty;
-            this.cBDepartment.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cBDepartment.ForeColor = System.Drawing.Color.Black;
-            this.cBDepartment.FormattingEnabled = true;
-            this.cBDepartment.ItemHeight = 25;
-            this.cBDepartment.Location = new System.Drawing.Point(144, 381);
-            this.cBDepartment.Name = "cBDepartment";
-            this.cBDepartment.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.cBDepartment.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.cBDepartment.Radius = 5;
-            this.cBDepartment.Size = new System.Drawing.Size(510, 31);
-            this.cBDepartment.TabIndex = 25;
-            this.cBDepartment.SelectedIndexChanged += new System.EventHandler(this.cBDepartment_SelectedIndexChanged);
-            // 
-            // textC_name
-            // 
-            this.textC_name.BackColor = System.Drawing.Color.Transparent;
-            this.textC_name.BaseColor = System.Drawing.Color.White;
-            this.textC_name.BorderColor = System.Drawing.Color.Silver;
-            this.textC_name.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textC_name.FocusedBaseColor = System.Drawing.Color.White;
-            this.textC_name.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.textC_name.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.textC_name.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textC_name.Location = new System.Drawing.Point(141, 313);
-            this.textC_name.Name = "textC_name";
-            this.textC_name.PasswordChar = '\0';
-            this.textC_name.Radius = 5;
-            this.textC_name.SelectedText = "";
-            this.textC_name.Size = new System.Drawing.Size(160, 30);
-            this.textC_name.TabIndex = 24;
-            this.textC_name.TextChanged += new System.EventHandler(this.textC_name_TextChanged);
-            // 
-            // btnAddSection
-            // 
-            this.btnAddSection.AnimationHoverSpeed = 0.07F;
-            this.btnAddSection.AnimationSpeed = 0.03F;
-            this.btnAddSection.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddSection.BaseColor = System.Drawing.Color.Maroon;
-            this.btnAddSection.BorderColor = System.Drawing.Color.Black;
-            this.btnAddSection.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnAddSection.FocusedColor = System.Drawing.Color.Empty;
-            this.btnAddSection.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddSection.ForeColor = System.Drawing.Color.Gold;
-            this.btnAddSection.Image = null;
-            this.btnAddSection.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnAddSection.Location = new System.Drawing.Point(676, 504);
-            this.btnAddSection.Name = "btnAddSection";
-            this.btnAddSection.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.btnAddSection.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnAddSection.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnAddSection.OnHoverImage = null;
-            this.btnAddSection.OnPressedColor = System.Drawing.Color.Black;
-            this.btnAddSection.Radius = 5;
-            this.btnAddSection.Size = new System.Drawing.Size(160, 42);
-            this.btnAddSection.TabIndex = 22;
-            this.btnAddSection.Text = "ADD SECTION";
-            this.btnAddSection.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnAddSection.Click += new System.EventHandler(this.btnAddSection_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(672, 426);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(94, 21);
-            this.label5.TabIndex = 21;
-            this.label5.Text = "YEAR LEVEL";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(141, 425);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(70, 21);
-            this.label6.TabIndex = 20;
-            this.label6.Text = "COURSE";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(141, 356);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(111, 21);
-            this.label7.TabIndex = 19;
-            this.label7.Text = "DEPARTMENT";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(138, 288);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(107, 21);
-            this.label8.TabIndex = 18;
-            this.label8.Text = "CLASS NAME";
+            this.panel2.Controls.Add(this.gunaDataGridView1);
+            this.panel2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel2.Location = new System.Drawing.Point(96, 103);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(913, 226);
+            this.panel2.TabIndex = 30;
             // 
             // gunaDataGridView1
             // 
@@ -431,6 +241,212 @@ namespace FullScreenAppDemo
             this.gunaDataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gunaDataGridView1_CellClick);
             this.gunaDataGridView1.SelectionChanged += new System.EventHandler(this.gunaDataGridView1_SelectionChanged);
             // 
+            // CANC
+            // 
+            this.CANC.AnimationHoverSpeed = 0.07F;
+            this.CANC.AnimationSpeed = 0.03F;
+            this.CANC.BackColor = System.Drawing.Color.Transparent;
+            this.CANC.BaseColor = System.Drawing.Color.Maroon;
+            this.CANC.BorderColor = System.Drawing.Color.Black;
+            this.CANC.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.CANC.FocusedColor = System.Drawing.Color.Empty;
+            this.CANC.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CANC.ForeColor = System.Drawing.Color.Gold;
+            this.CANC.Image = null;
+            this.CANC.ImageSize = new System.Drawing.Size(20, 20);
+            this.CANC.Location = new System.Drawing.Point(849, 571);
+            this.CANC.Name = "CANC";
+            this.CANC.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.CANC.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.CANC.OnHoverForeColor = System.Drawing.Color.White;
+            this.CANC.OnHoverImage = null;
+            this.CANC.OnPressedColor = System.Drawing.Color.Black;
+            this.CANC.Radius = 5;
+            this.CANC.Size = new System.Drawing.Size(160, 42);
+            this.CANC.TabIndex = 29;
+            this.CANC.Text = "CANCEL";
+            this.CANC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.CANC.Click += new System.EventHandler(this.CANC_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.AnimationHoverSpeed = 0.07F;
+            this.btnDelete.AnimationSpeed = 0.03F;
+            this.btnDelete.BackColor = System.Drawing.Color.Transparent;
+            this.btnDelete.BaseColor = System.Drawing.Color.Maroon;
+            this.btnDelete.BorderColor = System.Drawing.Color.Black;
+            this.btnDelete.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnDelete.FocusedColor = System.Drawing.Color.Empty;
+            this.btnDelete.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.Gold;
+            this.btnDelete.Image = null;
+            this.btnDelete.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnDelete.Location = new System.Drawing.Point(849, 345);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnDelete.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnDelete.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnDelete.OnHoverImage = null;
+            this.btnDelete.OnPressedColor = System.Drawing.Color.Black;
+            this.btnDelete.Radius = 5;
+            this.btnDelete.Size = new System.Drawing.Size(160, 42);
+            this.btnDelete.TabIndex = 28;
+            this.btnDelete.Text = "DELETE";
+            this.btnDelete.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // cBYear
+            // 
+            this.cBYear.BackColor = System.Drawing.Color.Transparent;
+            this.cBYear.BaseColor = System.Drawing.Color.White;
+            this.cBYear.BorderColor = System.Drawing.Color.Silver;
+            this.cBYear.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cBYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cBYear.FocusedColor = System.Drawing.Color.Empty;
+            this.cBYear.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cBYear.ForeColor = System.Drawing.Color.Black;
+            this.cBYear.FormattingEnabled = true;
+            this.cBYear.ItemHeight = 25;
+            this.cBYear.Items.AddRange(new object[] {
+            "1st Year",
+            "2nd Year",
+            "3rd Year",
+            "4thYear"});
+            this.cBYear.Location = new System.Drawing.Point(673, 520);
+            this.cBYear.Name = "cBYear";
+            this.cBYear.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.cBYear.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.cBYear.Radius = 5;
+            this.cBYear.Size = new System.Drawing.Size(189, 31);
+            this.cBYear.TabIndex = 27;
+            // 
+            // cBCourse
+            // 
+            this.cBCourse.BackColor = System.Drawing.Color.Transparent;
+            this.cBCourse.BaseColor = System.Drawing.Color.White;
+            this.cBCourse.BorderColor = System.Drawing.Color.Silver;
+            this.cBCourse.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cBCourse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cBCourse.FocusedColor = System.Drawing.Color.Empty;
+            this.cBCourse.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cBCourse.ForeColor = System.Drawing.Color.Black;
+            this.cBCourse.FormattingEnabled = true;
+            this.cBCourse.ItemHeight = 25;
+            this.cBCourse.Location = new System.Drawing.Point(142, 517);
+            this.cBCourse.Name = "cBCourse";
+            this.cBCourse.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.cBCourse.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.cBCourse.Radius = 5;
+            this.cBCourse.Size = new System.Drawing.Size(510, 31);
+            this.cBCourse.TabIndex = 26;
+            // 
+            // cBDepartment
+            // 
+            this.cBDepartment.BackColor = System.Drawing.Color.Transparent;
+            this.cBDepartment.BaseColor = System.Drawing.Color.White;
+            this.cBDepartment.BorderColor = System.Drawing.Color.Silver;
+            this.cBDepartment.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cBDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cBDepartment.FocusedColor = System.Drawing.Color.Empty;
+            this.cBDepartment.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cBDepartment.ForeColor = System.Drawing.Color.Black;
+            this.cBDepartment.FormattingEnabled = true;
+            this.cBDepartment.ItemHeight = 25;
+            this.cBDepartment.Location = new System.Drawing.Point(142, 448);
+            this.cBDepartment.Name = "cBDepartment";
+            this.cBDepartment.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.cBDepartment.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.cBDepartment.Radius = 5;
+            this.cBDepartment.Size = new System.Drawing.Size(510, 31);
+            this.cBDepartment.TabIndex = 25;
+            this.cBDepartment.SelectedIndexChanged += new System.EventHandler(this.cBDepartment_SelectedIndexChanged);
+            // 
+            // textC_name
+            // 
+            this.textC_name.BackColor = System.Drawing.Color.Transparent;
+            this.textC_name.BaseColor = System.Drawing.Color.White;
+            this.textC_name.BorderColor = System.Drawing.Color.Silver;
+            this.textC_name.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textC_name.FocusedBaseColor = System.Drawing.Color.White;
+            this.textC_name.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.textC_name.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.textC_name.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textC_name.Location = new System.Drawing.Point(139, 380);
+            this.textC_name.Name = "textC_name";
+            this.textC_name.PasswordChar = '\0';
+            this.textC_name.Radius = 5;
+            this.textC_name.SelectedText = "";
+            this.textC_name.Size = new System.Drawing.Size(270, 30);
+            this.textC_name.TabIndex = 24;
+            this.textC_name.TextChanged += new System.EventHandler(this.textC_name_TextChanged);
+            // 
+            // btnAddSection
+            // 
+            this.btnAddSection.AnimationHoverSpeed = 0.07F;
+            this.btnAddSection.AnimationSpeed = 0.03F;
+            this.btnAddSection.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddSection.BaseColor = System.Drawing.Color.Maroon;
+            this.btnAddSection.BorderColor = System.Drawing.Color.Black;
+            this.btnAddSection.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnAddSection.FocusedColor = System.Drawing.Color.Empty;
+            this.btnAddSection.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddSection.ForeColor = System.Drawing.Color.Gold;
+            this.btnAddSection.Image = null;
+            this.btnAddSection.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnAddSection.Location = new System.Drawing.Point(674, 571);
+            this.btnAddSection.Name = "btnAddSection";
+            this.btnAddSection.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.btnAddSection.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnAddSection.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnAddSection.OnHoverImage = null;
+            this.btnAddSection.OnPressedColor = System.Drawing.Color.Black;
+            this.btnAddSection.Radius = 5;
+            this.btnAddSection.Size = new System.Drawing.Size(160, 42);
+            this.btnAddSection.TabIndex = 22;
+            this.btnAddSection.Text = "ADD SECTION";
+            this.btnAddSection.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnAddSection.Click += new System.EventHandler(this.btnAddSection_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(670, 493);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(94, 21);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "YEAR LEVEL";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(139, 492);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(70, 21);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "COURSE";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(139, 423);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(111, 21);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "DEPARTMENT";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(136, 355);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(125, 21);
+            this.label8.TabIndex = 18;
+            this.label8.Text = "SECTION NAME";
+            // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
@@ -447,67 +463,22 @@ namespace FullScreenAppDemo
             this.tabPage1.Controls.Add(this.textSubjectName);
             this.tabPage1.Controls.Add(this.textSubjectCode);
             this.tabPage1.Controls.Add(this.btnCreateSub);
+            this.tabPage1.Controls.Add(this.gunaPictureBox1);
             this.tabPage1.Location = new System.Drawing.Point(4, 46);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1152, 605);
+            this.tabPage1.Size = new System.Drawing.Size(1152, 682);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "SUBJECT";
             // 
-            // btnDeleteS
+            // panel1
             // 
-            this.btnDeleteS.AnimationHoverSpeed = 0.07F;
-            this.btnDeleteS.AnimationSpeed = 0.03F;
-            this.btnDeleteS.BackColor = System.Drawing.Color.Transparent;
-            this.btnDeleteS.BaseColor = System.Drawing.Color.Maroon;
-            this.btnDeleteS.BorderColor = System.Drawing.Color.Black;
-            this.btnDeleteS.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnDeleteS.FocusedColor = System.Drawing.Color.Empty;
-            this.btnDeleteS.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteS.ForeColor = System.Drawing.Color.Gold;
-            this.btnDeleteS.Image = null;
-            this.btnDeleteS.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnDeleteS.Location = new System.Drawing.Point(657, 194);
-            this.btnDeleteS.Name = "btnDeleteS";
-            this.btnDeleteS.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.btnDeleteS.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnDeleteS.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnDeleteS.OnHoverImage = null;
-            this.btnDeleteS.OnPressedColor = System.Drawing.Color.Black;
-            this.btnDeleteS.Radius = 5;
-            this.btnDeleteS.Size = new System.Drawing.Size(107, 42);
-            this.btnDeleteS.TabIndex = 23;
-            this.btnDeleteS.Text = "DELETE";
-            this.btnDeleteS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnDeleteS.Visible = false;
-            this.btnDeleteS.Click += new System.EventHandler(this.btnDeleteS_Click);
-            // 
-            // btnCancelUpdate
-            // 
-            this.btnCancelUpdate.AnimationHoverSpeed = 0.07F;
-            this.btnCancelUpdate.AnimationSpeed = 0.03F;
-            this.btnCancelUpdate.BackColor = System.Drawing.Color.Transparent;
-            this.btnCancelUpdate.BaseColor = System.Drawing.Color.Maroon;
-            this.btnCancelUpdate.BorderColor = System.Drawing.Color.Black;
-            this.btnCancelUpdate.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnCancelUpdate.FocusedColor = System.Drawing.Color.Empty;
-            this.btnCancelUpdate.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelUpdate.ForeColor = System.Drawing.Color.Gold;
-            this.btnCancelUpdate.Image = null;
-            this.btnCancelUpdate.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnCancelUpdate.Location = new System.Drawing.Point(264, 458);
-            this.btnCancelUpdate.Name = "btnCancelUpdate";
-            this.btnCancelUpdate.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.btnCancelUpdate.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnCancelUpdate.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnCancelUpdate.OnHoverImage = null;
-            this.btnCancelUpdate.OnPressedColor = System.Drawing.Color.Black;
-            this.btnCancelUpdate.Radius = 5;
-            this.btnCancelUpdate.Size = new System.Drawing.Size(107, 42);
-            this.btnCancelUpdate.TabIndex = 22;
-            this.btnCancelUpdate.Text = "CANCEL";
-            this.btnCancelUpdate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnCancelUpdate.Click += new System.EventHandler(this.btnCancelUpdate_Click);
+            this.panel1.Controls.Add(this.dgvSubList);
+            this.panel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.Location = new System.Drawing.Point(544, 253);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(512, 192);
+            this.panel1.TabIndex = 24;
             // 
             // dgvSubList
             // 
@@ -578,6 +549,61 @@ namespace FullScreenAppDemo
             this.dgvSubList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSubList_CellContentClick);
             this.dgvSubList.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvSubList_CellMouseClick);
             this.dgvSubList.SelectionChanged += new System.EventHandler(this.dgvSubList_SelectionChanged);
+            // 
+            // btnDeleteS
+            // 
+            this.btnDeleteS.AnimationHoverSpeed = 0.07F;
+            this.btnDeleteS.AnimationSpeed = 0.03F;
+            this.btnDeleteS.BackColor = System.Drawing.Color.Transparent;
+            this.btnDeleteS.BaseColor = System.Drawing.Color.Maroon;
+            this.btnDeleteS.BorderColor = System.Drawing.Color.Black;
+            this.btnDeleteS.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnDeleteS.FocusedColor = System.Drawing.Color.Empty;
+            this.btnDeleteS.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteS.ForeColor = System.Drawing.Color.Gold;
+            this.btnDeleteS.Image = null;
+            this.btnDeleteS.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnDeleteS.Location = new System.Drawing.Point(657, 194);
+            this.btnDeleteS.Name = "btnDeleteS";
+            this.btnDeleteS.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnDeleteS.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnDeleteS.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnDeleteS.OnHoverImage = null;
+            this.btnDeleteS.OnPressedColor = System.Drawing.Color.Black;
+            this.btnDeleteS.Radius = 5;
+            this.btnDeleteS.Size = new System.Drawing.Size(107, 42);
+            this.btnDeleteS.TabIndex = 23;
+            this.btnDeleteS.Text = "DELETE";
+            this.btnDeleteS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnDeleteS.Visible = false;
+            this.btnDeleteS.Click += new System.EventHandler(this.btnDeleteS_Click);
+            // 
+            // btnCancelUpdate
+            // 
+            this.btnCancelUpdate.AnimationHoverSpeed = 0.07F;
+            this.btnCancelUpdate.AnimationSpeed = 0.03F;
+            this.btnCancelUpdate.BackColor = System.Drawing.Color.Transparent;
+            this.btnCancelUpdate.BaseColor = System.Drawing.Color.Maroon;
+            this.btnCancelUpdate.BorderColor = System.Drawing.Color.Black;
+            this.btnCancelUpdate.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnCancelUpdate.FocusedColor = System.Drawing.Color.Empty;
+            this.btnCancelUpdate.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelUpdate.ForeColor = System.Drawing.Color.Gold;
+            this.btnCancelUpdate.Image = null;
+            this.btnCancelUpdate.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnCancelUpdate.Location = new System.Drawing.Point(264, 458);
+            this.btnCancelUpdate.Name = "btnCancelUpdate";
+            this.btnCancelUpdate.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnCancelUpdate.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnCancelUpdate.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnCancelUpdate.OnHoverImage = null;
+            this.btnCancelUpdate.OnPressedColor = System.Drawing.Color.Black;
+            this.btnCancelUpdate.Radius = 5;
+            this.btnCancelUpdate.Size = new System.Drawing.Size(107, 42);
+            this.btnCancelUpdate.TabIndex = 22;
+            this.btnCancelUpdate.Text = "CANCEL";
+            this.btnCancelUpdate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnCancelUpdate.Click += new System.EventHandler(this.btnCancelUpdate_Click);
             // 
             // gunaLabel3
             // 
@@ -757,24 +783,6 @@ namespace FullScreenAppDemo
             // 
             this.departmentTableAdapter.ClearBeforeFill = true;
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.dgvSubList);
-            this.panel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(544, 253);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(512, 192);
-            this.panel1.TabIndex = 24;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.gunaDataGridView1);
-            this.panel2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.Location = new System.Drawing.Point(98, 36);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(913, 226);
-            this.panel2.TabIndex = 30;
-            // 
             // classIDDataGridViewTextBoxColumn
             // 
             this.classIDDataGridViewTextBoxColumn.DataPropertyName = "classID";
@@ -867,6 +875,40 @@ namespace FullScreenAppDemo
             // 
             this.sSubjectBindingSource3.DataSource = typeof(FullScreenAppDemo.db.S_Subject);
             // 
+            // gunaCirclePictureBox1
+            // 
+            this.gunaCirclePictureBox1.BaseColor = System.Drawing.Color.White;
+            this.gunaCirclePictureBox1.ErrorImage = null;
+            this.gunaCirclePictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("gunaCirclePictureBox1.Image")));
+            this.gunaCirclePictureBox1.Location = new System.Drawing.Point(82, 14);
+            this.gunaCirclePictureBox1.Name = "gunaCirclePictureBox1";
+            this.gunaCirclePictureBox1.Size = new System.Drawing.Size(92, 91);
+            this.gunaCirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.gunaCirclePictureBox1.TabIndex = 32;
+            this.gunaCirclePictureBox1.TabStop = false;
+            this.gunaCirclePictureBox1.UseTransfarantBackground = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(180, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(354, 46);
+            this.label1.TabIndex = 31;
+            this.label1.Text = "Section Data Form";
+            // 
+            // gunaPictureBox1
+            // 
+            this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
+            this.gunaPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("gunaPictureBox1.Image")));
+            this.gunaPictureBox1.Location = new System.Drawing.Point(739, -32);
+            this.gunaPictureBox1.Name = "gunaPictureBox1";
+            this.gunaPictureBox1.Size = new System.Drawing.Size(417, 385);
+            this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.gunaPictureBox1.TabIndex = 85;
+            this.gunaPictureBox1.TabStop = false;
+            // 
             // RegisSubject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -880,17 +922,17 @@ namespace FullScreenAppDemo
             tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gunaDataGridView1)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentPortalDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sSubjectBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.classSBindingSource)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.sectionWithDepWithCourseBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sSubjectBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.classSBindingSource1)).EndInit();
@@ -900,6 +942,8 @@ namespace FullScreenAppDemo
             ((System.ComponentModel.ISupportInitialize)(this.sSubjectBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sSubjectBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -957,5 +1001,8 @@ namespace FullScreenAppDemo
         private System.Windows.Forms.DataGridViewTextBoxColumn subjectUnitDataGridViewTextBoxColumn;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
+        private Guna.UI.WinForms.GunaCirclePictureBox gunaCirclePictureBox1;
+        private System.Windows.Forms.Label label1;
+        private Guna.UI.WinForms.GunaPictureBox gunaPictureBox1;
     }
 }

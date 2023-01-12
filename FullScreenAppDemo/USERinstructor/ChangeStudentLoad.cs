@@ -107,7 +107,9 @@ namespace FullScreenAppDemo
 
         private void gunaButton1_Click(object sender, EventArgs e)
         {
-            sFDialog.InitialDirectory = "C";
+            try
+            {
+                sFDialog.InitialDirectory = "C";
             sFDialog.Title = "SAVE AS EXCEL FILE";
             sFDialog.FileName = "";
             sFDialog.Filter = "Excel Files (2016|*.xlsx|Excel Files(.CSV)|*.csv";
@@ -234,7 +236,12 @@ namespace FullScreenAppDemo
 
             }
             Cursor.Current = Cursors.Default;
+            }
+            catch
+            {
+                MessageBox.Show("Something Went Wrong", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+            }
 
         }
         private void openFile()
@@ -250,10 +257,12 @@ namespace FullScreenAppDemo
 
         private void gunaButton5_Click(object sender, EventArgs e)
         {
+           
             dgvStudentLoad.DataSource = null;
             dgvStudentLoad.Columns.Clear();
             dgvStudentLoad.Refresh();
 
+            
             using (OpenFileDialog ofd = new OpenFileDialog())
             {
                 ofd.Filter = "Excel Files Only | *.xlsx; *.xls";
@@ -303,45 +312,60 @@ namespace FullScreenAppDemo
 
         private void gunaButton3_Click(object sender, EventArgs e)
         {
-            classID = Class.classID;
-            instructorID = loginInstructor.instructorID;
-            subjectID = Class.subjectID;
-
-            string studentID = "";
-            string schoolID = "";
-
-            //SAVE THE FILE LOCATION
-            if (fileName != "")
+            try
             {
-                var resFile = _context.assignSubjects.Where(q => q.a_classID == classID.ToString() && q.a_subjectID == subjectID.ToString() && q.a_instructorID == instructorID.ToString()).FirstOrDefault();
-                if (resFile != null)
+                classID = Class.classID;
+                instructorID = loginInstructor.instructorID;
+                subjectID = Class.subjectID;
+
+                string studentID = "";
+                string schoolID = "";
+
+                if (MessageBox.Show("Are you sure you want to Make Changes", "Make Changes", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    resFile.a_FileLocation = fileName;
-                    _context.SaveChanges();
-                }
-            }
-
-            for (int i = 0; i < dgvStudentLoad.Rows.Count; i++)
-            {
-                studentID = dgvStudentLoad.Rows[i].Cells[0].Value.ToString();
-                schoolID = dgvStudentLoad.Rows[i].Cells[1].Value.ToString();
-
-                var res = _context.Student_Profile.Where(q => q.StudentID == studentID.ToString() && q.SchoolID == schoolID.ToString() &&
-                q.ClassID == classID.ToString() && q.SubjectID == subjectID.ToString() && q.InstructorID == instructorID.ToString()).FirstOrDefault();
-
-                if (res != null)
-                {
-                    //res.Grade = dgvStudentLoad.Rows[i].Cells[3].Value.ToString();
-                    if (string.IsNullOrEmpty(dgvStudentLoad.Rows[i].Cells[3].Value as string))
+                    //SAVE THE FILE LOCATION
+                    if (fileName != "")
                     {
-                        dgvStudentLoad.Rows[i].Cells[3].Value = " ";
+                        var resFile = _context.assignSubjects.Where(q => q.a_classID == classID.ToString() && q.a_subjectID == subjectID.ToString() && q.a_instructorID == instructorID.ToString()).FirstOrDefault();
+                        if (resFile != null)
+                        {
+                            resFile.a_FileLocation = fileName;
+                            _context.SaveChanges();
+                            MessageBox.Show("Succesfully Making Changes", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        }
                     }
-                    res.Grade = !string.IsNullOrEmpty(dgvStudentLoad.Rows[i].Cells[3].Value.ToString()) ? dgvStudentLoad.Rows[i].Cells[3].Value.ToString() : " "; //0 means empty character
+
+                    for (int i = 0; i < dgvStudentLoad.Rows.Count; i++)
+                    {
+                        studentID = dgvStudentLoad.Rows[i].Cells[0].Value.ToString();
+                        schoolID = dgvStudentLoad.Rows[i].Cells[1].Value.ToString();
+
+                        var res = _context.Student_Profile.Where(q => q.StudentID == studentID.ToString() && q.SchoolID == schoolID.ToString() &&
+                        q.ClassID == classID.ToString() && q.SubjectID == subjectID.ToString() && q.InstructorID == instructorID.ToString()).FirstOrDefault();
+
+                        if (res != null)
+                        {
+                            //res.Grade = dgvStudentLoad.Rows[i].Cells[3].Value.ToString();
+                            if (string.IsNullOrEmpty(dgvStudentLoad.Rows[i].Cells[3].Value as string))
+                            {
+                                dgvStudentLoad.Rows[i].Cells[3].Value = " ";
+                            }
+                            res.Grade = !string.IsNullOrEmpty(dgvStudentLoad.Rows[i].Cells[3].Value.ToString()) ? dgvStudentLoad.Rows[i].Cells[3].Value.ToString() : " "; //0 means empty character
+                        }
+                    }
+
+                    _context.SaveChanges();
+                    loadCurrentData();
+                    MessageBox.Show("Succesfully Making Changes", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 }
             }
+            catch
+            {
+                MessageBox.Show("Something Went Wrong", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-            _context.SaveChanges();
-            loadCurrentData();
+            }
 
         }
 

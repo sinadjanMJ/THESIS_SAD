@@ -227,7 +227,7 @@ namespace FullScreenAppDemo
 
         private void dgvDepartmentList_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            deletedepartment.Visible = true;
+           // deletedepartment.Visible = true;
             choicedepartment = "update";
             DepartmentImport v = new DepartmentImport(this);
             v.UpdateEventHandler += F2_UpdateEventHandler1;
@@ -249,7 +249,7 @@ namespace FullScreenAppDemo
 
         private void dgvDepartmentList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            deletedepartment.Visible = true;
+          //  deletedepartment.Visible = true;
         }
 
         private void gunaButton1_Click(object sender, EventArgs e)
@@ -295,6 +295,11 @@ namespace FullScreenAppDemo
             {
                 departmentID = Convert.ToInt32(dgvDepartmentList.SelectedRows[0].Cells[0].Value.ToString());
             }
+            deletedepartment.Visible = true;
+        }
+
+        private void dgvDepartmentList_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
             deletedepartment.Visible = true;
         }
     }

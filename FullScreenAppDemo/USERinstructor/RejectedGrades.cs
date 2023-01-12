@@ -77,31 +77,44 @@ namespace FullScreenAppDemo
 
         private void PROCEED_Click(object sender, EventArgs e)
         {
-            int convertID = 0;
-            if (rejectedA_ID != "")
+          try
+          {
+            if (MessageBox.Show("Are you sure you want to Send it to Pending", "Sending in Process", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                convertID = Int32.Parse(rejectedA_ID);
-            }
-            var res = _context.assignSubjects.Where(q => q.a_id == convertID).FirstOrDefault();
-
-            if (res != null)
-            {
-                res.a_status = "pending";
-                _context.SaveChanges();
-
-                var resTransact = _context.transactionGrades.Where(q => q.a_ID == rejectedA_ID).FirstOrDefault();
-                if (resTransact != null)
+                int convertID = 0;
+                if (rejectedA_ID != "")
                 {
-                    resTransact.status_Instructor = "pending";
-                    resTransact.status_Dean = "";
-                    _context.SaveChanges();
+                    convertID = Int32.Parse(rejectedA_ID);
                 }
+                var res = _context.assignSubjects.Where(q => q.a_id == convertID).FirstOrDefault();
+
+                if (res != null)
+                {
+                    res.a_status = "pending";
+                    _context.SaveChanges();
+
+                    var resTransact = _context.transactionGrades.Where(q => q.a_ID == rejectedA_ID).FirstOrDefault();
+                    if (resTransact != null)
+                    {
+                        resTransact.status_Instructor = "pending";
+                        resTransact.status_Dean = "";
+                        _context.SaveChanges();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Entity not found");
+                }
+                rejectedGrade();
             }
-            else
+
+            }
+            catch
             {
-                MessageBox.Show("Entity not found");
+                MessageBox.Show("Something Went Wrong", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
-            rejectedGrade();
+
         }
 
     

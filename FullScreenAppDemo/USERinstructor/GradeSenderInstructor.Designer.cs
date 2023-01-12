@@ -38,7 +38,6 @@ namespace FullScreenAppDemo
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.textFeedback = new Guna.UI.WinForms.GunaTextBox();
             this.dgvPendingGrade = new Guna.UI.WinForms.GunaDataGridView();
-            this.userInWithClassListBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.gunaButton2 = new Guna.UI.WinForms.GunaButton();
             this.uipanel = new System.Windows.Forms.Panel();
             this.gunaCirclePictureBox2 = new Guna.UI.WinForms.GunaCirclePictureBox();
@@ -53,18 +52,21 @@ namespace FullScreenAppDemo
             this.subjectDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.yearLevelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sEMESTERDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userInWithClassListBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPendingGrade)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userInWithClassListBindingSource1)).BeginInit();
             this.uipanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userInWithClassListBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userInWithClassListBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // gunaLabel3
             // 
             this.gunaLabel3.AutoSize = true;
             this.gunaLabel3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel3.Location = new System.Drawing.Point(197, 444);
+            this.gunaLabel3.Location = new System.Drawing.Point(86, 470);
             this.gunaLabel3.Name = "gunaLabel3";
             this.gunaLabel3.Size = new System.Drawing.Size(105, 25);
             this.gunaLabel3.TabIndex = 25;
@@ -75,7 +77,7 @@ namespace FullScreenAppDemo
             this.gunaLabel1.AutoSize = true;
             this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.gunaLabel1.Location = new System.Drawing.Point(194, 243);
+            this.gunaLabel1.Location = new System.Drawing.Point(83, 269);
             this.gunaLabel1.Name = "gunaLabel1";
             this.gunaLabel1.Size = new System.Drawing.Size(177, 25);
             this.gunaLabel1.TabIndex = 18;
@@ -90,7 +92,7 @@ namespace FullScreenAppDemo
             this.textFeedback.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.textFeedback.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.textFeedback.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.textFeedback.Location = new System.Drawing.Point(199, 469);
+            this.textFeedback.Location = new System.Drawing.Point(88, 495);
             this.textFeedback.Multiline = true;
             this.textFeedback.Name = "textFeedback";
             this.textFeedback.PasswordChar = '\0';
@@ -139,7 +141,7 @@ namespace FullScreenAppDemo
             this.dgvPendingGrade.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPendingGrade.EnableHeadersVisualStyles = false;
             this.dgvPendingGrade.GridColor = System.Drawing.Color.Gray;
-            this.dgvPendingGrade.Location = new System.Drawing.Point(199, 271);
+            this.dgvPendingGrade.Location = new System.Drawing.Point(88, 297);
             this.dgvPendingGrade.Name = "dgvPendingGrade";
             this.dgvPendingGrade.ReadOnly = true;
             this.dgvPendingGrade.RowHeadersVisible = false;
@@ -171,10 +173,6 @@ namespace FullScreenAppDemo
             this.dgvPendingGrade.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPendingGrade_CellClick);
             this.dgvPendingGrade.SelectionChanged += new System.EventHandler(this.dgvPendingGrade_SelectionChanged);
             // 
-            // userInWithClassListBindingSource1
-            // 
-            this.userInWithClassListBindingSource1.DataSource = typeof(FullScreenAppDemo.perips.userInWithClassList);
-            // 
             // gunaButton2
             // 
             this.gunaButton2.AnimationHoverSpeed = 0.07F;
@@ -188,9 +186,9 @@ namespace FullScreenAppDemo
             this.gunaButton2.ForeColor = System.Drawing.Color.Gold;
             this.gunaButton2.Image = null;
             this.gunaButton2.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton2.Location = new System.Drawing.Point(602, 223);
+            this.gunaButton2.Location = new System.Drawing.Point(491, 249);
             this.gunaButton2.Name = "gunaButton2";
-            this.gunaButton2.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.gunaButton2.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
             this.gunaButton2.OnHoverBorderColor = System.Drawing.Color.Black;
             this.gunaButton2.OnHoverForeColor = System.Drawing.Color.White;
             this.gunaButton2.OnHoverImage = null;
@@ -214,6 +212,7 @@ namespace FullScreenAppDemo
             this.uipanel.Controls.Add(this.textFeedback);
             this.uipanel.Controls.Add(this.gunaLabel1);
             this.uipanel.Controls.Add(this.gunaLabel3);
+            this.uipanel.Controls.Add(this.gunaPictureBox1);
             this.uipanel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uipanel.Location = new System.Drawing.Point(2, 2);
             this.uipanel.Name = "uipanel";
@@ -225,7 +224,7 @@ namespace FullScreenAppDemo
             this.gunaCirclePictureBox2.BaseColor = System.Drawing.Color.White;
             this.gunaCirclePictureBox2.ErrorImage = null;
             this.gunaCirclePictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("gunaCirclePictureBox2.Image")));
-            this.gunaCirclePictureBox2.Location = new System.Drawing.Point(179, 79);
+            this.gunaCirclePictureBox2.Location = new System.Drawing.Point(68, 105);
             this.gunaCirclePictureBox2.Name = "gunaCirclePictureBox2";
             this.gunaCirclePictureBox2.Size = new System.Drawing.Size(92, 91);
             this.gunaCirclePictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -237,7 +236,7 @@ namespace FullScreenAppDemo
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(277, 101);
+            this.label16.Location = new System.Drawing.Point(166, 127);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(307, 46);
             this.label16.TabIndex = 87;
@@ -256,7 +255,7 @@ namespace FullScreenAppDemo
             this.gunaButton3.ForeColor = System.Drawing.Color.Gold;
             this.gunaButton3.Image = null;
             this.gunaButton3.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton3.Location = new System.Drawing.Point(800, 488);
+            this.gunaButton3.Location = new System.Drawing.Point(689, 514);
             this.gunaButton3.Name = "gunaButton3";
             this.gunaButton3.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.gunaButton3.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -283,7 +282,7 @@ namespace FullScreenAppDemo
             this.gunaButton1.ForeColor = System.Drawing.Color.Gold;
             this.gunaButton1.Image = null;
             this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton1.Location = new System.Drawing.Point(832, 223);
+            this.gunaButton1.Location = new System.Drawing.Point(721, 249);
             this.gunaButton1.Name = "gunaButton1";
             this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -345,6 +344,21 @@ namespace FullScreenAppDemo
             this.sEMESTERDataGridViewTextBoxColumn.Name = "sEMESTERDataGridViewTextBoxColumn";
             this.sEMESTERDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // userInWithClassListBindingSource1
+            // 
+            this.userInWithClassListBindingSource1.DataSource = typeof(FullScreenAppDemo.perips.userInWithClassList);
+            // 
+            // gunaPictureBox1
+            // 
+            this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
+            this.gunaPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("gunaPictureBox1.Image")));
+            this.gunaPictureBox1.Location = new System.Drawing.Point(683, -10);
+            this.gunaPictureBox1.Name = "gunaPictureBox1";
+            this.gunaPictureBox1.Size = new System.Drawing.Size(486, 457);
+            this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.gunaPictureBox1.TabIndex = 89;
+            this.gunaPictureBox1.TabStop = false;
+            // 
             // GradeSenderInstructor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -356,11 +370,12 @@ namespace FullScreenAppDemo
             this.Text = "GradeSenderInstructor";
             this.Load += new System.EventHandler(this.GradeSenderInstructor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPendingGrade)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userInWithClassListBindingSource1)).EndInit();
             this.uipanel.ResumeLayout(false);
             this.uipanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userInWithClassListBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userInWithClassListBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -385,5 +400,6 @@ namespace FullScreenAppDemo
         private System.Windows.Forms.DataGridViewTextBoxColumn subjectDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn yearLevelDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sEMESTERDataGridViewTextBoxColumn;
+        private Guna.UI.WinForms.GunaPictureBox gunaPictureBox1;
     }
 }

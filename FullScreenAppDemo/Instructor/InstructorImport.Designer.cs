@@ -210,7 +210,7 @@ namespace FullScreenAppDemo
             this.btnSave.ImageSize = new System.Drawing.Size(20, 20);
             this.btnSave.Location = new System.Drawing.Point(490, 298);
             this.btnSave.Name = "btnSave";
-            this.btnSave.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnSave.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
             this.btnSave.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnSave.OnHoverForeColor = System.Drawing.Color.White;
             this.btnSave.OnHoverImage = null;
@@ -313,21 +313,21 @@ namespace FullScreenAppDemo
             this.label3.ForeColor = System.Drawing.Color.Gold;
             this.label3.Location = new System.Drawing.Point(60, 27);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(160, 15);
+            this.label3.Size = new System.Drawing.Size(204, 15);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Amping permi , nikaon naka";
+            this.label3.Text = "Set Attainable Goals That Excite You";
             // 
             // label18
             // 
             this.label18.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.Gold;
-            this.label18.Location = new System.Drawing.Point(368, 19);
+            this.label18.Location = new System.Drawing.Point(426, 9);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(185, 16);
+            this.label18.Size = new System.Drawing.Size(109, 30);
             this.label18.TabIndex = 2;
-            this.label18.Text = "Welcome to Mga Palaatik";
+            this.label18.Text = "Welcome ";
             // 
             // label2
             // 

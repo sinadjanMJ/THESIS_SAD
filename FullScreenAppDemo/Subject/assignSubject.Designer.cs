@@ -61,13 +61,13 @@ namespace FullScreenAppDemo
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dgvAssignInstructor = new Guna.UI.WinForms.GunaDataGridView();
-            this.btnDelete = new Guna.UI.WinForms.GunaButton();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.classNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subjectNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.instructorNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.semesterDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.assignWithClassSubInstructorBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.btnDelete = new Guna.UI.WinForms.GunaButton();
             ((System.ComponentModel.ISupportInitialize)(this.assignWithClassSubInstructorBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.assignWithClassSubInstructorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.assignClassWithSubBindingSource)).BeginInit();
@@ -241,7 +241,7 @@ namespace FullScreenAppDemo
             this.btnSaveAssign.Image = null;
             this.btnSaveAssign.ImageSize = new System.Drawing.Size(20, 20);
             this.btnSaveAssign.Name = "btnSaveAssign";
-            this.btnSaveAssign.OnHoverBaseColor = System.Drawing.Color.Maroon;
+            this.btnSaveAssign.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
             this.btnSaveAssign.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnSaveAssign.OnHoverForeColor = System.Drawing.Color.Gold;
             this.btnSaveAssign.OnHoverImage = null;
@@ -425,29 +425,6 @@ namespace FullScreenAppDemo
             this.dgvAssignInstructor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAssignInstructor_CellClick);
             this.dgvAssignInstructor.SelectionChanged += new System.EventHandler(this.dgvAssignInstructor_SelectionChanged);
             // 
-            // btnDelete
-            // 
-            this.btnDelete.AnimationHoverSpeed = 0.07F;
-            this.btnDelete.AnimationSpeed = 0.03F;
-            this.btnDelete.BackColor = System.Drawing.Color.Transparent;
-            this.btnDelete.BaseColor = System.Drawing.Color.Maroon;
-            this.btnDelete.BorderColor = System.Drawing.Color.Black;
-            this.btnDelete.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnDelete.FocusedColor = System.Drawing.Color.Empty;
-            resources.ApplyResources(this.btnDelete, "btnDelete");
-            this.btnDelete.ForeColor = System.Drawing.Color.Gold;
-            this.btnDelete.Image = null;
-            this.btnDelete.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.OnHoverBaseColor = System.Drawing.Color.Maroon;
-            this.btnDelete.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnDelete.OnHoverForeColor = System.Drawing.Color.Gold;
-            this.btnDelete.OnHoverImage = null;
-            this.btnDelete.OnPressedColor = System.Drawing.Color.Black;
-            this.btnDelete.Radius = 5;
-            this.btnDelete.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
             // iDDataGridViewTextBoxColumn
             // 
             this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
@@ -486,6 +463,29 @@ namespace FullScreenAppDemo
             // assignWithClassSubInstructorBindingSource2
             // 
             this.assignWithClassSubInstructorBindingSource2.DataSource = typeof(FullScreenAppDemo.perips.assignWithClassSubInstructor);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.AnimationHoverSpeed = 0.07F;
+            this.btnDelete.AnimationSpeed = 0.03F;
+            this.btnDelete.BackColor = System.Drawing.Color.Transparent;
+            this.btnDelete.BaseColor = System.Drawing.Color.Maroon;
+            this.btnDelete.BorderColor = System.Drawing.Color.Black;
+            this.btnDelete.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnDelete.FocusedColor = System.Drawing.Color.Empty;
+            resources.ApplyResources(this.btnDelete, "btnDelete");
+            this.btnDelete.ForeColor = System.Drawing.Color.Gold;
+            this.btnDelete.Image = null;
+            this.btnDelete.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.OnHoverBaseColor = System.Drawing.Color.Maroon;
+            this.btnDelete.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnDelete.OnHoverForeColor = System.Drawing.Color.Gold;
+            this.btnDelete.OnHoverImage = null;
+            this.btnDelete.OnPressedColor = System.Drawing.Color.Black;
+            this.btnDelete.Radius = 5;
+            this.btnDelete.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // assignSubject
             // 

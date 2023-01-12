@@ -44,7 +44,6 @@ namespace FullScreenAppDemo
             this.CloseBTN = new Guna.UI.WinForms.GunaButton();
             this.MinimizedBTN = new Guna.UI.WinForms.GunaButton();
             this.label3 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
@@ -144,7 +143,7 @@ namespace FullScreenAppDemo
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.Image = null;
             this.btnCancel.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnCancel.Location = new System.Drawing.Point(664, 259);
+            this.btnCancel.Location = new System.Drawing.Point(633, 259);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnCancel.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -152,7 +151,7 @@ namespace FullScreenAppDemo
             this.btnCancel.OnHoverImage = null;
             this.btnCancel.OnPressedColor = System.Drawing.Color.Black;
             this.btnCancel.Radius = 5;
-            this.btnCancel.Size = new System.Drawing.Size(103, 42);
+            this.btnCancel.Size = new System.Drawing.Size(134, 42);
             this.btnCancel.TabIndex = 30;
             this.btnCancel.Text = "CANCEL";
             this.btnCancel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -171,15 +170,15 @@ namespace FullScreenAppDemo
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Image = null;
             this.btnSave.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnSave.Location = new System.Drawing.Point(548, 259);
+            this.btnSave.Location = new System.Drawing.Point(469, 259);
             this.btnSave.Name = "btnSave";
-            this.btnSave.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnSave.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
             this.btnSave.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnSave.OnHoverForeColor = System.Drawing.Color.White;
             this.btnSave.OnHoverImage = null;
             this.btnSave.OnPressedColor = System.Drawing.Color.Black;
             this.btnSave.Radius = 5;
-            this.btnSave.Size = new System.Drawing.Size(103, 42);
+            this.btnSave.Size = new System.Drawing.Size(148, 42);
             this.btnSave.TabIndex = 29;
             this.btnSave.Text = "SAVE";
             this.btnSave.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -217,7 +216,6 @@ namespace FullScreenAppDemo
             this.panel1.Controls.Add(this.CloseBTN);
             this.panel1.Controls.Add(this.MinimizedBTN);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label18);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -279,21 +277,9 @@ namespace FullScreenAppDemo
             this.label3.ForeColor = System.Drawing.Color.Gold;
             this.label3.Location = new System.Drawing.Point(60, 27);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(160, 15);
+            this.label3.Size = new System.Drawing.Size(201, 15);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Amping permi , nikaon naka";
-            // 
-            // label18
-            // 
-            this.label18.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.Gold;
-            this.label18.Location = new System.Drawing.Point(368, 19);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(185, 16);
-            this.label18.TabIndex = 2;
-            this.label18.Text = "Welcome to Mga Palaatik";
+            this.label3.Text = "Break Tasks Down Into Small Steps";
             // 
             // label2
             // 
@@ -363,7 +349,6 @@ namespace FullScreenAppDemo
         private Guna.UI.WinForms.GunaButton CloseBTN;
         private Guna.UI.WinForms.GunaButton MinimizedBTN;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
     }

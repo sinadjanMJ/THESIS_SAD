@@ -50,10 +50,12 @@ namespace FullScreenAppDemo
             this.yearLevelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sEMESTERDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userInWithClassListBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRejected)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userInWithClassListBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -65,6 +67,7 @@ namespace FullScreenAppDemo
             this.panel1.Controls.Add(this.gunaLabel5);
             this.panel1.Controls.Add(this.dgvRejected);
             this.panel1.Controls.Add(this.gunaLabel4);
+            this.panel1.Controls.Add(this.gunaPictureBox1);
             this.panel1.Location = new System.Drawing.Point(2, 4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1173, 726);
@@ -85,7 +88,7 @@ namespace FullScreenAppDemo
             this.PROCEED.ImageSize = new System.Drawing.Size(20, 20);
             this.PROCEED.Location = new System.Drawing.Point(780, 471);
             this.PROCEED.Name = "PROCEED";
-            this.PROCEED.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.PROCEED.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
             this.PROCEED.OnHoverBorderColor = System.Drawing.Color.Black;
             this.PROCEED.OnHoverForeColor = System.Drawing.Color.White;
             this.PROCEED.OnHoverImage = null;
@@ -274,6 +277,17 @@ namespace FullScreenAppDemo
             // 
             this.userInWithClassListBindingSource.DataSource = typeof(FullScreenAppDemo.perips.userInWithClassList);
             // 
+            // gunaPictureBox1
+            // 
+            this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
+            this.gunaPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("gunaPictureBox1.Image")));
+            this.gunaPictureBox1.Location = new System.Drawing.Point(708, -34);
+            this.gunaPictureBox1.Name = "gunaPictureBox1";
+            this.gunaPictureBox1.Size = new System.Drawing.Size(465, 486);
+            this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.gunaPictureBox1.TabIndex = 88;
+            this.gunaPictureBox1.TabStop = false;
+            // 
             // RejectedGrades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -289,6 +303,7 @@ namespace FullScreenAppDemo
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRejected)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userInWithClassListBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -311,5 +326,6 @@ namespace FullScreenAppDemo
         private System.Windows.Forms.DataGridViewTextBoxColumn sEMESTERDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource userInWithClassListBindingSource;
         private Guna.UI.WinForms.GunaButton PROCEED;
+        private Guna.UI.WinForms.GunaPictureBox gunaPictureBox1;
     }
 }

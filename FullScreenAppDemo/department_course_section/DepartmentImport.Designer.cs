@@ -86,7 +86,7 @@ namespace FullScreenAppDemo
             this.btnSave.ImageSize = new System.Drawing.Size(20, 20);
             this.btnSave.Location = new System.Drawing.Point(101, 142);
             this.btnSave.Name = "btnSave";
-            this.btnSave.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnSave.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
             this.btnSave.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnSave.OnHoverForeColor = System.Drawing.Color.White;
             this.btnSave.OnHoverImage = null;
@@ -191,9 +191,9 @@ namespace FullScreenAppDemo
             this.label3.ForeColor = System.Drawing.Color.Gold;
             this.label3.Location = new System.Drawing.Point(60, 27);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(160, 15);
+            this.label3.Size = new System.Drawing.Size(145, 15);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Amping permi , nikaon naka";
+            this.label3.Text = "Create a Positive Mindset";
             // 
             // label2
             // 

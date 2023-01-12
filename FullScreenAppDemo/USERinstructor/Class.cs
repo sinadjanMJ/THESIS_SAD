@@ -112,12 +112,23 @@ namespace FullScreenAppDemo
 
         private void gunaButton1_Click(object sender, EventArgs e)
         {
-            var res = _context.assignSubjects.Where(q => q.a_id == a_ID).FirstOrDefault();
-            if (res != null)
+            try
             {
-                res.a_status = "pending";
-                _context.SaveChanges();
-                InstructorLoad();
+                if (MessageBox.Show("Are you sure you want to Send it to Pending", "Sending", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                var res = _context.assignSubjects.Where(q => q.a_id == a_ID).FirstOrDefault();
+                if (res != null)
+                {
+                    res.a_status = "pending";
+                    _context.SaveChanges();
+                    InstructorLoad();
+                }
+            }
+            }
+            catch
+            {
+                MessageBox.Show("Something Went Wrong", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 

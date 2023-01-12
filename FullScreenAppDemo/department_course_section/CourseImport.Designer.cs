@@ -89,7 +89,7 @@ namespace FullScreenAppDemo
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.Image = null;
             this.btnCancel.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnCancel.Location = new System.Drawing.Point(528, 173);
+            this.btnCancel.Location = new System.Drawing.Point(498, 173);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnCancel.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -97,7 +97,7 @@ namespace FullScreenAppDemo
             this.btnCancel.OnHoverImage = null;
             this.btnCancel.OnPressedColor = System.Drawing.Color.Black;
             this.btnCancel.Radius = 5;
-            this.btnCancel.Size = new System.Drawing.Size(103, 42);
+            this.btnCancel.Size = new System.Drawing.Size(133, 42);
             this.btnCancel.TabIndex = 14;
             this.btnCancel.Text = "CANCEL";
             this.btnCancel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -116,15 +116,15 @@ namespace FullScreenAppDemo
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Image = null;
             this.btnSave.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnSave.Location = new System.Drawing.Point(408, 173);
+            this.btnSave.Location = new System.Drawing.Point(351, 173);
             this.btnSave.Name = "btnSave";
-            this.btnSave.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnSave.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
             this.btnSave.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnSave.OnHoverForeColor = System.Drawing.Color.White;
             this.btnSave.OnHoverImage = null;
             this.btnSave.OnPressedColor = System.Drawing.Color.Black;
             this.btnSave.Radius = 5;
-            this.btnSave.Size = new System.Drawing.Size(103, 42);
+            this.btnSave.Size = new System.Drawing.Size(141, 42);
             this.btnSave.TabIndex = 13;
             this.btnSave.Text = "SAVE";
             this.btnSave.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -271,9 +271,9 @@ namespace FullScreenAppDemo
             this.label3.ForeColor = System.Drawing.Color.Gold;
             this.label3.Location = new System.Drawing.Point(60, 27);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(160, 15);
+            this.label3.Size = new System.Drawing.Size(145, 15);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Amping permi , nikaon naka";
+            this.label3.Text = "Create a Positive Mindset";
             // 
             // label2
             // 

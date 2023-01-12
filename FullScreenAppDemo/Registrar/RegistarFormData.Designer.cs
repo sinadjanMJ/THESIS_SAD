@@ -293,7 +293,7 @@ namespace FullScreenAppDemo
             this.Controls.Add(this.DashboardPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RegistarFormData";
-            this.Text = "RegistarFormData";
+            this.Text = "B";
             this.Load += new System.EventHandler(this.RegistarFormData_Load);
             this.DashboardPanel.ResumeLayout(false);
             this.DashboardPanel.PerformLayout();

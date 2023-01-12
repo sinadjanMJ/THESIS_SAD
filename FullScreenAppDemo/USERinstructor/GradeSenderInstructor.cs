@@ -97,63 +97,86 @@ namespace FullScreenAppDemo
 
         private void gunaButton2_Click(object sender, EventArgs e)
         {
-            int convertID = 0;
-            if (selectedA_ID.ToString() != "")
+            try
             {
-                convertID = Int32.Parse(selectedA_ID.ToString());
-            }
-            //convertID = Int32.Parse(selectedA_ID.ToString());
-            var res = _context.assignSubjects.Where(q => q.a_id == convertID).FirstOrDefault();
+                if (MessageBox.Show("Are you sure you want to Send it back to Editable", "Sending in Process", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                int convertID = 0;
+                if (selectedA_ID.ToString() != "")
+                {
+                    convertID = Int32.Parse(selectedA_ID.ToString());
+                }
+                //convertID = Int32.Parse(selectedA_ID.ToString());
+                var res = _context.assignSubjects.Where(q => q.a_id == convertID).FirstOrDefault();
 
-            if (res != null)
+                if (res != null)
+                {
+                    res.a_status = "edit";
+                    _context.SaveChanges();
+                    loadPendingGrade();
+                }
+            }
+            }
+            catch
             {
-                res.a_status = "edit";
-                _context.SaveChanges();
-                loadPendingGrade();
+                MessageBox.Show("Something Went Wrong", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 
         private void gunaButton3_Click(object sender, EventArgs e)
         {
-            int convertID = 0;
-            if (selectedA_ID.ToString() != "")
+          try
+          {
+            if (MessageBox.Show("Are you sure you want to Send it to Dean", "Sending in Process", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                convertID = Int32.Parse(selectedA_ID.ToString());
-            }
-            //MessageBox.Show("Class ID : " + res.a_classID.ToString());
-            var res = _context.assignSubjects.Where(q => q.a_id == convertID).FirstOrDefault();
-            if (res != null)
-            {
-                res.a_status = "sent";
-
-                var renderRes = _context.transactionGrades.Where(q => q.a_ID == convertID.ToString()).FirstOrDefault();
-                if (renderRes != null) //THERE IS ALREADY AN EXISTING RECORDS
+                int convertID = 0;
+                if (selectedA_ID.ToString() != "")
                 {
-                    renderRes.feedback_Instructor = textFeedback.Text.Trim();
-                    renderRes.status_Instructor = "sent";
-                    renderRes.status_Dean = "pending";
+                    convertID = Int32.Parse(selectedA_ID.ToString());
                 }
-                else //SINCE IT'S NULL, ADD NEW RECORD
+                //MessageBox.Show("Class ID : " + res.a_classID.ToString());
+                var res = _context.assignSubjects.Where(q => q.a_id == convertID).FirstOrDefault();
+                if (res != null)
                 {
-                    transactionGrade tg = new transactionGrade
+                    res.a_status = "sent";
+
+                    var renderRes = _context.transactionGrades.Where(q => q.a_ID == convertID.ToString()).FirstOrDefault();
+                    if (renderRes != null) //THERE IS ALREADY AN EXISTING RECORDS
                     {
-                        a_ID = selectedA_ID.ToString(),
-                        feedback_Instructor = textFeedback.Text.Trim(),
-                        status_Instructor = "sent",
-                        status_Dean = "pending"
-                    };
-                    _context.transactionGrades.Add(tg);
-                }
+                        renderRes.feedback_Instructor = textFeedback.Text.Trim();
+                        renderRes.status_Instructor = "sent";
+                        renderRes.status_Dean = "pending";
+                    }
+                    else //SINCE IT'S NULL, ADD NEW RECORD
+                    {
+                        transactionGrade tg = new transactionGrade
+                        {
+                            a_ID = selectedA_ID.ToString(),
+                            feedback_Instructor = textFeedback.Text.Trim(),
+                            status_Instructor = "sent",
+                            status_Dean = "pending"
+                        };
+                        _context.transactionGrades.Add(tg);
+                    }
 
-                _context.SaveChanges();
-                MessageBox.Show("PENDING GRADE SENT TO DEAN");
-                loadPendingGrade();
-                textFeedback.Text = "";
+                    _context.SaveChanges();
+                    MessageBox.Show("PENDING GRADE SENT TO DEAN", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    loadPendingGrade();
+                    textFeedback.Text = "";
+                }
+                else
+                {
+                    MessageBox.Show("Entity not found", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+           
+                }
             }
-            else
+            catch
             {
-                MessageBox.Show("Entity not found");
-            }
+                MessageBox.Show("Something Went Wrong", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+          }
 
         }
     }

@@ -170,7 +170,7 @@ namespace FullScreenAppDemo
             this.btnAddNew.ImageSize = new System.Drawing.Size(20, 20);
             this.btnAddNew.Location = new System.Drawing.Point(205, 637);
             this.btnAddNew.Name = "btnAddNew";
-            this.btnAddNew.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnAddNew.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
             this.btnAddNew.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnAddNew.OnHoverForeColor = System.Drawing.Color.White;
             this.btnAddNew.OnHoverImage = null;
@@ -847,7 +847,7 @@ namespace FullScreenAppDemo
             this.gunaButton3.ImageSize = new System.Drawing.Size(20, 20);
             this.gunaButton3.Location = new System.Drawing.Point(876, 637);
             this.gunaButton3.Name = "gunaButton3";
-            this.gunaButton3.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.gunaButton3.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
             this.gunaButton3.OnHoverBorderColor = System.Drawing.Color.Black;
             this.gunaButton3.OnHoverForeColor = System.Drawing.Color.White;
             this.gunaButton3.OnHoverImage = null;
@@ -1192,8 +1192,8 @@ namespace FullScreenAppDemo
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1371, 788);
-            this.Controls.Add(this.NEXTPANEL);
             this.Controls.Add(this.UPDATEPANEL);
+            this.Controls.Add(this.NEXTPANEL);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "UPDATESTUDENT";
             this.Text = "UPDATESTUDENT";

@@ -125,9 +125,9 @@
             this.label3.ForeColor = System.Drawing.Color.Gold;
             this.label3.Location = new System.Drawing.Point(60, 27);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(160, 15);
+            this.label3.Size = new System.Drawing.Size(201, 15);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Amping permi , nikaon naka";
+            this.label3.Text = "Break Tasks Down Into Small Steps";
             // 
             // label18
             // 
