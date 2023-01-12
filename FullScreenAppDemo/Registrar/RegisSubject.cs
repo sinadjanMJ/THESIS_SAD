@@ -428,6 +428,9 @@ namespace FullScreenAppDemo
                         _context.Class_S.Remove(selected);
                         _context.SaveChanges();
                     }
+
+                    CLEAR();
+                    btnAddSection.Text = "ADD SECTION";
                     btnDelete.Visible = false;
                     MessageBox.Show("Succesfully Deleted", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

@@ -120,10 +120,31 @@
   <metadata name="instructorWithDeptBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="guna2TextBox3.IconLeft" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAA6tJREFUaEPt
+        mctrE1EUxqPiC3UlPra+9T8QFRFFN7qt4BulFCmG2plJoRKTMxNbLAUVd+pCcKEgvqj4oK4qggVFUAQR
+        FdcVfKCbplXrd8IZuDO5re3k3phIfnBok+/OOffMfcyZm1SDBjUIUWZpzncP5cm9RL47SL73CX+/sOV9
+        dwj2lHznIgXOwRNdbUvkstoBnd+eD9xH6PBPdHZsMsZtYf0539kmbv4dRO0ruTO6jk7JAu8BfC0Xt9UF
+        o7AHnfhR1qmEhhvynQJvt7ivDpj7pOuM2Bvop4jcTUTO6s7uzoVs/D9/h/XThTZvY9eUDDfnNwVuTsLY
+        hTup6wTu6POpzHdeV7jmhc4XkvWlmR1KO1J54CLuYmtqLDVNmk0aIpoOn2kkNBL3i+/3STOzZAuZFQgQ
+        XxNDmDIbpEliStMQW7Xqm9dMtuAtkybmgOP7sUDDSGK9yBVzMshshN9iLEafyGYg8raoAUpBAueIyMbA
+        FG0pi4PRErlysM/fizj3nScimQXrDKMwGI1laFS4lIDDUdU5TwORjYMR2KzGQiIjnd3pRSInB8PdrDqG
+        vRTJGuj8azVmzvcOi5QcOL2iOsW06hbJGniO9Kgx8fmySMlBIpGHFhb+VpGswQ9LNWbe956JlBw4+qw6
+        5VJDJGtgnayNxMQzRqTk8GKLOKXW+SJZo6OnY4EaE1YUKTm1kAj6MCxScuAoMrVQqqwSyRrZQscaNaap
+        qfV/LHYkEt9+T4tkjTx5vWpMI9uvpnR/J5I1EOOjGhN13X6RkqMrUWxOL6LMjkgsUyUKU140uoNJXqT+
+        CnzyeojFMlfK68t4t1lkY8Dn0bI4Jst4Bncm8mIFK3KCIlcMv+/zNFJjGB2NkHFedb+aOGDj7Rad/qb6
+        xmc7r7qMZgdjG6XAO1bB4UMb+4j5HMsFzqv2M+1zpal5qnIcJAa933Yy4x7QIfj7PDln8TK0k6tY3PU5
+        bNnC8XWonHdBP4d2H+LXjWfWk8EdNXpkOqEF7t30+fRsCW0eU4fYucB9CD99Oi006yPDlA4MAvcmgpWd
+        GE5gRUzRG+Fzoul60wxcf1XTTrUBr9ebVwpqEzxXFpd2NuWHHgT/JRb5oUdXdnAyuPYa2umSCG2gGu9E
+        FdNyoWUmkr2lSUC1RjJVZzLJQH9cN8lgE7mtSyK0RjL/Aq4M+AdTXRKhod7bK81rm4lGBtu5I83qA10y
+        dZdECKbZLKyJO5wEHr6ufF2f8JpBEgfkY4MG1SOV+gMeT0ydpzXwWwAAAABJRU5ErkJggg==
+</value>
+  </data>
   <metadata name="instructorWithDeptBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>252, 17</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="gunaCirclePictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAHWCAYAAAAB9zFVAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL

@@ -35,21 +35,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ComponentFactory.Krypton.Docking">
-      <HintPath>..\..\..\Users\Lenovo\Documents\guiguna\Krypton-master\Bin\ComponentFactory.Krypton.Docking.dll</HintPath>
-    </Reference>
-    <Reference Include="ComponentFactory.Krypton.Navigator">
-      <HintPath>..\..\..\Users\Lenovo\Documents\guiguna\Krypton-master\Bin\ComponentFactory.Krypton.Navigator.dll</HintPath>
-    </Reference>
-    <Reference Include="ComponentFactory.Krypton.Ribbon">
-      <HintPath>..\..\..\Users\Lenovo\Documents\guiguna\Krypton-master\Bin\ComponentFactory.Krypton.Ribbon.dll</HintPath>
-    </Reference>
-    <Reference Include="ComponentFactory.Krypton.Toolkit">
-      <HintPath>..\..\..\Users\Lenovo\Documents\guiguna\Krypton-master\Bin\ComponentFactory.Krypton.Toolkit.dll</HintPath>
-    </Reference>
-    <Reference Include="ComponentFactory.Krypton.Workspace">
-      <HintPath>..\..\..\Users\Lenovo\Documents\guiguna\Krypton-master\Bin\ComponentFactory.Krypton.Workspace.dll</HintPath>
-    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -58,6 +43,10 @@
     </Reference>
     <Reference Include="Guna.UI">
       <HintPath>..\..\..\Users\Lenovo\Documents\guiguna\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna.UI-Framework-Lib-master\Guna.UI WinForms\.net 2.0\Guna.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.1.9, Culture=neutral, PublicKeyToken=e4b9cdd7b4cde4b4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Users\Lenovo\Documents\guiguna\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna.UI-Framework-Lib-master\Guna.UI2 WinForms\.net 4.0\Guna.UI2.dll</HintPath>
     </Reference>
     <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
       <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
@@ -71,6 +60,24 @@
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="PresentationCore" />
@@ -121,6 +128,12 @@
     </Compile>
     <Compile Include="Academics\uAcademicStudentList.Designer.cs">
       <DependentUpon>uAcademicStudentList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccadDH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccadDH.Designer.cs">
+      <DependentUpon>AccadDH.cs</DependentUpon>
     </Compile>
     <Compile Include="db\academicslogin.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -182,6 +195,26 @@
     <Compile Include="db\usertypeLogin.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Instructor\frmPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Instructor\frmPrint.Designer.cs">
+      <DependentUpon>frmPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Instructor\InstructorClearance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Instructor\InstructorClearance.Designer.cs">
+      <DependentUpon>InstructorClearance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Instructor\InstructorClearanceDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Instructor\InstructorClearanceDisplay.Designer.cs">
+      <DependentUpon>InstructorClearanceDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="perips\instructorClearance.cs" />
+    <Compile Include="perips\printClearance.cs" />
     <Compile Include="perips\uAcademicClassList.cs" />
     <Compile Include="perips\uAcademicPendingsClass.cs" />
     <Compile Include="perips\uStudentLoadSubs.cs" />
@@ -209,6 +242,7 @@
     <Compile Include="Academics\uAcademicStudentLoad.Designer.cs">
       <DependentUpon>uAcademicStudentLoad.cs</DependentUpon>
     </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="USERdean\uDeanRejectedForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -391,10 +425,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="DASHBOARD\RegisDashboard.cs">
+    <Compile Include="Registrar\RegisDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DASHBOARD\RegisDashboard.Designer.cs">
+    <Compile Include="Registrar\RegisDashboard.Designer.cs">
       <DependentUpon>RegisDashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="Registrar\RegisStudent.cs">
@@ -434,6 +468,19 @@
     <EmbeddedResource Include="Academics\uAcademicStudentList.resx">
       <DependentUpon>uAcademicStudentList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AccadDH.resx">
+      <DependentUpon>AccadDH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Instructor\frmPrint.resx">
+      <DependentUpon>frmPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Instructor\InstructorClearance.resx">
+      <DependentUpon>InstructorClearance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Instructor\InstructorClearanceDisplay.resx">
+      <DependentUpon>InstructorClearanceDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptInstructorClearance.rdlc" />
     <EmbeddedResource Include="selectuser\SelectUserForm.resx">
       <DependentUpon>SelectUserForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -527,7 +574,7 @@
     <EmbeddedResource Include="Registrar\RegisSubject.resx">
       <DependentUpon>RegisSubject.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DASHBOARD\RegisDashboard.resx">
+    <EmbeddedResource Include="Registrar\RegisDashboard.resx">
       <DependentUpon>RegisDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Registrar\RegisDean.resx">
@@ -559,7 +606,9 @@
     <None Include="Properties\DataSources\FullScreenAppDemo.perips.courseImps.datasource" />
     <None Include="Properties\DataSources\FullScreenAppDemo.perips.DeanWithDepartment.datasource" />
     <None Include="Properties\DataSources\FullScreenAppDemo.perips.fPStudentList.datasource" />
+    <None Include="Properties\DataSources\FullScreenAppDemo.perips.instructorClearance.datasource" />
     <None Include="Properties\DataSources\FullScreenAppDemo.perips.InstructorWithDept.datasource" />
+    <None Include="Properties\DataSources\FullScreenAppDemo.perips.printClearance.datasource" />
     <None Include="Properties\DataSources\FullScreenAppDemo.perips.sectionWithDepWithCourse.datasource" />
     <None Include="Properties\DataSources\FullScreenAppDemo.perips.studentAssignSub.datasource" />
     <None Include="Properties\DataSources\FullScreenAppDemo.perips.studentLoadwithInst.datasource" />
@@ -618,6 +667,19 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>

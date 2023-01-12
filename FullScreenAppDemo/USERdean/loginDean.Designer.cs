@@ -29,6 +29,7 @@ namespace FullScreenAppDemo
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(loginDean));
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.txt_DeanID = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -37,6 +38,8 @@ namespace FullScreenAppDemo
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.CloseBTN = new Guna.UI.WinForms.GunaButton();
+            this.MinimizedBTN = new Guna.UI.WinForms.GunaButton();
             this.SuspendLayout();
             // 
             // textBox1
@@ -135,11 +138,61 @@ namespace FullScreenAppDemo
             this.label1.TabIndex = 36;
             this.label1.Text = "Get Started";
             // 
+            // CloseBTN
+            // 
+            this.CloseBTN.AnimationHoverSpeed = 0.07F;
+            this.CloseBTN.AnimationSpeed = 0.03F;
+            this.CloseBTN.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.CloseBTN.BorderColor = System.Drawing.Color.Black;
+            this.CloseBTN.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.CloseBTN.FocusedColor = System.Drawing.Color.Empty;
+            this.CloseBTN.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.CloseBTN.ForeColor = System.Drawing.Color.White;
+            this.CloseBTN.Image = ((System.Drawing.Image)(resources.GetObject("CloseBTN.Image")));
+            this.CloseBTN.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.CloseBTN.ImageSize = new System.Drawing.Size(20, 20);
+            this.CloseBTN.Location = new System.Drawing.Point(254, 4);
+            this.CloseBTN.Name = "CloseBTN";
+            this.CloseBTN.OnHoverBaseColor = System.Drawing.Color.Red;
+            this.CloseBTN.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.CloseBTN.OnHoverForeColor = System.Drawing.Color.White;
+            this.CloseBTN.OnHoverImage = null;
+            this.CloseBTN.OnPressedColor = System.Drawing.Color.Black;
+            this.CloseBTN.Size = new System.Drawing.Size(30, 30);
+            this.CloseBTN.TabIndex = 49;
+            this.CloseBTN.Click += new System.EventHandler(this.CloseBTN_Click);
+            // 
+            // MinimizedBTN
+            // 
+            this.MinimizedBTN.AnimationHoverSpeed = 0.07F;
+            this.MinimizedBTN.AnimationSpeed = 0.03F;
+            this.MinimizedBTN.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.MinimizedBTN.BorderColor = System.Drawing.Color.Black;
+            this.MinimizedBTN.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.MinimizedBTN.FocusedColor = System.Drawing.Color.Empty;
+            this.MinimizedBTN.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.MinimizedBTN.ForeColor = System.Drawing.Color.Gray;
+            this.MinimizedBTN.Image = ((System.Drawing.Image)(resources.GetObject("MinimizedBTN.Image")));
+            this.MinimizedBTN.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.MinimizedBTN.ImageSize = new System.Drawing.Size(20, 20);
+            this.MinimizedBTN.Location = new System.Drawing.Point(218, 4);
+            this.MinimizedBTN.Name = "MinimizedBTN";
+            this.MinimizedBTN.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(170)))), ((int)(((byte)(231)))));
+            this.MinimizedBTN.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.MinimizedBTN.OnHoverForeColor = System.Drawing.Color.White;
+            this.MinimizedBTN.OnHoverImage = null;
+            this.MinimizedBTN.OnPressedColor = System.Drawing.Color.Black;
+            this.MinimizedBTN.Size = new System.Drawing.Size(30, 30);
+            this.MinimizedBTN.TabIndex = 48;
+            this.MinimizedBTN.Click += new System.EventHandler(this.MinimizedBTN_Click);
+            // 
             // loginDean
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(289, 489);
+            this.Controls.Add(this.CloseBTN);
+            this.Controls.Add(this.MinimizedBTN);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.txt_DeanID);
             this.Controls.Add(this.button2);
@@ -169,5 +222,7 @@ namespace FullScreenAppDemo
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private Guna.UI.WinForms.GunaButton CloseBTN;
+        private Guna.UI.WinForms.GunaButton MinimizedBTN;
     }
 }

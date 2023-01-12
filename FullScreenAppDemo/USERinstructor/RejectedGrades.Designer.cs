@@ -41,7 +41,6 @@ namespace FullScreenAppDemo
             this.lblDeanFeedback = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel5 = new Guna.UI.WinForms.GunaLabel();
             this.dgvRejected = new Guna.UI.WinForms.GunaDataGridView();
-            this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
             this.aIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.classIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.classnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,6 +49,7 @@ namespace FullScreenAppDemo
             this.yearLevelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sEMESTERDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userInWithClassListBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
             this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).BeginInit();
@@ -214,16 +214,6 @@ namespace FullScreenAppDemo
             this.dgvRejected.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvRejected.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRejected_CellClick);
             // 
-            // gunaLabel4
-            // 
-            this.gunaLabel4.AutoSize = true;
-            this.gunaLabel4.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel4.Location = new System.Drawing.Point(186, 272);
-            this.gunaLabel4.Name = "gunaLabel4";
-            this.gunaLabel4.Size = new System.Drawing.Size(143, 37);
-            this.gunaLabel4.TabIndex = 18;
-            this.gunaLabel4.Text = "REJECTED";
-            // 
             // aIDDataGridViewTextBoxColumn
             // 
             this.aIDDataGridViewTextBoxColumn.DataPropertyName = "a_ID";
@@ -276,6 +266,16 @@ namespace FullScreenAppDemo
             // userInWithClassListBindingSource
             // 
             this.userInWithClassListBindingSource.DataSource = typeof(FullScreenAppDemo.perips.userInWithClassList);
+            // 
+            // gunaLabel4
+            // 
+            this.gunaLabel4.AutoSize = true;
+            this.gunaLabel4.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel4.Location = new System.Drawing.Point(186, 272);
+            this.gunaLabel4.Name = "gunaLabel4";
+            this.gunaLabel4.Size = new System.Drawing.Size(143, 37);
+            this.gunaLabel4.TabIndex = 18;
+            this.gunaLabel4.Text = "REJECTED";
             // 
             // gunaPictureBox1
             // 

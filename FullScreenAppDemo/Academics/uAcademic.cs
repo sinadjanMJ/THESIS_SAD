@@ -120,17 +120,43 @@ namespace FullScreenAppDemo
 
         private void dgvClass_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+
             try
             {
                 if (dgvClass.SelectedRows.Count > 0)
                 {
                     classID = Int32.Parse(dgvClass.SelectedRows[0].Cells[0].Value.ToString());
+                    loadAcceptedGrade();
                 }
             }
             catch
             {
                 MessageBox.Show("Error occured at dgvClass_CellClick");
             }
+        }
+        private void loadAcceptedGrade()
+        {
+            var res = (
+                from asb in _context.assignSubjects
+                join tg in _context.transactionGrades on asb.a_id.ToString() equals tg.a_ID
+                join sub in _context.S_Subject on asb.a_subjectID equals sub.SubjectID.ToString()
+                join ins in _context.Instructors on asb.a_instructorID equals ins.InstructorID.ToString()
+                join cl in _context.Class_S on asb.a_classID equals cl.ClassID.ToString()
+                where cl.ClassID == classID && tg.status_Registrar == "accepted"
+
+                select new uDeanListGrade
+                {
+                    a_ID = tg.a_ID,
+                    SubjectID = sub.SubjectID,
+                    Subject = sub.SubjectName,
+                    instructorID = asb.a_instructorID,
+                    instructor = ins.Instructor_fname + " " + ins.Instructor_mname + " " + ins.Instructor_lname,
+                    SEMESTER = asb.a_semester
+                }
+
+                ).ToList();
+
+            dgvSubs.DataSource = res;
         }
 
         private void dgvClass_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

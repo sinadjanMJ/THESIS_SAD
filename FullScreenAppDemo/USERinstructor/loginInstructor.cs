@@ -51,5 +51,17 @@ namespace FullScreenAppDemo
             }
            
         }
+
+        private void CloseBTN_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            SelectUserForm mj = new SelectUserForm();
+            mj.Show();
+        }
+
+        private void MinimizedBTN_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }

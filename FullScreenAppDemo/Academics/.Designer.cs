@@ -31,6 +31,9 @@ namespace FullScreenAppDemo
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(uAcademic));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -40,13 +43,19 @@ namespace FullScreenAppDemo
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.uipanel = new System.Windows.Forms.Panel();
             this.gunaCirclePictureBox2 = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.label16 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
+            this.dgvSubs = new Guna.UI.WinForms.GunaDataGridView();
+            this.aIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subjectIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subjectDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.instructorIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.instructorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sEMESTERDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uDeanListGradeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
             this.dgvClass = new Guna.UI.WinForms.GunaDataGridView();
             this.classIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,26 +72,17 @@ namespace FullScreenAppDemo
             this.departmentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.departmentNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
-            this.dgvSubs = new Guna.UI.WinForms.GunaDataGridView();
-            this.uDeanListGradeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.aIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subjectIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subjectDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.instructorIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.instructorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sEMESTERDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.uipanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSubs)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uDeanListGradeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClass)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.classSBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCourseList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDepartmentList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSubs)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uDeanListGradeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // uipanel
@@ -132,6 +132,133 @@ namespace FullScreenAppDemo
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1054, 513);
             this.panel1.TabIndex = 0;
+            // 
+            // gunaLabel4
+            // 
+            this.gunaLabel4.AutoSize = true;
+            this.gunaLabel4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel4.Location = new System.Drawing.Point(576, 274);
+            this.gunaLabel4.Name = "gunaLabel4";
+            this.gunaLabel4.Size = new System.Drawing.Size(156, 21);
+            this.gunaLabel4.TabIndex = 14;
+            this.gunaLabel4.Text = "ACCEPTED GRADES";
+            // 
+            // dgvSubs
+            // 
+            this.dgvSubs.AllowUserToAddRows = false;
+            this.dgvSubs.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvSubs.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvSubs.AutoGenerateColumns = false;
+            this.dgvSubs.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvSubs.BackgroundColor = System.Drawing.Color.White;
+            this.dgvSubs.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvSubs.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvSubs.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSubs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvSubs.ColumnHeadersHeight = 21;
+            this.dgvSubs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.aIDDataGridViewTextBoxColumn,
+            this.subjectIDDataGridViewTextBoxColumn,
+            this.subjectDataGridViewTextBoxColumn,
+            this.instructorIDDataGridViewTextBoxColumn,
+            this.instructorDataGridViewTextBoxColumn,
+            this.sEMESTERDataGridViewTextBoxColumn});
+            this.dgvSubs.DataSource = this.uDeanListGradeBindingSource;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSubs.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvSubs.EnableHeadersVisualStyles = false;
+            this.dgvSubs.GridColor = System.Drawing.Color.Gray;
+            this.dgvSubs.Location = new System.Drawing.Point(580, 299);
+            this.dgvSubs.Name = "dgvSubs";
+            this.dgvSubs.ReadOnly = true;
+            this.dgvSubs.RowHeadersVisible = false;
+            this.dgvSubs.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvSubs.Size = new System.Drawing.Size(443, 150);
+            this.dgvSubs.TabIndex = 13;
+            this.dgvSubs.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
+            this.dgvSubs.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvSubs.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dgvSubs.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dgvSubs.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dgvSubs.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dgvSubs.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dgvSubs.ThemeStyle.GridColor = System.Drawing.Color.Gray;
+            this.dgvSubs.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.Maroon;
+            this.dgvSubs.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvSubs.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvSubs.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.Gold;
+            this.dgvSubs.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgvSubs.ThemeStyle.HeaderStyle.Height = 21;
+            this.dgvSubs.ThemeStyle.ReadOnly = true;
+            this.dgvSubs.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvSubs.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvSubs.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.dgvSubs.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvSubs.ThemeStyle.RowsStyle.Height = 22;
+            this.dgvSubs.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvSubs.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvSubs.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSubs_CellClick);
+            this.dgvSubs.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSubs_CellDoubleClick);
+            // 
+            // aIDDataGridViewTextBoxColumn
+            // 
+            this.aIDDataGridViewTextBoxColumn.DataPropertyName = "a_ID";
+            this.aIDDataGridViewTextBoxColumn.HeaderText = "a_ID";
+            this.aIDDataGridViewTextBoxColumn.Name = "aIDDataGridViewTextBoxColumn";
+            this.aIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // subjectIDDataGridViewTextBoxColumn
+            // 
+            this.subjectIDDataGridViewTextBoxColumn.DataPropertyName = "SubjectID";
+            this.subjectIDDataGridViewTextBoxColumn.HeaderText = "SUBJECT ID";
+            this.subjectIDDataGridViewTextBoxColumn.Name = "subjectIDDataGridViewTextBoxColumn";
+            this.subjectIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // subjectDataGridViewTextBoxColumn
+            // 
+            this.subjectDataGridViewTextBoxColumn.DataPropertyName = "Subject";
+            this.subjectDataGridViewTextBoxColumn.HeaderText = "SUBJECT";
+            this.subjectDataGridViewTextBoxColumn.Name = "subjectDataGridViewTextBoxColumn";
+            this.subjectDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // instructorIDDataGridViewTextBoxColumn
+            // 
+            this.instructorIDDataGridViewTextBoxColumn.DataPropertyName = "instructorID";
+            this.instructorIDDataGridViewTextBoxColumn.HeaderText = "INSTRUCTOR ID";
+            this.instructorIDDataGridViewTextBoxColumn.Name = "instructorIDDataGridViewTextBoxColumn";
+            this.instructorIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // instructorDataGridViewTextBoxColumn
+            // 
+            this.instructorDataGridViewTextBoxColumn.DataPropertyName = "instructor";
+            this.instructorDataGridViewTextBoxColumn.HeaderText = "INSTRUCTOR";
+            this.instructorDataGridViewTextBoxColumn.Name = "instructorDataGridViewTextBoxColumn";
+            this.instructorDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sEMESTERDataGridViewTextBoxColumn
+            // 
+            this.sEMESTERDataGridViewTextBoxColumn.DataPropertyName = "SEMESTER";
+            this.sEMESTERDataGridViewTextBoxColumn.HeaderText = "SEMESTER";
+            this.sEMESTERDataGridViewTextBoxColumn.Name = "sEMESTERDataGridViewTextBoxColumn";
+            this.sEMESTERDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // uDeanListGradeBindingSource
+            // 
+            this.uDeanListGradeBindingSource.DataSource = typeof(FullScreenAppDemo.perips.uDeanListGrade);
             // 
             // gunaLabel3
             // 
@@ -424,133 +551,6 @@ namespace FullScreenAppDemo
             // 
             this.departmentBindingSource.DataSource = typeof(FullScreenAppDemo.db.Department);
             // 
-            // gunaLabel4
-            // 
-            this.gunaLabel4.AutoSize = true;
-            this.gunaLabel4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel4.Location = new System.Drawing.Point(576, 274);
-            this.gunaLabel4.Name = "gunaLabel4";
-            this.gunaLabel4.Size = new System.Drawing.Size(156, 21);
-            this.gunaLabel4.TabIndex = 14;
-            this.gunaLabel4.Text = "ACCEPTED GRADES";
-            // 
-            // dgvSubs
-            // 
-            this.dgvSubs.AllowUserToAddRows = false;
-            this.dgvSubs.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvSubs.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvSubs.AutoGenerateColumns = false;
-            this.dgvSubs.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvSubs.BackgroundColor = System.Drawing.Color.White;
-            this.dgvSubs.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvSubs.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvSubs.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSubs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvSubs.ColumnHeadersHeight = 21;
-            this.dgvSubs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.aIDDataGridViewTextBoxColumn,
-            this.subjectIDDataGridViewTextBoxColumn,
-            this.subjectDataGridViewTextBoxColumn,
-            this.instructorIDDataGridViewTextBoxColumn,
-            this.instructorDataGridViewTextBoxColumn,
-            this.sEMESTERDataGridViewTextBoxColumn});
-            this.dgvSubs.DataSource = this.uDeanListGradeBindingSource;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSubs.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvSubs.EnableHeadersVisualStyles = false;
-            this.dgvSubs.GridColor = System.Drawing.Color.Gray;
-            this.dgvSubs.Location = new System.Drawing.Point(580, 299);
-            this.dgvSubs.Name = "dgvSubs";
-            this.dgvSubs.ReadOnly = true;
-            this.dgvSubs.RowHeadersVisible = false;
-            this.dgvSubs.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSubs.Size = new System.Drawing.Size(443, 150);
-            this.dgvSubs.TabIndex = 13;
-            this.dgvSubs.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
-            this.dgvSubs.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvSubs.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dgvSubs.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.dgvSubs.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dgvSubs.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dgvSubs.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dgvSubs.ThemeStyle.GridColor = System.Drawing.Color.Gray;
-            this.dgvSubs.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.Maroon;
-            this.dgvSubs.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvSubs.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvSubs.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.Gold;
-            this.dgvSubs.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvSubs.ThemeStyle.HeaderStyle.Height = 21;
-            this.dgvSubs.ThemeStyle.ReadOnly = true;
-            this.dgvSubs.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvSubs.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvSubs.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.dgvSubs.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgvSubs.ThemeStyle.RowsStyle.Height = 22;
-            this.dgvSubs.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvSubs.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgvSubs.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSubs_CellClick);
-            this.dgvSubs.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSubs_CellDoubleClick);
-            // 
-            // uDeanListGradeBindingSource
-            // 
-            this.uDeanListGradeBindingSource.DataSource = typeof(FullScreenAppDemo.perips.uDeanListGrade);
-            // 
-            // aIDDataGridViewTextBoxColumn
-            // 
-            this.aIDDataGridViewTextBoxColumn.DataPropertyName = "a_ID";
-            this.aIDDataGridViewTextBoxColumn.HeaderText = "a_ID";
-            this.aIDDataGridViewTextBoxColumn.Name = "aIDDataGridViewTextBoxColumn";
-            this.aIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // subjectIDDataGridViewTextBoxColumn
-            // 
-            this.subjectIDDataGridViewTextBoxColumn.DataPropertyName = "SubjectID";
-            this.subjectIDDataGridViewTextBoxColumn.HeaderText = "SUBJECT ID";
-            this.subjectIDDataGridViewTextBoxColumn.Name = "subjectIDDataGridViewTextBoxColumn";
-            this.subjectIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // subjectDataGridViewTextBoxColumn
-            // 
-            this.subjectDataGridViewTextBoxColumn.DataPropertyName = "Subject";
-            this.subjectDataGridViewTextBoxColumn.HeaderText = "SUBJECT";
-            this.subjectDataGridViewTextBoxColumn.Name = "subjectDataGridViewTextBoxColumn";
-            this.subjectDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // instructorIDDataGridViewTextBoxColumn
-            // 
-            this.instructorIDDataGridViewTextBoxColumn.DataPropertyName = "instructorID";
-            this.instructorIDDataGridViewTextBoxColumn.HeaderText = "INSTRUCTOR ID";
-            this.instructorIDDataGridViewTextBoxColumn.Name = "instructorIDDataGridViewTextBoxColumn";
-            this.instructorIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // instructorDataGridViewTextBoxColumn
-            // 
-            this.instructorDataGridViewTextBoxColumn.DataPropertyName = "instructor";
-            this.instructorDataGridViewTextBoxColumn.HeaderText = "INSTRUCTOR";
-            this.instructorDataGridViewTextBoxColumn.Name = "instructorDataGridViewTextBoxColumn";
-            this.instructorDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sEMESTERDataGridViewTextBoxColumn
-            // 
-            this.sEMESTERDataGridViewTextBoxColumn.DataPropertyName = "SEMESTER";
-            this.sEMESTERDataGridViewTextBoxColumn.HeaderText = "SEMESTER";
-            this.sEMESTERDataGridViewTextBoxColumn.Name = "sEMESTERDataGridViewTextBoxColumn";
-            this.sEMESTERDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // uAcademic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -566,14 +566,14 @@ namespace FullScreenAppDemo
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSubs)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uDeanListGradeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClass)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.classSBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCourseList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDepartmentList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSubs)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uDeanListGradeBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

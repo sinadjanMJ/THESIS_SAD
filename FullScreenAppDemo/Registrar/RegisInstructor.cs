@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -89,6 +90,35 @@ namespace FullScreenAppDemo
             InstructorImport std = new InstructorImport(this);
             std.UpdateEventHandler += F2_UpdateEventHandler1;
             std.ShowDialog();
+        }
+
+        private void guna2TextBox3_TextChanged(object sender, EventArgs e)
+        {
+            var res1 = (
+                           from ins in _context.Instructors.Where(q => DbFunctions.Like(q.Instructor_fname, "%" + guna2TextBox3.Text + "%"))
+
+                           join deps in _context.Departments
+                           on ins.Department_ID equals deps.Department_ID.ToString()
+
+                           select new InstructorWithDept
+                           {
+                               InstructorID = ins.InstructorID,
+                               Instructor_Name = ins.Instructor_fname + ", " + ins.Instructor_lname,
+                               Department_Name = deps.Department_Name
+                           }
+
+                           ).ToList();
+
+            dgvInstructorList.DataSource = res1;
+        }
+
+        private void gunaButton1_Click(object sender, EventArgs e)
+        {
+            InstructorClearance mj = new InstructorClearance();
+            mj.TopLevel = false;
+            DashboardPanel.Controls.Clear();
+            DashboardPanel.Controls.Add(mj);
+            mj.Show();
         }
     }
 }

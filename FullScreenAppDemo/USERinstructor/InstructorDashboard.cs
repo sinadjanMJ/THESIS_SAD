@@ -25,10 +25,17 @@ namespace FullScreenAppDemo
 
         private void CloseBTN_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want to Exit", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+
+            if (MessageBox.Show("Are you sure you want to Logout", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 //this.Close();
-                Application.Exit();
+
+                this.Hide();
+                SelectUserForm mj = new SelectUserForm();
+                mj.Show();
+
+
+
             }
         }
 

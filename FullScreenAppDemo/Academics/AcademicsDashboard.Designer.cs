@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AcademicsDashboard));
-            this.label15 = new System.Windows.Forms.Label();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.gunaElipsePanel4 = new Guna.UI.WinForms.GunaElipsePanel();
             this.AcademicsDashboardPanel = new System.Windows.Forms.Panel();
             this.PendingBTN = new Guna.UI.WinForms.GunaButton();
             this.gunaCirclePictureBox1 = new Guna.UI.WinForms.GunaCirclePictureBox();
@@ -49,10 +45,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.CloseBTN = new Guna.UI.WinForms.GunaButton();
-            this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            this.gunaElipsePanel4.SuspendLayout();
-            this.AcademicsDashboardPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -60,57 +52,8 @@
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(124)))), ((int)(((byte)(49)))));
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(13, 55);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(32, 33);
-            this.label15.TabIndex = 2;
-            this.label15.Text = "5";
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(124)))), ((int)(((byte)(49)))));
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(183, 16);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(40, 38);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 4;
-            this.pictureBox5.TabStop = false;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(124)))), ((int)(((byte)(49)))));
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(14, 18);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(68, 18);
-            this.label17.TabIndex = 3;
-            this.label17.Text = "Pending";
-            // 
-            // gunaElipsePanel4
-            // 
-            this.gunaElipsePanel4.BackColor = System.Drawing.Color.Transparent;
-            this.gunaElipsePanel4.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(124)))), ((int)(((byte)(49)))));
-            this.gunaElipsePanel4.Controls.Add(this.label15);
-            this.gunaElipsePanel4.Controls.Add(this.pictureBox5);
-            this.gunaElipsePanel4.Controls.Add(this.label17);
-            this.gunaElipsePanel4.Location = new System.Drawing.Point(55, 44);
-            this.gunaElipsePanel4.Name = "gunaElipsePanel4";
-            this.gunaElipsePanel4.Radius = 20;
-            this.gunaElipsePanel4.Size = new System.Drawing.Size(241, 140);
-            this.gunaElipsePanel4.TabIndex = 13;
-            // 
             // AcademicsDashboardPanel
             // 
-            this.AcademicsDashboardPanel.Controls.Add(this.gunaElipsePanel4);
             this.AcademicsDashboardPanel.Location = new System.Drawing.Point(193, 52);
             this.AcademicsDashboardPanel.Name = "AcademicsDashboardPanel";
             this.AcademicsDashboardPanel.Size = new System.Drawing.Size(1175, 733);
@@ -163,9 +106,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(29, 78);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 16);
+            this.label1.Size = new System.Drawing.Size(151, 16);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Michel Jay Gwapo";
+            this.label1.Text = "Michel Jay Sinadjan";
             // 
             // ApprovedBTN
             // 
@@ -248,7 +191,6 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel2.Controls.Add(this.gunaButton1);
             this.panel2.Controls.Add(this.ApprovedBTN);
             this.panel2.Controls.Add(this.PendingBTN);
             this.panel2.Controls.Add(this.DashboardBTN);
@@ -290,21 +232,21 @@
             this.label3.ForeColor = System.Drawing.Color.Gold;
             this.label3.Location = new System.Drawing.Point(60, 27);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(160, 15);
+            this.label3.Size = new System.Drawing.Size(251, 15);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Amping permi , nikaon naka";
+            this.label3.Text = "Work hard in silence let success be the noise";
             // 
             // label18
             // 
             this.label18.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.Gold;
-            this.label18.Location = new System.Drawing.Point(653, 19);
+            this.label18.Location = new System.Drawing.Point(652, 12);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(185, 16);
+            this.label18.Size = new System.Drawing.Size(98, 25);
             this.label18.TabIndex = 2;
-            this.label18.Text = "Welcome to Mga Palaatik";
+            this.label18.Text = "Welcome ";
             // 
             // label2
             // 
@@ -313,7 +255,7 @@
             this.label2.ForeColor = System.Drawing.Color.Gold;
             this.label2.Location = new System.Drawing.Point(60, 12);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(192, 16);
+            this.label2.Size = new System.Drawing.Size(210, 16);
             this.label2.TabIndex = 2;
             this.label2.Text = "CRMC STUDENT PORTAL";
             // 
@@ -366,33 +308,6 @@
             this.CloseBTN.TabIndex = 4;
             this.CloseBTN.Click += new System.EventHandler(this.CloseBTN_Click);
             // 
-            // gunaButton1
-            // 
-            this.gunaButton1.AnimationHoverSpeed = 0.07F;
-            this.gunaButton1.AnimationSpeed = 0.03F;
-            this.gunaButton1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.gunaButton1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(170)))), ((int)(((byte)(231)))));
-            this.gunaButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.gunaButton1.ForeColor = System.Drawing.Color.Gray;
-            this.gunaButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaButton1.Image")));
-            this.gunaButton1.ImageOffsetX = 5;
-            this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton1.Location = new System.Drawing.Point(9, 353);
-            this.gunaButton1.Name = "gunaButton1";
-            this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(170)))), ((int)(((byte)(231)))));
-            this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton1.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton1.OnHoverImage = ((System.Drawing.Image)(resources.GetObject("gunaButton1.OnHoverImage")));
-            this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton1.Radius = 20;
-            this.gunaButton1.Size = new System.Drawing.Size(177, 45);
-            this.gunaButton1.TabIndex = 11;
-            this.gunaButton1.Text = "Pending";
-            this.gunaButton1.TextOffsetX = 10;
-            // 
             // AcademicsDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -404,10 +319,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AcademicsDashboard";
             this.Text = "AcademicsDashboard";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            this.gunaElipsePanel4.ResumeLayout(false);
-            this.gunaElipsePanel4.PerformLayout();
-            this.AcademicsDashboardPanel.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.AcademicsDashboard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -420,10 +332,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Label label17;
-        private Guna.UI.WinForms.GunaElipsePanel gunaElipsePanel4;
         private System.Windows.Forms.Panel AcademicsDashboardPanel;
         private Guna.UI.WinForms.GunaButton PendingBTN;
         private Guna.UI.WinForms.GunaCirclePictureBox gunaCirclePictureBox1;
@@ -440,6 +348,5 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
         private Guna.UI.WinForms.GunaButton CloseBTN;
-        private Guna.UI.WinForms.GunaButton gunaButton1;
     }
 }

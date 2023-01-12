@@ -37,7 +37,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.DeanBTN = new Guna.UI.WinForms.GunaButton();
             this.StudentBTN = new Guna.UI.WinForms.GunaButton();
@@ -165,7 +164,6 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.gunaButton1);
             this.panel2.Controls.Add(this.DeanBTN);
             this.panel2.Controls.Add(this.StudentBTN);
@@ -177,16 +175,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(195, 736);
             this.panel2.TabIndex = 5;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(43, 652);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // gunaButton1
             // 
@@ -423,6 +411,5 @@
         private Guna.UI.WinForms.GunaButton MinimizedBTN;
         private Guna.UI.WinForms.GunaButton gunaButton1;
         public System.Windows.Forms.Panel DashboardPanel;
-        private System.Windows.Forms.Button button1;
     }
 }

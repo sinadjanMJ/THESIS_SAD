@@ -30,6 +30,7 @@ namespace FullScreenAppDemo
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(uAcademicPendings));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -42,55 +43,54 @@ namespace FullScreenAppDemo
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(uAcademicPendings));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.uAcademicPendingsClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dgvPendingList = new Guna.UI.WinForms.GunaDataGridView();
-            this.gunaLabel5 = new Guna.UI.WinForms.GunaLabel();
-            this.uAcademicPendingsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dgvDepartmentList = new Guna.UI.WinForms.GunaDataGridView();
-            this.courseBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
-            this.dgvCourseList = new Guna.UI.WinForms.GunaDataGridView();
-            this.classSBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
-            this.dgvClass = new Guna.UI.WinForms.GunaDataGridView();
-            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.gunaCirclePictureBox2 = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.departmentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.departmentNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.departmentBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.courseIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.coursenameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.courseBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.classIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.classNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.yearLevelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.classSBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.uAcademicPendingsClassBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.dgvPendingList = new Guna.UI.WinForms.GunaDataGridView();
             this.classIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cLASSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.yearLevelDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.semesterDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uAcademicPendingsClassBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.gunaLabel5 = new Guna.UI.WinForms.GunaLabel();
+            this.dgvDepartmentList = new Guna.UI.WinForms.GunaDataGridView();
+            this.departmentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.departmentNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.departmentBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
+            this.dgvCourseList = new Guna.UI.WinForms.GunaDataGridView();
+            this.courseIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coursenameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.courseBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
+            this.dgvClass = new Guna.UI.WinForms.GunaDataGridView();
+            this.classIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.classNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.yearLevelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.classSBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
+            this.uAcademicPendingsClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.uAcademicPendingsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.courseBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.classSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.uAcademicPendingsClassBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPendingList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uAcademicPendingsClassBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDepartmentList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCourseList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.courseBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClass)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.classSBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uAcademicPendingsClassBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uAcademicPendingsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDepartmentList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCourseList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.classSBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClass)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.courseBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.classSBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uAcademicPendingsClassBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -102,6 +102,29 @@ namespace FullScreenAppDemo
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1175, 733);
             this.panel1.TabIndex = 0;
+            // 
+            // gunaCirclePictureBox2
+            // 
+            this.gunaCirclePictureBox2.BaseColor = System.Drawing.Color.White;
+            this.gunaCirclePictureBox2.ErrorImage = null;
+            this.gunaCirclePictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("gunaCirclePictureBox2.Image")));
+            this.gunaCirclePictureBox2.Location = new System.Drawing.Point(175, 87);
+            this.gunaCirclePictureBox2.Name = "gunaCirclePictureBox2";
+            this.gunaCirclePictureBox2.Size = new System.Drawing.Size(92, 91);
+            this.gunaCirclePictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.gunaCirclePictureBox2.TabIndex = 90;
+            this.gunaCirclePictureBox2.TabStop = false;
+            this.gunaCirclePictureBox2.UseTransfarantBackground = false;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(273, 109);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(495, 46);
+            this.label16.TabIndex = 89;
+            this.label16.Text = "Academic Pending Grades";
             // 
             // panel2
             // 
@@ -185,6 +208,38 @@ namespace FullScreenAppDemo
             this.dgvPendingList.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvPendingList.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
+            // classIDDataGridViewTextBoxColumn1
+            // 
+            this.classIDDataGridViewTextBoxColumn1.DataPropertyName = "classID";
+            this.classIDDataGridViewTextBoxColumn1.HeaderText = "CLASS ID";
+            this.classIDDataGridViewTextBoxColumn1.Name = "classIDDataGridViewTextBoxColumn1";
+            this.classIDDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // cLASSDataGridViewTextBoxColumn
+            // 
+            this.cLASSDataGridViewTextBoxColumn.DataPropertyName = "CLASS";
+            this.cLASSDataGridViewTextBoxColumn.HeaderText = "CLASS";
+            this.cLASSDataGridViewTextBoxColumn.Name = "cLASSDataGridViewTextBoxColumn";
+            this.cLASSDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // yearLevelDataGridViewTextBoxColumn1
+            // 
+            this.yearLevelDataGridViewTextBoxColumn1.DataPropertyName = "yearLevel";
+            this.yearLevelDataGridViewTextBoxColumn1.HeaderText = "YEAR LEVEL";
+            this.yearLevelDataGridViewTextBoxColumn1.Name = "yearLevelDataGridViewTextBoxColumn1";
+            this.yearLevelDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // semesterDataGridViewTextBoxColumn
+            // 
+            this.semesterDataGridViewTextBoxColumn.DataPropertyName = "semester";
+            this.semesterDataGridViewTextBoxColumn.HeaderText = "SEMESTER";
+            this.semesterDataGridViewTextBoxColumn.Name = "semesterDataGridViewTextBoxColumn";
+            this.semesterDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // uAcademicPendingsClassBindingSource1
+            // 
+            this.uAcademicPendingsClassBindingSource1.DataSource = typeof(FullScreenAppDemo.perips.uAcademicPendingsClass);
+            // 
             // gunaLabel5
             // 
             this.gunaLabel5.AutoSize = true;
@@ -261,6 +316,24 @@ namespace FullScreenAppDemo
             this.dgvDepartmentList.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvDepartmentList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDepartmentList_CellClick);
             // 
+            // departmentIDDataGridViewTextBoxColumn
+            // 
+            this.departmentIDDataGridViewTextBoxColumn.DataPropertyName = "Department_ID";
+            this.departmentIDDataGridViewTextBoxColumn.HeaderText = "Department_ID";
+            this.departmentIDDataGridViewTextBoxColumn.Name = "departmentIDDataGridViewTextBoxColumn";
+            this.departmentIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // departmentNameDataGridViewTextBoxColumn
+            // 
+            this.departmentNameDataGridViewTextBoxColumn.DataPropertyName = "Department_Name";
+            this.departmentNameDataGridViewTextBoxColumn.HeaderText = "Department_Name";
+            this.departmentNameDataGridViewTextBoxColumn.Name = "departmentNameDataGridViewTextBoxColumn";
+            this.departmentNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // departmentBindingSource1
+            // 
+            this.departmentBindingSource1.DataSource = typeof(FullScreenAppDemo.db.Department);
+            // 
             // gunaLabel2
             // 
             this.gunaLabel2.AutoSize = true;
@@ -336,6 +409,24 @@ namespace FullScreenAppDemo
             this.dgvCourseList.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvCourseList.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvCourseList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCourseList_CellClick);
+            // 
+            // courseIDDataGridViewTextBoxColumn
+            // 
+            this.courseIDDataGridViewTextBoxColumn.DataPropertyName = "CourseID";
+            this.courseIDDataGridViewTextBoxColumn.HeaderText = "CourseID";
+            this.courseIDDataGridViewTextBoxColumn.Name = "courseIDDataGridViewTextBoxColumn";
+            this.courseIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // coursenameDataGridViewTextBoxColumn
+            // 
+            this.coursenameDataGridViewTextBoxColumn.DataPropertyName = "Course_name";
+            this.coursenameDataGridViewTextBoxColumn.HeaderText = "Course_name";
+            this.coursenameDataGridViewTextBoxColumn.Name = "coursenameDataGridViewTextBoxColumn";
+            this.coursenameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // courseBindingSource1
+            // 
+            this.courseBindingSource1.DataSource = typeof(FullScreenAppDemo.db.Course);
             // 
             // gunaLabel3
             // 
@@ -415,75 +506,6 @@ namespace FullScreenAppDemo
             this.dgvClass.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClass_CellClick);
             this.dgvClass.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClass_CellDoubleClick);
             // 
-            // gunaLabel1
-            // 
-            this.gunaLabel1.AutoSize = true;
-            this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel1.Location = new System.Drawing.Point(46, 34);
-            this.gunaLabel1.Name = "gunaLabel1";
-            this.gunaLabel1.Size = new System.Drawing.Size(125, 21);
-            this.gunaLabel1.TabIndex = 21;
-            this.gunaLabel1.Text = "DEPARTMENTS";
-            // 
-            // gunaCirclePictureBox2
-            // 
-            this.gunaCirclePictureBox2.BaseColor = System.Drawing.Color.White;
-            this.gunaCirclePictureBox2.ErrorImage = null;
-            this.gunaCirclePictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("gunaCirclePictureBox2.Image")));
-            this.gunaCirclePictureBox2.Location = new System.Drawing.Point(175, 87);
-            this.gunaCirclePictureBox2.Name = "gunaCirclePictureBox2";
-            this.gunaCirclePictureBox2.Size = new System.Drawing.Size(92, 91);
-            this.gunaCirclePictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.gunaCirclePictureBox2.TabIndex = 90;
-            this.gunaCirclePictureBox2.TabStop = false;
-            this.gunaCirclePictureBox2.UseTransfarantBackground = false;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(273, 109);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(495, 46);
-            this.label16.TabIndex = 89;
-            this.label16.Text = "Academic Pending Grades";
-            // 
-            // departmentIDDataGridViewTextBoxColumn
-            // 
-            this.departmentIDDataGridViewTextBoxColumn.DataPropertyName = "Department_ID";
-            this.departmentIDDataGridViewTextBoxColumn.HeaderText = "Department_ID";
-            this.departmentIDDataGridViewTextBoxColumn.Name = "departmentIDDataGridViewTextBoxColumn";
-            this.departmentIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // departmentNameDataGridViewTextBoxColumn
-            // 
-            this.departmentNameDataGridViewTextBoxColumn.DataPropertyName = "Department_Name";
-            this.departmentNameDataGridViewTextBoxColumn.HeaderText = "Department_Name";
-            this.departmentNameDataGridViewTextBoxColumn.Name = "departmentNameDataGridViewTextBoxColumn";
-            this.departmentNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // departmentBindingSource1
-            // 
-            this.departmentBindingSource1.DataSource = typeof(FullScreenAppDemo.db.Department);
-            // 
-            // courseIDDataGridViewTextBoxColumn
-            // 
-            this.courseIDDataGridViewTextBoxColumn.DataPropertyName = "CourseID";
-            this.courseIDDataGridViewTextBoxColumn.HeaderText = "CourseID";
-            this.courseIDDataGridViewTextBoxColumn.Name = "courseIDDataGridViewTextBoxColumn";
-            this.courseIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // coursenameDataGridViewTextBoxColumn
-            // 
-            this.coursenameDataGridViewTextBoxColumn.DataPropertyName = "Course_name";
-            this.coursenameDataGridViewTextBoxColumn.HeaderText = "Course_name";
-            this.coursenameDataGridViewTextBoxColumn.Name = "coursenameDataGridViewTextBoxColumn";
-            this.coursenameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // courseBindingSource1
-            // 
-            this.courseBindingSource1.DataSource = typeof(FullScreenAppDemo.db.Course);
-            // 
             // classIDDataGridViewTextBoxColumn
             // 
             this.classIDDataGridViewTextBoxColumn.DataPropertyName = "ClassID";
@@ -509,37 +531,15 @@ namespace FullScreenAppDemo
             // 
             this.classSBindingSource1.DataSource = typeof(FullScreenAppDemo.db.Class_S);
             // 
-            // uAcademicPendingsClassBindingSource1
+            // gunaLabel1
             // 
-            this.uAcademicPendingsClassBindingSource1.DataSource = typeof(FullScreenAppDemo.perips.uAcademicPendingsClass);
-            // 
-            // classIDDataGridViewTextBoxColumn1
-            // 
-            this.classIDDataGridViewTextBoxColumn1.DataPropertyName = "classID";
-            this.classIDDataGridViewTextBoxColumn1.HeaderText = "CLASS ID";
-            this.classIDDataGridViewTextBoxColumn1.Name = "classIDDataGridViewTextBoxColumn1";
-            this.classIDDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // cLASSDataGridViewTextBoxColumn
-            // 
-            this.cLASSDataGridViewTextBoxColumn.DataPropertyName = "CLASS";
-            this.cLASSDataGridViewTextBoxColumn.HeaderText = "CLASS";
-            this.cLASSDataGridViewTextBoxColumn.Name = "cLASSDataGridViewTextBoxColumn";
-            this.cLASSDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // yearLevelDataGridViewTextBoxColumn1
-            // 
-            this.yearLevelDataGridViewTextBoxColumn1.DataPropertyName = "yearLevel";
-            this.yearLevelDataGridViewTextBoxColumn1.HeaderText = "YEAR LEVEL";
-            this.yearLevelDataGridViewTextBoxColumn1.Name = "yearLevelDataGridViewTextBoxColumn1";
-            this.yearLevelDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // semesterDataGridViewTextBoxColumn
-            // 
-            this.semesterDataGridViewTextBoxColumn.DataPropertyName = "semester";
-            this.semesterDataGridViewTextBoxColumn.HeaderText = "SEMESTER";
-            this.semesterDataGridViewTextBoxColumn.Name = "semesterDataGridViewTextBoxColumn";
-            this.semesterDataGridViewTextBoxColumn.ReadOnly = true;
+            this.gunaLabel1.AutoSize = true;
+            this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel1.Location = new System.Drawing.Point(46, 34);
+            this.gunaLabel1.Name = "gunaLabel1";
+            this.gunaLabel1.Size = new System.Drawing.Size(125, 21);
+            this.gunaLabel1.TabIndex = 21;
+            this.gunaLabel1.Text = "DEPARTMENTS";
             // 
             // uAcademicPendings
             // 
@@ -553,22 +553,22 @@ namespace FullScreenAppDemo
             this.Load += new System.EventHandler(this.uAcademicPendings_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.uAcademicPendingsClassBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPendingList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uAcademicPendingsClassBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDepartmentList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCourseList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.courseBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClass)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.classSBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uAcademicPendingsClassBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.uAcademicPendingsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDepartmentList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCourseList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.classSBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClass)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.courseBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.classSBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uAcademicPendingsClassBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }

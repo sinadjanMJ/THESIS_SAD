@@ -32,6 +32,14 @@ namespace FullScreenAppDemo
             loadDepartment();
             pendingLog();
         }
+      
+        private void loadDepartment()
+        {
+            var res = _context.Departments.ToList();
+            ListtoDataTableConverter converter = new ListtoDataTableConverter();
+            DataTable dt = converter.ToDataTable(res);
+            dgvDepartmentList.DataSource = dt;
+        }
         private void pendingLog()
         {
             var res = (
@@ -59,13 +67,6 @@ namespace FullScreenAppDemo
             dgvPendingList.DataSource = res;
         }
 
-        private void loadDepartment()
-        {
-            var res = _context.Departments.ToList();
-            ListtoDataTableConverter converter = new ListtoDataTableConverter();
-            DataTable dt = converter.ToDataTable(res);
-            dgvDepartmentList.DataSource = dt;
-        }
 
         private void loadCourse()
         {
@@ -151,17 +152,13 @@ namespace FullScreenAppDemo
 
         private void dgvClass_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
-            {
+            
                 uAcademicGradePendings mj = new uAcademicGradePendings();
                 mj.TopLevel = false;
                 panel1.Controls.Clear();
                 panel1.Controls.Add(mj);
                 mj.Show();
-            }
-            catch 
-            {
-            }
+           
         }
     }
 }

@@ -31,6 +31,7 @@ namespace FullScreenAppDemo
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.TabControl tabControl1;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisSubject));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -38,8 +39,9 @@ namespace FullScreenAppDemo
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisSubject));
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.gunaCirclePictureBox1 = new Guna.UI.WinForms.GunaCirclePictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.gunaDataGridView1 = new Guna.UI.WinForms.GunaDataGridView();
             this.CANC = new Guna.UI.WinForms.GunaButton();
@@ -68,6 +70,7 @@ namespace FullScreenAppDemo
             this.textSubjectName = new Guna.UI.WinForms.GunaTextBox();
             this.textSubjectCode = new Guna.UI.WinForms.GunaTextBox();
             this.btnCreateSub = new Guna.UI.WinForms.GunaButton();
+            this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
             this.studentPortalDataSet1 = new FullScreenAppDemo.studentPortalDataSet1();
             this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.departmentTableAdapter = new FullScreenAppDemo.studentPortalDataSet1TableAdapters.DepartmentTableAdapter();
@@ -90,18 +93,17 @@ namespace FullScreenAppDemo
             this.sSubjectBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.courseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sSubjectBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
-            this.gunaCirclePictureBox1 = new Guna.UI.WinForms.GunaCirclePictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
             tabControl1 = new System.Windows.Forms.TabControl();
             tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaDataGridView1)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentPortalDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sSubjectBindingSource)).BeginInit();
@@ -115,8 +117,6 @@ namespace FullScreenAppDemo
             ((System.ComponentModel.ISupportInitialize)(this.sSubjectBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sSubjectBindingSource3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -153,6 +153,29 @@ namespace FullScreenAppDemo
             this.tabPage2.Size = new System.Drawing.Size(1152, 682);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "SECTION";
+            // 
+            // gunaCirclePictureBox1
+            // 
+            this.gunaCirclePictureBox1.BaseColor = System.Drawing.Color.White;
+            this.gunaCirclePictureBox1.ErrorImage = null;
+            this.gunaCirclePictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("gunaCirclePictureBox1.Image")));
+            this.gunaCirclePictureBox1.Location = new System.Drawing.Point(82, 14);
+            this.gunaCirclePictureBox1.Name = "gunaCirclePictureBox1";
+            this.gunaCirclePictureBox1.Size = new System.Drawing.Size(92, 91);
+            this.gunaCirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.gunaCirclePictureBox1.TabIndex = 32;
+            this.gunaCirclePictureBox1.TabStop = false;
+            this.gunaCirclePictureBox1.UseTransfarantBackground = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(180, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(354, 46);
+            this.label1.TabIndex = 31;
+            this.label1.Text = "Section Data Form";
             // 
             // panel2
             // 
@@ -312,7 +335,7 @@ namespace FullScreenAppDemo
             "2nd Year",
             "3rd Year",
             "4thYear"});
-            this.cBYear.Location = new System.Drawing.Point(673, 520);
+            this.cBYear.Location = new System.Drawing.Point(648, 519);
             this.cBYear.Name = "cBYear";
             this.cBYear.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cBYear.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -332,7 +355,7 @@ namespace FullScreenAppDemo
             this.cBCourse.ForeColor = System.Drawing.Color.Black;
             this.cBCourse.FormattingEnabled = true;
             this.cBCourse.ItemHeight = 25;
-            this.cBCourse.Location = new System.Drawing.Point(142, 517);
+            this.cBCourse.Location = new System.Drawing.Point(117, 516);
             this.cBCourse.Name = "cBCourse";
             this.cBCourse.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cBCourse.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -352,7 +375,7 @@ namespace FullScreenAppDemo
             this.cBDepartment.ForeColor = System.Drawing.Color.Black;
             this.cBDepartment.FormattingEnabled = true;
             this.cBDepartment.ItemHeight = 25;
-            this.cBDepartment.Location = new System.Drawing.Point(142, 448);
+            this.cBDepartment.Location = new System.Drawing.Point(117, 447);
             this.cBDepartment.Name = "cBDepartment";
             this.cBDepartment.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cBDepartment.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -371,7 +394,7 @@ namespace FullScreenAppDemo
             this.textC_name.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.textC_name.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.textC_name.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textC_name.Location = new System.Drawing.Point(139, 380);
+            this.textC_name.Location = new System.Drawing.Point(114, 379);
             this.textC_name.Name = "textC_name";
             this.textC_name.PasswordChar = '\0';
             this.textC_name.Radius = 5;
@@ -411,7 +434,7 @@ namespace FullScreenAppDemo
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(670, 493);
+            this.label5.Location = new System.Drawing.Point(645, 492);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(94, 21);
             this.label5.TabIndex = 21;
@@ -421,7 +444,7 @@ namespace FullScreenAppDemo
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(139, 492);
+            this.label6.Location = new System.Drawing.Point(114, 491);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(70, 21);
             this.label6.TabIndex = 20;
@@ -431,7 +454,7 @@ namespace FullScreenAppDemo
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(139, 423);
+            this.label7.Location = new System.Drawing.Point(114, 422);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(111, 21);
             this.label7.TabIndex = 19;
@@ -441,7 +464,7 @@ namespace FullScreenAppDemo
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(136, 355);
+            this.label8.Location = new System.Drawing.Point(111, 354);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(125, 21);
             this.label8.TabIndex = 18;
@@ -769,6 +792,17 @@ namespace FullScreenAppDemo
             this.btnCreateSub.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnCreateSub.Click += new System.EventHandler(this.btnCreateSub_Click_2);
             // 
+            // gunaPictureBox1
+            // 
+            this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
+            this.gunaPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("gunaPictureBox1.Image")));
+            this.gunaPictureBox1.Location = new System.Drawing.Point(739, -32);
+            this.gunaPictureBox1.Name = "gunaPictureBox1";
+            this.gunaPictureBox1.Size = new System.Drawing.Size(417, 385);
+            this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.gunaPictureBox1.TabIndex = 85;
+            this.gunaPictureBox1.TabStop = false;
+            // 
             // studentPortalDataSet1
             // 
             this.studentPortalDataSet1.DataSetName = "studentPortalDataSet1";
@@ -875,40 +909,6 @@ namespace FullScreenAppDemo
             // 
             this.sSubjectBindingSource3.DataSource = typeof(FullScreenAppDemo.db.S_Subject);
             // 
-            // gunaCirclePictureBox1
-            // 
-            this.gunaCirclePictureBox1.BaseColor = System.Drawing.Color.White;
-            this.gunaCirclePictureBox1.ErrorImage = null;
-            this.gunaCirclePictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("gunaCirclePictureBox1.Image")));
-            this.gunaCirclePictureBox1.Location = new System.Drawing.Point(82, 14);
-            this.gunaCirclePictureBox1.Name = "gunaCirclePictureBox1";
-            this.gunaCirclePictureBox1.Size = new System.Drawing.Size(92, 91);
-            this.gunaCirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.gunaCirclePictureBox1.TabIndex = 32;
-            this.gunaCirclePictureBox1.TabStop = false;
-            this.gunaCirclePictureBox1.UseTransfarantBackground = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(180, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(354, 46);
-            this.label1.TabIndex = 31;
-            this.label1.Text = "Section Data Form";
-            // 
-            // gunaPictureBox1
-            // 
-            this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
-            this.gunaPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("gunaPictureBox1.Image")));
-            this.gunaPictureBox1.Location = new System.Drawing.Point(739, -32);
-            this.gunaPictureBox1.Name = "gunaPictureBox1";
-            this.gunaPictureBox1.Size = new System.Drawing.Size(417, 385);
-            this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.gunaPictureBox1.TabIndex = 85;
-            this.gunaPictureBox1.TabStop = false;
-            // 
             // RegisSubject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -922,6 +922,7 @@ namespace FullScreenAppDemo
             tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gunaDataGridView1)).EndInit();
             this.tabPage1.ResumeLayout(false);
@@ -929,6 +930,7 @@ namespace FullScreenAppDemo
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentPortalDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sSubjectBindingSource)).EndInit();
@@ -942,8 +944,6 @@ namespace FullScreenAppDemo
             ((System.ComponentModel.ISupportInitialize)(this.sSubjectBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sSubjectBindingSource3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
