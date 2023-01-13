@@ -85,7 +85,7 @@ namespace FullScreenAppDemo
                                     loadAssignment();
                                     clear();
                                     MessageBox.Show("Succesfully Added", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                                    this.Hide();
 
                                 }
                                 else // IT MEANS THERE IS AN EXISTING SUBJECT IN THE SECTION FOUND
@@ -156,6 +156,7 @@ namespace FullScreenAppDemo
 
                                             MessageBox.Show("Succesfully Updated", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                             btnDelete.Visible = false;
+                                            this.Hide();
 
 
 
@@ -186,6 +187,7 @@ namespace FullScreenAppDemo
                                         btnSaveAssign.Text = "ADD SUBJECT";
                                         btnBack.Text = "GO BACK";
                                         btnDelete.Visible = false;
+                                        this.Hide();
 
 
 

@@ -44,6 +44,11 @@ namespace FullScreenAppDemo
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.gunaDataGridView1 = new Guna.UI.WinForms.GunaDataGridView();
+            this.classIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.classNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.departmentNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.courseNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sectionWithDepWithCourseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.CANC = new Guna.UI.WinForms.GunaButton();
             this.btnDelete = new Guna.UI.WinForms.GunaButton();
             this.cBYear = new Guna.UI.WinForms.GunaComboBox();
@@ -58,6 +63,11 @@ namespace FullScreenAppDemo
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvSubList = new Guna.UI.WinForms.GunaDataGridView();
+            this.subjectIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subjectCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subjectNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subjectUnitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sSubjectBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.btnDeleteS = new Guna.UI.WinForms.GunaButton();
             this.btnCancelUpdate = new Guna.UI.WinForms.GunaButton();
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
@@ -76,16 +86,6 @@ namespace FullScreenAppDemo
             this.departmentTableAdapter = new FullScreenAppDemo.studentPortalDataSet1TableAdapters.DepartmentTableAdapter();
             this.sSubjectBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.classSBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.classIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.classNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.departmentNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.courseNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sectionWithDepWithCourseBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.subjectIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subjectCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subjectNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subjectUnitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sSubjectBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.classSBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.courseImpsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.departmentBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -99,17 +99,17 @@ namespace FullScreenAppDemo
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaDataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sectionWithDepWithCourseBindingSource)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sSubjectBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentPortalDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sSubjectBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.classSBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sectionWithDepWithCourseBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sSubjectBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.classSBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseImpsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource1)).BeginInit();
@@ -263,6 +263,38 @@ namespace FullScreenAppDemo
             this.gunaDataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.gunaDataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gunaDataGridView1_CellClick);
             this.gunaDataGridView1.SelectionChanged += new System.EventHandler(this.gunaDataGridView1_SelectionChanged);
+            // 
+            // classIDDataGridViewTextBoxColumn
+            // 
+            this.classIDDataGridViewTextBoxColumn.DataPropertyName = "classID";
+            this.classIDDataGridViewTextBoxColumn.HeaderText = "CLASS ID";
+            this.classIDDataGridViewTextBoxColumn.Name = "classIDDataGridViewTextBoxColumn";
+            this.classIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // classNameDataGridViewTextBoxColumn
+            // 
+            this.classNameDataGridViewTextBoxColumn.DataPropertyName = "className";
+            this.classNameDataGridViewTextBoxColumn.HeaderText = "CLASS NAME";
+            this.classNameDataGridViewTextBoxColumn.Name = "classNameDataGridViewTextBoxColumn";
+            this.classNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // departmentNameDataGridViewTextBoxColumn
+            // 
+            this.departmentNameDataGridViewTextBoxColumn.DataPropertyName = "departmentName";
+            this.departmentNameDataGridViewTextBoxColumn.HeaderText = "DEPARTMENT NAME";
+            this.departmentNameDataGridViewTextBoxColumn.Name = "departmentNameDataGridViewTextBoxColumn";
+            this.departmentNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // courseNameDataGridViewTextBoxColumn
+            // 
+            this.courseNameDataGridViewTextBoxColumn.DataPropertyName = "courseName";
+            this.courseNameDataGridViewTextBoxColumn.HeaderText = "COURSE NAME";
+            this.courseNameDataGridViewTextBoxColumn.Name = "courseNameDataGridViewTextBoxColumn";
+            this.courseNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sectionWithDepWithCourseBindingSource
+            // 
+            this.sectionWithDepWithCourseBindingSource.DataSource = typeof(FullScreenAppDemo.perips.sectionWithDepWithCourse);
             // 
             // CANC
             // 
@@ -573,6 +605,38 @@ namespace FullScreenAppDemo
             this.dgvSubList.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvSubList_CellMouseClick);
             this.dgvSubList.SelectionChanged += new System.EventHandler(this.dgvSubList_SelectionChanged);
             // 
+            // subjectIDDataGridViewTextBoxColumn
+            // 
+            this.subjectIDDataGridViewTextBoxColumn.DataPropertyName = "SubjectID";
+            this.subjectIDDataGridViewTextBoxColumn.HeaderText = "SubjectID";
+            this.subjectIDDataGridViewTextBoxColumn.Name = "subjectIDDataGridViewTextBoxColumn";
+            this.subjectIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // subjectCodeDataGridViewTextBoxColumn
+            // 
+            this.subjectCodeDataGridViewTextBoxColumn.DataPropertyName = "SubjectCode";
+            this.subjectCodeDataGridViewTextBoxColumn.HeaderText = "SubjectCode";
+            this.subjectCodeDataGridViewTextBoxColumn.Name = "subjectCodeDataGridViewTextBoxColumn";
+            this.subjectCodeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // subjectNameDataGridViewTextBoxColumn
+            // 
+            this.subjectNameDataGridViewTextBoxColumn.DataPropertyName = "SubjectName";
+            this.subjectNameDataGridViewTextBoxColumn.HeaderText = "SubjectName";
+            this.subjectNameDataGridViewTextBoxColumn.Name = "subjectNameDataGridViewTextBoxColumn";
+            this.subjectNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // subjectUnitDataGridViewTextBoxColumn
+            // 
+            this.subjectUnitDataGridViewTextBoxColumn.DataPropertyName = "SubjectUnit";
+            this.subjectUnitDataGridViewTextBoxColumn.HeaderText = "SubjectUnit";
+            this.subjectUnitDataGridViewTextBoxColumn.Name = "subjectUnitDataGridViewTextBoxColumn";
+            this.subjectUnitDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sSubjectBindingSource2
+            // 
+            this.sSubjectBindingSource2.DataSource = typeof(FullScreenAppDemo.db.S_Subject);
+            // 
             // btnDeleteS
             // 
             this.btnDeleteS.AnimationHoverSpeed = 0.07F;
@@ -817,70 +881,6 @@ namespace FullScreenAppDemo
             // 
             this.departmentTableAdapter.ClearBeforeFill = true;
             // 
-            // classIDDataGridViewTextBoxColumn
-            // 
-            this.classIDDataGridViewTextBoxColumn.DataPropertyName = "classID";
-            this.classIDDataGridViewTextBoxColumn.HeaderText = "CLASS ID";
-            this.classIDDataGridViewTextBoxColumn.Name = "classIDDataGridViewTextBoxColumn";
-            this.classIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // classNameDataGridViewTextBoxColumn
-            // 
-            this.classNameDataGridViewTextBoxColumn.DataPropertyName = "className";
-            this.classNameDataGridViewTextBoxColumn.HeaderText = "CLASS NAME";
-            this.classNameDataGridViewTextBoxColumn.Name = "classNameDataGridViewTextBoxColumn";
-            this.classNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // departmentNameDataGridViewTextBoxColumn
-            // 
-            this.departmentNameDataGridViewTextBoxColumn.DataPropertyName = "departmentName";
-            this.departmentNameDataGridViewTextBoxColumn.HeaderText = "DEPARTMENT NAME";
-            this.departmentNameDataGridViewTextBoxColumn.Name = "departmentNameDataGridViewTextBoxColumn";
-            this.departmentNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // courseNameDataGridViewTextBoxColumn
-            // 
-            this.courseNameDataGridViewTextBoxColumn.DataPropertyName = "courseName";
-            this.courseNameDataGridViewTextBoxColumn.HeaderText = "COURSE NAME";
-            this.courseNameDataGridViewTextBoxColumn.Name = "courseNameDataGridViewTextBoxColumn";
-            this.courseNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sectionWithDepWithCourseBindingSource
-            // 
-            this.sectionWithDepWithCourseBindingSource.DataSource = typeof(FullScreenAppDemo.perips.sectionWithDepWithCourse);
-            // 
-            // subjectIDDataGridViewTextBoxColumn
-            // 
-            this.subjectIDDataGridViewTextBoxColumn.DataPropertyName = "SubjectID";
-            this.subjectIDDataGridViewTextBoxColumn.HeaderText = "SubjectID";
-            this.subjectIDDataGridViewTextBoxColumn.Name = "subjectIDDataGridViewTextBoxColumn";
-            this.subjectIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // subjectCodeDataGridViewTextBoxColumn
-            // 
-            this.subjectCodeDataGridViewTextBoxColumn.DataPropertyName = "SubjectCode";
-            this.subjectCodeDataGridViewTextBoxColumn.HeaderText = "SubjectCode";
-            this.subjectCodeDataGridViewTextBoxColumn.Name = "subjectCodeDataGridViewTextBoxColumn";
-            this.subjectCodeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // subjectNameDataGridViewTextBoxColumn
-            // 
-            this.subjectNameDataGridViewTextBoxColumn.DataPropertyName = "SubjectName";
-            this.subjectNameDataGridViewTextBoxColumn.HeaderText = "SubjectName";
-            this.subjectNameDataGridViewTextBoxColumn.Name = "subjectNameDataGridViewTextBoxColumn";
-            this.subjectNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // subjectUnitDataGridViewTextBoxColumn
-            // 
-            this.subjectUnitDataGridViewTextBoxColumn.DataPropertyName = "SubjectUnit";
-            this.subjectUnitDataGridViewTextBoxColumn.HeaderText = "SubjectUnit";
-            this.subjectUnitDataGridViewTextBoxColumn.Name = "subjectUnitDataGridViewTextBoxColumn";
-            this.subjectUnitDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sSubjectBindingSource2
-            // 
-            this.sSubjectBindingSource2.DataSource = typeof(FullScreenAppDemo.db.S_Subject);
-            // 
             // classSBindingSource1
             // 
             this.classSBindingSource1.DataSource = typeof(FullScreenAppDemo.db.Class_S);
@@ -925,18 +925,18 @@ namespace FullScreenAppDemo
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gunaDataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sectionWithDepWithCourseBindingSource)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sSubjectBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentPortalDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sSubjectBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.classSBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sectionWithDepWithCourseBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sSubjectBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.classSBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseImpsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource1)).EndInit();

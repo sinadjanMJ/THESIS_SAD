@@ -413,6 +413,7 @@ namespace FullScreenAppDemo
         private void BTNAssignSub_Click_1(object sender, EventArgs e)
         {
             assignSubject mj = new assignSubject();
+           
             mj.Show();
         }
 
