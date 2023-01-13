@@ -38,20 +38,22 @@ namespace FullScreenAppDemo
 
         private void btnSaveAssign_Click(object sender, EventArgs e)
         {
-            try
-            {
+            
                 //GET THE NECESSARY DATA FROM COMBO BOX
                 string classID = (cBSection.SelectedItem as classValue).Value.ToString();
                 string semester = cBSemester.Text.Trim();
                 string subjectID = (cBSubject.SelectedItem as subjectValue).Value.ToString();
                 string instructorID = (cBInstructor.SelectedItem as instructorValue).Value.ToString();
 
+            try
+            {
                 if (cBCourse.SelectedIndex == -1 || cBYear.SelectedIndex == -1 || cBSemester.SelectedIndex == -1 || cBDepartment.SelectedIndex == -1 || cBSection.SelectedIndex == -1)
                 {
                     MessageBox.Show("Fill out the Designated Credential first", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
+
                     if (btnSaveAssign.Text == "ADD SUBJECT")
                     {
 
